@@ -1,19 +1,17 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import { links, type Locale } from '../content';
+import { documents, links, type Locale } from '../content';
 const { locale } = Astro.props as { locale: Locale };
-const de = locale === 'de';
+const d = documents[locale].about;
 ---
-<SiteLayout locale={locale} path="about" title={de ? 'Über Ditero' : 'About Ditero'} description={de ? 'Ditero ist ein quelloffenes, selbst gehostetes Projekt für gemeinsame Aufgaben.' : 'Ditero is an open-source, self-hosted project for shared tasks.'}>
-  <article class="document"><p class="eyebrow">Ditero</p><h1>{de ? 'Pläne sind besser gemeinsam.' : 'Plans are better together.'}</h1>
-    <p class="lead">{de ? 'Eine Aufgaben-App für Haushalte, Vereine und kleine Unternehmen. Selbst gehostet, local-first und unter der MIT-Lizenz quelloffen.' : 'A todo app for households, clubs and small businesses. Self-hosted, local-first and open source under the MIT license.'}</p>
-    <h2>{de ? 'Ein Projekt in Entwicklung' : 'A project in progress'}</h2>
-    <p>{de ? 'Ditero befindet sich in einer frühen Alpha. Die Version v0.0.1-alpha.2 enthält die Web-App, signierte unabhängige Android-Pakete und experimentelle Desktop-Installer. Umfangreiche Gerätetests sowie die Qualifizierung für Windows und macOS sind noch nicht abgeschlossen.' : 'Ditero is in early alpha. Version v0.0.1-alpha.2 includes the web app, signed independent Android packages and experimental desktop installers. Wider device testing and Windows and macOS qualification are not complete.'}</p>
-    <h2>{de ? 'Mitmachen und Kontakt' : 'Contribute and get in touch'}</h2>
-    <p>{de ? 'Ditero wird von iuliandita entwickelt. Fehlerberichte, Ideen und Beiträge sind auf GitHub willkommen.' : 'Ditero is developed by iuliandita. Bug reports, ideas and contributions are welcome on GitHub.'}</p>
-    <p><a href={links.project}>{de ? 'Projekt auf GitHub' : 'Project on GitHub'}</a> · <a href={links.issues}>{de ? 'Fehler melden' : 'Report an issue'}</a> · <a href="mailto:iulian.dita@gmail.com">iulian.dita@gmail.com</a></p>
-    <h2>{de ? 'Website und App' : 'Website and app'}</h2>
-    <p>{de ? 'Diese Website stellt das Projekt vor. Sie ist keine gehostete Ditero-Instanz. Die Konfiguration und Verarbeitung von Daten in einer selbst gehosteten Instanz liegen bei ihrem Betreiber.' : 'This website introduces the project. It is not a hosted Ditero instance. The operator of a self-hosted instance controls its configuration and data processing.'}</p>
-    <a class="text-link" href={links.deploy}>{de ? 'Ditero selbst einrichten' : 'Set up your own Ditero'}</a>
+<SiteLayout locale={locale} path="about" title={d.title} description={d.description}>
+  <article class="document">
+    <h1>{d.h1}</h1>
+    <p class="lead">{d.lead}</p>
+    <h2>{d.statusH}</h2><p>{d.statusText}</p>
+    <h2>{d.contribH}</h2><p>{d.contribText}</p>
+    <p><a href={links.project}>{d.project}</a> · <a href={links.issues}>{d.issues}</a> · <a dir="ltr" href={links.contact}>iulian.dita@gmail.com</a></p>
+    <h2>{d.websiteH}</h2><p>{d.websiteText}</p>
+    <a class="text-link" href={links.deploy}>{d.setup}</a>
   </article>
 </SiteLayout>

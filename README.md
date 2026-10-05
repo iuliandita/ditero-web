@@ -2,7 +2,7 @@
 
 The public website for [Ditero](https://github.com/iuliandita/ditero), a self-hosted todo app for households and small groups.
 
-Built with Astro, TypeScript, and native CSS. English and German pages, light and dark themes. MIT licensed. The application and its release downloads live in their own repository.
+Built with Astro, TypeScript, and native CSS. English, German, Spanish, French, Romanian, and Arabic pages, including RTL, with light and dark themes. MIT licensed. The application and its release downloads live in their own repository.
 
 ## Development
 
@@ -17,6 +17,8 @@ bun run preview
 ```
 
 Default builds are unindexed previews. Build the official site with `SITE_ENV=production bun run build` to emit canonical URLs and the sitemap.
+
+Screenshots show the English development interface with fictional household data. They are not a promise that every pictured feature is in the latest public alpha. Web and native alpha downloads are linked separately from source/nightly API and terminal tools. Fonts are bundled locally; no remote font service is used.
 
 ## Deployment
 

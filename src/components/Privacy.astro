@@ -1,15 +1,17 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import { type Locale } from '../content';
+import { documents, links, type Locale } from '../content';
 const { locale } = Astro.props as { locale: Locale };
-const de = locale === 'de';
+const d = documents[locale].privacy;
 ---
-<SiteLayout locale={locale} path="privacy" title={de ? 'Datenschutz' : 'Privacy'} description={de ? 'Datenschutzhinweise für die Ditero-Projektwebsite.' : 'Privacy information for the Ditero project website.'}>
-  <article class="document"><p class="eyebrow">ditero.app</p><h1>{de ? 'Datenschutz' : 'Privacy'}</h1><p class="lead">{de ? 'Diese Hinweise gelten für die Projektwebsite. Für eine selbst gehostete Ditero-Instanz ist ihr jeweiliger Betreiber verantwortlich.' : 'This information applies to the project website. Each self-hosted Ditero instance has its own operator.'}</p>
-    <h2>{de ? 'Bereitstellung der Website' : 'Serving this website'}</h2><p>{de ? 'Cloudflare stellt diese statische Website bereit. Beim Abruf verarbeitet Cloudflare Verbindungsdaten wie die IP-Adresse sowie Angaben zur Anfrage, um die Website auszuliefern und abzusichern.' : 'Cloudflare serves this static website. When you visit, Cloudflare processes connection information such as your IP address and request details to deliver and protect the site.'} <a href="https://www.cloudflare.com/privacypolicy/">{de ? 'Cloudflares Datenschutzhinweise' : 'Cloudflare privacy policy'}</a>.</p>
-    <h2>Cloudflare Web Analytics</h2><p>{de ? 'Wir verwenden Cloudflare Web Analytics, um Seitenaufrufe und technische Leistungsdaten zu verstehen. Cloudflare fügt das Analyse-Skript bei der Auslieferung hinzu. Diese Analyse verwendet keine Cookies. Der Quellcode der Website enthält kein zusätzliches Analyse-Skript und kein Google Analytics.' : 'We use Cloudflare Web Analytics to understand page visits and technical performance. Cloudflare adds the analytics script when serving the site. This analytics service uses no cookies. The website source includes no additional analytics script and no Google Analytics.'}</p>
-    <h2>Google Search Console</h2><p>{de ? 'Google Search Console liefert Berichte für Website-Betreiber über die Sichtbarkeit in der Google-Suche. Dafür wird auf dieser Website kein Google-Analyse-Skript ausgeführt.' : 'Google Search Console provides webmaster reports about visibility in Google Search. It does not run a Google analytics script on this website.'}</p>
-    <h2>{de ? 'Deine Design-Einstellung' : 'Your theme preference'}</h2><p>{de ? 'Wenn du zwischen hellem und dunklem Design wechselst, speichert dein Browser diese Auswahl lokal unter ditero-theme. Die Website übermittelt diese Einstellung nicht an uns. Du kannst sie löschen, indem du die Website-Daten in deinem Browser entfernst.' : 'When you switch between light and dark themes, your browser saves that choice locally under ditero-theme. The website does not send this preference to us. You can remove it by clearing this site’s data in your browser.'}</p>
-    <h2>{de ? 'Externe Links und Kontakt' : 'External links and contact'}</h2><p>{de ? 'Links zu GitHub und anderen Websites führen zu Diensten mit eigenen Datenschutzhinweisen. Bei Fragen zur Projektwebsite kannst du iuliandita unter' : 'Links to GitHub and other websites lead to services with their own privacy information. For questions about the project website, contact iuliandita at'} <a href="mailto:iulian.dita@gmail.com">iulian.dita@gmail.com</a>{de ? ' kontaktieren.' : '.'}</p>
+<SiteLayout locale={locale} path="privacy" title={d.title} description={d.description}>
+  <article class="document">
+    <h1>{d.title}</h1>
+    <p class="lead">{d.lead}</p>
+    <h2>{d.servingH}</h2><p>{d.servingText} <a href={links.cloudflarePrivacy}>{d.cloudflare}</a>.</p>
+    <h2>Cloudflare Web Analytics</h2><p>{d.analyticsText}</p>
+    <h2>Google Search Console</h2><p>{d.gscText}</p>
+    <h2>{d.themeH}</h2><p>{d.themeText}</p>
+    <h2>{d.externalH}</h2><p>{d.contactBefore} <a dir="ltr" href={links.contact}>iulian.dita@gmail.com</a>{d.contactAfter}</p>
   </article>
 </SiteLayout>

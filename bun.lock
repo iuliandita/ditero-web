@@ -5,6 +5,8 @@
     "": {
       "name": "ditero-web",
       "dependencies": {
+        "@fontsource-variable/noto-sans-arabic": "5.3.0",
+        "@fontsource-variable/schibsted-grotesk": "5.3.0",
         "astro": "7.3.5",
       },
       "devDependencies": {
@@ -174,6 +176,10 @@
     "@esbuild/win32-ia32": ["@esbuild/win32-ia32@0.28.1", "", { "os": "win32", "cpu": "ia32" }, "sha512-zvb/mB2bSCoJOpoCBgYKKpX6YM6mJBlBUVUtVj41DlZJVEB6/0CKlRYxP5wWl1C1ILiCoAU5wZZ4q1P3qeS6Eg=="],
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.28.1", "", { "os": "win32", "cpu": "x64" }, "sha512-bm4Mowrv+GXMlpWX++EcXw/iLyd1o3+bJkC2DkWXYVvgZCqD/bSj9ctZeAMC3cIxgjRVR2Dufaiu4YPxr5gW1A=="],
+
+    "@fontsource-variable/noto-sans-arabic": ["@fontsource-variable/noto-sans-arabic@5.3.0", "", {}, "sha512-Rz8+DBzza3//cmN+DBQajJhx3x+Dx12eUgnQsTOgPWbOT0+In6APmE8z4I/QQnUWfAx+s8l93+60qDT5vJH1sA=="],
+
+    "@fontsource-variable/schibsted-grotesk": ["@fontsource-variable/schibsted-grotesk@5.3.0", "", {}, "sha512-ndS6H/KICWANchlHF3q4UdZD+xrZ3Ji0rUobIuXlgvDUzDfqZDsVuXPXZb636nJZMHE9zZ9Fmwgqazm8hMB50Q=="],
 
     "@img/colour": ["@img/colour@1.1.0", "", {}, "sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ=="],
 

@@ -1,15 +1,19 @@
 ---
-import { copy, pageUrl, links, type Locale } from '../content';
+import '@fontsource-variable/schibsted-grotesk/wght.css';
+import '@fontsource-variable/noto-sans-arabic/wght.css';
+import { copy, locales, localeInfo, pageUrl, links, type Locale } from '../content';
 import '../styles/site.css';
 interface Props { locale: Locale; title?: string; description?: string; path?: string; noindex?: boolean }
-const { locale, title = copy[locale].title, description = copy[locale].description, path = '', noindex = false } = Astro.props;
+const { locale, title = copy[locale].meta.title, description = copy[locale].meta.description, path = '', noindex = false } = Astro.props;
 const t = copy[locale];
+const info = localeInfo[locale];
 const production = import.meta.env.SITE_ENV === 'production' && !noindex;
 const root = 'https://ditero.app';
 const canonical = root + pageUrl(locale, path);
+const home = pageUrl(locale);
 ---
 <!doctype html>
-<html lang={locale}>
+<html lang={locale} dir={info.dir}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,8 +23,7 @@ const canonical = root + pageUrl(locale, path);
     <script is:inline src="/theme-init.js"></script>
     {production && <>
       <link rel="canonical" href={canonical} />
-      <link rel="alternate" hreflang="en" href={root + pageUrl('en', path)} />
-      <link rel="alternate" hreflang="de" href={root + pageUrl('de', path)} />
+      {locales.map(l => <link rel="alternate" hreflang={l} href={root + pageUrl(l, path)} />)}
       <link rel="alternate" hreflang="x-default" href={root + pageUrl('en', path)} />
       <meta property="og:url" content={canonical} />
       <meta property="og:image" content={root + '/icon.png'} />
@@ -29,31 +32,63 @@ const canonical = root + pageUrl(locale, path);
     <meta property="og:site_name" content="Ditero" />
     <meta property="og:title" content={`${title} | Ditero`} />
     <meta property="og:description" content={description} />
-    <meta property="og:locale" content={locale === 'de' ? 'de_DE' : 'en_US'} />
+    <meta property="og:locale" content={info.og} />
+    {locales.filter(l => l !== locale).map(l => <meta property="og:locale:alternate" content={localeInfo[l].og} />)}
     <meta name="twitter:card" content="summary" />
     <link rel="icon" type="image/png" href="/icon.png" />
     <link rel="apple-touch-icon" href="/icon.png" />
     <title>{title} | Ditero</title>
   </head>
   <body>
-    <a class="skip" href="#main">{t.skip}</a>
+    <a class="skip" href="#main">{t.ui.skip}</a>
     <header class="site-header wrap">
-      <a href={pageUrl(locale)} class="brand" aria-label="Ditero"><img class="wordmark-light" src="/brand/ditero-wordmark-light.png" width="148" height="49" alt="Ditero" /><img class="wordmark-dark" src="/brand/ditero-wordmark-dark.png" width="148" height="49" alt="Ditero" /></a>
-      <nav aria-label={locale === 'de' ? 'Hauptnavigation' : 'Main navigation'}>
-        <a class="feature-nav" href={pageUrl(locale) + '#features'}>{t.features}</a>
-        <a href={links.project}>{t.source}</a>
-        <a class="language" href={pageUrl(locale === 'en' ? 'de' : 'en', path)} lang={locale === 'en' ? 'de' : 'en'} aria-label={locale === 'en' ? 'Auf Deutsch lesen' : 'Read in English'}>{locale === 'en' ? 'DE' : 'EN'}</a>
-        <button id="theme-toggle" class="theme-toggle" type="button" hidden data-light-label={t.themeLight} data-dark-label={t.themeDark} aria-label={t.themeDark}><span data-theme-label>Dark</span></button>
+      <a href={home} class="brand" aria-label={t.ui.home}>
+        <img class="wordmark-light" src="/brand/ditero-wordmark-light.png" width="148" height="49" alt="" />
+        <img class="wordmark-dark" src="/brand/ditero-wordmark-dark.png" width="148" height="49" alt="" />
+      </a>
+      <nav class="main-nav" aria-label={t.ui.mainNav}>
+        <a href={home + '#features'}>{t.ui.features}</a>
+        <a href={home + '#access'}>{t.ui.access}</a>
+        <a href={home + '#support'}>{t.ui.support}</a>
+        <a href={links.project}>{t.ui.source}</a>
       </nav>
+      <div class="tools">
+        <details class="lang" data-lang-menu>
+          <summary aria-label={`${t.ui.language}: ${info.name}`}>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z" /></svg>
+            <span class="lang-name">{info.name}</span>
+          </summary>
+          <ul>
+            {locales.map(l => <li><a href={pageUrl(l, path)} lang={l} hreflang={l} aria-current={l === locale ? 'true' : undefined}>{localeInfo[l].name}</a></li>)}
+          </ul>
+        </details>
+        <button id="theme-toggle" class="theme-toggle" type="button" hidden aria-pressed="false" aria-label={t.ui.theme} title={t.ui.theme}>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" /></svg>
+        </button>
+      </div>
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer wrap">
-      <div><a class="brand" href={pageUrl(locale)}>Ditero</a><p>{t.footer}</p></div>
-      <nav aria-label={locale === 'de' ? 'Weitere Links' : 'Footer links'}><a href={pageUrl(locale, 'about')}>{t.about}</a><a href={pageUrl(locale, 'privacy')}>{t.privacy}</a><a href={links.license}>MIT</a><a href={links.project}>GitHub</a></nav>
+      <div><a class="footer-brand" href={home}>Ditero</a><p>{t.ui.footerNote}</p></div>
+      <nav aria-label={t.ui.footerNav}>
+        <a href={home + '#features'}>{t.ui.features}</a>
+        <a href={home + '#access'}>{t.ui.access}</a>
+        <a href={home + '#support'}>{t.ui.support}</a>
+        <a href={pageUrl(locale, 'about')}>{t.ui.about}</a>
+        <a href={pageUrl(locale, 'privacy')}>{t.ui.privacy}</a>
+        <a href={links.project}>{t.ui.source}</a>
+        <a href={links.license}>{t.ui.license}</a>
+        <a href={links.issues}>{t.ui.issues}</a>
+      </nav>
     </footer>
     <script>
       import { initTheme } from '../scripts/theme';
+      import { initLanguage } from '../scripts/language';
+      import { initCarousel } from '../scripts/carousel';
       initTheme();
+      initLanguage();
+      initCarousel();
     </script>
   </body>
 </html>

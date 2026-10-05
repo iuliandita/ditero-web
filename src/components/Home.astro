@@ -1,32 +1,108 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import { copy, links, type Locale } from '../content';
+import Capture from './Capture.astro';
+import { copy, extra, links, type LinkKey, type Locale } from '../content';
 const { locale } = Astro.props as { locale: Locale };
 const t = copy[locale];
+const x = extra[locale];
+const a = t.access;
+const label = (key: 'setup' | 'release' | 'guide') => a.labels[key];
+const publicRows: { row: typeof a.public.web; link?: [LinkKey, 'setup' | 'release' | 'guide'] }[] = [
+  { row: a.public.web, link: ['deploy', 'setup'] },
+  { row: a.public.android, link: ['release', 'release'] },
+  { row: a.public.desktop, link: ['release', 'release'] },
+  { row: a.public.ios },
+];
+const devRows: { row: typeof a.dev.cli; link: [LinkKey, 'guide'] }[] = [
+  { row: a.dev.cli, link: ['cli', 'guide'] },
+  { row: a.dev.tui, link: ['tui', 'guide'] },
+  { row: a.dev.api, link: ['api', 'guide'] },
+  { row: a.dev.mcp, link: ['mcp', 'guide'] },
+];
+const carouselLinks: Record<string, LinkKey> = { access: 'api' };
+const cap = { desktopAlt: t.capture.desktopAlt, mobileAlt: t.capture.mobileAlt, caption: t.capture.caption, open: t.capture.open };
 ---
 <SiteLayout locale={locale}>
-  <section class="hero wrap">
-    <div class="hero-copy">
-      <p class="eyebrow">{t.eyebrow}</p>
-      <h1>{t.headline.split('\n').map(line => <span>{line}</span>)}</h1>
-      <p class="intro">{t.intro}</p>
-      <div class="actions"><a class="button primary" href={links.deploy}>{t.primary}<span aria-hidden="true">↗</span></a><a class="text-link" href={links.project}>{t.secondary}<span aria-hidden="true">↗</span></a></div>
-      <p class="alpha"><span>{t.alpha}</span><br />{t.alphaText}</p>
-    </div>
-    <figure class="illustration">
-      <div class="sample">
-        <div class="sample-sidebar"><p class="sample-brand"><img src="/icon.png" width="28" height="28" alt="" />Ditero</p><p class="sample-space">{t.space}</p><ul><li class="selected">{t.today}<span>3</span></li><li>{t.shopping}</li><li>{t.project}</li><li>{t.chores}</li></ul><div class="people" aria-hidden="true"><span>A</span><span>S</span><span>J</span></div></div>
-        <div class="sample-main"><div class="sample-heading"><p>{t.shared}</p><h2>{t.today}</h2></div><ul class="sample-tasks">{t.tasks.map(task => <li class:list={{ done: task.done }}><span class="task-check" aria-hidden="true">{task.done ? '✓' : ''}</span><div><strong>{task.name}</strong><small>{task.detail}</small><span class="task-tag">{task.tag}</span></div></li>)}</ul><p class="sample-note">{t.progress}</p></div>
+  <section class="intro wrap">
+    <h1><span>{t.hero.line1}</span> <span>{t.hero.line2}</span></h1>
+    <div class="intro-side">
+      <p class="lead">{t.hero.intro}</p>
+      <div class="actions">
+        <a class="button" href={links.deploy}>{t.hero.primary}</a>
+        <a class="text-link" href="#access">{t.hero.apps}</a>
       </div>
-      <figcaption>{t.illustration}</figcaption>
-    </figure>
+    </div>
   </section>
-  <section id="features" class="features wrap">
-    <div class="section-heading"><h2>{t.sectionTitle.split('\n').map(line => <span>{line}</span>)}</h2><p>{t.sectionIntro}</p></div>
-    <div class="feature-grid">{t.featureItems.map((item, index) => <article><span class="feature-mark" aria-hidden="true">{['✓', '↻', '+', 'Aa'][index]}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+  <div class="wrap"><Capture name="list" variant="hero" {...cap} /><p class="status">{t.hero.status}</p></div>
+
+  <section id="features" class="section wrap split">
+    <div class="split-head"><h2>{t.features.title}</h2><p>{t.features.intro}</p></div>
+    <dl class="rows">{t.features.items.map(item => <div><dt>{item.title}</dt><dd>{item.text}</dd></div>)}</dl>
   </section>
-  <section class="ownership">
-    <div class="wrap ownership-inner"><div><p class="eyebrow">{locale === 'de' ? 'Quelloffen. Selbst gehostet.' : 'Open source. Self-hosted.'}</p><h2>{t.ownershipTitle.split('\n').map(line => <span>{line}</span>)}</h2></div><div><p class="ownership-lead">{t.ownershipText}</p><a class="text-link" href={links.deploy}>{t.ownershipLink}<span aria-hidden="true">↗</span></a><p class="fine-print">{t.ownershipNote}</p></div></div>
+  <div class="wrap"><Capture name="dashboard" variant="wide" {...cap} desktopAlt={t.capture.dashboardAlt} /></div>
+
+  <section id="assistant" class="section wrap split">
+    <div class="split-head"><h2>{x.ai.title}</h2><p>{x.ai.intro}</p></div>
+    <div>
+      <figure class="request"><figcaption>{x.ai.exampleLabel}</figcaption><blockquote><p>{x.ai.example}</p></blockquote><p class="small">{x.ai.note}</p></figure>
+      <ul class="plain">{x.ai.points.map(point => <li>{point}</li>)}</ul>
+      <a class="text-link" href={links.mcp}>{x.ai.link}</a>
+    </div>
   </section>
-  <section id="get-started" class="release wrap"><div><p class="eyebrow">v0.0.1-alpha.2</p><h2>{t.releaseTitle}</h2><p>{t.releaseText}</p><p class="fine-print">{t.releaseNote}</p></div><div class="release-actions"><a class="button primary" href={links.release}>{t.releaseLink}<span aria-hidden="true">↗</span></a><a class="text-link" href={links.docs}>{t.releaseDocs}<span aria-hidden="true">↗</span></a></div></section>
+
+  <section id="access" class="section wrap">
+    <div class="split"><div class="split-head"><h2>{a.title}</h2><p>{a.intro}</p></div>
+      <div>
+        <h3 class="group">{a.publicTitle}</h3>
+        <dl class="rows">{publicRows.map(({ row, link }) => <div><dt>{row.name}<span class="state">{row.state}</span></dt><dd>{row.text}{link && <> <a href={links[link[0]]}>{label(link[1])}</a></>}</dd></div>)}</dl>
+        <h3 class="group">{a.devTitle}</h3>
+        <dl class="rows">{devRows.map(({ row, link }) => <div><dt>{row.name}<span class="state">{row.state}</span></dt><dd>{row.text} <a href={links[link[0]]}>{label(link[1])}</a></dd></div>)}</dl>
+        <p class="small">{a.note}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap split phone">
+    <div class="split-head"><h2>{t.mobile.title}</h2><p>{t.mobile.text}</p><a class="text-link" href={links.release}>{t.mobile.link}</a></div>
+    <Capture name="list" variant="phone" {...cap} />
+  </section>
+
+  <section id="more" class="section wrap carousel" data-carousel data-of={x.ui.of} aria-label={x.carousel.label} aria-roledescription="carousel">
+    <div class="split-head wide"><h2>{x.carousel.title}</h2><p>{x.carousel.intro}</p></div>
+    <div class="tabs" role="group" aria-label={x.ui.groups} data-controls hidden>
+      {x.carousel.groups.map(group => <button type="button" data-tab>{group.tab}</button>)}
+    </div>
+    <ul class="track" data-track tabindex="0" aria-label={x.carousel.label}>
+      {x.carousel.groups.map((group, i) => (
+        <li class="pane" id={`group-${group.id}`} data-pane data-title={group.title} aria-roledescription="slide" aria-label={`${i + 1} ${x.ui.of} ${x.carousel.groups.length}`}>
+          <h3>{group.title}</h3>
+          <img class="feature-art" src={`/images/carousel/${group.id}.webp`} srcset={`/images/carousel/${group.id}.webp 480w, /images/carousel/${group.id}-720.webp 720w`} sizes="(max-width: 800px) 72px, 224px" alt="" width="720" height="720" loading="lazy" decoding="async" />
+          <ul class="plain">{group.items.map(item => <li>{item}</li>)}</ul>
+          <a class="text-link" href={links[carouselLinks[group.id] ?? 'docs']}>{x.ui.docs}</a>
+        </li>
+      ))}
+    </ul>
+    <div class="controls" data-controls hidden>
+      <button type="button" class="step" data-prev>{x.ui.prev}</button>
+      <p class="small" data-status aria-live="polite"></p>
+      <button type="button" class="step" data-next>{x.ui.next}</button>
+    </div>
+    <p class="small">{x.carousel.note}</p>
+  </section>
+
+  <section class="section wrap split">
+    <div class="split-head"><h2>{t.server.title}</h2></div>
+    <div>
+      <p class="body">{t.server.text}</p>
+      <p class="actions"><a class="button" href={links.deploy}>{t.server.link}</a><a class="text-link" href={links.docs}>{t.server.docs}</a></p>
+      <p class="body">{t.server.encryption}</p>
+    </div>
+  </section>
+
+  <section id="support" class="support">
+    <div class="wrap split">
+      <div class="split-head"><h2>{t.support.title}</h2></div>
+      <div><p class="body">{t.support.text}</p><p class="actions"><a class="button" href={links.support}>{t.support.kofi}</a><a class="text-link" href={links.sponsor}>{t.support.sponsor}</a></p></div>
+    </div>
+  </section>
 </SiteLayout>

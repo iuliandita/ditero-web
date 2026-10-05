@@ -2,20 +2,32 @@
 interface Props {
   name: 'list' | 'dashboard';
   variant: 'hero' | 'wide' | 'phone';
-  desktopAlt: string; mobileAlt: string; caption: string; open: string;
+  desktopAlt: string; mobileAlt: string; open: string;
 }
-const { name, variant, desktopAlt, mobileAlt, caption, open } = Astro.props;
+const { name, variant, desktopAlt, mobileAlt, open } = Astro.props;
 const themes = ['light', 'dark'] as const;
 const src = (size: 'desktop' | 'mobile', theme: string) => `/images/${name}-${size}-${theme}.webp`;
-const desktop = variant !== 'phone';
-const mobile = variant === 'hero' || variant === 'phone';
+const hero = variant === 'hero';
+const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
 ---
 <figure class={`capture capture-${variant}`}>
   {themes.map(theme => (
     <div class={`shots shots-${theme}`}>
-      {desktop && <a class="shot shot-desktop" href={src('desktop', theme)} aria-label={`${open}: ${desktopAlt}`}><img src={src('desktop', theme)} width="1440" height="1000" alt={desktopAlt} loading="lazy" decoding="async" /></a>}
-      {mobile && <a class="shot shot-mobile" href={src('mobile', theme)} aria-label={`${open}: ${mobileAlt}`}><img src={src('mobile', theme)} width="390" height="844" alt={mobileAlt} loading="lazy" decoding="async" /></a>}
+      {variant !== 'phone' && (
+        <a class={`shot shot-desktop ${desktopCrop}`} href={src('desktop', theme)} aria-label={`${open}: ${desktopAlt}`}>
+          <img src={src('desktop', theme)} width="1440" height="1000" alt={desktopAlt} loading="lazy" fetchpriority={hero ? 'high' : undefined} decoding="async" />
+        </a>
+      )}
+      {variant === 'wide' && (
+        <a class="shot shot-compact crop-dashboard-compact" href={src('desktop', theme)} aria-label={`${open}: ${desktopAlt}`}>
+          <img src={src('desktop', theme)} width="1440" height="1000" alt={desktopAlt} loading="lazy" decoding="async" />
+        </a>
+      )}
+      {variant !== 'wide' && (
+        <a class="shot shot-mobile crop-phone" href={src('mobile', theme)} aria-label={`${open}: ${mobileAlt}`}>
+          <img src={src('mobile', theme)} width="390" height="844" alt={mobileAlt} loading="lazy" fetchpriority={hero ? 'high' : undefined} decoding="async" />
+        </a>
+      )}
     </div>
   ))}
-  <figcaption>{caption}</figcaption>
 </figure>

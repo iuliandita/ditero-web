@@ -1,0 +1,17 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { documents, links, type Locale } from '../content';
+const { locale } = Astro.props as { locale: Locale };
+const d = documents[locale].about;
+---
+<SiteLayout locale={locale} path="about" title={d.title} description={d.description}>
+  <article class="document">
+    <h1>{d.h1}</h1>
+    <p class="lead">{d.lead}</p>
+    <h2>{d.statusH}</h2><p>{d.statusText}</p>
+    <h2>{d.contribH}</h2><p>{d.contribText}</p>
+    <p><a href={links.project}>{d.project}</a> · <a href={links.issues}>{d.issues}</a> · <a dir="ltr" href={links.contact}>iulian.dita@gmail.com</a></p>
+    <h2>{d.websiteH}</h2><p>{d.websiteText}</p>
+    <a class="text-link" href={links.deploy}>{d.setup}</a>
+  </article>
+</SiteLayout>

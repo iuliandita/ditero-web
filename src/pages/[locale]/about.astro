@@ -1,0 +1,7 @@
+---
+import About from '../../components/About.astro';
+import type { Locale } from '../../content';
+export const getStaticPaths = () => (['es', 'fr', 'ro', 'ar'] as const).map(locale => ({ params: { locale }, props: { locale } }));
+const { locale } = Astro.props as { locale: Locale };
+---
+<About locale={locale} />

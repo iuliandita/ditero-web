@@ -1,0 +1,59 @@
+---
+import { copy, pageUrl, links, type Locale } from '../content';
+import '../styles/site.css';
+interface Props { locale: Locale; title?: string; description?: string; path?: string; noindex?: boolean }
+const { locale, title = copy[locale].title, description = copy[locale].description, path = '', noindex = false } = Astro.props;
+const t = copy[locale];
+const production = import.meta.env.SITE_ENV === 'production' && !noindex;
+const root = 'https://ditero.app';
+const canonical = root + pageUrl(locale, path);
+---
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="robots" content={production ? 'index, follow' : 'noindex, follow'} />
+    <script is:inline src="/theme-init.js"></script>
+    {production && <>
+      <link rel="canonical" href={canonical} />
+      <link rel="alternate" hreflang="en" href={root + pageUrl('en', path)} />
+      <link rel="alternate" hreflang="de" href={root + pageUrl('de', path)} />
+      <link rel="alternate" hreflang="x-default" href={root + pageUrl('en', path)} />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:image" content={root + '/icon.png'} />
+    </>}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ditero" />
+    <meta property="og:title" content={`${title} | Ditero`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content={locale === 'de' ? 'de_DE' : 'en_US'} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <title>{title} | Ditero</title>
+  </head>
+  <body>
+    <a class="skip" href="#main">{t.skip}</a>
+    <header class="site-header wrap">
+      <a href={pageUrl(locale)} class="brand" aria-label="Ditero"><img class="wordmark-light" src="/brand/ditero-wordmark-light.png" width="148" height="49" alt="Ditero" /><img class="wordmark-dark" src="/brand/ditero-wordmark-dark.png" width="148" height="49" alt="Ditero" /></a>
+      <nav aria-label={locale === 'de' ? 'Hauptnavigation' : 'Main navigation'}>
+        <a class="feature-nav" href={pageUrl(locale) + '#features'}>{t.features}</a>
+        <a href={links.project}>{t.source}</a>
+        <a class="language" href={pageUrl(locale === 'en' ? 'de' : 'en', path)} lang={locale === 'en' ? 'de' : 'en'} aria-label={locale === 'en' ? 'Auf Deutsch lesen' : 'Read in English'}>{locale === 'en' ? 'DE' : 'EN'}</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" hidden data-light-label={t.themeLight} data-dark-label={t.themeDark} aria-label={t.themeDark}><span data-theme-label>Dark</span></button>
+      </nav>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer wrap">
+      <div><a class="brand" href={pageUrl(locale)}>Ditero</a><p>{t.footer}</p></div>
+      <nav aria-label={locale === 'de' ? 'Weitere Links' : 'Footer links'}><a href={pageUrl(locale, 'about')}>{t.about}</a><a href={pageUrl(locale, 'privacy')}>{t.privacy}</a><a href={links.license}>MIT</a><a href={links.project}>GitHub</a></nav>
+    </footer>
+    <script>
+      import { initTheme } from '../scripts/theme';
+      initTheme();
+    </script>
+  </body>
+</html>

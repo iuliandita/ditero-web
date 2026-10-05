@@ -1,0 +1,17 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { documents, links, type Locale } from '../content';
+const { locale } = Astro.props as { locale: Locale };
+const d = documents[locale].privacy;
+---
+<SiteLayout locale={locale} path="privacy" title={d.title} description={d.description}>
+  <article class="document">
+    <h1>{d.title}</h1>
+    <p class="lead">{d.lead}</p>
+    <h2>{d.servingH}</h2><p>{d.servingText} <a href={links.cloudflarePrivacy}>{d.cloudflare}</a>.</p>
+    <h2>Cloudflare Web Analytics</h2><p>{d.analyticsText}</p>
+    <h2>Google Search Console</h2><p>{d.gscText}</p>
+    <h2>{d.themeH}</h2><p>{d.themeText}</p>
+    <h2>{d.externalH}</h2><p>{d.contactBefore} <a dir="ltr" href={links.contact}>iulian.dita@gmail.com</a>{d.contactAfter}</p>
+  </article>
+</SiteLayout>

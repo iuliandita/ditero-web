@@ -1,0 +1,21 @@
+---
+interface Props {
+  name: 'list' | 'dashboard';
+  variant: 'hero' | 'wide' | 'phone';
+  desktopAlt: string; mobileAlt: string; caption: string; open: string;
+}
+const { name, variant, desktopAlt, mobileAlt, caption, open } = Astro.props;
+const themes = ['light', 'dark'] as const;
+const src = (size: 'desktop' | 'mobile', theme: string) => `/images/${name}-${size}-${theme}.webp`;
+const desktop = variant !== 'phone';
+const mobile = variant === 'hero' || variant === 'phone';
+---
+<figure class={`capture capture-${variant}`}>
+  {themes.map(theme => (
+    <div class={`shots shots-${theme}`}>
+      {desktop && <a class="shot shot-desktop" href={src('desktop', theme)} aria-label={`${open}: ${desktopAlt}`}><img src={src('desktop', theme)} width="1440" height="1000" alt={desktopAlt} loading="lazy" decoding="async" /></a>}
+      {mobile && <a class="shot shot-mobile" href={src('mobile', theme)} aria-label={`${open}: ${mobileAlt}`}><img src={src('mobile', theme)} width="390" height="844" alt={mobileAlt} loading="lazy" decoding="async" /></a>}
+    </div>
+  ))}
+  <figcaption>{caption}</figcaption>
+</figure>

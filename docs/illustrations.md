@@ -1,9 +1,27 @@
-# Feature illustrations
+# Feature illustration style
 
-The seven carousel illustrations are original decorative artwork, separate from the real app screenshots. They share an opaque charcoal-teal ground, paper/felt texture, off-white shapes and restrained teal accents.
+Ditero uses tactile felt and layered paper artwork. Preserve the visible fuzzy fibers, paper grain, soft cast shadows and restrained teal palette. The Files, Customization and Reminders originals establish the material reference for the whole set.
 
-Each group uses a distinct motif: shared sheets, a routine ring, reminder signals with a crescent, differently arranged task blocks, an attachment pouch, an integration key and theme discs. They contain no text, vendor marks or fabricated app interface.
+## Palette and materials
 
-Serve 480px and 720px WebP variants with explicit dimensions, empty alternative text and lazy loading. Display the artwork at inline end on desktop and as a 72px thumbnail beside the mobile heading. Preserve RTL placement and light/dark parity.
+- Opaque deep green ground: `#1a2b29`.
+- Off-white paper: `#eef2f1`.
+- Bright teal felt: `#6fd0bf`.
+- Deep teal felt: `#0f6f64`.
+- Cool gray: `#aab7b9`.
 
-When an illustration fails visual review, generate a fresh original. Do not retouch the previous bitmap or accumulate image edits.
+Use front-facing cut-paper collages with a few distinct layers, believable edge thickness and diffuse offset shadows. Felt must look fibrous at the displayed size. Keep generous space around one dominant motif. Avoid glossy plastic, metallic surfaces, dramatic lighting, glow, gradients and flat vector finishes. No nostalgic period styling is required.
+
+## Feature meaning
+
+Each graphic supports its adjacent heading. Lists use grouped sheets and tabs; routines use repeating completion shapes; reminders use a signal and a quiet-hours crescent; views rearrange the same task shapes; files use a document wallet and earlier sheets; access uses a key and connected shapes; customization uses light/dark material halves, color swatches and size variations. Keep compositions clear at 160-336px.
+
+Artwork is decorative, separate from real app captures. Do not add text, logos, fake interface elements or symbols that imply unsupported features. Supply empty alternative text and explicit square dimensions. Serve 480px and 720px WebP variants. Maintain identical material and palette in both website themes.
+
+## Creating more artwork
+
+Generate a fresh original for every revision. Do not retouch the previous bitmap or accumulate image edits. Include the palette, material, composition and feature motif in each prompt. Preserve the source PNG and exact prompt in private design evidence. Review the full set together at its displayed size for material, background, scale and visual weight; regenerate inconsistent plates before shipping.
+
+## Felt brand mark
+
+The decorative footer mark uses the existing Ditero clipboard silhouette in the same felt and paper materials. Preserve two checklist rows: the first checked, the second empty. Preserve its counterclockwise tilt: top-right higher than top-left, clipboard top leaning left. Keep the Ditero name as real page text beside the artwork.

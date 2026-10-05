@@ -1,16 +1,23 @@
 ---
 import '@fontsource-variable/schibsted-grotesk/wght.css';
 import '@fontsource-variable/noto-sans-arabic/wght.css';
-import { copy, locales, localeInfo, pageUrl, links, type Locale } from '../content';
+import { copy, extra, locales, localeInfo, pageUrl, links, type Locale } from '../content';
 import '../styles/site.css';
 interface Props { locale: Locale; title?: string; description?: string; path?: string; noindex?: boolean }
 const { locale, title = copy[locale].meta.title, description = copy[locale].meta.description, path = '', noindex = false } = Astro.props;
 const t = copy[locale];
+const x = extra[locale];
 const info = localeInfo[locale];
 const production = import.meta.env.SITE_ENV === 'production' && !noindex;
 const root = 'https://ditero.app';
 const canonical = root + pageUrl(locale, path);
 const home = pageUrl(locale);
+const nav: [string, string][] = [
+  [t.ui.features, home + '#features'],
+  [t.ui.access, home + '#access'],
+  [t.ui.support, home + '#support'],
+  [t.ui.source, links.project],
+];
 ---
 <!doctype html>
 <html lang={locale} dir={info.dir}>
@@ -47,12 +54,18 @@ const home = pageUrl(locale);
         <img class="wordmark-dark" src="/brand/ditero-wordmark-dark.png" width="148" height="49" alt="" />
       </a>
       <nav class="main-nav" aria-label={t.ui.mainNav}>
-        <a href={home + '#features'}>{t.ui.features}</a>
-        <a href={home + '#access'}>{t.ui.access}</a>
-        <a href={home + '#support'}>{t.ui.support}</a>
-        <a href={links.project}>{t.ui.source}</a>
+        {nav.map(([label, href]) => <a href={href}>{label}</a>)}
       </nav>
       <div class="tools">
+        <details class="menu" data-menu>
+          <summary aria-label={x.ui.menu}>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+            <span class="menu-name">{x.ui.menu}</span>
+          </summary>
+          <nav aria-label={t.ui.mainNav}>
+            {nav.map(([label, href]) => <a href={href}>{label}</a>)}
+          </nav>
+        </details>
         <details class="lang" data-lang-menu>
           <summary aria-label={`${t.ui.language}: ${info.name}`}>
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z" /></svg>
@@ -70,7 +83,13 @@ const home = pageUrl(locale);
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer wrap">
-      <div><a class="footer-brand" href={home}>Ditero</a><p>{t.ui.footerNote}</p></div>
+      <div class="footer-identity">
+        <a class="footer-brand" href={home}>
+          <img src="/brand/ditero-felt.webp" srcset="/brand/ditero-felt.webp 480w, /brand/ditero-felt-720.webp 720w" sizes="112px" width="112" height="112" alt="" loading="lazy" decoding="async" />
+          <span>Ditero</span>
+        </a>
+        <p>{t.ui.footerNote}</p>
+      </div>
       <nav aria-label={t.ui.footerNav}>
         <a href={home + '#features'}>{t.ui.features}</a>
         <a href={home + '#access'}>{t.ui.access}</a>
@@ -89,6 +108,18 @@ const home = pageUrl(locale);
       initTheme();
       initLanguage();
       initCarousel();
+      const menu = document.querySelector<HTMLDetailsElement>('[data-menu]');
+      if (menu) {
+        const close = (): void => { menu.open = false; };
+        menu.addEventListener('click', event => { if ((event.target as Element).closest('nav a')) close(); });
+        menu.addEventListener('keydown', event => {
+          if (event.key !== 'Escape' || !menu.open) return;
+          close();
+          menu.querySelector<HTMLElement>('summary')?.focus();
+        });
+        document.addEventListener('click', event => { if (menu.open && !menu.contains(event.target as Node)) close(); });
+        matchMedia('(min-width: 801px)').addEventListener('change', close);
+      }
     </script>
   </body>
 </html>

@@ -21,8 +21,8 @@ const devRows: { row: typeof a.dev.cli; link: [LinkKey, 'guide'] }[] = [
 ];
 const categoryLinks: Record<string, LinkKey> = { access: 'api' };
 const cap = { desktopAlt: t.capture.desktopAlt, mobileAlt: t.capture.mobileAlt, heroAlt: t.capture.heroAlt, open: t.capture.open };
-const proofHeights = { 'task-detail': 462, 'recurrence-reminders': 462 };
-const mobileProofHeights = { 'task-detail': 524, 'recurrence-reminders': 288 };
+const proofHeights = { 'task-detail': 470, 'recurrence-reminders': 470 };
+const mobileProofHeights = { 'task-detail': 524, 'recurrence-reminders': 398 };
 const proofs = (['task-detail', 'recurrence-reminders'] as const).map(id => ({
   id, ...t.gallery.items[id], ...t.features.proof[id], height: proofHeights[id],
 }));
@@ -38,8 +38,7 @@ const dashboard = t.features.proof.dashboard;
         <a class="text-link" href="#access">{t.hero.apps}</a>
       </div>
       <div class="hero-meta">
-        <p class="platforms"><span>{x.ui.platforms}</span>{' '}<a class="status" href={links.release}>{t.hero.status}{' '}<bdi>{version}</bdi></a></p>
-        <a class="text-link assistant-teaser" href="#assistant">{x.ui.assistantTeaser}</a>
+        <a class="status small" href={links.release}>{t.hero.status}{' '}<bdi>{version}</bdi></a>
       </div>
     </div>
     <div class="hero-media"><Capture name="list" variant="hero" {...cap} /></div>
@@ -101,9 +100,9 @@ const dashboard = t.features.proof.dashboard;
       {[x.features.groups.slice(0, 4), x.features.groups.slice(4)].map(groups => (
         <div class="feature-column">{groups.map(group => (
         <details class="feature-group" id={`group-${group.id}`} name="features">
-          <summary><span class="feature-summary"><span>{group.title}</span><span class="feature-preview">{group.items[0]}</span></span></summary>
+          <summary><span class="feature-summary"><span>{group.title}</span><span class="feature-preview">{group.summary}</span></span></summary>
           <div class="feature-body">
-            <div><ul class="feature-items">{group.items.slice(1).map(item => <li>{item}</li>)}</ul><a class="text-link" href={links[categoryLinks[group.id] ?? 'docs']}>{x.ui.docs}</a></div>
+            <div><ul class="feature-items">{group.items.map(item => <li>{item}</li>)}</ul><a class="text-link" href={links[categoryLinks[group.id] ?? 'docs']}>{x.ui.docs}</a></div>
           </div>
         </details>
         ))}</div>
@@ -142,7 +141,7 @@ const dashboard = t.features.proof.dashboard;
 
   <section id="self-host" class="host" aria-labelledby="host-title">
     <div class="wrap host-grid">
-      <div class="host-copy"><h2 id="host-title">{t.server.title}</h2><p>{t.server.text}</p><div class="actions"><a class="button" href={links.deploy}>{t.server.link}</a><a class="text-link" href={links.docs}>{t.server.docs}</a></div></div>
+      <div class="host-copy"><h2 id="host-title"><img class="host-mark" src="/brand/ditero-felt-96.webp" width="32" height="32" alt="" loading="lazy" decoding="async" /><span>{t.server.title}</span></h2><p>{t.server.text}</p><div class="actions"><a class="button" href={links.deploy}>{t.server.link}</a><a class="text-link" href={links.docs}>{t.server.docs}</a></div></div>
       <div class="host-details"><ol class="steps" role="list">{x.setup.steps.map(step => <li>{step}</li>)}</ol><p class="encryption-note">{t.server.encryption}</p></div>
     </div>
   </section>

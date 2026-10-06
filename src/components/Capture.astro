@@ -14,11 +14,11 @@ const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
   {hero ? (
     <div class="shot shot-responsive crop-list" data-hero-capture data-light-wide="/images/list-wide-light.webp" data-dark-wide="/images/list-wide-dark.webp" data-light-desktop={src('desktop', 'light')} data-dark-desktop={src('desktop', 'dark')} data-light-mobile={src('mobile', 'light')} data-dark-mobile={src('mobile', 'dark')} data-desktop-alt={desktopAlt} data-mobile-alt={mobileAlt}>
       <picture>
-        <source media="(min-width: 1180px) and (prefers-color-scheme: dark)" srcset="/images/list-wide-dark.webp" width="1100" height="500" />
-        <source media="(min-width: 1180px)" srcset="/images/list-wide-light.webp" width="1100" height="500" />
-        <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset={src('mobile', 'dark')} />
-        <source media="(max-width: 700px)" srcset={src('mobile', 'light')} />
-        <source media="(prefers-color-scheme: dark)" srcset={src('desktop', 'dark')} />
+        <source data-size="wide" media="(min-width: 1180px) and (prefers-color-scheme: dark)" srcset="/images/list-wide-dark.webp" width="1100" height="500" />
+        <source data-size="wide" media="(min-width: 1180px)" srcset="/images/list-wide-light.webp" width="1100" height="500" />
+        <source data-size="mobile" media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset={src('mobile', 'dark')} />
+        <source data-size="mobile" media="(max-width: 700px)" srcset={src('mobile', 'light')} />
+        <source data-size="desktop" media="(prefers-color-scheme: dark)" srcset={src('desktop', 'dark')} />
         <img src={src('desktop', 'light')} width="820" height="510" alt={heroAlt} loading="eager" fetchpriority="high" decoding="async" />
       </picture>
       <div class="fallback-desktop">{themes.map(theme => <a class={`fallback-link shots-${theme}`} href={`/images/gallery/list-desktop-${theme}.png`} aria-label={`${open}: ${desktopAlt}`} />)}</div>
@@ -49,7 +49,7 @@ const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
       const wideSrc = dark ? capture.dataset.darkWide : capture.dataset.lightWide;
       const mobileSrc = dark ? capture.dataset.darkMobile : capture.dataset.lightMobile;
       for (const source of sources) {
-        const selected = (source.media.includes('max-width') ? mobileSrc : source.media.includes('min-width') ? wideSrc : desktopSrc) ?? '';
+        const selected = (source.dataset.size === 'mobile' ? mobileSrc : source.dataset.size === 'wide' ? wideSrc : desktopSrc) ?? '';
         if (source.getAttribute('srcset') !== selected) source.srcset = selected;
       }
       if (image.getAttribute('src') !== desktopSrc) image.src = desktopSrc ?? '';

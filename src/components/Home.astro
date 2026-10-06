@@ -73,7 +73,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
     <fieldset class="tour-stage wrap">
       <legend class="sr-only">{x.ui.tour}</legend>
       {proofs.map((proof, index) => <>
-        <input class={`tour-radio tour-choice-${index + 1} sr-only`} type="radio" name="product-tour" id={`tour-${proof.id}`} checked={index === 0} aria-controls={`panel-${proof.id}`} />
+        <input class={`tour-radio tour-choice-${index + 1}`} type="radio" name="product-tour" id={`tour-${proof.id}`} checked={index === 0} aria-controls={`panel-${proof.id}`} />
         <label class={`tour-choice tour-choice-${index + 1}`} for={`tour-${proof.id}`}>
           <span class="choice-title" id={`proof-${proof.id}-title`}>{proof.title}</span>
           <span class="choice-text">{proof.text}</span>
@@ -99,7 +99,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
           </figure>
         </div>
       </>)}
-      <input class="tour-radio tour-choice-3 sr-only" type="radio" name="product-tour" id="tour-dashboard" aria-controls="panel-dashboard" />
+      <input class="tour-radio tour-choice-3" type="radio" name="product-tour" id="tour-dashboard" aria-controls="panel-dashboard" />
       <label class="tour-choice tour-choice-3" for="tour-dashboard" id="dashboard">
         <span class="choice-title" id="dashboard-title">{dashboard.title}</span>
         <span class="choice-text">{dashboard.text}</span>

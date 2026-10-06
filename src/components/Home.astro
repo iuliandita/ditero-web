@@ -104,8 +104,8 @@ const productCopy = (text: string) => text.split(/(Docker Compose|Helm)/g);
       <a class="text-link feature-guide" href={links.docs}>{x.ui.docs}</a>
     </header>
     <div class="feature-explorer" role="group" aria-label={x.ui.groups}>
-      {x.features.groups.map((group, index) => (
-        <details class="feature-group" id={`group-${group.id}`} name="features" open={index === 0}>
+      {x.features.groups.map(group => (
+        <details class="feature-group" id={`group-${group.id}`} name="features">
           <summary>
             <span class="feature-summary">
               <span>{group.title}</span>

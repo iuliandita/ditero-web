@@ -1,7 +1,7 @@
 import type { ExtraCopy } from './types';
 
 export const es: ExtraCopy = {
-  ui: { platforms: 'Web, Android y aplicación de escritorio experimental. CLI, TUI y MCP desde el código fuente.', details: 'Detalles', menu: 'Menú', heroIntro: 'Listas de la compra compartidas, tareas del hogar recurrentes y recordatorios para tu hogar. Gratis, de código abierto y autoalojado.', groups: 'Grupos de funciones', docs: 'Documentación' },
+  ui: { tour: 'Explora Ditero', platforms: 'Web, Android y aplicación de escritorio experimental. CLI, TUI y MCP desde el código fuente.', details: 'Detalles', menu: 'Menú', heroIntro: 'Listas de la compra compartidas, tareas del hogar recurrentes y recordatorios para tu hogar. Gratis, de código abierto y autoalojado.', groups: 'Grupos de funciones', docs: 'Documentación' },
   setup: { steps: ["Inicia tu servidor con Docker Compose", "Crea tu cuenta en la aplicación web", "Invita a otras personas y comparte una lista"] },
   ai: {
     title: "Planifica con tu asistente",

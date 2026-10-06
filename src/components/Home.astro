@@ -42,6 +42,10 @@ const proofs = (['task-detail', 'recurrence-reminders'] as const).map(id => ({
   id, ...t.gallery.items[id], ...t.features.proof[id], assets: proofAssets[id],
 }));
 const dashboard = t.features.proof.dashboard;
+const featureCopy = (text: string) => text.split(/((?<![A-Za-z0-9])و?(?:HTTP API|Telegram|Discord|webhooks|Slack|Karma|TOTP|iCal|ntfy|CLI|TUI|MCP|API)[،؛:,.!?؟]?(?![A-Za-z0-9]))/gu).map(part => {
+  const term = /^(و?)(HTTP API|Telegram|Discord|webhooks|Slack|Karma|TOTP|iCal|ntfy|CLI|TUI|MCP|API)([،؛:,.!?؟]?)$/u.exec(part);
+  return term ? { before: term[1], name: term[2], after: term[3] } : part;
+});
 const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm)[.,;:!?،؛؟]?)/g).map(part => {
   const term = /^(و?)(Docker Compose|Helm)([.,;:!?،؛؟]?)$/.exec(part);
   return term ? { before: term[1], name: term[2], after: term[3] } : part;
@@ -64,15 +68,18 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
     <div class="hero-media"><Capture name="list" variant="hero" {...cap} /></div>
   </section>
 
-  <div class="tour">
-    <div class="proofs wrap">
-    {proofs.map((proof) => (
-      <section class={`proof proof-${proof.id}`} aria-labelledby={`proof-${proof.id}-title`}>
-        <div class="proof-copy">
-          <h2 id={`proof-${proof.id}-title`}>{proof.title}</h2>
-          <p>{proof.text}</p>
-        </div>
-        <figure class="proof-media">
+  <section id="product-tour" class="tour" aria-labelledby="tour-title">
+    <h2 class="sr-only" id="tour-title">{x.ui.tour}</h2>
+    <fieldset class="tour-stage wrap">
+      <legend class="sr-only">{x.ui.tour}</legend>
+      {proofs.map((proof, index) => <>
+        <input class={`tour-radio tour-choice-${index + 1} sr-only`} type="radio" name="product-tour" id={`tour-${proof.id}`} checked={index === 0} aria-controls={`panel-${proof.id}`} />
+        <label class={`tour-choice tour-choice-${index + 1}`} for={`tour-${proof.id}`}>
+          <span class="choice-title" id={`proof-${proof.id}-title`}>{proof.title}</span>
+          <span class="choice-text">{proof.text}</span>
+        </label>
+        <div class="tour-panel" id={`panel-${proof.id}`} role="region" aria-labelledby={`proof-${proof.id}-title`}>
+          <figure class="proof-media">
           {(['light', 'dark'] as const).map(theme => (
             <div class={`shots shots-${theme}`}>
               <a class="proof-link proof-desktop" href={`/images/gallery/${proof.id}${theme === 'dark' ? '-dark' : ''}.png`} aria-label={`${t.capture.open}: ${proof.alt}`}>
@@ -89,15 +96,19 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
               </a>
             </div>
           ))}
-        </figure>
-      </section>
-    ))}
-    <section id="dashboard" class="proof proof-dashboard" aria-labelledby="dashboard-title">
-      <div class="proof-copy"><h2 id="dashboard-title">{dashboard.title}</h2><p>{dashboard.text}</p></div>
-      <div class="proof-media"><Capture name="dashboard" variant="wide" {...cap} desktopAlt={t.capture.dashboardAlt} compactAlt={t.capture.dashboardCompactAlt} /></div>
-    </section>
-    </div>
-  </div>
+          </figure>
+        </div>
+      </>)}
+      <input class="tour-radio tour-choice-3 sr-only" type="radio" name="product-tour" id="tour-dashboard" aria-controls="panel-dashboard" />
+      <label class="tour-choice tour-choice-3" for="tour-dashboard" id="dashboard">
+        <span class="choice-title" id="dashboard-title">{dashboard.title}</span>
+        <span class="choice-text">{dashboard.text}</span>
+      </label>
+      <div class="tour-panel tour-dashboard" id="panel-dashboard" role="region" aria-labelledby="dashboard-title">
+        <Capture name="dashboard" variant="wide" {...cap} desktopAlt={t.capture.dashboardAlt} compactAlt={t.capture.dashboardCompactAlt} />
+      </div>
+    </fieldset>
+  </section>
 
   <section id="assistant" class="assistant wrap" aria-labelledby="assistant-title">
     <div class="assistant-sheet">
@@ -141,13 +152,13 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
         <details class="feature-group" id={`group-${group.id}`} name="features">
           <summary>
             <span class="feature-summary">
-              <span>{group.title}</span>
-              <span class="feature-preview">{group.summary}</span>
+              <span>{featureCopy(group.title).map(part => typeof part === 'string' ? part : <span class="feature-term-run">{part.before}<bdi dir="ltr">{part.name}</bdi>{part.after}</span>)}</span>
+              <span class="feature-preview">{featureCopy(group.summary).map(part => typeof part === 'string' ? part : <span class="feature-term-run">{part.before}<bdi dir="ltr">{part.name}</bdi>{part.after}</span>)}</span>
             </span>
           </summary>
           <div class="feature-body">
-            <h3 class="feature-panel-title">{group.title}</h3>
-            <ul class="feature-items">{group.items.map(item => <li>{item}</li>)}</ul>
+            <h3 class="feature-panel-title">{featureCopy(group.title).map(part => typeof part === 'string' ? part : <span class="feature-term-run">{part.before}<bdi dir="ltr">{part.name}</bdi>{part.after}</span>)}</h3>
+            <ul class="feature-items">{group.items.map(item => <li>{featureCopy(item).map(part => typeof part === 'string' ? part : <span class="feature-term-run">{part.before}<bdi dir="ltr">{part.name}</bdi>{part.after}</span>)}</li>)}</ul>
           </div>
         </details>
       ))}
@@ -233,3 +244,18 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
     <div><p>{t.support.text}</p><p class="actions"><a class="text-link" href={links.support}>{t.support.kofi}</a><a class="text-link" href={links.sponsor}>{t.support.sponsor}</a></p></div>
   </section>
 </SiteLayout>
+
+<script>
+  const revealTourFragment = (): void => {
+    const id = location.hash.slice(1);
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (!target) return;
+    const panel = target.closest<HTMLElement>('.tour-panel');
+    const choice = target.closest<HTMLLabelElement>('.tour-choice');
+    const radio = panel?.previousElementSibling?.previousElementSibling ?? (choice ? document.getElementById(choice.htmlFor) : null);
+    if (radio instanceof HTMLInputElement && radio.type === 'radio') radio.checked = true;
+  };
+  revealTourFragment();
+  window.addEventListener('hashchange', revealTourFragment);
+</script>

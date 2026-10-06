@@ -63,7 +63,7 @@ const en: HomeCopy = {
     },
     labels: { setup: 'Setup guide', release: 'Downloads', guide: 'Guide' },
   },
-  server: { title: 'Run the server yourself', text: "Run Ditero on your infrastructure. Inspect the MIT-licensed code and decide who has access. Docker Compose and Helm guides are available.", link: 'Read the deployment guide', docs: 'Read the documentation', encryption: 'Attachments are encrypted, which protects file content. This does not mean all task data is end-to-end encrypted.' },
+  server: { title: 'Run the server yourself', text: "Run Ditero on your infrastructure. Inspect the MIT‑licensed code and decide who has access. Docker Compose and Helm guides are available.", link: 'Read the deployment guide', docs: 'Read the documentation', encryption: 'Attachments are encrypted, which protects file content. This does not mean all task data is end-to-end encrypted.' },
   support: { title: 'Support development', text: 'Ditero is free and MIT licensed. There are no paid feature unlocks. Support contributes to the development of the project.', kofi: 'Support on Ko-fi', sponsor: 'Sponsor Ditero' },
 };
 

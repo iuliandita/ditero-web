@@ -1,7 +1,7 @@
 import type { ExtraCopy } from './types';
 
 export const ro: ExtraCopy = {
-  ui: { platforms: 'Web, Android și aplicație desktop experimentală. CLI, TUI și MCP din sursă.', details: 'Detalii', menu: 'Meniu', heroIntro: 'Liste de cumpărături comune, treburi casnice recurente și mementouri pentru casa voastră. Gratuit, open source și găzduit de tine.', groups: 'Grupuri de funcții', docs: 'Documentație' },
+  ui: { tour: 'Descoperă Ditero', platforms: 'Web, Android și aplicație desktop experimentală. CLI, TUI și MCP din sursă.', details: 'Detalii', menu: 'Meniu', heroIntro: 'Liste de cumpărături comune, treburi casnice recurente și mementouri pentru casa voastră. Gratuit, open source și găzduit de tine.', groups: 'Grupuri de funcții', docs: 'Documentație' },
   setup: { steps: ["Pornește serverul cu Docker Compose", "Creează-ți contul în aplicația web", "Invită oameni și partajează o listă"] },
   ai: {
     title: "Planifică cu asistentul tău",

@@ -208,7 +208,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
     <div class="wrap host-grid">
       <div class="host-copy">
         <h2 id="host-title">
-          <img class="host-mark" src="/brand/ditero-felt-96.webp" width="32" height="32" alt="" loading="lazy" decoding="async" />
+          <img class="host-mark" src="/brand/ditero-felt-96.webp" width="40" height="40" alt="" loading="lazy" decoding="async" />
           <span>{t.server.title}</span>
         </h2>
         <p>{productCopy(t.server.text).map(part => typeof part === 'string' ? part : <span class="product-run">{part.before}<bdi class="product-term">{part.name}</bdi>{part.after}</span>)}</p>

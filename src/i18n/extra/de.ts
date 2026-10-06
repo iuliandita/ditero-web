@@ -26,7 +26,7 @@ export const de: ExtraCopy = {
       { id: 'reminders', title: 'Erinnerungen', summary: "ntfy, Telegram, Discord, Slack und E-Mail", items: ["Erinnerungen an Fälligkeiten", "Ruhezeiten", 'Wähle deine Zustellungskanäle', 'Bestätigung von Erinnerungen', "Eskalation bei unbeantworteten Erinnerungen"] },
       { id: 'views', title: 'Ansichten auf Aufgaben', summary: "Kalender, Board, Tabelle und Dashboards", items: ['Dashboards', 'Kalender', 'Board', 'Tabelle', 'Gespeicherte Ansichten'] },
       { id: 'files', title: 'Dateien und Kommentare', summary: "Gespräche zu Aufgaben und verschlüsselte Anhänge", items: ['Verschlüsselte Anhänge', 'Kommentare zu Aufgaben'] },
-      { id: 'recovery', title: 'Verlauf und Export', summary: "Änderungsverlauf, Import und Export", items: ['Änderungsverlauf', 'Export und Import, mit dokumentierten Ausnahmen'] },
+      { id: 'recovery', title: 'Verlauf und Export', summary: "Erledigungsverlauf, Import und Export", items: ['Erledigungsverlauf', 'Export und Import, mit dokumentierten Ausnahmen'] },
       { id: 'access', title: 'Anmeldung und API', summary: "Passkeys, API, Kalender und Assistenten-Tools", items: ['Passkeys und TOTP', 'Persönliche Zugriffstoken', "HTTP-API und iCal-Exporte", "CLI-, TUI- und MCP-Clients im Quellcode", "Kalender-Abonnements und Webhooks"] },
       { id: 'custom', title: 'Anpassung', summary: "Sechs Sprachen, Designs und Leseoptionen", items: ['Sechs Oberflächensprachen, darunter Arabisch von rechts nach links', "Helles und dunkles Design", 'Akzentfarben und geteilte Designs', 'Lesegröße und eine Option mit hohem Kontrast'] },
     ],

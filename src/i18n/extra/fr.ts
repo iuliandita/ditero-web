@@ -26,7 +26,7 @@ export const fr: ExtraCopy = {
       { id: 'reminders', title: 'Rappels', summary: "ntfy, Telegram, Discord, Slack et e-mail", items: ["Rappels d'échéance", "Heures de silence", 'Choisissez vos canaux de notification', 'Accusé de réception des rappels', "Escalade des rappels sans réponse"] },
       { id: 'views', title: 'Façons de voir les tâches', summary: "Calendrier, tableau kanban, tableau de données et tableaux de bord", items: ['Tableaux de bord', 'Calendrier', 'Tableau kanban', 'Tableau de données', 'Vues enregistrées'] },
       { id: 'files', title: 'Fichiers et commentaires', summary: "Discussions sur les tâches et pièces jointes chiffrées", items: ['Pièces jointes chiffrées', 'Commentaires sur les tâches'] },
-      { id: 'recovery', title: 'Historique et export', summary: "Historique des modifications, import et export", items: ['Historique des modifications', 'Export et import, avec exclusions documentées'] },
+      { id: 'recovery', title: 'Historique et export', summary: "Historique des tâches terminées, import et export", items: ['Historique des tâches terminées', 'Export et import, avec exclusions documentées'] },
       { id: 'access', title: 'Connexion et API', summary: "Passkeys, API, calendriers et outils pour assistants", items: ['Passkeys et TOTP', "Jetons d'accès personnels", "API HTTP et exports iCal", "Clients CLI, TUI et MCP depuis le code source", "Abonnements calendrier et webhooks"] },
       { id: 'custom', title: 'Personnalisation', summary: "Six langues, thèmes et options de lecture", items: ["Six langues d'interface, dont l'arabe de droite à gauche", "Thèmes clair et sombre", "Couleurs d'accent et thèmes partagés", 'Taille de lecture et option de contraste élevé'] },
     ],

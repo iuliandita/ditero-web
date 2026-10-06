@@ -26,7 +26,7 @@ export const en: ExtraCopy = {
       { id: 'reminders', title: 'Reminders', summary: "ntfy, Telegram, Discord, Slack and email", items: ["Due-date reminders", "Quiet hours", 'Choose your delivery channels', 'Acknowledgement of reminders', "Escalation when a reminder goes unanswered"] },
       { id: 'views', title: 'Ways to look at tasks', summary: "Calendar, board, table and dashboards", items: ['Dashboards', 'Calendar', 'Board', 'Table', 'Saved views'] },
       { id: 'files', title: 'Files and comments', summary: "Task discussions and encrypted attachments", items: ['Encrypted attachments', 'Comments on tasks'] },
-      { id: 'recovery', title: 'History and export', summary: "Change history, import and export", items: ['Change history', 'Export and import, with documented exclusions'] },
+      { id: 'recovery', title: 'History and export', summary: "Task completion history, import and export", items: ['Task completion history', 'Export and import, with documented exclusions'] },
       { id: 'access', title: 'Sign-in and API', summary: "Passkeys, API, calendars and assistant tools", items: ['Passkeys and TOTP', 'Personal access tokens', "HTTP API and iCal snapshot exports", "CLI, TUI and MCP source clients", "Calendar subscriptions and webhooks"] },
       { id: 'custom', title: 'Customization', summary: "Six languages, themes and reading options", items: ['Six interface languages including right-to-left Arabic', "Light and dark themes", 'Accent colors and shared themes', 'Reading size and a high-contrast option'] },
     ],

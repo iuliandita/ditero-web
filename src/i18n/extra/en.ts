@@ -1,7 +1,7 @@
 import type { ExtraCopy } from './types';
 
 export const en: ExtraCopy = {
-  ui: { platforms: 'Web, Android and experimental desktop.', details: 'Details', menu: 'Menu', heroIntro: 'Shared shopping, chores and plans for your household. Free, open source and self-hosted.', groups: 'Feature groups', docs: 'Documentation' },
+  ui: { platforms: 'Web, Android and experimental desktop.', details: 'Details', menu: 'Menu', heroIntro: 'Shared shopping lists, recurring chores and reminders for your household. Free, open source and self-hosted.', groups: 'Feature groups', docs: 'Documentation' },
   setup: { steps: ["Run your server with Docker Compose", "Create your account in the web app", "Invite people and share a list"] },
   ai: {
     title: "Plan with your assistant",

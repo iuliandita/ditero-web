@@ -1,7 +1,7 @@
 import type { ExtraCopy } from './types';
 
 export const en: ExtraCopy = {
-  ui: { details: 'Details', menu: 'Menu', heroIntro: 'Shared shopping, chores and plans for your household. Free, open source and self-hosted.', groups: 'Feature groups', docs: 'Documentation' },
+  ui: { platforms: 'Web, Android and experimental desktop.', details: 'Details', menu: 'Menu', heroIntro: 'Shared shopping, chores and plans for your household. Free, open source and self-hosted.', groups: 'Feature groups', docs: 'Documentation' },
   setup: { steps: ["Run your server with Docker Compose", "Create your account in the web app", "Invite people and share a list"] },
   ai: {
     title: "Plan with your assistant",
@@ -23,7 +23,7 @@ export const en: ExtraCopy = {
     groups: [
       { id: 'lists', title: 'Lists and sharing', summary: "Shopping, projects and shared responsibilities", items: ["Shopping, projects and checklists", "Assign tasks to people", 'Typed lists for different kinds of work', 'Subtasks inside tasks', 'Priorities and labels', 'Shared workspaces with memberships', "Folders and templates", "Quick add with dates and priorities", "Offline sync"] },
       { id: 'routines', title: 'Habits and routines', summary: "Recurring chores, habits and focus", items: ["Recurring chores", "Habits and streaks", 'A focus mode for the task at hand', "Focus timer", "Karma"] },
-      { id: 'reminders', title: 'Reminders', summary: "ntfy, Telegram, Discord, Slack and email", items: ["Due-date reminders", "Quiet hours", 'Delivery through ntfy, Telegram, Discord, Slack and email', 'Acknowledgement of reminders', "Escalation when a reminder goes unanswered"] },
+      { id: 'reminders', title: 'Reminders', summary: "ntfy, Telegram, Discord, Slack and email", items: ["Due-date reminders", "Quiet hours", 'Choose your delivery channels', 'Acknowledgement of reminders', "Escalation when a reminder goes unanswered"] },
       { id: 'views', title: 'Ways to look at tasks', summary: "Calendar, board, table and dashboards", items: ['Dashboards', 'Calendar', 'Board', 'Table', 'Saved views'] },
       { id: 'files', title: 'Files and comments', summary: "Encrypted files and task discussions", items: ['Encrypted attachments', 'Comments on tasks'] },
       { id: 'recovery', title: 'History and export', summary: "Change history, import and export", items: ['Change history', 'Export and import, with documented exclusions'] },

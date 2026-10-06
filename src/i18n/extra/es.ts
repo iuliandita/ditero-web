@@ -1,7 +1,7 @@
 import type { ExtraCopy } from './types';
 
 export const es: ExtraCopy = {
-  ui: { details: 'Detalles', menu: 'Menú', heroIntro: 'Compras, tareas del hogar y planes para tu casa. Gratis, de código abierto y autoalojado.', groups: 'Grupos de funciones', docs: 'Documentación' },
+  ui: { platforms: 'Web, Android y aplicación de escritorio experimental.', details: 'Detalles', menu: 'Menú', heroIntro: 'Compras, tareas del hogar y planes para tu casa. Gratis, de código abierto y autoalojado.', groups: 'Grupos de funciones', docs: 'Documentación' },
   setup: { steps: ["Inicia tu servidor con Docker Compose", "Crea tu cuenta en la aplicación web", "Invita a otras personas y comparte una lista"] },
   ai: {
     title: "Planifica con tu asistente",
@@ -23,7 +23,7 @@ export const es: ExtraCopy = {
     groups: [
       { id: 'lists', title: 'Listas y colaboración', summary: "Compras, proyectos y responsabilidades compartidas", items: ["Compras, proyectos y listas de control", "Asigna tareas a otras personas", 'Listas tipadas para distintos tipos de trabajo', 'Subtareas dentro de las tareas', 'Prioridades y etiquetas', 'Espacios de trabajo compartidos con membresías', "Carpetas y plantillas", "Entrada rápida con fechas y prioridades", "Sincronización sin conexión"] },
       { id: 'routines', title: 'Hábitos y rutinas', summary: "Tareas recurrentes, hábitos y concentración", items: ["Tareas domésticas recurrentes", "Hábitos y rachas", 'Un modo de concentración para la tarea actual', "Temporizador de concentración", "Karma"] },
-      { id: 'reminders', title: 'Recordatorios', summary: "ntfy, Telegram, Discord, Slack y correo electrónico", items: ["Recordatorios de vencimiento", "Horas de silencio", 'Envío por ntfy, Telegram, Discord, Slack y correo electrónico', 'Confirmación de recordatorios', "Escalamiento de recordatorios sin respuesta"] },
+      { id: 'reminders', title: 'Recordatorios', summary: "ntfy, Telegram, Discord, Slack y correo electrónico", items: ["Recordatorios de vencimiento", "Horas de silencio", 'Elige tus canales de envío', 'Confirmación de recordatorios', "Escalamiento de recordatorios sin respuesta"] },
       { id: 'views', title: 'Formas de ver las tareas', summary: "Calendario, tablero, tabla y paneles", items: ['Paneles', 'Calendario', 'Tablero', 'Tabla', 'Vistas guardadas'] },
       { id: 'files', title: 'Archivos y comentarios', summary: "Archivos cifrados y conversaciones sobre tareas", items: ['Archivos adjuntos cifrados', 'Comentarios en las tareas'] },
       { id: 'recovery', title: 'Historial y exportación', summary: "Historial de cambios, importación y exportación", items: ['Historial de cambios', 'Exportación e importación, con exclusiones documentadas'] },

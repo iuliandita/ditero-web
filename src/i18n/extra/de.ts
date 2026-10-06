@@ -1,7 +1,7 @@
 import type { ExtraCopy } from './types';
 
 export const de: ExtraCopy = {
-  ui: { details: 'Details', menu: 'Menü', heroIntro: 'Einkäufe, Hausarbeit und Pläne für deinen Haushalt. Kostenlos, quelloffen und selbst gehostet.', groups: 'Funktionsgruppen', docs: 'Dokumentation' },
+  ui: { platforms: 'Web, Android und experimentelle Desktop-App.', details: 'Details', menu: 'Menü', heroIntro: 'Einkäufe, Hausarbeit und Pläne für deinen Haushalt. Kostenlos, quelloffen und selbst gehostet.', groups: 'Funktionsgruppen', docs: 'Dokumentation' },
   setup: { steps: ["Starte den Server mit Docker Compose", "Lege dein Konto in der Web-App an", "Lade Leute ein und teile eine Liste"] },
   ai: {
     title: "Plane mit deinem Assistenten",
@@ -23,7 +23,7 @@ export const de: ExtraCopy = {
     groups: [
       { id: 'lists', title: 'Listen und Teilen', summary: "Einkäufe, Projekte und gemeinsame Aufgaben", items: ["Einkäufe, Projekte und Checklisten", "Aufgaben an Menschen zuweisen", 'Typisierte Listen für verschiedene Arten von Aufgaben', 'Unteraufgaben innerhalb von Aufgaben', 'Prioritäten und Labels', 'Gemeinsame Arbeitsbereiche mit Mitgliedschaften', "Ordner und Vorlagen", "Schnelleingabe mit Datum und Priorität", "Offline-Synchronisierung"] },
       { id: 'routines', title: 'Gewohnheiten und Routinen', summary: "Wiederkehrende Hausarbeit, Gewohnheiten und Fokus", items: ["Wiederkehrende Hausarbeit", "Gewohnheiten und Serien", 'Ein Fokusmodus für die aktuelle Aufgabe', "Fokustimer", "Karma"] },
-      { id: 'reminders', title: 'Erinnerungen', summary: "ntfy, Telegram, Discord, Slack und E-Mail", items: ["Erinnerungen an Fälligkeiten", "Ruhezeiten", 'Zustellung über ntfy, Telegram, Discord, Slack und E-Mail', 'Bestätigung von Erinnerungen', "Eskalation bei unbeantworteten Erinnerungen"] },
+      { id: 'reminders', title: 'Erinnerungen', summary: "ntfy, Telegram, Discord, Slack und E-Mail", items: ["Erinnerungen an Fälligkeiten", "Ruhezeiten", 'Wähle deine Zustellungskanäle', 'Bestätigung von Erinnerungen', "Eskalation bei unbeantworteten Erinnerungen"] },
       { id: 'views', title: 'Ansichten auf Aufgaben', summary: "Kalender, Board, Tabelle und Dashboards", items: ['Dashboards', 'Kalender', 'Board', 'Tabelle', 'Gespeicherte Ansichten'] },
       { id: 'files', title: 'Dateien und Kommentare', summary: "Verschlüsselte Dateien und Gespräche zu Aufgaben", items: ['Verschlüsselte Anhänge', 'Kommentare zu Aufgaben'] },
       { id: 'recovery', title: 'Verlauf und Export', summary: "Änderungsverlauf, Import und Export", items: ['Änderungsverlauf', 'Export und Import, mit dokumentierten Ausnahmen'] },

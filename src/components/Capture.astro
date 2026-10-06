@@ -12,10 +12,8 @@ const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
 ---
 <figure class={`capture capture-${variant}`}>
   {hero ? (
-    <div class="shot shot-responsive crop-list" data-hero-capture data-light-wide="/images/list-wide-light.webp" data-dark-wide="/images/list-wide-dark.webp" data-light-desktop={src('desktop', 'light')} data-dark-desktop={src('desktop', 'dark')} data-light-mobile={src('mobile', 'light')} data-dark-mobile={src('mobile', 'dark')} data-desktop-alt={desktopAlt} data-mobile-alt={mobileAlt}>
+    <div class="shot shot-responsive crop-list" data-hero-capture data-light-desktop={src('desktop', 'light')} data-dark-desktop={src('desktop', 'dark')} data-light-mobile={src('mobile', 'light')} data-dark-mobile={src('mobile', 'dark')} data-desktop-alt={desktopAlt} data-mobile-alt={mobileAlt}>
       <picture>
-        <source data-size="wide" media="(min-width: 1180px) and (prefers-color-scheme: dark)" srcset="/images/list-wide-dark.webp" width="1100" height="500" />
-        <source data-size="wide" media="(min-width: 1180px)" srcset="/images/list-wide-light.webp" width="1100" height="500" />
         <source data-size="mobile" media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset={src('mobile', 'dark')} />
         <source data-size="mobile" media="(max-width: 700px)" srcset={src('mobile', 'light')} />
         <source data-size="desktop" media="(prefers-color-scheme: dark)" srcset={src('desktop', 'dark')} />
@@ -46,10 +44,9 @@ const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
       const saved = document.documentElement.dataset.theme;
       const dark = saved === 'dark' || (!saved && system.matches);
       const desktopSrc = dark ? capture.dataset.darkDesktop : capture.dataset.lightDesktop;
-      const wideSrc = dark ? capture.dataset.darkWide : capture.dataset.lightWide;
       const mobileSrc = dark ? capture.dataset.darkMobile : capture.dataset.lightMobile;
       for (const source of sources) {
-        const selected = (source.dataset.size === 'mobile' ? mobileSrc : source.dataset.size === 'wide' ? wideSrc : desktopSrc) ?? '';
+        const selected = (source.dataset.size === 'mobile' ? mobileSrc : desktopSrc) ?? '';
         if (source.getAttribute('srcset') !== selected) source.srcset = selected;
       }
       if (image.getAttribute('src') !== desktopSrc) image.src = desktopSrc ?? '';

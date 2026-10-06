@@ -46,8 +46,8 @@ const productTerms = new Set(['Docker Compose', 'Helm']);
 const productCopy = (text: string) => text.split(/(Docker Compose|Helm)/g);
 ---
 <SiteLayout locale={locale}>
-  <section class="hero wrap" aria-labelledby="hero-title">
-    <div class="hero-copy">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy wrap">
       <h1 id="hero-title"><span>{t.hero.line1}</span> <span>{t.hero.line2}</span></h1>
       <p class="lead">{x.ui.heroIntro}</p>
       <div class="actions">
@@ -62,7 +62,8 @@ const productCopy = (text: string) => text.split(/(Docker Compose|Helm)/g);
     <div class="hero-media"><Capture name="list" variant="hero" {...cap} /></div>
   </section>
 
-  <div class="proofs wrap">
+  <div class="tour">
+    <div class="proofs wrap">
     {proofs.map((proof) => (
       <section class={`proof proof-${proof.id}`} aria-labelledby={`proof-${proof.id}-title`}>
         <div class="proof-copy">
@@ -93,12 +94,14 @@ const productCopy = (text: string) => text.split(/(Docker Compose|Helm)/g);
       <div class="proof-copy"><h2 id="dashboard-title">{dashboard.title}</h2><p>{dashboard.text}</p></div>
       <div class="proof-media"><Capture name="dashboard" variant="wide" {...cap} desktopAlt={t.capture.dashboardAlt} compactAlt={t.capture.dashboardCompactAlt} /></div>
     </section>
+    </div>
   </div>
 
   <section id="features" class="features wrap" aria-labelledby="features-title">
     <header class="features-head">
       <h2 id="features-title">{t.features.title}</h2>
       <p>{t.features.intro}</p>
+      <a class="text-link feature-guide" href={links.docs}>{x.ui.docs}</a>
     </header>
     <div class="feature-explorer" role="group" aria-label={x.ui.groups}>
       {x.features.groups.map((group, index) => (
@@ -109,18 +112,17 @@ const productCopy = (text: string) => text.split(/(Docker Compose|Helm)/g);
               <span class="feature-preview">{group.summary}</span>
             </span>
           </summary>
-          <div class="feature-body paper">
+          <div class="feature-body">
             <h3 class="feature-panel-title">{group.title}</h3>
             <ul class="feature-items">{group.items.map(item => <li>{item}</li>)}</ul>
           </div>
         </details>
       ))}
     </div>
-    <a class="text-link feature-guide" href={links.docs}>{x.ui.docs}</a>
   </section>
 
   <section id="assistant" class="assistant wrap" aria-labelledby="assistant-title">
-    <div class="assistant-sheet paper">
+    <div class="assistant-sheet">
       <header class="assistant-heading">
         <h2 id="assistant-title">{x.ai.title}</h2>
         <p>{x.ai.intro}</p>

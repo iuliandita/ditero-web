@@ -27,7 +27,7 @@ export const es: ExtraCopy = {
       { id: 'views', title: 'Formas de ver las tareas', summary: "Calendario, tablero, tabla y paneles", items: ['Paneles', 'Calendario', 'Tablero', 'Tabla', 'Vistas guardadas'] },
       { id: 'files', title: 'Archivos y comentarios', summary: "Archivos cifrados y conversaciones sobre tareas", items: ['Archivos adjuntos cifrados', 'Comentarios en las tareas'] },
       { id: 'recovery', title: 'Historial y exportación', summary: "Historial de cambios, importación y exportación", items: ['Historial de cambios', 'Exportación e importación, con exclusiones documentadas'] },
-      { id: 'access', title: 'Inicio de sesión e integraciones', summary: "Passkeys, API, calendarios y herramientas para asistentes", items: ['Passkeys y TOTP', 'Tokens de acceso personal', "API HTTP y exportaciones iCal", "Clientes CLI, TUI y MCP desde el código fuente", "Suscripciones de calendario y webhooks"] },
+      { id: 'access', title: 'Acceso y API', summary: "Passkeys, API, calendarios y herramientas para asistentes", items: ['Passkeys y TOTP', 'Tokens de acceso personal', "API HTTP y exportaciones iCal", "Clientes CLI, TUI y MCP desde el código fuente", "Suscripciones de calendario y webhooks"] },
       { id: 'custom', title: 'Personalización', summary: "Seis idiomas, temas y opciones de lectura", items: ['Seis idiomas de interfaz, incluido el árabe de derecha a izquierda', "Temas claro y oscuro", 'Colores de acento y temas compartidos', 'Tamaño de lectura y una opción de alto contraste'] },
     ],
   },

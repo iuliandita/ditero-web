@@ -17,7 +17,7 @@ const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
         <source data-size="mobile" media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset={src('mobile', 'dark')} />
         <source data-size="mobile" media="(max-width: 700px)" srcset={src('mobile', 'light')} />
         <source data-size="desktop" media="(prefers-color-scheme: dark)" srcset={src('desktop', 'dark')} />
-        <img src={src('desktop', 'light')} width="820" height="510" alt={heroAlt} loading="eager" fetchpriority="high" decoding="async" />
+        <img src={src('desktop', 'light')} width="838" height="420" alt={heroAlt} loading="eager" fetchpriority="high" decoding="async" />
       </picture>
       <div class="fallback-desktop">{themes.map(theme => <a class={`fallback-link shots-${theme}`} href={`/images/gallery/list-desktop-${theme}.png`} aria-label={`${open}: ${desktopAlt}`} />)}</div>
       <div class="fallback-mobile">{themes.map(theme => <a class={`fallback-link shots-${theme}`} href={`/images/gallery/list-mobile-${theme}.png`} aria-label={`${open}: ${mobileAlt}`} />)}</div>

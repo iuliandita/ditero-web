@@ -254,7 +254,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
     if (!target) return;
     const panel = target.closest<HTMLElement>('.tour-panel');
     const choice = target.closest<HTMLLabelElement>('.tour-choice');
-    const radio = choice ? document.getElementById(choice.htmlFor) : panel ? [...document.querySelectorAll<HTMLInputElement>('.tour-radio')].find(input => input.getAttribute('aria-controls') === panel.id) : null;
+    const radio = target instanceof HTMLInputElement && target.matches('.tour-radio') ? target : choice ? document.getElementById(choice.htmlFor) : panel ? [...document.querySelectorAll<HTMLInputElement>('.tour-radio')].find(input => input.getAttribute('aria-controls') === panel.id) : null;
     if (radio instanceof HTMLInputElement && radio.type === 'radio') radio.checked = true;
   };
   revealTourFragment();

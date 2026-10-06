@@ -10,7 +10,7 @@ export interface HomeCopy {
     about: string; privacy: string; license: string; issues: string; language: string; theme: string; footerNote: string; home: string;
   };
   hero: { line1: string; line2: string; intro: string; primary: string; apps: string; status: string };
-  capture: { heroAlt: string; dashboardAlt: string; dashboardCompactAlt: string; desktopAlt: string; mobileAlt: string; open: string };
+  capture: { dashboardAlt: string; dashboardCompactAlt: string; desktopAlt: string; mobileAlt: string; open: string };
   gallery: { title: string; note: string; items: Record<'priorities' | 'task-detail' | 'recurrence-reminders' | 'saved-filters', { title: string; caption: string; alt: string }> };
   features: { title: string; intro: string; proof: Record<'task-detail' | 'recurrence-reminders' | 'dashboard', Item> };
   access: {
@@ -28,7 +28,7 @@ const en: HomeCopy = {
   meta: { title: 'Shared lists. Your server.', description: 'Ditero is an open-source, self-hosted todo app for households, clubs and small teams. Share shopping lists, chores, habits and projects from one server you run.' },
   ui: { selfHost: 'Self-host', skip: 'Skip to content', mainNav: 'Main navigation', footerNav: 'Footer links', features: 'Features', access: 'Apps and tools', support: 'Support', source: 'Source code', about: 'About', privacy: 'Privacy', license: 'MIT license', issues: 'Issues', language: 'Language', theme: 'Dark theme', footerNote: 'Open source under the MIT license.', home: 'Ditero home' },
   hero: { line1: 'Shared lists.', line2: 'Your server.', intro: 'Shared tasks, shopping and routines for households and small groups. Self-hosted, with offline sync and web, mobile, desktop and terminal clients.', primary: 'Set up your server', apps: 'Apps and tools', status: "Alpha:" },
-  capture: { heroAlt: "Ditero showing household tasks.", dashboardCompactAlt: 'Ditero household dashboard showing task priorities.', dashboardAlt: "Ditero household dashboard showing task priorities, a habit streak and focus time.", desktopAlt: "Ditero household tasks grouped by priority.", mobileAlt: 'The Ditero mobile app showing a shared list with example tasks.', open: 'Open full-size screenshot' },
+  capture: { dashboardCompactAlt: 'Ditero household dashboard showing task priorities.', dashboardAlt: "Ditero household dashboard showing task priorities, a habit streak and focus time.", desktopAlt: "Ditero household tasks grouped by priority.", mobileAlt: 'The Ditero mobile app showing a shared list with example tasks.', open: 'Open full-size screenshot' },
   gallery: {
     title: "A closer look",
     note: "English development previews with fictional household data.",
@@ -44,7 +44,7 @@ const en: HomeCopy = {
     proof: {
       'task-detail': { title: 'Share the work', text: 'Assign tasks, share notes, and break plans into subtasks.' },
       'recurrence-reminders': { title: 'Chores and habits', text: 'Repeat the chores. Build habits. Set reminders for the right time.' },
-      'dashboard': { title: 'Dashboards', text: 'See priorities, upcoming tasks and habits in one place.' },
+      'dashboard': { title: 'Dashboards', text: 'Keep your priorities in view.' },
     },
   },
   access: {
@@ -73,7 +73,7 @@ const de: HomeCopy = {
   meta: { title: 'Gemeinsame Listen. Dein Server.', description: 'Ditero ist eine quelloffene, selbst gehostete Aufgaben-App für Haushalte, Vereine und kleine Teams. Teile Einkaufslisten, Hausarbeit, Gewohnheiten und Projekte von einem Server, den du selbst betreibst.' },
   ui: { selfHost: 'Selbst hosten', skip: 'Zum Inhalt springen', mainNav: 'Hauptnavigation', footerNav: 'Weitere Links', features: 'Funktionen', access: 'Apps und Werkzeuge', support: 'Unterstützen', source: 'Quellcode', about: 'Über Ditero', privacy: 'Datenschutz', license: 'MIT-Lizenz', issues: 'Fehler melden', language: 'Sprache', theme: 'Dunkles Design', footerNote: 'Quelloffen unter der MIT-Lizenz.', home: 'Ditero Startseite' },
   hero: { line1: 'Gemeinsame Listen.', line2: 'Dein Server.', intro: 'Gemeinsame Aufgaben, Einkäufe und Routinen für Haushalte und kleine Gruppen. Selbst gehostet, mit Offline-Sync und Clients für Web, Mobilgeräte, Desktop und Terminal.', primary: 'Server einrichten', apps: 'Apps und Werkzeuge', status: "Alpha:" },
-  capture: { heroAlt: "Ditero mit Aufgaben für den Haushalt.", dashboardCompactAlt: 'Ditero-Haushaltsdashboard mit Aufgabenprioritäten.', dashboardAlt: "Ditero-Haushaltsdashboard mit Aufgabenprioritäten, einer Gewohnheitsserie und Fokuszeit.", desktopAlt: "Haushaltsaufgaben in Ditero, nach Priorität gruppiert.", mobileAlt: 'Die mobile Ditero-App mit einer gemeinsamen Liste und Beispielaufgaben.', open: 'Screenshot in voller Größe öffnen' },
+  capture: { dashboardCompactAlt: 'Ditero-Haushaltsdashboard mit Aufgabenprioritäten.', dashboardAlt: "Ditero-Haushaltsdashboard mit Aufgabenprioritäten, einer Gewohnheitsserie und Fokuszeit.", desktopAlt: "Haushaltsaufgaben in Ditero, nach Priorität gruppiert.", mobileAlt: 'Die mobile Ditero-App mit einer gemeinsamen Liste und Beispielaufgaben.', open: 'Screenshot in voller Größe öffnen' },
   gallery: {
     title: "Genauer hinsehen",
     note: "Entwicklungsvorschauen auf Englisch mit erfundenen Haushaltsdaten.",
@@ -89,7 +89,7 @@ const de: HomeCopy = {
     proof: {
       'task-detail': { title: 'Aufgaben gemeinsam verteilen', text: 'Weise Aufgaben zu, teile Notizen und zerlege Pläne in Unteraufgaben.' },
       'recurrence-reminders': { title: 'Hausarbeit und Gewohnheiten', text: 'Wiederhole Hausarbeit. Baue Gewohnheiten auf. Lass dich rechtzeitig erinnern.' },
-      'dashboard': { title: 'Dashboards', text: 'Sieh Prioritäten, anstehende Aufgaben und Gewohnheiten an einem Ort.' },
+      'dashboard': { title: 'Dashboards', text: 'Behalte deine Prioritäten im Blick.' },
     },
   },
   access: {
@@ -118,7 +118,7 @@ const es: HomeCopy = {
   meta: { title: 'Listas compartidas. Tu servidor.', description: 'Ditero es una aplicación de tareas de código abierto y autoalojada para hogares, clubes y equipos pequeños. Comparte listas de la compra, tareas del hogar, hábitos y proyectos desde un servidor que gestionas tú.' },
   ui: { selfHost: 'Autoalojar', skip: 'Saltar al contenido', mainNav: 'Navegación principal', footerNav: 'Enlaces del pie de página', features: 'Funciones', access: 'Apps y herramientas', support: 'Apoyar', source: 'Código fuente', about: 'Acerca de', privacy: 'Privacidad', license: 'Licencia MIT', issues: 'Incidencias', language: 'Idioma', theme: 'Tema oscuro', footerNote: 'Código abierto con licencia MIT.', home: 'Inicio de Ditero' },
   hero: { line1: 'Listas compartidas.', line2: 'Tu servidor.', intro: 'Tareas, compras y rutinas compartidas para hogares y grupos pequeños. En tu servidor, con sincronización sin conexión y clientes web, móviles, de escritorio y terminal.', primary: 'Configurar tu servidor', apps: 'Apps y herramientas', status: "Alfa:" },
-  capture: { heroAlt: "Ditero mostrando tareas del hogar.", dashboardCompactAlt: 'Panel del hogar en Ditero con las prioridades de las tareas.', dashboardAlt: "Panel del hogar en Ditero con prioridades de tareas, una racha de hábito y tiempo de concentración.", desktopAlt: "Tareas del hogar en Ditero agrupadas por prioridad.", mobileAlt: 'La aplicación móvil de Ditero con una lista compartida y tareas de ejemplo.', open: 'Abrir la captura a tamaño completo' },
+  capture: { dashboardCompactAlt: 'Panel del hogar en Ditero con las prioridades de las tareas.', dashboardAlt: "Panel del hogar en Ditero con prioridades de tareas, una racha de hábito y tiempo de concentración.", desktopAlt: "Tareas del hogar en Ditero agrupadas por prioridad.", mobileAlt: 'La aplicación móvil de Ditero con una lista compartida y tareas de ejemplo.', open: 'Abrir la captura a tamaño completo' },
   gallery: {
     title: "Una mirada más de cerca",
     note: "Vistas previas de desarrollo en inglés con datos ficticios de un hogar.",
@@ -134,7 +134,7 @@ const es: HomeCopy = {
     proof: {
       'task-detail': { title: 'Repartir las tareas', text: 'Asigna tareas, comparte notas y divide los planes en subtareas.' },
       'recurrence-reminders': { title: 'Tareas del hogar y hábitos', text: 'Repite las tareas del hogar. Crea hábitos. Recibe recordatorios a tiempo.' },
-      'dashboard': { title: 'Paneles', text: 'Ve prioridades, próximas tareas y hábitos en un solo lugar.' },
+      'dashboard': { title: 'Paneles', text: 'Ten tus prioridades a la vista.' },
     },
   },
   access: {
@@ -163,7 +163,7 @@ const fr: HomeCopy = {
   meta: { title: 'Listes partagées. Votre serveur.', description: 'Ditero est une application de tâches open source et auto-hébergée pour les foyers, les associations et les petites équipes. Partagez listes de courses, tâches ménagères, habitudes et projets depuis un serveur que vous gérez.' },
   ui: { selfHost: 'Auto-héberger', skip: 'Aller au contenu', mainNav: 'Navigation principale', footerNav: 'Liens de pied de page', features: 'Fonctionnalités', access: 'Apps et outils', support: 'Soutenir', source: 'Code source', about: 'À propos', privacy: 'Confidentialité', license: 'Licence MIT', issues: 'Signaler un problème', language: 'Langue', theme: 'Thème sombre', footerNote: 'Open source sous licence MIT.', home: 'Accueil Ditero' },
   hero: { line1: 'Listes partagées.', line2: 'Votre serveur.', intro: 'Tâches, courses et routines partagées pour les foyers et petits groupes. Sur votre serveur, avec synchronisation hors ligne et clients web, mobiles, de bureau et en terminal.', primary: 'Installer votre serveur', apps: 'Apps et outils', status: "Alpha :" },
-  capture: { heroAlt: "Ditero affichant les tâches du foyer.", dashboardCompactAlt: 'Tableau de bord du foyer Ditero avec les priorités des tâches.', dashboardAlt: "Tableau de bord du foyer Ditero avec les priorités des tâches, une série pour une habitude et le temps de concentration.", desktopAlt: "Tâches du foyer dans Ditero regroupées par priorité.", mobileAlt: "L'application mobile Ditero affichant une liste partagée avec des tâches d'exemple.", open: 'Ouvrir la capture en taille réelle' },
+  capture: { dashboardCompactAlt: 'Tableau de bord du foyer Ditero avec les priorités des tâches.', dashboardAlt: "Tableau de bord du foyer Ditero avec les priorités des tâches, une série pour une habitude et le temps de concentration.", desktopAlt: "Tâches du foyer dans Ditero regroupées par priorité.", mobileAlt: "L'application mobile Ditero affichant une liste partagée avec des tâches d'exemple.", open: 'Ouvrir la capture en taille réelle' },
   gallery: {
     title: "Voir de plus près",
     note: "Aperçus de développement en anglais avec les données fictives d’un foyer.",
@@ -179,7 +179,7 @@ const fr: HomeCopy = {
     proof: {
       'task-detail': { title: 'Répartissez les tâches', text: 'Attribuez des tâches, partagez des notes et décomposez les projets en sous-tâches.' },
       'recurrence-reminders': { title: 'Tâches ménagères et habitudes', text: 'Répétez les tâches ménagères. Créez des habitudes. Recevez vos rappels au bon moment.' },
-      'dashboard': { title: 'Tableaux de bord', text: 'Retrouvez priorités, tâches à venir et habitudes au même endroit.' },
+      'dashboard': { title: 'Tableaux de bord', text: 'Garde tes priorités en vue.' },
     },
   },
   access: {
@@ -208,7 +208,7 @@ const ro: HomeCopy = {
   meta: { title: 'Liste comune. Serverul tău.', description: 'Ditero este o aplicație de sarcini open source, găzduită de tine, pentru gospodării, cluburi și echipe mici. Partajează liste de cumpărături, treburi casnice, obiceiuri și proiecte de pe un server pe care îl administrezi tu.' },
   ui: { selfHost: 'Găzduiește', skip: 'Treci la conținut', mainNav: 'Navigare principală', footerNav: 'Linkuri din subsol', features: 'Funcții', access: 'Aplicații și instrumente', support: 'Sprijină', source: 'Cod sursă', about: 'Despre', privacy: 'Confidențialitate', license: 'Licența MIT', issues: 'Probleme', language: 'Limba', theme: 'Temă întunecată', footerNote: 'Open source sub licență MIT.', home: 'Pagina principală Ditero' },
   hero: { line1: 'Liste comune.', line2: 'Serverul tău.', intro: 'Sarcini, cumpărături și rutine comune pentru gospodării și grupuri mici. Pe serverul tău, cu sincronizare offline și clienți web, mobili, desktop și terminal.', primary: 'Configurează-ți serverul', apps: 'Aplicații și instrumente', status: "Alfa:" },
-  capture: { heroAlt: "Ditero afișând sarcinile gospodăriei.", dashboardCompactAlt: 'Tabloul de bord al gospodăriei în Ditero, cu prioritățile sarcinilor.', dashboardAlt: "Tabloul de bord al gospodăriei în Ditero, cu prioritățile sarcinilor, o serie de zile pentru un obicei și timpul de concentrare.", desktopAlt: "Sarcinile gospodăriei în Ditero, grupate după prioritate.", mobileAlt: 'Aplicația mobilă Ditero afișând o listă comună cu sarcini de exemplu.', open: 'Deschide captura de ecran la dimensiune completă' },
+  capture: { dashboardCompactAlt: 'Tabloul de bord al gospodăriei în Ditero, cu prioritățile sarcinilor.', dashboardAlt: "Tabloul de bord al gospodăriei în Ditero, cu prioritățile sarcinilor, o serie de zile pentru un obicei și timpul de concentrare.", desktopAlt: "Sarcinile gospodăriei în Ditero, grupate după prioritate.", mobileAlt: 'Aplicația mobilă Ditero afișând o listă comună cu sarcini de exemplu.', open: 'Deschide captura de ecran la dimensiune completă' },
   gallery: {
     title: "O privire mai atentă",
     note: "Previzualizări din dezvoltare în engleză, cu date fictive ale unei gospodării.",
@@ -224,7 +224,7 @@ const ro: HomeCopy = {
     proof: {
       'task-detail': { title: 'Împarte sarcinile', text: 'Atribuie sarcini, adaugă note și împarte planurile în subsarcini.' },
       'recurrence-reminders': { title: 'Treburi casnice și obiceiuri', text: 'Repetă treburile casnice. Formează obiceiuri. Primește mementouri la timp.' },
-      'dashboard': { title: 'Panouri de control', text: 'Vezi prioritățile, sarcinile viitoare și obiceiurile într-un singur loc.' },
+      'dashboard': { title: 'Panouri de control', text: 'Prioritățile tale, într-un singur loc.' },
     },
   },
   access: {
@@ -253,7 +253,7 @@ const ar: HomeCopy = {
   meta: { title: 'قوائم مشتركة. خادمك.', description: 'Ditero تطبيق مهام مفتوح المصدر ومستضاف ذاتيًا للأسر والنوادي والفرق الصغيرة. شارك قوائم التسوق والمهام المنزلية والعادات والمشاريع من خادم تديره بنفسك.' },
   ui: { selfHost: 'استضافة ذاتية', skip: 'تخطَّ إلى المحتوى', mainNav: 'التنقل الرئيسي', footerNav: 'روابط التذييل', features: 'الميزات', access: 'التطبيقات والأدوات', support: 'الدعم', source: 'الشيفرة المصدرية', about: 'حول', privacy: 'الخصوصية', license: 'ترخيص MIT', issues: 'المشكلات', language: 'اللغة', theme: 'السمة الداكنة', footerNote: 'مفتوح المصدر بترخيص MIT.', home: 'الصفحة الرئيسية لـ Ditero' },
   hero: { line1: 'قوائم مشتركة.', line2: 'خادمك.', intro: 'مهام وتسوق وروتين مشترك للأسر والمجموعات الصغيرة. على خادمك، مع مزامنة دون اتصال وتطبيقات للويب والجوال وسطح المكتب والطرفية.', primary: 'إعداد الخادم الخاص بك', apps: 'التطبيقات والأدوات', status: "ألفا:" },
-  capture: { heroAlt: "Ditero يعرض مهام الأسرة.", dashboardCompactAlt: 'لوحة الأسرة في Ditero تعرض أولويات المهام.', dashboardAlt: "لوحة الأسرة في Ditero تعرض أولويات المهام وسلسلة التزام بعادة ووقت التركيز.", desktopAlt: "مهام الأسرة في Ditero مجمّعة حسب الأولوية.", mobileAlt: 'تطبيق Ditero على الجوال يعرض قائمة مشتركة بمهام تجريبية.', open: 'افتح لقطة الشاشة بالحجم الكامل' },
+  capture: { dashboardCompactAlt: 'لوحة الأسرة في Ditero تعرض أولويات المهام.', dashboardAlt: "لوحة الأسرة في Ditero تعرض أولويات المهام وسلسلة التزام بعادة ووقت التركيز.", desktopAlt: "مهام الأسرة في Ditero مجمّعة حسب الأولوية.", mobileAlt: 'تطبيق Ditero على الجوال يعرض قائمة مشتركة بمهام تجريبية.', open: 'افتح لقطة الشاشة بالحجم الكامل' },
   gallery: {
     title: "نظرة أقرب",
     note: "معاينات من نسخة التطوير بواجهة إنجليزية وبيانات منزلية خيالية.",
@@ -269,7 +269,7 @@ const ar: HomeCopy = {
     proof: {
       'task-detail': { title: 'تقاسم المهام', text: 'أسنِد المهام، وشارك الملاحظات، وقسّم الخطط إلى مهام فرعية.' },
       'recurrence-reminders': { title: 'المهام المنزلية والعادات', text: 'كرّر المهام المنزلية. ابنِ عادات. اضبط التذكيرات في الوقت المناسب.' },
-      'dashboard': { title: 'لوحات المعلومات', text: 'شاهد الأولويات والمهام القادمة والعادات في مكان واحد.' },
+      'dashboard': { title: 'لوحات المعلومات', text: 'أبقِ أولوياتك واضحة.' },
     },
   },
   access: {

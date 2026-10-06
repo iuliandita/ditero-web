@@ -2,9 +2,9 @@
 interface Props {
   name: 'list' | 'dashboard';
   variant: 'hero' | 'wide';
-  desktopAlt: string; mobileAlt: string; heroAlt?: string; compactAlt?: string; open: string;
+  desktopAlt: string; mobileAlt: string; compactAlt?: string; open: string;
 }
-const { name, variant, desktopAlt, mobileAlt, heroAlt = desktopAlt, compactAlt = desktopAlt, open } = Astro.props;
+const { name, variant, desktopAlt, mobileAlt, compactAlt = desktopAlt, open } = Astro.props;
 const themes = ['light', 'dark'] as const;
 const src = (size: 'desktop' | 'mobile', theme: string) => `/images/${name}-${size}-${theme}.webp`;
 const hero = variant === 'hero';
@@ -12,12 +12,12 @@ const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
 ---
 <figure class={`capture capture-${variant}`}>
   {hero ? (
-    <div class="shot shot-responsive crop-list" data-hero-capture data-light-desktop={src('desktop', 'light')} data-dark-desktop={src('desktop', 'dark')} data-light-mobile={src('mobile', 'light')} data-dark-mobile={src('mobile', 'dark')} data-desktop-alt={desktopAlt} data-mobile-alt={mobileAlt}>
+    <div class="shot shot-responsive crop-list" data-hero-capture data-light-desktop={src('desktop', 'light')} data-dark-desktop={src('desktop', 'dark')} data-light-mobile={src('mobile', 'light')} data-dark-mobile={src('mobile', 'dark')}>
       <picture>
         <source data-size="mobile" media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset={src('mobile', 'dark')} />
         <source data-size="mobile" media="(max-width: 700px)" srcset={src('mobile', 'light')} />
         <source data-size="desktop" media="(prefers-color-scheme: dark)" srcset={src('desktop', 'dark')} />
-        <img src={src('desktop', 'light')} width="838" height="420" alt={heroAlt} loading="eager" fetchpriority="high" decoding="async" />
+        <img src={src('desktop', 'light')} width="838" height="420" alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async" />
       </picture>
       <div class="fallback-desktop">{themes.map(theme => <a class={`fallback-link shots-${theme}`} href={`/images/gallery/list-desktop-${theme}.png`} aria-label={`${open}: ${desktopAlt}`} />)}</div>
       <div class="fallback-mobile">{themes.map(theme => <a class={`fallback-link shots-${theme}`} href={`/images/gallery/list-mobile-${theme}.png`} aria-label={`${open}: ${mobileAlt}`} />)}</div>
@@ -50,7 +50,6 @@ const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
         if (source.getAttribute('srcset') !== selected) source.srcset = selected;
       }
       if (image.getAttribute('src') !== desktopSrc) image.src = desktopSrc ?? '';
-      image.alt = (mobile.matches ? capture.dataset.mobileAlt : capture.dataset.desktopAlt) ?? image.alt;
     };
     update();
     mobile.addEventListener('change', update);

@@ -66,39 +66,8 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
     <div class="hero-media"><Capture name="list" variant="hero" {...cap} /></div>
   </section>
 
-  <section id="assistant" class="assistant wrap" aria-labelledby="assistant-title">
-    <div class="assistant-sheet">
-      <header class="assistant-heading">
-        <h2 id="assistant-title">{x.ai.title}</h2>
-        <p>{x.ai.intro}</p>
-      </header>
-      <div class="assistant-example">
-        <figure class="request">
-          <figcaption>{x.ai.exampleLabel}</figcaption>
-          <blockquote><p>{x.ai.example}</p></blockquote>
-        </figure>
-        <div class="assistant-plan">
-          <p class="plan-label" id="plan-label">{x.ai.resultLabel}</p>
-          <ul class="plan" aria-labelledby="plan-label">
-            {x.ai.results.map(result => (
-              <li><span class="plan-title">{result.title}</span><span class="plan-detail">{result.detail}</span></li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <footer class="assistant-links">
-        <a class="text-link" href={links.mcp}>{x.ai.link}</a>
-        <p class="source small">{x.ai.shortSource}</p>
-        <details class="fold">
-          <summary aria-label={`${x.ui.details}: ${x.ai.title}`}>{x.ui.details}</summary>
-          <ul class="plain">{x.ai.points.map(point => <li>{point}</li>)}</ul>
-        </details>
-      </footer>
-    </div>
-  </section>
-
   <section id="product-tour" class="tour" aria-labelledby="tour-title">
-    <h2 class="sr-only" id="tour-title">{x.ui.tour}</h2>
+    <h2 class="tour-heading wrap" id="tour-title">{x.ui.tour}</h2>
     <fieldset class="tour-stage wrap">
       <legend class="sr-only">{x.ui.tour}</legend>
       {proofs.map((proof, index) => <>
@@ -147,7 +116,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
     </header>
     <div class="feature-explorer" role="group" aria-label={x.ui.groups}>
       {x.features.groups.map(group => (
-        <details class="feature-group" id={`group-${group.id}`} name="features">
+        <details class="feature-group" id={`group-${group.id}`} name="features" open={group.id === 'lists'}>
           <summary>
             <span class="feature-summary">
               <span><FeatureText text={group.title} /></span>
@@ -163,6 +132,37 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
           </div>
         </details>
       ))}
+    </div>
+  </section>
+
+  <section id="assistant" class="assistant wrap" aria-labelledby="assistant-title">
+    <div class="assistant-sheet">
+      <header class="assistant-heading">
+        <h2 id="assistant-title">{x.ai.title}</h2>
+        <p>{x.ai.intro}</p>
+      </header>
+      <div class="assistant-example">
+        <figure class="request">
+          <figcaption>{x.ai.exampleLabel}</figcaption>
+          <blockquote><p>{x.ai.example}</p></blockquote>
+        </figure>
+        <div class="assistant-plan">
+          <p class="plan-label" id="plan-label">{x.ai.resultLabel}</p>
+          <ul class="plan" aria-labelledby="plan-label">
+            {x.ai.results.map(result => (
+              <li><span class="plan-title">{result.title}</span><span class="plan-detail">{result.detail}</span></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <footer class="assistant-links">
+        <a class="text-link" href={links.mcp}>{x.ai.link}</a>
+        <p class="source small">{x.ai.shortSource}</p>
+        <details class="fold">
+          <summary aria-label={`${x.ui.details}: ${x.ai.title}`}>{x.ui.details}</summary>
+          <ul class="plain">{x.ai.points.map(point => <li>{point}</li>)}</ul>
+        </details>
+      </footer>
     </div>
   </section>
 

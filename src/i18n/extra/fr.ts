@@ -5,7 +5,7 @@ export const fr: ExtraCopy = {
   setup: { steps: ["Lancez votre serveur avec Docker Compose", "Créez votre compte dans l'application web", "Invitez des proches et partagez une liste"] },
   ai: {
     title: "Planifiez avec votre assistant",
-    intro: "Connectez votre assistant IA via MCP. Décrivez le plan : il crée les tâches, les priorités et les échéances.",
+    intro: "Connectez un assistant IA que vous utilisez déjà. Via MCP, il transforme vos demandes en tâches, priorités et échéances.",
     exampleLabel: 'Exemple de demande',
     example: 'Planifiez le pique-nique de samedi, attribuez les courses et marquez la réservation du train comme prioritaire.',
     resultLabel: "Exemple de plan",

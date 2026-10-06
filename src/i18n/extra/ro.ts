@@ -5,7 +5,7 @@ export const ro: ExtraCopy = {
   setup: { steps: ["Pornește serverul cu Docker Compose", "Creează-ți contul în aplicația web", "Invită oameni și partajează o listă"] },
   ai: {
     title: "Planifică cu asistentul tău",
-    intro: "Conectează asistentul AI prin MCP. Descrie planul; el creează sarcini, priorități și termene.",
+    intro: "Conectează un asistent AI pe care îl folosești deja. Prin MCP, transformă cererile tale în sarcini, priorități și termene.",
     exampleLabel: 'Exemplu de cerere',
     example: 'Planifică picnicul de sâmbătă, atribuie cumpărăturile și marchează rezervarea trenului ca prioritate mare.',
     resultLabel: "Exemplu de plan",

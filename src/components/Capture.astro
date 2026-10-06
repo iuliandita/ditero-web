@@ -1,33 +1,62 @@
 ---
 interface Props {
   name: 'list' | 'dashboard';
-  variant: 'hero' | 'wide' | 'phone';
-  desktopAlt: string; mobileAlt: string; open: string;
+  variant: 'hero' | 'wide';
+  desktopAlt: string; mobileAlt: string; heroAlt?: string; compactAlt?: string; open: string;
 }
-const { name, variant, desktopAlt, mobileAlt, open } = Astro.props;
+const { name, variant, desktopAlt, mobileAlt, heroAlt = desktopAlt, compactAlt = desktopAlt, open } = Astro.props;
 const themes = ['light', 'dark'] as const;
 const src = (size: 'desktop' | 'mobile', theme: string) => `/images/${name}-${size}-${theme}.webp`;
 const hero = variant === 'hero';
 const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
 ---
 <figure class={`capture capture-${variant}`}>
-  {themes.map(theme => (
+  {hero ? (
+    <div class="shot shot-responsive crop-list" data-hero-capture data-light-wide="/images/list-wide-light.webp" data-dark-wide="/images/list-wide-dark.webp" data-light-desktop={src('desktop', 'light')} data-dark-desktop={src('desktop', 'dark')} data-light-mobile={src('mobile', 'light')} data-dark-mobile={src('mobile', 'dark')} data-desktop-alt={desktopAlt} data-mobile-alt={mobileAlt}>
+      <picture>
+        <source media="(min-width: 1180px) and (prefers-color-scheme: dark)" srcset="/images/list-wide-dark.webp" width="1100" height="500" />
+        <source media="(min-width: 1180px)" srcset="/images/list-wide-light.webp" width="1100" height="500" />
+        <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset={src('mobile', 'dark')} />
+        <source media="(max-width: 700px)" srcset={src('mobile', 'light')} />
+        <source media="(prefers-color-scheme: dark)" srcset={src('desktop', 'dark')} />
+        <img src={src('desktop', 'light')} width="820" height="510" alt={heroAlt} loading="eager" fetchpriority="high" decoding="async" />
+      </picture>
+      <div class="fallback-desktop">{themes.map(theme => <a class={`fallback-link shots-${theme}`} href={`/images/gallery/list-desktop-${theme}.png`} aria-label={`${open}: ${desktopAlt}`} />)}</div>
+      <div class="fallback-mobile">{themes.map(theme => <a class={`fallback-link shots-${theme}`} href={`/images/gallery/list-mobile-${theme}.png`} aria-label={`${open}: ${mobileAlt}`} />)}</div>
+    </div>
+  ) : themes.map(theme => (
     <div class={`shots shots-${theme}`}>
-      {variant !== 'phone' && (
-        <a class={`shot shot-desktop ${desktopCrop}`} href={src('desktop', theme)} aria-label={`${open}: ${desktopAlt}`}>
-          <img src={src('desktop', theme)} width="1440" height="1000" alt={desktopAlt} loading="lazy" fetchpriority={hero ? 'high' : undefined} decoding="async" />
+        <a class={`shot shot-desktop ${desktopCrop}`} href={`/images/gallery/dashboard-${theme}.png`} aria-label={`${open}: ${desktopAlt}`}>
+          <img src={src('desktop', theme)} width="572" height="515" alt={desktopAlt} loading="lazy" decoding="async" />
         </a>
-      )}
-      {variant === 'wide' && (
-        <a class="shot shot-compact crop-dashboard-compact" href={src('desktop', theme)} aria-label={`${open}: ${desktopAlt}`}>
-          <img src={src('desktop', theme)} width="1440" height="1000" alt={desktopAlt} loading="lazy" decoding="async" />
+        <a class="shot shot-compact crop-dashboard-compact" href={`/images/gallery/dashboard-mobile-${theme}.png`} aria-label={`${open}: ${compactAlt}`}>
+          <img src={src('mobile', theme)} width="390" height="640" alt={compactAlt} loading="lazy" decoding="async" />
         </a>
-      )}
-      {variant !== 'wide' && (
-        <a class="shot shot-mobile crop-phone" href={src('mobile', theme)} aria-label={`${open}: ${mobileAlt}`}>
-          <img src={src('mobile', theme)} width="390" height="844" alt={mobileAlt} loading="lazy" fetchpriority={hero ? 'high' : undefined} decoding="async" />
-        </a>
-      )}
     </div>
   ))}
 </figure>
+<script>
+  const mobile = matchMedia('(max-width: 700px)');
+  const system = matchMedia('(prefers-color-scheme: dark)');
+  for (const capture of document.querySelectorAll<HTMLElement>('[data-hero-capture]')) {
+    const image = capture.querySelector<HTMLImageElement>('img');
+    const sources = capture.querySelectorAll<HTMLSourceElement>('source');
+    if (!image) continue;
+    const update = (): void => {
+      const saved = document.documentElement.dataset.theme;
+      const dark = saved === 'dark' || (!saved && system.matches);
+      const desktopSrc = dark ? capture.dataset.darkDesktop : capture.dataset.lightDesktop;
+      const wideSrc = dark ? capture.dataset.darkWide : capture.dataset.lightWide;
+      const mobileSrc = dark ? capture.dataset.darkMobile : capture.dataset.lightMobile;
+      for (const source of sources) {
+        const selected = (source.media.includes('max-width') ? mobileSrc : source.media.includes('min-width') ? wideSrc : desktopSrc) ?? '';
+        if (source.getAttribute('srcset') !== selected) source.srcset = selected;
+      }
+      if (image.getAttribute('src') !== desktopSrc) image.src = desktopSrc ?? '';
+      image.alt = (mobile.matches ? capture.dataset.mobileAlt : capture.dataset.desktopAlt) ?? image.alt;
+    };
+    update();
+    mobile.addEventListener('change', update);
+    document.addEventListener('ditero-theme-change', update);
+  }
+</script>

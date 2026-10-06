@@ -15,6 +15,7 @@ const home = pageUrl(locale);
 const nav: [string, string][] = [
   [t.ui.features, home + '#features'],
   [t.ui.access, home + '#access'],
+  [t.ui.selfHost, home + '#self-host'],
   [t.ui.support, home + '#support'],
   [t.ui.source, links.project],
 ];
@@ -85,7 +86,7 @@ const nav: [string, string][] = [
     <footer class="site-footer wrap">
       <div class="footer-identity">
         <a class="footer-brand" href={home}>
-          <img src="/brand/ditero-felt.webp" srcset="/brand/ditero-felt.webp 480w, /brand/ditero-felt-720.webp 720w" sizes="112px" width="112" height="112" alt="" loading="lazy" decoding="async" />
+          <img src="/brand/ditero-felt-96.webp" width="64" height="64" alt="" loading="lazy" decoding="async" />
           <span>Ditero</span>
         </a>
         <p>{t.ui.footerNote}</p>
@@ -104,10 +105,8 @@ const nav: [string, string][] = [
     <script>
       import { initTheme } from '../scripts/theme';
       import { initLanguage } from '../scripts/language';
-      import { initCarousel } from '../scripts/carousel';
       initTheme();
       initLanguage();
-      initCarousel();
       const menu = document.querySelector<HTMLDetailsElement>('[data-menu]');
       if (menu) {
         const close = (): void => { menu.open = false; };
@@ -118,7 +117,7 @@ const nav: [string, string][] = [
           menu.querySelector<HTMLElement>('summary')?.focus();
         });
         document.addEventListener('click', event => { if (menu.open && !menu.contains(event.target as Node)) close(); });
-        matchMedia('(min-width: 801px)').addEventListener('change', close);
+        matchMedia('(min-width: 1101px)').addEventListener('change', close);
       }
     </script>
   </body>

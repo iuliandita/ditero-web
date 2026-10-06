@@ -14,9 +14,9 @@ Use front-facing cut-paper collages with a few distinct layers, believable edge 
 
 ## Feature meaning
 
-Each graphic supports its adjacent heading. Lists use grouped sheets and tabs; routines use repeating completion shapes; reminders use a signal and a quiet-hours crescent; views rearrange the same task shapes; files use a document wallet and earlier sheets; access uses a key and connected shapes; customization uses light/dark material halves, color swatches and size variations. Keep compositions clear at 160-336px.
+Each graphic supports its adjacent heading. Lists use grouped sheets and tabs; routines use repeating completion shapes; reminders use a signal and a quiet-hours crescent; views rearrange the same task shapes; files use a document wallet and earlier sheets; access uses a key and connected shapes; customization uses light/dark material halves, color swatches and size variations. Keep compositions clear at small sizes. The current homepage uses felt only in the 64px footer mark; feature summaries remain plain text. Retain the feature artwork for future uses. Do not enlarge it into hero stages or section backgrounds.
 
-Artwork is decorative, separate from real app captures. Do not add text, logos, fake interface elements or symbols that imply unsupported features. Supply empty alternative text and explicit square dimensions. Serve 480px and 720px WebP variants. Maintain identical material and palette in both website themes.
+Artwork is decorative, separate from real app captures. Do not add text, logos, fake interface elements or symbols that imply unsupported features. Supply empty alternative text and explicit square dimensions. Retain 480px and 720px originals for future uses; serve the 96px optimized brand variant in the footer. Maintain identical material and palette in both website themes.
 
 ## Creating more artwork
 

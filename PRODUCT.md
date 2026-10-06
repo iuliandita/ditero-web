@@ -14,15 +14,17 @@ Ditero is a self-hosted, local-first shared todo app. This website helps visitor
 
 ## Capabilities and Constraints
 
-One self-hostable server supports web, Android and desktop clients. CLI, TUI, membership-scoped API and local MCP tools are available on develop/source or nightly builds, with wider qualification still in progress. Shared workspaces, typed lists, assignments, recurring tasks, reminders, dashboards, comments and encrypted attachments. Offline changes sync on reconnect. File encryption does not mean all task data is end-to-end encrypted. MIT open source. Public native downloads are experimental; platform qualifications remain incomplete. Keep release claims tied to a verified public release.
+The current public release is [v0.0.1-alpha.4](https://github.com/iuliandita/ditero/releases/tag/v0.0.1-alpha.4).
+
+One self-hostable server supports web, Android and desktop clients. Alpha.4 includes CLI, TUI and local MCP source clients plus a membership-scoped HTTP API. CLI, TUI and MCP run from source; standalone binaries are not in the alpha downloads. Calendar subscription feeds and task webhooks are included in Alpha.4; wider qualification remains in progress. Shared workspaces, typed lists, assignments, recurring tasks, reminders delivered to ntfy, Telegram, Discord, Slack or email, dashboards, comments and encrypted attachments. Offline changes sync on reconnect. File encryption does not mean all task data is end-to-end encrypted. MIT open source. Signed independent Android APK/AAB packages are an alpha release; desktop installers are experimental, with unsigned Windows installers and ad-hoc signed macOS builds without notarization. Broader native platform qualification remains incomplete. Keep release claims tied to a verified public release.
 
 ## Brand Commitments
 
-Preserve the Ditero name, existing wordmark and app icon. Professional, clean, relevant copy and visuals. Use usegarret.com and iuliandita.com as references for craft, without copying their artwork. Light and dark themes. English, German, Spanish, French, Romanian and Arabic, including RTL.
+Preserve the Ditero name, existing wordmark and app icon. Professional, clean, relevant copy and visuals. Use usegarret.com and iuliandita.com as references for craft, without copying their artwork. Light and dark themes. English, German, Spanish, French, Romanian and Arabic, including RTL. The homepage should sit alongside Todoist and Things in clarity and finish: restrained neutral surfaces, real interface proof and approachable typography. Felt and paper artwork is a small signature, never the main visual hierarchy.
 
 ## Evidence on Hand
 
-Real desktop and mobile English captures in both themes are being prepared. Use fictional example content in screenshots. No customer testimonials, adoption counts or benchmark claims have been supplied.
+Real desktop and mobile English captures in both themes are available. Use fictional example content in screenshots. No customer testimonials, adoption counts or benchmark claims have been supplied.
 
 ## Sponsorship
 
@@ -30,4 +32,4 @@ The app remains free, MIT licensed and self-hostable, with no paid feature unloc
 
 ## Accessibility & Inclusion
 
-Keyboard navigation, visible focus, legible contrast, reduced motion, responsive layouts, localized controls and semantic content. Screenshots need translated descriptions and must be identified as English examples on other language pages.
+Keyboard navigation, visible focus, legible contrast, reduced motion, responsive layouts, localized controls and semantic content. Screenshots need translated descriptions. Do not add visible language or example-data captions.

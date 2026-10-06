@@ -9,7 +9,7 @@ export const en: ExtraCopy = {
     exampleLabel: 'Example request',
     example: "Plan Saturday's picnic, assign the shopping, and mark booking the train as high priority.",
     resultLabel: "Example plan",
-    results: [{"title": "Plan Saturday's picnic", "detail": "Saturday"}, {"title": "Buy food for the picnic", "detail": "Assigned to Alex"}, {"title": "Book the train", "detail": "High priority"}],
+    results: [{"title": "Plan Saturday's picnic", "detail": "Shared list"}, {"title": "Buy food for the picnic", "detail": "Assigned to Alex"}, {"title": "Book the train", "detail": "High priority"}],
     source: "Standalone binaries are not included in the alpha downloads.",
     shortSource: "MCP runs from source.",
     points: [

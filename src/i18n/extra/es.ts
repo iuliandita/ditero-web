@@ -9,7 +9,7 @@ export const es: ExtraCopy = {
     exampleLabel: 'Ejemplo de petición',
     example: 'Planifica el picnic del sábado, asigna las compras y marca como prioridad alta reservar el tren.',
     resultLabel: "Plan de ejemplo",
-    results: [{"title": "Planificar el picnic del sábado", "detail": "Sábado"}, {"title": "Comprar comida para el picnic", "detail": "Asignada a Alex"}, {"title": "Reservar el tren", "detail": "Prioridad alta"}],
+    results: [{"title": "Planificar el picnic del sábado", "detail": "Lista compartida"}, {"title": "Comprar comida para el picnic", "detail": "Asignada a Alex"}, {"title": "Reservar el tren", "detail": "Prioridad alta"}],
     source: "Las descargas alfa no incluyen ejecutables independientes.",
     shortSource: "MCP se ejecuta desde el código fuente.",
     points: [

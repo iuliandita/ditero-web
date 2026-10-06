@@ -9,7 +9,7 @@ export const ro: ExtraCopy = {
     exampleLabel: 'Exemplu de cerere',
     example: 'Planifică picnicul de sâmbătă, atribuie cumpărăturile și marchează rezervarea trenului ca prioritate mare.',
     resultLabel: "Exemplu de plan",
-    results: [{"title": "Planifică picnicul de sâmbătă", "detail": "Sâmbătă"}, {"title": "Cumpără mâncare pentru picnic", "detail": "Atribuită lui Alex"}, {"title": "Rezervă trenul", "detail": "Prioritate mare"}],
+    results: [{"title": "Planifică picnicul de sâmbătă", "detail": "Listă comună"}, {"title": "Cumpără mâncare pentru picnic", "detail": "Atribuită lui Alex"}, {"title": "Rezervă trenul", "detail": "Prioritate mare"}],
     source: "Descărcările alfa nu includ executabile separate.",
     shortSource: "MCP rulează din sursă.",
     points: [

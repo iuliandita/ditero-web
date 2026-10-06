@@ -13,12 +13,19 @@ const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
 <figure class={`capture capture-${variant}`}>
   {hero ? (
     <div class="shot shot-responsive crop-list" data-hero-capture data-light-desktop={src('desktop', 'light')} data-dark-desktop={src('desktop', 'dark')} data-light-mobile={src('mobile', 'light')} data-dark-mobile={src('mobile', 'dark')}>
-      <picture>
-        <source data-size="mobile" media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset={src('mobile', 'dark')} />
-        <source data-size="mobile" media="(max-width: 700px)" srcset={src('mobile', 'light')} />
-        <source data-size="desktop" media="(prefers-color-scheme: dark)" srcset={src('desktop', 'dark')} />
-        <img src={src('desktop', 'light')} width="838" height="420" alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async" />
+      <picture hidden>
+        <source media="(max-width: 700px)" />
+        <img width="838" height="420" alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async" />
       </picture>
+      <script is:inline src="/hero-init.js"></script>
+      <noscript>
+        <picture>
+          <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset={src('mobile', 'dark')} />
+          <source media="(max-width: 700px)" srcset={src('mobile', 'light')} />
+          <source media="(prefers-color-scheme: dark)" srcset={src('desktop', 'dark')} />
+          <img src={src('desktop', 'light')} width="838" height="420" alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async" />
+        </picture>
+      </noscript>
       <div class="fallback-desktop">{themes.map(theme => <a class={`fallback-link shots-${theme}`} href={`/images/gallery/list-desktop-${theme}.png`} aria-label={`${open}: ${desktopAlt}`} />)}</div>
       <div class="fallback-mobile">{themes.map(theme => <a class={`fallback-link shots-${theme}`} href={`/images/gallery/list-mobile-${theme}.png`} aria-label={`${open}: ${mobileAlt}`} />)}</div>
     </div>
@@ -33,26 +40,3 @@ const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
     </div>
   ))}
 </figure>
-<script>
-  const mobile = matchMedia('(max-width: 700px)');
-  const system = matchMedia('(prefers-color-scheme: dark)');
-  for (const capture of document.querySelectorAll<HTMLElement>('[data-hero-capture]')) {
-    const image = capture.querySelector<HTMLImageElement>('img');
-    const sources = capture.querySelectorAll<HTMLSourceElement>('source');
-    if (!image) continue;
-    const update = (): void => {
-      const saved = document.documentElement.dataset.theme;
-      const dark = saved === 'dark' || (!saved && system.matches);
-      const desktopSrc = dark ? capture.dataset.darkDesktop : capture.dataset.lightDesktop;
-      const mobileSrc = dark ? capture.dataset.darkMobile : capture.dataset.lightMobile;
-      for (const source of sources) {
-        const selected = (source.dataset.size === 'mobile' ? mobileSrc : desktopSrc) ?? '';
-        if (source.getAttribute('srcset') !== selected) source.srcset = selected;
-      }
-      if (image.getAttribute('src') !== desktopSrc) image.src = desktopSrc ?? '';
-    };
-    update();
-    mobile.addEventListener('change', update);
-    document.addEventListener('ditero-theme-change', update);
-  }
-</script>

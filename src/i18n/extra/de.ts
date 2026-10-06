@@ -9,7 +9,7 @@ export const de: ExtraCopy = {
     exampleLabel: 'Beispielanfrage',
     example: 'Plane das Picknick am Samstag, weise die Einkäufe zu und markiere die Zugbuchung mit hoher Priorität.',
     resultLabel: "Beispielplan",
-    results: [{"title": "Picknick am Samstag planen", "detail": "Samstag"}, {"title": "Essen fürs Picknick kaufen", "detail": "Alex zugewiesen"}, {"title": "Zug buchen", "detail": "Hohe Priorität"}],
+    results: [{"title": "Picknick am Samstag planen", "detail": "Gemeinsame Liste"}, {"title": "Essen fürs Picknick kaufen", "detail": "Alex zugewiesen"}, {"title": "Zug buchen", "detail": "Hohe Priorität"}],
     source: "Eigenständige Programme sind nicht in den Alpha-Downloads enthalten.",
     shortSource: "MCP läuft aus dem Quellcode.",
     points: [

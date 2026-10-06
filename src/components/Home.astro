@@ -1,6 +1,7 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Capture from './Capture.astro';
+import FeatureText from './FeatureText.astro';
 import { copy, extra, links, version, type LinkKey, type Locale } from '../content';
 const { locale } = Astro.props as { locale: Locale };
 const t = copy[locale];
@@ -42,10 +43,7 @@ const proofs = (['task-detail', 'recurrence-reminders'] as const).map(id => ({
   id, ...t.gallery.items[id], ...t.features.proof[id], assets: proofAssets[id],
 }));
 const dashboard = t.features.proof.dashboard;
-const featureCopy = (text: string) => text.split(/((?<![A-Za-z0-9])و?(?:HTTP API|Telegram|Discord|webhooks|Slack|Karma|TOTP|iCal|ntfy|CLI|TUI|MCP|API)[،؛:,.!?؟]?(?![A-Za-z0-9]))/gu).map(part => {
-  const term = /^(و?)(HTTP API|Telegram|Discord|webhooks|Slack|Karma|TOTP|iCal|ntfy|CLI|TUI|MCP|API)([،؛:,.!?؟]?)$/u.exec(part);
-  return term ? { before: term[1], name: term[2], after: term[3] } : part;
-});
+const featureArtwork: Record<string, string> = { lists: 'lists', routines: 'routines', reminders: 'reminders', views: 'views', files: 'files', recovery: 'files', access: 'access', custom: 'custom' };
 const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm)[.,;:!?،؛؟]?)/g).map(part => {
   const term = /^(و?)(Docker Compose|Helm)([.,;:!?،؛؟]?)$/.exec(part);
   return term ? { before: term[1], name: term[2], after: term[3] } : part;
@@ -152,13 +150,16 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
         <details class="feature-group" id={`group-${group.id}`} name="features">
           <summary>
             <span class="feature-summary">
-              <span>{featureCopy(group.title).map(part => typeof part === 'string' ? part : <span class="feature-term-run">{part.before}<bdi dir="ltr">{part.name}</bdi>{part.after}</span>)}</span>
-              <span class="feature-preview">{featureCopy(group.summary).map(part => typeof part === 'string' ? part : <span class="feature-term-run">{part.before}<bdi dir="ltr">{part.name}</bdi>{part.after}</span>)}</span>
+              <span><FeatureText text={group.title} /></span>
+              <span class="feature-preview"><FeatureText text={group.summary} /></span>
             </span>
           </summary>
           <div class="feature-body">
-            <h3 class="feature-panel-title">{featureCopy(group.title).map(part => typeof part === 'string' ? part : <span class="feature-term-run">{part.before}<bdi dir="ltr">{part.name}</bdi>{part.after}</span>)}</h3>
-            <ul class="feature-items">{group.items.map(item => <li>{featureCopy(item).map(part => typeof part === 'string' ? part : <span class="feature-term-run">{part.before}<bdi dir="ltr">{part.name}</bdi>{part.after}</span>)}</li>)}</ul>
+            <header class="feature-panel-heading">
+              <h3 class="feature-panel-title"><FeatureText text={group.title} /></h3>
+              <img class="feature-art" src={`/images/carousel/${featureArtwork[group.id]}.webp`} width="480" height="480" alt="" loading="lazy" decoding="async" />
+            </header>
+            <ul class="feature-items">{group.items.map(item => <li><FeatureText text={item} /></li>)}</ul>
           </div>
         </details>
       ))}
@@ -253,7 +254,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
     if (!target) return;
     const panel = target.closest<HTMLElement>('.tour-panel');
     const choice = target.closest<HTMLLabelElement>('.tour-choice');
-    const radio = panel?.previousElementSibling?.previousElementSibling ?? (choice ? document.getElementById(choice.htmlFor) : null);
+    const radio = choice ? document.getElementById(choice.htmlFor) : panel ? [...document.querySelectorAll<HTMLInputElement>('.tour-radio')].find(input => input.getAttribute('aria-controls') === panel.id) : null;
     if (radio instanceof HTMLInputElement && radio.type === 'radio') radio.checked = true;
   };
   revealTourFragment();

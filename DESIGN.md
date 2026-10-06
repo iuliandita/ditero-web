@@ -67,7 +67,6 @@ spacing:
   excerpt-gap: "2px"
   section-gap: "clamp(2rem, 6vw, 6rem)"
   feature-gap: "0.5rem 1.25rem"
-  request-padding: "2.25rem"
   section: "clamp(3rem, 6vw, 5rem)"
 components:
   button-primary:
@@ -105,10 +104,7 @@ components:
     padding: "0 1.25rem"
     height: "44px"
   request:
-    backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.panel}"
-    padding: "{spacing.request-padding}"
   capture:
     backgroundColor: "{colors.surface}"
     rounded: "{rounded.panel}"
@@ -145,12 +141,12 @@ The CSS `light-dark()` values in the frontmatter are normative: light value firs
 ### Neutral
 
 - **Warm Page / Cool Charcoal:** page and menu backgrounds.
-- **Warm Surface / Dark Slate:** tour band, flat feature and assistant panels, hosting band and capture fallback.
+- **Warm Surface / Dark Slate:** tour band, flat feature panels, hosting band and capture fallback.
 - **Primary Ink / Muted Ink:** headings and controls / explanatory text and notes.
 - **Hairline:** panel outlines, menu borders, client separators and footer divider.
 - **Teal Tint / Tint Ink:** compact platform-state labels.
 
-**The Small Signature Rule.** Keep felt texture, the dashed seam and its 40px teal tab in hosting only. The clipboard mark appears at 32px in hosting and 48px in the footer. Features and assistant panels have solid hairlines, no texture, tabs or dashed outlines. Do not decorate the hero heading or app proof.
+**The Small Signature Rule.** Keep felt texture, the dashed seam and its 40px teal tab in hosting only. The clipboard mark appears at 32px in hosting and 48px in the footer. Feature panels have solid hairlines. The assistant is unboxed. Neither uses texture, tabs or dashed outlines. Do not decorate the hero heading or app proof.
 
 ## Typography
 
@@ -185,13 +181,13 @@ Sharing and recurrence form two columns above 700px, capped at 439px, with a 3re
 
 Features have a two-column header above 700px: heading and introduction at the logical start, an outlined Documentation action at the logical end on the introduction row, aligned to its last baseline with bottom alignment as fallback. On phones the action follows the introduction. DOM and focus order are heading, introduction, documentation link, then the eight summaries. With `::details-content` support above 900px, the eight exclusive native disclosures form a 4x2 index and the open flat panel spans the width below, with 2rem 2.25rem padding, repeated heading and two item columns. Below 901px, or without support, the same markup forms one accordion with 1.5rem panel padding and one item column. All 37 items remain available; every group starts closed so the eight categories can be scanned before opening details.
 
-The assistant is one flat contained card with 2.25rem padding, an introduction capped at 36rem and a 5:6 request/plan grid with a 2.5rem gap. The request uses a caption/body grid that stretches its quote rule to match the example height; plan titles and details share a wrapping baseline row. It stacks below 861px and uses 1.5rem padding below 701px. Its footer has a solid hairline, a full-width source sentence, then guide and native fold actions. An open fold spans the card while its summary remains content-width.
+The assistant is an unboxed editorial split on the page background. Above 900px a 5:6 grid with a 4rem gap places heading and introduction at the logical start, guide and source qualification below, and a stacked request and plan at the logical end. The example caption starts 0.5rem below the heading edge; plan titles and details share a wrapping baseline row. At 900px and below it follows DOM order: heading, example, links, with 2rem gaps. Its native fold spans the copy column and keeps a content-width summary. There is no card fill, border, radius or inset.
 
-Apps and tools are open strips with four columns above 860px and two from 701px through 860px. At 700px and below both use the same compact single-row pattern with 64px minimum summaries and horizontal hairlines. Name, chevron and state stay at the logical start, persistent action at the logical end of row one, and open description spans row two when native content flattening is supported. On larger screens the opened description precedes its persistent action, sharing rows across each strip. Native fallback follows the same summary, description, action order. A top hairline and 1rem inset anchor each larger strip; row subgrid aligns translated content. iOS keeps its unavailable state without an action or fold. Source-run and early-software qualifications remain visible.
+Apps and tools are open strips with four columns above 860px and two from 701px through 860px. At 700px and below both use the same compact single-row pattern with 64px minimum summaries and horizontal hairlines. Name, chevron and state stay at the logical start, persistent action at the logical end of row one, and open description spans row two when native content flattening is supported. On larger screens the opened description precedes its persistent action, sharing rows across each strip. Native fallback follows the same summary, description, action order. A top hairline and 1rem inset anchor each larger strip; row subgrid aligns translated content. iOS keeps its unavailable state without an action or fold. Source-run badges remain visible. The group heading and a concise binaries-only sentence share a wrapping baseline row. The existing early-software note lives in the Web disclosure.
 
-Hosting uses equal columns with a 6rem gap above the phone breakpoint. Copy order is mark, heading, paragraph, primary action, documentation link. Its three numbered steps occupy one page-colored card with solid hairlines between rows; the muted encryption note follows without another divider. Support uses equal columns above 700px. Both stack on phones.
+Hosting uses equal columns with a 4rem gap above the phone breakpoint. Its actions deliberately stack at every width. Copy order is mark, heading, paragraph, primary action, documentation link. Its three numbered steps occupy one page-colored card with solid hairlines between rows; the muted encryption note follows without another divider. Support uses equal columns above 700px. Both stack on phones.
 
-At 1100px and below, section navigation becomes a native menu disclosure and the language name hides. From 481px through 700px the reading wrap is capped at 34rem. The start-aligned mobile lead uses its available reading width and text-wrap: pretty. The mobile hero uses the genuine 390x844 source in a 390x490 frame capped at 24rem. Mobile proof media align to the logical start and retain 390px caps. Below 481px hero and proof media extend 12px past each text gutter; this does not make the primary action full width.
+At 1100px and below, section navigation becomes a native menu disclosure and the language name hides. From 481px through 700px the reading wrap is capped at 34rem. The start-aligned mobile lead uses its available reading width and text-wrap: pretty. The mobile hero uses the genuine 390x844 source in a 390x470 frame capped at the native 390px. From 481px through 700px the frame centers inside the reading wrap. Mobile proof media align to the logical start and retain 390px caps. Below 481px hero and proof media extend 12px past each text gutter; this does not make the primary action full width.
 
 Use logical padding, margins and insets for content. Keep isolated Latin technical nouns in `bdi`, and keep English screenshot pixels physically oriented. Use native aspect ratios without enlargement, retouching or noncontiguous composites. Verify new image dimensions before changing asset documentation. Theme selection alone does not qualify image content parity.
 
@@ -211,9 +207,9 @@ Motion is state-only: 160ms button fill changes and 180ms chevron turns use the 
 
 ## Shapes
 
-Use the frontmatter radius scale for state labels, menu items, controls, panels and screenshots. Hero capture corners are 14px; other capture frames and flat panels are 12px. Feature summaries have a teal open-state underline and chevron, with no tab on their panel. Client cells use logical vertical separators on larger screens and horizontal separators on phones. Focus is a 2px teal outline with a 4px offset; feature summaries use zero offset.
+Use the frontmatter radius scale for state labels, menu items, controls, panels and screenshots. Hero capture corners are 14px; other capture frames and flat panels are 12px. Feature summaries have a quiet top hairline and a teal 2px chevron. Rotation and the teal top hairline mark the open state. The accordion has a closing hairline; the 4x2 index uses segmented top lines. There is no tab on the panel. Client cells use logical vertical separators on larger screens and horizontal separators on phones. Focus is a 2px teal outline with a 4px offset; feature summaries use zero offset.
 
-Hosting alone has a dashed top seam and 40x3px teal tab. Its decorative clipboard is 32px; the footer mark is 48px with 8px corners. Artwork stays direction-neutral. Docker Compose and Helm use small inline monospace chips with a page-colored fill, 1px hairline, 5px radius and no wrapping.
+Hosting alone has a dashed top seam and 40x3px teal tab. Its decorative clipboard is 32px; the footer mark is 48px with 8px corners. Artwork stays direction-neutral. Dark hosting and footer marks use the wordmark's brightness(1.45) lift. Docker Compose and Helm use small inline monospace chips with a page-colored fill, 1px hairline and 5px radius. Each chip, attached Arabic conjunction and trailing punctuation stays in one nowrap unit.
 
 ## Components
 
@@ -221,11 +217,11 @@ Hosting alone has a dashed top seam and 40x3px teal tab. Its decorative clipboar
 - **Release metadata:** one underlined link contains both Alpha and version. A 0.85rem monospace `bdi` isolates the version; the shared release constant owns its version and URL.
 - **Navigation:** plain 44px text targets, native language and mobile-menu disclosures and an inline-SVG theme control with localized label and pressed state. Menus have page-colored fills, hairlines and compact corners. The dark wordmark retains its brightness filter.
 - **Capture:** real WebP evidence with translated descriptions and no visible language caption. The hero uses an eager high-priority responsive picture; other images are lazy. CSS follows system theme, and script reconciles saved theme. The hero image is decorative because its single visible responsive/theme link supplies the translated capture description. Corresponding full native PNGs remain linked.
-- **Hero proof:** the genuine Standard-density 1100x800 Board originals show the same six-task household fixture. Their contiguous 838x420 crop displays at no more than 820px. It includes Household priorities and populated P1/P2/P3 columns. The linked full original includes the excluded empty fourth column and Add task control. Mobile keeps the genuine 390x844 List source in a 390x490 frame.
+- **Hero proof:** the genuine Standard-density 1100x800 Board originals show the same six-task household fixture. Their contiguous 838x420 crop displays at no more than 820px. It includes Household priorities and populated P1/P2/P3 columns. The linked full original includes the excluded empty fourth column and Add task control. Mobile keeps the genuine 390x844 List source in a 390x470 frame.
 - **Proof excerpts:** desktop sharing and recurrence pair a 439x92 context strip with a 439x470 detail/settings crop. Mobile sharing pairs 390x100 and 390x524; recurrence pairs 390x100 and 390x398. A 2px separator stays inside each outlined 12px frame. Context strips are decorative; detail crops carry translated descriptions. Never stitch omitted regions together.
 - **Dashboard proof:** use the contiguous 604x562 crop from genuine 900x800 desktop originals with 16px native margins beyond the former crop, showing priorities, three habit streaks and two focus sessions. The 358x504 mobile crop from genuine 390x844 originals shows the complete priorities panel; habits and focus stay outside that crop. Both device/theme originals remain linked.
 - **Feature disclosure:** eight native exclusive groups, all 37 items, 80px minimum summaries (76px on phones), neutral 4px item dots and one general documentation link in the header. Expanded panels use surface fill, solid hairline and 12px corners, with no shadow, texture or tabs.
-- **Assistant card:** surface fill, solid hairline, 12px corners. The 1.4rem/500 request has a 2px teal inline-start rule and 1rem padding. On phones its text is 1.2rem. Neutral 4px dots mark plan rows; there are no fake checkboxes, avatars or app rows. The solid-divider footer preserves source qualification, guide and native fold.
+- **Assistant split:** unboxed, on the page background. The 1.4rem/500 request has a 2px teal inline-start rule and 1rem padding. On phones its text is 1.2rem. Neutral 4px dots mark plan rows; there are no fake checkboxes, avatars or app rows. Guide and source qualification share a wrapping row, followed by the native fold.
 - **Client strips:** preserve Alpha, experimental, source-run and unavailable states. Each action's accessible name includes its client name. Names and badges stack, desktop actions follow expanded descriptions, and both mobile strips share the 64px row pattern. Tool names are isolated monospace.
 - **Hosting steps:** one page-colored, hairline-bordered 12px card; three rows retain numbered outlined circles and separators. The encryption note is 0.95rem muted. Keep felt behind hosting copy only, with one stitched seam and small mark.
 - **Footer:** small felt clipboard beside Ditero as real text, with ordinary text links and a solid divider.
@@ -242,7 +238,7 @@ Hosting alone has a dashed top seam and 40x3px teal tab. Its decorative clipboar
 
 ### Don't:
 
-- **Don't** add texture, teal tabs or dashed outlines to features or assistant cards.
+- **Don't** add texture, teal tabs or dashed outlines to features or the assistant.
 - **Don't** use decorative art as evidence of behavior or invent richer capture content.
 - **Don't** enlarge or retouch screenshots, add fake interfaces or vendor marks.
 - **Don't** add gradients, autoplay, parallax or shadows to ordinary panels and buttons.

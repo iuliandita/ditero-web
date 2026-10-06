@@ -10,7 +10,7 @@ export const de: ExtraCopy = {
     example: 'Plane das Picknick am Samstag, weise die Einkäufe zu und markiere die Zugbuchung mit hoher Priorität.',
     resultLabel: "Beispielplan",
     results: [{"title": "Picknick am Samstag planen", "detail": "Samstag"}, {"title": "Essen fürs Picknick kaufen", "detail": "Alex zugewiesen"}, {"title": "Zug buchen", "detail": "Hohe Priorität"}],
-    source: "CLI, TUI und MCP laufen aus dem Quellcode. Eigenständige Programme sind nicht in den Alpha-Downloads enthalten.",
+    source: "Eigenständige Programme sind nicht in den Alpha-Downloads enthalten.",
     shortSource: "MCP läuft aus dem Quellcode.",
     points: [
       'Es ist ein externer Assistent, den du anbindest. Ditero hat keinen eingebauten Chatbot und hostet kein KI-Modell.',

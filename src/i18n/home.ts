@@ -18,7 +18,6 @@ export interface HomeCopy {
     public: Record<'web' | 'android' | 'desktop' | 'ios', Row>;
     dev: Record<'cli' | 'tui' | 'api' | 'mcp', Row>;
     labels: { setup: string; release: string; guide: string };
-    note: string;
   };
   server: { title: string; text: string; link: string; docs: string; encryption: string };
   support: { title: string; text: string; kofi: string; sponsor: string };
@@ -51,7 +50,7 @@ const en: HomeCopy = {
     title: 'Apps and tools', intro: "One server for your group. Reach it from the web, your phone, your desktop or your own tools.",
     publicTitle: 'Apps', devTitle: "Tools and API",
     public: {
-      web: { name: 'Web', state: 'Alpha', text: 'Use the web app in a current browser and install it from there. Changes made offline sync when you reconnect.' },
+      web: { name: 'Web', state: 'Alpha', text: 'Use the web app in a current browser and install it from there. Changes made offline sync when you reconnect. Early software changes quickly. Review the setup, backup and platform notes before relying on it.' },
       android: { name: 'Android', state: 'Alpha', text: 'Signed, independent Android downloads.' },
       desktop: { name: 'Desktop', state: 'Experimental', text: 'Windows installers are unsigned and macOS builds are ad-hoc signed. Platform qualification is not complete.' },
       ios: { name: 'iOS', state: 'Not available yet', text: 'There is no native iOS app yet.' },
@@ -63,7 +62,6 @@ const en: HomeCopy = {
       mcp: { name: 'MCP', state: 'Run from source', text: 'Let a connected assistant plan, create and manage tasks.' },
     },
     labels: { setup: 'Setup guide', release: 'Downloads', guide: 'Guide' },
-    note: 'Early software changes quickly. Review the setup, backup and platform notes before relying on it.',
   },
   server: { title: 'Run the server yourself', text: "Run Ditero on your infrastructure. Inspect the MIT-licensed code and decide who has access. Docker Compose and Helm guides are available.", link: 'Read the deployment guide', docs: 'Read the documentation', encryption: 'Attachments are encrypted, which protects file content. This does not mean all task data is end-to-end encrypted.' },
   support: { title: 'Support development', text: 'Ditero is free and MIT licensed. There are no paid feature unlocks. Support contributes to the development of the project.', kofi: 'Support on Ko-fi', sponsor: 'Sponsor Ditero' },
@@ -96,7 +94,7 @@ const de: HomeCopy = {
     title: 'Apps und Werkzeuge', intro: "Ein Server für deine Gruppe. Nutze ihn im Web, auf dem Smartphone, am Desktop oder mit deinen eigenen Werkzeugen.",
     publicTitle: 'Apps', devTitle: "Werkzeuge und API",
     public: {
-      web: { name: 'Web', state: 'Alpha', text: 'Nutze die Web-App in einem aktuellen Browser und installiere sie von dort. Offline vorgenommene Änderungen werden synchronisiert, sobald du wieder verbunden bist.' },
+      web: { name: 'Web', state: 'Alpha', text: 'Nutze die Web-App in einem aktuellen Browser und installiere sie von dort. Offline vorgenommene Änderungen werden synchronisiert, sobald du wieder verbunden bist. Frühe Software verändert sich schnell. Lies die Hinweise zu Einrichtung, Sicherung und Plattformen, bevor du dich auf sie verlässt.' },
       android: { name: 'Android', state: 'Alpha', text: 'Signierte, unabhängige Android-Downloads.' },
       desktop: { name: 'Desktop', state: 'Experimentell', text: 'Windows-Installer sind unsigniert, macOS-Builds sind ad-hoc signiert. Die Plattformqualifizierung ist nicht abgeschlossen.' },
       ios: { name: 'iOS', state: 'Noch nicht verfügbar', text: 'Es gibt noch keine native iOS-App.' },
@@ -108,7 +106,6 @@ const de: HomeCopy = {
       mcp: { name: 'MCP', state: 'Aus Quellcode starten', text: 'Lass einen verbundenen Assistenten Aufgaben planen, erstellen und verwalten.' },
     },
     labels: { setup: 'Einrichtungsanleitung', release: 'Downloads', guide: 'Anleitung' },
-    note: 'Frühe Software verändert sich schnell. Lies die Hinweise zu Einrichtung, Sicherung und Plattformen, bevor du dich auf sie verlässt.',
   },
   server: { title: 'Betreibe den Server selbst', text: "Betreibe Ditero auf deiner Infrastruktur. Prüfe den MIT-lizenzierten Code und bestimme, wer Zugriff hat. Anleitungen für Docker Compose und Helm sind verfügbar.", link: 'Anleitung zur Einrichtung lesen', docs: 'Dokumentation lesen', encryption: 'Anhänge sind verschlüsselt und schützen so Dateiinhalte. Das bedeutet nicht, dass alle Aufgabendaten Ende-zu-Ende-verschlüsselt sind.' },
   support: { title: 'Entwicklung unterstützen', text: 'Ditero ist kostenlos und MIT-lizenziert. Es gibt keine kostenpflichtigen Funktionen. Unterstützung trägt zur Weiterentwicklung des Projekts bei.', kofi: 'Auf Ko-fi unterstützen', sponsor: 'Ditero sponsern' },
@@ -141,7 +138,7 @@ const es: HomeCopy = {
     title: 'Apps y herramientas', intro: "Un servidor para tu grupo. Accede desde la web, el móvil, el escritorio o tus propias herramientas.",
     publicTitle: 'Aplicaciones', devTitle: "Herramientas y API",
     public: {
-      web: { name: 'Web', state: 'Alfa', text: 'Usa la aplicación web en un navegador actual e instálala desde allí. Los cambios hechos sin conexión se sincronizan cuando vuelves a conectarte.' },
+      web: { name: 'Web', state: 'Alfa', text: 'Usa la aplicación web en un navegador actual e instálala desde allí. Los cambios hechos sin conexión se sincronizan cuando vuelves a conectarte. El software temprano cambia rápido. Revisa las notas de instalación, copias de seguridad y plataformas antes de depender de él.' },
       android: { name: 'Android', state: 'Alfa', text: 'Descargas de Android independientes y firmadas.' },
       desktop: { name: 'Escritorio', state: 'Experimental', text: 'Los instaladores de Windows no están firmados y las compilaciones de macOS tienen firma ad hoc. La cualificación de plataformas no está completa.' },
       ios: { name: 'iOS', state: 'Aún no disponible', text: 'Todavía no hay una app nativa para iOS.' },
@@ -153,7 +150,6 @@ const es: HomeCopy = {
       mcp: { name: 'MCP', state: 'Desde código fuente', text: 'Deja que un asistente conectado planifique, cree y gestione tareas.' },
     },
     labels: { setup: 'Guía de instalación', release: 'Descargas', guide: 'Guía' },
-    note: 'El software temprano cambia rápido. Revisa las notas de instalación, copias de seguridad y plataformas antes de depender de él.',
   },
   server: { title: 'Gestiona tú el servidor', text: "Ejecuta Ditero en tu infraestructura. Revisa el código con licencia MIT y decide quién tiene acceso. Hay guías de Docker Compose y Helm.", link: 'Leer la guía de despliegue', docs: 'Leer la documentación', encryption: 'Los archivos adjuntos están cifrados, lo que protege su contenido. Esto no significa que todos los datos de las tareas tengan cifrado de extremo a extremo.' },
   support: { title: 'Apoyar el desarrollo', text: 'Ditero es gratuito y tiene licencia MIT. No hay funciones de pago. El apoyo contribuye al desarrollo del proyecto.', kofi: 'Apoyar en Ko-fi', sponsor: 'Patrocinar Ditero' },
@@ -186,7 +182,7 @@ const fr: HomeCopy = {
     title: 'Apps et outils', intro: "Un serveur pour votre groupe. Accédez-y depuis le web, votre téléphone, votre ordinateur ou vos propres outils.",
     publicTitle: 'Applications', devTitle: "Outils et API",
     public: {
-      web: { name: 'Web', state: 'Alpha', text: "Utilisez l'application web dans un navigateur récent et installez-la depuis celui-ci. Les modifications faites hors ligne se synchronisent à la reconnexion." },
+      web: { name: 'Web', state: 'Alpha', text: "Utilisez l'application web dans un navigateur récent et installez-la depuis celui-ci. Les modifications faites hors ligne se synchronisent à la reconnexion. Un logiciel jeune évolue vite. Lisez les notes sur l'installation, les sauvegardes et les plateformes avant de vous y fier." },
       android: { name: 'Android', state: 'Alpha', text: 'Téléchargements Android signés et indépendants.' },
       desktop: { name: 'Bureau', state: 'Expérimental', text: "Les installateurs Windows ne sont pas signés et les versions macOS ont une signature ad hoc. La qualification des plateformes n'est pas terminée." },
       ios: { name: 'iOS', state: 'Pas encore disponible', text: "Il n'existe pas encore d'application iOS native." },
@@ -198,7 +194,6 @@ const fr: HomeCopy = {
       mcp: { name: 'MCP', state: 'Lancer depuis les sources', text: 'Laissez un assistant connecté planifier, créer et gérer des tâches.' },
     },
     labels: { setup: "Guide d'installation", release: 'Téléchargements', guide: 'Guide' },
-    note: "Un logiciel jeune évolue vite. Lisez les notes sur l'installation, les sauvegardes et les plateformes avant de vous y fier.",
   },
   server: { title: 'Gérez le serveur vous-même', text: "Hébergez Ditero sur votre infrastructure. Consultez le code sous licence MIT et choisissez qui y accède. Guides Docker Compose et Helm disponibles.", link: 'Lire le guide de déploiement', docs: 'Lire la documentation', encryption: 'Les pièces jointes sont chiffrées, ce qui protège le contenu des fichiers. Cela ne signifie pas que toutes les données des tâches sont chiffrées de bout en bout.' },
   support: { title: 'Soutenir le développement', text: "Ditero est gratuit et sous licence MIT. Aucune fonctionnalité n'est payante. Le soutien contribue au développement du projet.", kofi: 'Soutenir sur Ko-fi', sponsor: 'Sponsoriser Ditero' },
@@ -231,7 +226,7 @@ const ro: HomeCopy = {
     title: 'Aplicații și instrumente', intro: "Un server pentru grupul tău. Accesează-l din browser, de pe telefon, desktop sau prin propriile instrumente.",
     publicTitle: 'Aplicații', devTitle: "Instrumente și API",
     public: {
-      web: { name: 'Web', state: 'Alfa', text: 'Folosește aplicația web într-un browser actual și instaleaz-o de acolo. Modificările făcute offline se sincronizează când te reconectezi.' },
+      web: { name: 'Web', state: 'Alfa', text: 'Folosește aplicația web într-un browser actual și instaleaz-o de acolo. Modificările făcute offline se sincronizează când te reconectezi. Software-ul timpuriu se schimbă repede. Citește notele despre instalare, copii de siguranță și platforme înainte să te bazezi pe el.' },
       android: { name: 'Android', state: 'Alfa', text: 'Descărcări Android semnate și independente.' },
       desktop: { name: 'Desktop', state: 'Experimental', text: 'Programele de instalare pentru Windows nu sunt semnate, iar versiunile pentru macOS au semnătură ad hoc. Calificarea platformelor nu este încheiată.' },
       ios: { name: 'iOS', state: 'Încă indisponibil', text: 'Încă nu există o aplicație iOS nativă.' },
@@ -243,7 +238,6 @@ const ro: HomeCopy = {
       mcp: { name: 'MCP', state: 'Rulează din sursă', text: 'Lasă un asistent conectat să planifice, să creeze și să gestioneze sarcini.' },
     },
     labels: { setup: 'Ghid de instalare', release: 'Descărcări', guide: 'Ghid' },
-    note: 'Software-ul timpuriu se schimbă repede. Citește notele despre instalare, copii de siguranță și platforme înainte să te bazezi pe el.',
   },
   server: { title: 'Administrează serverul tu însuți', text: "Rulează Ditero pe infrastructura ta. Verifică sursa sub licență MIT și decide cine are acces. Ai ghiduri pentru Docker Compose și Helm.", link: 'Citește ghidul de implementare', docs: 'Citește documentația', encryption: 'Atașamentele sunt criptate, ceea ce protejează conținutul fișierelor. Asta nu înseamnă că toate datele sarcinilor sunt criptate integral (end-to-end).' },
   support: { title: 'Sprijină dezvoltarea', text: 'Ditero este gratuit și are licență MIT. Nu există funcții cu plată. Sprijinul contribuie la dezvoltarea proiectului.', kofi: 'Sprijină pe Ko-fi', sponsor: 'Sponsorizează Ditero' },
@@ -276,7 +270,7 @@ const ar: HomeCopy = {
     title: 'التطبيقات والأدوات', intro: "خادم واحد لمجموعتك. استخدمه عبر الويب أو الهاتف أو سطح المكتب أو أدواتك الخاصة.",
     publicTitle: 'التطبيقات', devTitle: "الأدوات وواجهة API",
     public: {
-      web: { name: 'الويب', state: 'ألفا', text: 'استخدم تطبيق الويب في متصفح حديث وثبّته منه. تتم مزامنة التغييرات التي أجريتها دون اتصال عند إعادة الاتصال.' },
+      web: { name: 'الويب', state: 'ألفا', text: 'استخدم تطبيق الويب في متصفح حديث وثبّته منه. تتم مزامنة التغييرات التي أجريتها دون اتصال عند إعادة الاتصال. البرمجيات المبكرة تتغير بسرعة. راجع ملاحظات الإعداد والنسخ الاحتياطي والمنصات قبل الاعتماد عليها.' },
       android: { name: 'Android', state: 'ألفا', text: 'تنزيلات أندرويد موقّعة ومستقلة.' },
       desktop: { name: 'سطح المكتب', state: 'تجريبي', text: 'مثبّتات Windows غير موقّعة، وإصدارات macOS موقّعة توقيعًا مؤقتًا (ad hoc). لم يكتمل تأهيل المنصات بعد.' },
       ios: { name: 'iOS', state: 'غير متاح بعد', text: 'لا يوجد تطبيق iOS أصلي بعد.' },
@@ -288,7 +282,6 @@ const ar: HomeCopy = {
       mcp: { name: 'MCP', state: 'التشغيل من المصدر', text: 'دع مساعدًا متصلًا يخطط للمهام وينشئها ويديرها.' },
     },
     labels: { setup: 'دليل الإعداد', release: 'التنزيلات', guide: 'الدليل' },
-    note: 'البرمجيات المبكرة تتغير بسرعة. راجع ملاحظات الإعداد والنسخ الاحتياطي والمنصات قبل الاعتماد عليها.',
   },
   server: { title: 'شغّل الخادم بنفسك', text: "شغّل Ditero على بنيتك التحتية. افحص الشيفرة بترخيص MIT وحدد من يملك الوصول. تتوفر أدلة Docker Compose وHelm.", link: 'اقرأ دليل النشر', docs: 'اقرأ الوثائق', encryption: 'المرفقات مشفرة، مما يحمي محتوى الملفات. لا يعني ذلك أن كل بيانات المهام مشفرة من طرف إلى طرف.' },
   support: { title: 'ادعم التطوير', text: 'Ditero مجاني وبترخيص MIT. لا توجد ميزات مدفوعة. يساهم الدعم في تطوير المشروع.', kofi: 'ادعم على Ko-fi', sponsor: 'كن راعيًا لـ Ditero' },

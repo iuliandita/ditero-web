@@ -10,7 +10,7 @@ export const es: ExtraCopy = {
     example: 'Planifica el picnic del sábado, asigna las compras y marca como prioridad alta reservar el tren.',
     resultLabel: "Plan de ejemplo",
     results: [{"title": "Planificar el picnic del sábado", "detail": "Sábado"}, {"title": "Comprar comida para el picnic", "detail": "Asignada a Alex"}, {"title": "Reservar el tren", "detail": "Prioridad alta"}],
-    source: "CLI, TUI y MCP se ejecutan desde el código fuente. Las descargas alfa no incluyen ejecutables independientes.",
+    source: "Las descargas alfa no incluyen ejecutables independientes.",
     shortSource: "MCP se ejecuta desde el código fuente.",
     points: [
       'Es un asistente externo que tú conectas. Ditero no tiene chatbot integrado ni aloja ningún modelo de IA.',

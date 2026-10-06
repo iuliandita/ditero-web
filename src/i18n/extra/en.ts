@@ -10,7 +10,7 @@ export const en: ExtraCopy = {
     example: "Plan Saturday's picnic, assign the shopping, and mark booking the train as high priority.",
     resultLabel: "Example plan",
     results: [{"title": "Plan Saturday's picnic", "detail": "Saturday"}, {"title": "Buy food for the picnic", "detail": "Assigned to Alex"}, {"title": "Book the train", "detail": "High priority"}],
-    source: "CLI, TUI and MCP run from source. Standalone binaries are not included in the alpha downloads.",
+    source: "Standalone binaries are not included in the alpha downloads.",
     shortSource: "MCP runs from source.",
     points: [
       'It is an external assistant that you connect. Ditero has no built-in chatbot and does not host any AI model.',

@@ -10,7 +10,7 @@ export const ro: ExtraCopy = {
     example: 'Planifică picnicul de sâmbătă, atribuie cumpărăturile și marchează rezervarea trenului ca prioritate mare.',
     resultLabel: "Exemplu de plan",
     results: [{"title": "Planifică picnicul de sâmbătă", "detail": "Sâmbătă"}, {"title": "Cumpără mâncare pentru picnic", "detail": "Atribuită lui Alex"}, {"title": "Rezervă trenul", "detail": "Prioritate mare"}],
-    source: "CLI, TUI și MCP rulează din sursă. Descărcările alfa nu includ executabile separate.",
+    source: "Descărcările alfa nu includ executabile separate.",
     shortSource: "MCP rulează din sursă.",
     points: [
       'Este un asistent extern pe care îl conectezi tu. Ditero nu are chatbot integrat și nu găzduiește niciun model AI.',

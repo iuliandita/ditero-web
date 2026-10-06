@@ -21,10 +21,26 @@ const devRows: { row: typeof a.dev.cli; link: [LinkKey, 'guide'] }[] = [
 ];
 const categoryLinks: Record<string, LinkKey> = { access: 'api' };
 const cap = { desktopAlt: t.capture.desktopAlt, mobileAlt: t.capture.mobileAlt, heroAlt: t.capture.heroAlt, open: t.capture.open };
-const proofHeights = { 'task-detail': 470, 'recurrence-reminders': 470 };
-const mobileProofHeights = { 'task-detail': 524, 'recurrence-reminders': 398 };
+type ProofId = 'task-detail' | 'recurrence-reminders';
+type ProofAssets = {
+  context: 'sharing' | 'recurrence';
+  desktop: { width: number; contextHeight: number; height: number };
+  mobile: { width: number; contextHeight: number; height: number };
+};
+const proofAssets = {
+  'task-detail': {
+    context: 'sharing',
+    desktop: { width: 439, contextHeight: 92, height: 470 },
+    mobile: { width: 390, contextHeight: 100, height: 524 },
+  },
+  'recurrence-reminders': {
+    context: 'recurrence',
+    desktop: { width: 439, contextHeight: 92, height: 470 },
+    mobile: { width: 390, contextHeight: 100, height: 398 },
+  },
+} satisfies Record<ProofId, ProofAssets>;
 const proofs = (['task-detail', 'recurrence-reminders'] as const).map(id => ({
-  id, ...t.gallery.items[id], ...t.features.proof[id], height: proofHeights[id],
+  id, ...t.gallery.items[id], ...t.features.proof[id], assets: proofAssets[id],
 }));
 const dashboard = t.features.proof.dashboard;
 const productTerms = new Set(['Docker Compose', 'Helm']);
@@ -59,14 +75,14 @@ const productCopy = (text: string) => text.split(/(Docker Compose|Helm)/g);
             <div class={`shots shots-${theme}`}>
               <a class="proof-link proof-desktop" href={`/images/gallery/${proof.id}${theme === 'dark' ? '-dark' : ''}.png`} aria-label={`${t.capture.open}: ${proof.alt}`}>
                 <span class="proof-excerpts">
-                  <img src={`/images/proof/${proof.id === 'task-detail' ? 'sharing' : 'recurrence'}-context-${theme}.webp`} width="439" height="92" alt="" loading="lazy" decoding="async" />
-                  <img src={`/images/proof/${proof.id}-${theme}.webp`} width="439" height={proof.height} alt={proof.alt} loading="lazy" decoding="async" />
+                  <img src={`/images/proof/${proof.assets.context}-context-${theme}.webp`} width={proof.assets.desktop.width} height={proof.assets.desktop.contextHeight} alt="" loading="lazy" decoding="async" />
+                  <img src={`/images/proof/${proof.id}-${theme}.webp`} width={proof.assets.desktop.width} height={proof.assets.desktop.height} alt={proof.alt} loading="lazy" decoding="async" />
                 </span>
               </a>
               <a class="proof-link proof-mobile" href={`/images/gallery/${proof.id}-mobile-${theme}.png`} aria-label={`${t.capture.open}: ${proof.alt}`}>
                 <span class="proof-excerpts">
-                  <img src={`/images/proof/${proof.id === 'task-detail' ? 'sharing' : 'recurrence'}-context-mobile-${theme}.webp`} width="390" height="100" alt="" loading="lazy" decoding="async" />
-                  <img src={`/images/proof/${proof.id}-mobile-${theme}.webp`} width="390" height={mobileProofHeights[proof.id]} alt={proof.alt} loading="lazy" decoding="async" />
+                  <img src={`/images/proof/${proof.assets.context}-context-mobile-${theme}.webp`} width={proof.assets.mobile.width} height={proof.assets.mobile.contextHeight} alt="" loading="lazy" decoding="async" />
+                  <img src={`/images/proof/${proof.id}-mobile-${theme}.webp`} width={proof.assets.mobile.width} height={proof.assets.mobile.height} alt={proof.alt} loading="lazy" decoding="async" />
                 </span>
               </a>
             </div>
@@ -80,72 +96,135 @@ const productCopy = (text: string) => text.split(/(Docker Compose|Helm)/g);
     </section>
   </div>
 
-  <section id="assistant" class="assistant wrap" aria-labelledby="assistant-title">
-    <div class="assistant-copy">
-      <h2 id="assistant-title">{x.ai.title}</h2><p>{x.ai.intro}</p>
-      <p class="source">{x.ai.shortSource}</p>
-      <div class="assistant-links">
-        <a class="text-link" href={links.mcp}>{x.ai.link}</a>
-        <details class="fold"><summary aria-label={`${x.ui.details}: ${x.ai.title}`}>{x.ui.details}</summary><ul class="plain">{x.ai.points.map(point => <li>{point}</li>)}</ul></details>
-      </div>
-    </div>
-    <figure class="request">
-      <figcaption>{x.ai.exampleLabel}</figcaption>
-      <blockquote><p>{x.ai.example}</p></blockquote>
-      <p class="plan-label" id="plan-label">{x.ai.resultLabel}</p>
-      <ul class="plan" aria-labelledby="plan-label">{x.ai.results.map(result => <li><span class="plan-title">{result.title}</span><span class="plan-detail">{result.detail}</span></li>)}</ul>
-    </figure>
-  </section>
-
   <section id="features" class="features wrap" aria-labelledby="features-title">
-    <div class="features-head"><h2 id="features-title">{t.features.title}</h2><p>{t.features.intro}</p></div>
+    <header class="features-head">
+      <h2 id="features-title">{t.features.title}</h2>
+      <p>{t.features.intro}</p>
+    </header>
     <div class="feature-explorer" role="group" aria-label={x.ui.groups}>
-      {[x.features.groups.slice(0, 4), x.features.groups.slice(4)].map(groups => (
-        <div class="feature-column">{groups.map(group => (
-        <details class="feature-group" id={`group-${group.id}`} name="features">
-          <summary><span class="feature-summary"><span>{group.title}</span><span class="feature-preview">{group.summary}</span></span></summary>
-          <div class="feature-body">
-            <div><ul class="feature-items">{group.items.map(item => <li>{item}</li>)}</ul><a class="text-link" href={links[categoryLinks[group.id] ?? 'docs']}>{x.ui.docs}</a></div>
+      {x.features.groups.map((group, index) => (
+        <details class="feature-group" id={`group-${group.id}`} name="features" open={index === 0}>
+          <summary>
+            <span class="feature-summary">
+              <span>{group.title}</span>
+              <span class="feature-preview">{group.summary}</span>
+            </span>
+          </summary>
+          <div class="feature-body paper">
+            <h3 class="feature-panel-title">{group.title}</h3>
+            <ul class="feature-items">{group.items.map(item => <li>{item}</li>)}</ul>
+            <a class="text-link" href={links[categoryLinks[group.id] ?? 'docs']}>{x.ui.docs}</a>
           </div>
         </details>
-        ))}</div>
       ))}
+    </div>
+  </section>
+
+  <section id="assistant" class="assistant wrap" aria-labelledby="assistant-title">
+    <div class="assistant-sheet paper">
+      <header class="assistant-heading">
+        <h2 id="assistant-title">{x.ai.title}</h2>
+        <p>{x.ai.intro}</p>
+      </header>
+      <div class="assistant-example">
+        <figure class="request">
+          <figcaption>{x.ai.exampleLabel}</figcaption>
+          <blockquote><p>{x.ai.example}</p></blockquote>
+        </figure>
+        <div class="assistant-plan">
+          <p class="plan-label" id="plan-label">{x.ai.resultLabel}</p>
+          <ul class="plan" aria-labelledby="plan-label">
+            {x.ai.results.map(result => (
+              <li><span class="plan-title">{result.title}</span><span class="plan-detail">{result.detail}</span></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <footer class="assistant-links">
+        <p class="source">{x.ai.shortSource}</p>
+        <a class="text-link" href={links.mcp}>{x.ai.link}</a>
+        <details class="fold">
+          <summary aria-label={`${x.ui.details}: ${x.ai.title}`}>{x.ui.details}</summary>
+          <ul class="plain">{x.ai.points.map(point => <li>{point}</li>)}</ul>
+        </details>
+      </footer>
     </div>
   </section>
 
   <section id="access" class="apps wrap" aria-labelledby="apps-title">
-    <div class="apps-heading"><h2 id="apps-title">{a.title}</h2><p>{a.intro}</p></div>
-    <div class="apps-body">
-      {([
-        { title: a.publicTitle, rows: publicRows },
-        { title: a.devTitle, rows: devRows },
-      ]).map(({ title, rows }) => (
-        <div class="apps-stack">
-          <h3 class="group">{title}</h3>
-          <div class="clients">
-            {rows.map(({ row, link }) => (
-              <article class="public-client">
-                {link ? <>
-                  <details class="client-details">
-                    <summary><span class="client-heading"><span class="client-name"><span class="name">{row.name}</span><span class="client-chevron" aria-hidden="true" /></span><span class="state">{row.state}</span></span></summary>
-                    <p>{row.text}</p>
-                    {(['cli', 'tui', 'mcp'] as const).some(key => key === link[0]) && <p>{x.ai.source}</p>}
-                  </details>
-                  <a class="text-link client-action" href={links[link[0]]} aria-label={`${label(link[1])}: ${row.name}`}>{label(link[1])}</a>
-                </> : <div class="client-heading"><span class="name">{row.name}</span><span class="state">{row.state}</span></div>}
-              </article>
-            ))}
-          </div>
-        </div>
-      ))}
+    <header class="apps-heading">
+      <h2 id="apps-title">{a.title}</h2>
+      <p>{a.intro}</p>
+    </header>
+    <div class="server-node" aria-hidden="true">
+      <img src="/icon.png" width="28" height="28" alt="" loading="lazy" decoding="async" />
+      <span>Ditero</span>
+    </div>
+    <div class="apps-stack">
+      <h3 class="group">{a.publicTitle}</h3>
+      <div class="platform-strip">
+        {publicRows.map(({ row, link }) => (
+          <article class="platform-client">
+            {link ? <>
+              <details class="client-details">
+                <summary>
+                  <span class="client-heading">
+                    <span class="client-name"><span class="name">{row.name}</span><span class="client-chevron" aria-hidden="true" /></span>
+                    <span class="state">{row.state}</span>
+                  </span>
+                </summary>
+                <p>{row.text}</p>
+              </details>
+              <a class="text-link client-action" href={links[link[0]]} aria-label={`${label(link[1])}: ${row.name}`}>{label(link[1])}</a>
+            </> : <div class="client-heading"><span class="name">{row.name}</span><span class="state">{row.state}</span></div>}
+          </article>
+        ))}
+      </div>
+    </div>
+    <div class="apps-stack tools-stack">
+      <h3 class="group">{a.devTitle}</h3>
+      <p class="tools-source">{x.ai.source}</p>
+      <div class="tool-strip">
+        {devRows.map(({ row, link }) => (
+          <article class="tool-client">
+            <details class="client-details">
+              <summary>
+                <span class="client-heading">
+                  <span class="client-name"><bdi class="name tool-name">{row.name}</bdi><span class="client-chevron" aria-hidden="true" /></span>
+                  <span class="state">{row.state}</span>
+                </span>
+              </summary>
+              <p>{row.text}</p>
+            </details>
+            <a class="text-link client-action" href={links[link[0]]} aria-label={`${label(link[1])}: ${row.name}`}>{label(link[1])}</a>
+          </article>
+        ))}
+      </div>
     </div>
     <p class="small apps-note">{a.note}</p>
   </section>
 
   <section id="self-host" class="host" aria-labelledby="host-title">
     <div class="wrap host-grid">
-      <div class="host-copy"><h2 id="host-title"><img class="host-mark" src="/brand/ditero-felt-96.webp" width="32" height="32" alt="" loading="lazy" decoding="async" /><span>{t.server.title}</span></h2><p>{productCopy(t.server.text).map(part => productTerms.has(part) ? <bdi class="product-term">{part}</bdi> : part)}</p><div class="actions"><a class="button" href={links.deploy}>{t.server.link}</a><a class="text-link" href={links.docs}>{t.server.docs}</a></div></div>
-      <div class="host-details"><ol class="steps" role="list">{x.setup.steps.map(step => <li><span>{productCopy(step).map(part => productTerms.has(part) ? <bdi class="product-term">{part}</bdi> : part)}</span></li>)}</ol><p class="encryption-note">{t.server.encryption}</p></div>
+      <div class="host-copy">
+        <h2 id="host-title">
+          <img class="host-mark" src="/brand/ditero-felt-96.webp" width="32" height="32" alt="" loading="lazy" decoding="async" />
+          <span>{t.server.title}</span>
+        </h2>
+        <p>{productCopy(t.server.text).map(part => productTerms.has(part) ? <bdi class="product-term">{part}</bdi> : part)}</p>
+        <div class="actions">
+          <a class="button" href={links.deploy}>{t.server.link}</a>
+          <a class="text-link" href={links.docs}>{t.server.docs}</a>
+        </div>
+      </div>
+      <div class="host-details">
+        <ol class="steps" role="list">
+          {x.setup.steps.map(step => (
+            <li><span>{productCopy(step).map(part => productTerms.has(part) ? <bdi class="product-term">{part}</bdi> : part)}</span></li>
+          ))}
+        </ol>
+        <p class="encryption-note">{t.server.encryption}</p>
+      </div>
     </div>
   </section>
 

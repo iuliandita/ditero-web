@@ -22,6 +22,9 @@ const devRows: { row: typeof a.dev.cli; link: [LinkKey, 'guide'] }[] = [
 const carouselLinks: Record<string, LinkKey> = { access: 'api' };
 const cap = { desktopAlt: t.capture.desktopAlt, mobileAlt: t.capture.mobileAlt, open: t.capture.open };
 const dashboard = t.features.items[2];
+const gallery = (['priorities', 'task-detail', 'recurrence-reminders', 'saved-filters'] as const).map((id) => ({
+  ...t.gallery.items[id], src: `/images/gallery/${id}.png`,
+}));
 const art = (id: string) => ({ src: `/images/carousel/${id}.webp`, srcset: `/images/carousel/${id}.webp 480w, /images/carousel/${id}-720.webp 720w` });
 const [assistantSource, ...assistantCaveats] = [x.ai.points[3], ...x.ai.points.slice(0, 3)];
 ---
@@ -86,6 +89,27 @@ const [assistantSource, ...assistantCaveats] = [x.ai.points[3], ...x.ai.points.s
         <Capture name="dashboard" variant="wide" {...cap} desktopAlt={t.capture.dashboardAlt} />
         <img class="tile dash-tile" {...art('views')} sizes="112px" alt="" width="720" height="720" loading="lazy" decoding="async" />
       </div>
+    </div>
+  </section>
+
+  <section class="gallery wrap" aria-labelledby="gallery-title">
+    <div class="gallery-head">
+      <h2 id="gallery-title">{t.gallery.title}</h2>
+      <p>{t.gallery.note}</p>
+    </div>
+    <div class="gallery-grid">
+      {gallery.map((item) => (
+        <figure class="gallery-item">
+          <a class="gallery-image" href={item.src}>
+            <img src={item.src} alt={item.alt} width="1440" height="1100" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>
+            <h3>{item.title}</h3>
+            <p>{item.caption}</p>
+            <a class="text-link" href={item.src}>{t.capture.open}<span class="visually-hidden">: {item.title}</span></a>
+          </figcaption>
+        </figure>
+      ))}
     </div>
   </section>
 

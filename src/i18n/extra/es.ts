@@ -5,7 +5,7 @@ export const es: ExtraCopy = {
   setup: { steps: ["Inicia tu servidor con Docker Compose", "Crea tu cuenta en la aplicación web", "Invita a otras personas y comparte una lista"] },
   ai: {
     title: "Planifica con tu asistente",
-    intro: "Conecta un asistente de IA que ya uses. Mediante MCP, convierte tus peticiones en tareas, prioridades y fechas de vencimiento.",
+    intro: "Conecta un asistente de IA que ya uses. A través de MCP, el asistente convierte tus peticiones en tareas, prioridades y fechas de vencimiento.",
     exampleLabel: 'Ejemplo de petición',
     example: 'Planifica el picnic del sábado, asigna las compras y marca como prioridad alta reservar el tren.',
     resultLabel: "Plan de ejemplo",
@@ -21,7 +21,7 @@ export const es: ExtraCopy = {
   },
   features: {
     groups: [
-      { id: 'lists', title: 'Listas compartidas', summary: "Compras y proyectos en grupo", items: ["Listas de tareas, compras, control, proyectos y hábitos", "Asigna tareas a otras personas", 'Subtareas dentro de las tareas', 'Prioridades y etiquetas', 'Espacios de trabajo para compartir con otras personas', "Carpetas y plantillas", "Entrada rápida con fechas y prioridades", "Sincronización sin conexión"] },
+      { id: 'lists', title: 'Listas compartidas', summary: "Compras y proyectos en grupo", items: ["Listas de tareas, compras, control, proyectos y hábitos", "Asigna tareas a otras personas", 'Subtareas dentro de las tareas', 'Prioridades y etiquetas', 'Espacios de trabajo para compartir con otras personas', "Carpetas y plantillas", "Entrada rápida con fechas y prioridades", "Los cambios sin conexión se sincronizan al reconectar"] },
       { id: 'routines', title: 'Hábitos y rutinas', summary: "Tareas recurrentes, hábitos y concentración", items: ["Tareas domésticas recurrentes", "Hábitos y rachas", 'Temporizador de concentración por tarea', "Puntos por tareas y hábitos completados (Karma)"] },
       { id: 'reminders', title: 'Recordatorios', summary: "ntfy, Telegram, Discord, Slack y email", items: ["Recordatorios de vencimiento", "Horas de silencio", 'Elige tus canales de envío', 'Confirmación de recordatorios', "Escalamiento de recordatorios sin respuesta"] },
       { id: 'views', title: 'Vistas de tareas', summary: "Calendario, tablero, tabla y paneles", items: ['Paneles', 'Calendario', 'Tablero', 'Tabla', 'Vistas guardadas'] },

@@ -21,7 +21,7 @@ export const de: ExtraCopy = {
   },
   features: {
     groups: [
-      { id: 'lists', title: 'Listen und Teilen', summary: "Einkäufe und gemeinsame Aufgaben", items: ["Listen für Aufgaben, Einkäufe, Checklisten, Projekte und Gewohnheiten", "Aufgaben an Menschen zuweisen", 'Unteraufgaben innerhalb von Aufgaben', 'Prioritäten und Labels', 'Arbeitsbereiche mit anderen teilen', "Ordner und Vorlagen", "Schnelleingabe mit Datum und Priorität", "Offline-Synchronisierung"] },
+      { id: 'lists', title: 'Listen und Teilen', summary: "Einkäufe und gemeinsame Aufgaben", items: ["Listen für Aufgaben, Einkäufe, Checklisten, Projekte und Gewohnheiten", "Aufgaben an Menschen zuweisen", 'Unteraufgaben innerhalb von Aufgaben', 'Prioritäten und Labels', 'Arbeitsbereiche mit anderen teilen', "Ordner und Vorlagen", "Schnelleingabe mit Datum und Priorität", "Offline-Änderungen werden bei erneuter Verbindung synchronisiert"] },
       { id: 'routines', title: 'Routinen', summary: "Hausarbeit, Gewohnheiten und Fokus", items: ["Wiederkehrende Hausarbeit", "Gewohnheiten und Serien", 'Fokustimer für einzelne Aufgaben', "Punkte für erledigte Aufgaben und Gewohnheiten (Karma)"] },
       { id: 'reminders', title: 'Erinnerungen', summary: "ntfy, Telegram, Discord, Slack und E-Mail", items: ["Erinnerungen an Fälligkeiten", "Ruhezeiten", 'Wähle deine Zustellungskanäle', 'Bestätigung von Erinnerungen', "Eskalation bei unbeantworteten Erinnerungen"] },
       { id: 'views', title: 'Ansichten', summary: "Kalender, Board, Tabelle und Dashboards", items: ['Dashboards', 'Kalender', 'Board', 'Tabelle', 'Gespeicherte Ansichten'] },

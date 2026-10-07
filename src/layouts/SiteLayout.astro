@@ -5,6 +5,7 @@ import themeInit from '../scripts/theme-init.js?raw';
 import wordmarkLight from '../assets/ditero-wordmark-light.png';
 import wordmarkDark from '../assets/ditero-wordmark-dark.png';
 import groteskFont from '@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2?url';
+import groteskExtendedFont from '@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-ext-wght-normal.woff2?url';
 import arabicFont from '@fontsource-variable/noto-sans-arabic/files/noto-sans-arabic-arabic-wght-normal.woff2?url';
 import '@fontsource-variable/schibsted-grotesk/wght.css';
 import '@fontsource-variable/noto-sans-arabic/wght.css';
@@ -35,6 +36,7 @@ const nav: [string, string][] = [
     <meta name="description" content={description} />
     <meta name="color-scheme" content="light dark" />
     <link rel="preload" href={locale === 'ar' ? arabicFont : groteskFont} as="font" type="font/woff2" crossorigin />
+    {locale === 'ro' && <link rel="preload" href={groteskExtendedFont} as="font" type="font/woff2" crossorigin />}
     <meta name="robots" content={production ? 'index, follow' : 'noindex, follow'} />
     <script is:inline set:html={themeInit}></script>
     {hero && <script is:inline set:html={heroPreload}></script>}

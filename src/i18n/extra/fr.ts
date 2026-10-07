@@ -21,7 +21,7 @@ export const fr: ExtraCopy = {
   },
   features: {
     groups: [
-      { id: 'lists', title: 'Listes et partage', summary: "Courses et projets en groupe", items: ["Tâches, courses, listes de contrôle, projets et habitudes", "Attribuez les tâches à vos proches", 'Sous-tâches dans les tâches', 'Priorités et étiquettes', 'Espaces de travail à partager avec d\'autres personnes', "Dossiers et modèles", "Saisie rapide avec dates et priorités", "Synchronisation hors ligne"] },
+      { id: 'lists', title: 'Listes et partage', summary: "Courses et projets en groupe", items: ["Tâches, courses, listes de contrôle, projets et habitudes", "Attribuez les tâches à vos proches", 'Sous-tâches dans les tâches', 'Priorités et étiquettes', 'Espaces de travail à partager avec d\'autres personnes', "Dossiers et modèles", "Saisie rapide avec dates et priorités", "Les modifications hors ligne se synchronisent à la reconnexion"] },
       { id: 'routines', title: 'Habitudes', summary: "Tâches récurrentes et habitudes", items: ["Tâches ménagères récurrentes", "Habitudes et séries", 'Minuteur de concentration lié aux tâches', "Points pour les tâches et habitudes accomplies (Karma)"] },
       { id: 'reminders', title: 'Rappels', summary: "ntfy, Telegram, Discord, Slack et e-mail", items: ["Rappels d'échéance", "Heures de silence", 'Choisissez vos canaux de notification', 'Accusé de réception des rappels', "Escalade des rappels sans réponse"] },
       { id: 'views', title: 'Vues des tâches', summary: "Calendrier, kanban et tableaux", items: ['Tableaux de bord', 'Calendrier', 'Tableau kanban', 'Tableau de données', 'Vues enregistrées'] },

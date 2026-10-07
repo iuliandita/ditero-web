@@ -6,7 +6,10 @@ export function initTheme(): void {
     const theme = document.documentElement.dataset.theme;
     return theme === 'dark' || (!theme && system.matches);
   };
-  const render = (): void => button.setAttribute('aria-pressed', String(isDark()));
+  const render = (): void => {
+    button.setAttribute('aria-pressed', String(isDark()));
+    document.dispatchEvent(new Event('ditero-theme-change'));
+  };
   render();
   button.hidden = false;
   system.addEventListener('change', render);

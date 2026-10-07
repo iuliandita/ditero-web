@@ -1,33 +1,44 @@
 ---
+import heroInit from '../scripts/hero-init.js?raw';
+
 interface Props {
   name: 'list' | 'dashboard';
-  variant: 'hero' | 'wide' | 'phone';
-  desktopAlt: string; mobileAlt: string; open: string;
+  variant: 'hero' | 'wide';
+  desktopAlt: string; mobileAlt: string; compactAlt?: string; open: string;
 }
-const { name, variant, desktopAlt, mobileAlt, open } = Astro.props;
+const { name, variant, desktopAlt, mobileAlt, compactAlt = desktopAlt, open } = Astro.props;
 const themes = ['light', 'dark'] as const;
 const src = (size: 'desktop' | 'mobile', theme: string) => `/images/${name}-${size}-${theme}.webp`;
 const hero = variant === 'hero';
 const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
 ---
 <figure class={`capture capture-${variant}`}>
-  {themes.map(theme => (
+  {hero ? (
+    <div class="shot shot-responsive crop-list" data-hero-capture data-light-desktop={src('desktop', 'light')} data-dark-desktop={src('desktop', 'dark')} data-light-mobile={src('mobile', 'light')} data-dark-mobile={src('mobile', 'dark')}>
+      <picture hidden>
+        <source media="(max-width: 700px)" />
+        <img width="838" height="420" alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async" />
+      </picture>
+      <script is:inline set:html={heroInit}></script>
+      <noscript>
+        <picture>
+          <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset={src('mobile', 'dark')} />
+          <source media="(max-width: 700px)" srcset={src('mobile', 'light')} />
+          <source media="(prefers-color-scheme: dark)" srcset={src('desktop', 'dark')} />
+          <img src={src('desktop', 'light')} width="838" height="420" alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async" />
+        </picture>
+      </noscript>
+      <div class="fallback-desktop">{themes.map(theme => <a class={`fallback-link shots-${theme}`} href={`/images/gallery/list-desktop-${theme}.png`} aria-label={`${open}: ${desktopAlt}`} />)}</div>
+      <div class="fallback-mobile">{themes.map(theme => <a class={`fallback-link shots-${theme}`} href={`/images/gallery/list-mobile-${theme}.png`} aria-label={`${open}: ${mobileAlt}`} />)}</div>
+    </div>
+  ) : themes.map(theme => (
     <div class={`shots shots-${theme}`}>
-      {variant !== 'phone' && (
-        <a class={`shot shot-desktop ${desktopCrop}`} href={src('desktop', theme)} aria-label={`${open}: ${desktopAlt}`}>
-          <img src={src('desktop', theme)} width="1440" height="1000" alt={desktopAlt} loading="lazy" fetchpriority={hero ? 'high' : undefined} decoding="async" />
+        <a class={`shot shot-desktop ${desktopCrop}`} href={`/images/gallery/dashboard-${theme}.png`} aria-label={`${open}: ${desktopAlt}`}>
+          <img src={src('desktop', theme)} width="438" height="432" alt={desktopAlt} loading="lazy" decoding="async" />
         </a>
-      )}
-      {variant === 'wide' && (
-        <a class="shot shot-compact crop-dashboard-compact" href={src('desktop', theme)} aria-label={`${open}: ${desktopAlt}`}>
-          <img src={src('desktop', theme)} width="1440" height="1000" alt={desktopAlt} loading="lazy" decoding="async" />
+        <a class="shot shot-compact crop-dashboard-compact" href={`/images/gallery/dashboard-mobile-${theme}.png`} aria-label={`${open}: ${compactAlt}`}>
+          <img src={src('mobile', theme)} width="390" height="536" alt={compactAlt} loading="lazy" decoding="async" />
         </a>
-      )}
-      {variant !== 'wide' && (
-        <a class="shot shot-mobile crop-phone" href={src('mobile', theme)} aria-label={`${open}: ${mobileAlt}`}>
-          <img src={src('mobile', theme)} width="390" height="844" alt={mobileAlt} loading="lazy" fetchpriority={hero ? 'high' : undefined} decoding="async" />
-        </a>
-      )}
     </div>
   ))}
 </figure>

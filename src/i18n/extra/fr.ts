@@ -1,7 +1,7 @@
 import type { ExtraCopy } from './types';
 
 export const fr: ExtraCopy = {
-  ui: { tour: 'Découvrez Ditero', platforms: 'Web, Android et application de bureau expérimentale. CLI, TUI et MCP depuis le code source.', details: 'Détails', menu: 'Menu', heroIntro: 'Listes de courses partagées, tâches ménagères récurrentes et rappels pour votre foyer. Gratuit, open source et auto-hébergé.', groups: 'Groupes de fonctionnalités', docs: 'Documentation' },
+  ui: { view: 'Vue', desktop: 'Ordinateur', phone: 'Téléphone', tour: 'Découvrez Ditero', platforms: 'Web, Android et application de bureau expérimentale. CLI, TUI et MCP depuis le code source.', details: 'Détails', menu: 'Menu', heroIntro: 'Listes de courses partagées, tâches ménagères récurrentes et rappels pour votre foyer. Gratuit, open source et auto-hébergé.', groups: 'Groupes de fonctionnalités', docs: 'Documentation' },
   setup: { steps: ["Lancez votre serveur avec Docker Compose", "Créez votre compte dans l'application web", "Invitez des proches et partagez une liste"] },
   ai: {
     title: "Planifiez avec votre assistant",
@@ -21,7 +21,7 @@ export const fr: ExtraCopy = {
   },
   features: {
     groups: [
-      { id: 'lists', title: 'Listes et partage', summary: "Courses, projets et responsabilités partagées", items: ["Courses, projets et listes de contrôle", "Attribuez les tâches à vos proches", 'Listes typées pour différents types de travail', 'Sous-tâches dans les tâches', 'Priorités et étiquettes', 'Espaces de travail partagés avec appartenances', "Dossiers et modèles", "Saisie rapide avec dates et priorités", "Synchronisation hors ligne"] },
+      { id: 'lists', title: 'Listes et partage', summary: "Courses, projets et responsabilités partagées", items: ["Courses, projets et listes de contrôle", "Attribuez les tâches à vos proches", 'Listes typées pour différents types de travail', 'Sous-tâches dans les tâches', 'Priorités et étiquettes', 'Espaces de travail partagés avec des membres', "Dossiers et modèles", "Saisie rapide avec dates et priorités", "Synchronisation hors ligne"] },
       { id: 'routines', title: 'Habitudes et routines', summary: "Tâches récurrentes, habitudes et concentration", items: ["Tâches ménagères récurrentes", "Habitudes et séries", 'Un mode concentration pour la tâche en cours', "Minuteur de concentration", "Points pour les tâches et habitudes accomplies (Karma)"] },
       { id: 'reminders', title: 'Rappels', summary: "ntfy, Telegram, Discord, Slack et e-mail", items: ["Rappels d'échéance", "Heures de silence", 'Choisissez vos canaux de notification', 'Accusé de réception des rappels', "Escalade des rappels sans réponse"] },
       { id: 'views', title: 'Façons de voir les tâches', summary: "Calendrier, tableau kanban, tableau de données et tableaux de bord", items: ['Tableaux de bord', 'Calendrier', 'Tableau kanban', 'Tableau de données', 'Vues enregistrées'] },

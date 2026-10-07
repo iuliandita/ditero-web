@@ -1,7 +1,7 @@
 import type { ExtraCopy } from './types';
 
 export const ro: ExtraCopy = {
-  ui: { tour: 'Descoperă Ditero', platforms: 'Web, Android și aplicație desktop experimentală. CLI, TUI și MCP din sursă.', details: 'Detalii', menu: 'Meniu', heroIntro: 'Liste de cumpărături comune, treburi casnice recurente și mementouri pentru casa voastră. Gratuit, open source și găzduit de tine.', groups: 'Grupuri de funcții', docs: 'Documentație' },
+  ui: { view: 'Vizualizare', desktop: 'Desktop', phone: 'Telefon', tour: 'Descoperă Ditero', platforms: 'Web, Android și aplicație desktop experimentală. CLI, TUI și MCP din sursă.', details: 'Detalii', menu: 'Meniu', heroIntro: 'Liste de cumpărături comune, treburi casnice recurente și mementouri pentru casa voastră. Gratuit, open source și găzduit de tine.', groups: 'Grupuri de funcții', docs: 'Documentație' },
   setup: { steps: ["Pornește serverul cu Docker Compose", "Creează-ți contul în aplicația web", "Invită oameni și partajează o listă"] },
   ai: {
     title: "Planifică cu asistentul tău",
@@ -21,7 +21,7 @@ export const ro: ExtraCopy = {
   },
   features: {
     groups: [
-      { id: 'lists', title: 'Liste și partajare', summary: "Cumpărături, proiecte și responsabilități comune", items: ["Cumpărături, proiecte și liste de verificare", "Atribuie sarcini oamenilor", 'Liste tipizate pentru diferite feluri de muncă', 'Subsarcini în cadrul sarcinilor', 'Priorități și etichete', 'Spații de lucru comune cu apartenențe', "Dosare și șabloane", "Adăugare rapidă cu date și priorități", "Sincronizare offline"] },
+      { id: 'lists', title: 'Liste și partajare', summary: "Cumpărături, proiecte și responsabilități comune", items: ["Cumpărături, proiecte și liste de verificare", "Atribuie sarcini oamenilor", 'Liste tipizate pentru diferite feluri de muncă', 'Subsarcini în cadrul sarcinilor', 'Priorități și etichete', 'Spații de lucru comune cu membri', "Dosare și șabloane", "Adăugare rapidă cu date și priorități", "Sincronizare offline"] },
       { id: 'routines', title: 'Obiceiuri și rutine', summary: "Treburi recurente, obiceiuri și concentrare", items: ["Treburi casnice recurente", "Obiceiuri și serii", 'Un mod de concentrare pentru sarcina curentă', "Temporizator de concentrare", "Puncte pentru sarcini și obiceiuri finalizate (Karma)"] },
       { id: 'reminders', title: 'Mementouri', summary: "ntfy, Telegram, Discord, Slack și e-mail", items: ["Mementouri pentru termene", "Ore de liniște", 'Alege canalele de livrare', 'Confirmarea mementourilor', "Escaladarea mementourilor fără răspuns"] },
       { id: 'views', title: 'Moduri de a vedea sarcinile', summary: "Calendar, tablă, tabel și panouri de control", items: ['Panouri de control', 'Calendar', 'Tablă', 'Tabel', 'Vizualizări salvate'] },

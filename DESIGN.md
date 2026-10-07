@@ -137,6 +137,8 @@ Felt texture is confined to the backing mat around the self-hosting steps. A sma
 
 The CSS `light-dark()` values in the frontmatter are normative: light value first, dark value second. System preference is the default; explicit theme selection overrides it. Only the light page, surface and hairline neutrals change temperature; dark tokens retain their existing values.
 
+The color system requires browsers supporting `light-dark()`. Layout enhancements using `::details-content` and subgrid have accordion fallbacks; those fallbacks do not imply support for engines without the color primitives.
+
 ### Primary
 
 - **Ditero Teal:** actions, links, disclosure state, focus and selection. Hover deepens teal in light mode and lightens it in dark mode.

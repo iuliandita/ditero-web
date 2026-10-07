@@ -12,7 +12,7 @@ export const localeInfo: Record<Locale, { name: string; dir: 'ltr' | 'rtl'; og: 
 
 export const pageUrl = (locale: Locale, path = '') => `${locale === 'en' ? '/' : `/${locale}/`}${path ? `${path}/` : ''}`;
 
-export const version = 'v0.0.1-alpha.6';
+export const version = 'v0.0.1-alpha.8';
 
 const repo = 'https://github.com/iuliandita/ditero';
 export const links = {

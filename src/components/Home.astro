@@ -43,7 +43,7 @@ const proofs = (['task-detail', 'recurrence-reminders'] as const).map(id => ({
   id, ...t.gallery.items[id], ...t.features.proof[id], assets: proofAssets[id],
 }));
 const dashboard = t.features.proof.dashboard;
-const featureArtwork: Record<string, string> = { lists: 'lists', routines: 'routines', reminders: 'reminders', views: 'views', files: 'files', recovery: 'files', access: 'access', custom: 'custom' };
+const featureArtwork: Record<string, string> = { lists: 'lists', routines: 'routines', reminders: 'reminders', views: 'views', files: 'files', recovery: 'history', access: 'access', custom: 'custom' };
 const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm)[.,;:!?،؛؟]?)/g).map(part => {
   const term = /^(و?)(Docker Compose|Helm)([.,;:!?،؛؟]?)$/.exec(part);
   return term ? { before: term[1], name: term[2], after: term[3] } : part;

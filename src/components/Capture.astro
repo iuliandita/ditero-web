@@ -1,4 +1,6 @@
 ---
+import heroInit from '../scripts/hero-init.js?raw';
+
 interface Props {
   name: 'list' | 'dashboard';
   variant: 'hero' | 'wide';
@@ -17,7 +19,7 @@ const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
         <source media="(max-width: 700px)" />
         <img width="838" height="420" alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async" />
       </picture>
-      <script is:inline src="/hero-init.js"></script>
+      <script is:inline set:html={heroInit}></script>
       <noscript>
         <picture>
           <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset={src('mobile', 'dark')} />

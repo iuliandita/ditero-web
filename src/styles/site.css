@@ -209,7 +209,7 @@ p { text-wrap: pretty; max-width: 66ch; }
 .request { display: block; }
 .request figcaption, .plan-heading { min-height: 56px; display: flex; align-items: center; }
 .plan-heading { justify-content: space-between; gap: 1rem; }
-.assistant-robot { width: 56px; height: 56px; flex: none; object-fit: contain; }
+.assistant-robot { width: 56px; height: 56px; flex: none; object-fit: contain; border-radius: 8px; }
 .request figcaption, .plan-label { font-size: 0.95rem; font-weight: 600; color: var(--muted); }
 .request blockquote { margin: 0.75rem 0 0; font-size: clamp(1.4rem, 1.1rem + 0.6vw, 1.6rem); font-weight: 500; line-height: 1.45; letter-spacing: -0.01em; text-wrap: pretty; }
 .plan { display: grid; margin-top: 0.75rem; }

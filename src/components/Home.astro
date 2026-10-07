@@ -123,12 +123,9 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
               <span class="feature-preview"><FeatureText text={group.summary} /></span>
             </span>
           </summary>
-          <div class="feature-body">
-            <header class="feature-panel-heading">
-              <h3 class="feature-panel-title"><FeatureText text={group.title} /></h3>
-              <img class="feature-art" src={`/images/carousel/${featureArtwork[group.id]}.webp`} width="480" height="480" alt="" loading="lazy" decoding="async" />
-            </header>
+          <div class:list={['feature-body', { 'feature-body-short': group.items.length <= 3 }]}>
             <ul class="feature-items">{group.items.map(item => <li><FeatureText text={item} /></li>)}</ul>
+            <img class="feature-art" src={`/images/carousel/${featureArtwork[group.id]}.webp`} width="480" height="480" alt="" loading="lazy" decoding="async" />
           </div>
         </details>
       ))}

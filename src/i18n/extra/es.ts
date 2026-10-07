@@ -22,7 +22,7 @@ export const es: ExtraCopy = {
   features: {
     groups: [
       { id: 'lists', title: 'Listas compartidas', summary: "Compras y proyectos en grupo", items: ["Compras, proyectos y listas de control", "Asigna tareas a otras personas", 'Tipos de listas para compras, proyectos y más', 'Subtareas dentro de las tareas', 'Prioridades y etiquetas', 'Espacios de trabajo para compartir con otras personas', "Carpetas y plantillas", "Entrada rápida con fechas y prioridades", "Sincronización sin conexión"] },
-      { id: 'routines', title: 'Hábitos y rutinas', summary: "Tareas recurrentes, hábitos y concentración", items: ["Tareas domésticas recurrentes", "Hábitos y rachas", 'Un modo de concentración para la tarea actual', "Temporizador de concentración", "Puntos por tareas y hábitos completados (Karma)"] },
+      { id: 'routines', title: 'Hábitos y rutinas', summary: "Tareas recurrentes, hábitos y concentración", items: ["Tareas domésticas recurrentes", "Hábitos y rachas", 'Sesiones de concentración vinculadas a tareas', "Temporizador de concentración", "Puntos por tareas y hábitos completados (Karma)"] },
       { id: 'reminders', title: 'Recordatorios', summary: "ntfy, Telegram, Discord, Slack y email", items: ["Recordatorios de vencimiento", "Horas de silencio", 'Elige tus canales de envío', 'Confirmación de recordatorios', "Escalamiento de recordatorios sin respuesta"] },
       { id: 'views', title: 'Vistas de tareas', summary: "Calendario, tablero, tabla y paneles", items: ['Paneles', 'Calendario', 'Tablero', 'Tabla', 'Vistas guardadas'] },
       { id: 'files', title: 'Archivos', summary: "Comentarios y adjuntos cifrados", items: ['Archivos adjuntos cifrados', 'Comentarios en las tareas'] },

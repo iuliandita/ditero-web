@@ -22,7 +22,7 @@ export const ro: ExtraCopy = {
   features: {
     groups: [
       { id: 'lists', title: 'Liste și partajare', summary: "Cumpărături și proiecte în grup", items: ["Cumpărături, proiecte și liste de verificare", "Atribuie sarcini oamenilor", 'Tipuri de liste pentru cumpărături, proiecte și altele', 'Subsarcini în cadrul sarcinilor', 'Priorități și etichete', 'Spații de lucru împărțite cu alți oameni', "Dosare și șabloane", "Adăugare rapidă cu date și priorități", "Sincronizare offline"] },
-      { id: 'routines', title: 'Obiceiuri și rutine', summary: "Treburi recurente, obiceiuri și concentrare", items: ["Treburi casnice recurente", "Obiceiuri și serii", 'Un mod de concentrare pentru sarcina curentă', "Temporizator de concentrare", "Puncte pentru sarcini și obiceiuri finalizate (Karma)"] },
+      { id: 'routines', title: 'Obiceiuri și rutine', summary: "Treburi recurente, obiceiuri și concentrare", items: ["Treburi casnice recurente", "Obiceiuri și serii", 'Sesiuni de concentrare asociate sarcinilor', "Temporizator de concentrare", "Puncte pentru sarcini și obiceiuri finalizate (Karma)"] },
       { id: 'reminders', title: 'Mementouri', summary: "ntfy, Telegram, Discord, Slack și e-mail", items: ["Mementouri pentru termene", "Ore de liniște", 'Alege canalele de livrare', 'Confirmarea mementourilor', "Escaladarea mementourilor fără răspuns"] },
       { id: 'views', title: 'Vizualizări', summary: "Calendar, tablă, tabel și panouri de control", items: ['Panouri de control', 'Calendar', 'Tablă', 'Tabel', 'Vizualizări salvate'] },
       { id: 'files', title: 'Fișiere și comentarii', summary: "Comentarii și atașamente criptate", items: ['Atașamente criptate', 'Comentarii la sarcini'] },

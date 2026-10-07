@@ -7,9 +7,9 @@ export const fr: ExtraCopy = {
     title: "Planifiez avec votre assistant",
     intro: "Connectez un assistant IA que vous utilisez déjà. Via MCP, il transforme vos demandes en tâches, priorités et échéances.",
     exampleLabel: 'Exemple de demande',
-    example: 'Planifiez le pique-nique de samedi, attribuez les courses et marquez la réservation du train comme prioritaire.',
+    example: 'Planifiez le pique‑nique de samedi, attribuez les courses et marquez la réservation du train comme prioritaire.',
     resultLabel: "Exemple de plan",
-    results: [{"title": "Organiser le pique-nique de samedi", "detail": "Liste partagée"}, {"title": "Acheter de quoi manger pour le pique-nique", "detail": "Attribuée à Alex"}, {"title": "Réserver le train", "detail": "Priorité élevée"}],
+    results: [{"title": "Organiser le pique‑nique de samedi", "detail": "Liste partagée"}, {"title": "Acheter de quoi manger pour le pique‑nique", "detail": "Attribuée à Alex"}, {"title": "Réserver le train", "detail": "Priorité élevée"}],
     source: "Les téléchargements alpha ne comprennent pas de binaires autonomes.",
     shortSource: "MCP se lance depuis le code source.",
     points: [
@@ -22,7 +22,7 @@ export const fr: ExtraCopy = {
   features: {
     groups: [
       { id: 'lists', title: 'Listes et partage', summary: "Courses et projets en groupe", items: ["Courses, projets et listes de contrôle", "Attribuez les tâches à vos proches", 'Types de listes pour les courses, les projets et plus', 'Sous-tâches dans les tâches', 'Priorités et étiquettes', 'Espaces de travail à partager avec d\'autres personnes', "Dossiers et modèles", "Saisie rapide avec dates et priorités", "Synchronisation hors ligne"] },
-      { id: 'routines', title: 'Habitudes', summary: "Tâches récurrentes et habitudes", items: ["Tâches ménagères récurrentes", "Habitudes et séries", 'Un mode concentration pour la tâche en cours', "Minuteur de concentration", "Points pour les tâches et habitudes accomplies (Karma)"] },
+      { id: 'routines', title: 'Habitudes', summary: "Tâches récurrentes et habitudes", items: ["Tâches ménagères récurrentes", "Habitudes et séries", 'Sessions de concentration liées aux tâches', "Minuteur de concentration", "Points pour les tâches et habitudes accomplies (Karma)"] },
       { id: 'reminders', title: 'Rappels', summary: "ntfy, Telegram, Discord, Slack et e-mail", items: ["Rappels d'échéance", "Heures de silence", 'Choisissez vos canaux de notification', 'Accusé de réception des rappels', "Escalade des rappels sans réponse"] },
       { id: 'views', title: 'Vues des tâches', summary: "Calendrier, kanban et tableaux", items: ['Tableaux de bord', 'Calendrier', 'Tableau kanban', 'Tableau de données', 'Vues enregistrées'] },
       { id: 'files', title: 'Fichiers', summary: "Commentaires et fichiers chiffrés", items: ['Pièces jointes chiffrées', 'Commentaires sur les tâches'] },

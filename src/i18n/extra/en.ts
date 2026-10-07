@@ -22,7 +22,7 @@ export const en: ExtraCopy = {
   features: {
     groups: [
       { id: 'lists', title: 'Lists and sharing', summary: "Shopping, projects and shared responsibilities", items: ["Shopping, projects and checklists", "Assign tasks to people", 'List types for shopping, projects and more', 'Subtasks inside tasks', 'Priorities and labels', 'Workspaces shared with other people', "Folders and templates", "Quick add with dates and priorities", "Offline sync"] },
-      { id: 'routines', title: 'Habits and routines', summary: "Recurring chores, habits and focus", items: ["Recurring chores", "Habits and streaks", 'A focus mode for the task at hand', "Focus timer", "Points for completed tasks and habits (Karma)"] },
+      { id: 'routines', title: 'Habits and routines', summary: "Recurring chores, habits and focus", items: ["Recurring chores", "Habits and streaks", 'Task-linked focus sessions', "Focus timer", "Points for completed tasks and habits (Karma)"] },
       { id: 'reminders', title: 'Reminders', summary: "ntfy, Telegram, Discord, Slack and email", items: ["Due-date reminders", "Quiet hours", 'Choose your delivery channels', 'Acknowledgement of reminders', "Escalation when a reminder goes unanswered"] },
       { id: 'views', title: 'Task views', summary: "Calendar, board, table and dashboards", items: ['Dashboards', 'Calendar', 'Board', 'Table', 'Saved views'] },
       { id: 'files', title: 'Files and comments', summary: "Task discussions and encrypted attachments", items: ['Encrypted attachments', 'Comments on tasks'] },

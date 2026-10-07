@@ -107,7 +107,7 @@ const de: HomeCopy = {
     },
     labels: { setup: 'Einrichtungsanleitung', release: 'Downloads', guide: 'Anleitung' },
   },
-  server: { title: 'Betreibe den Server selbst', text: "Betreibe Ditero auf deiner Infrastruktur. Prüfe den MIT-lizenzierten Code und bestimme, wer Zugriff hat. Anleitungen für Docker Compose und Helm sind verfügbar.", link: 'Anleitung zur Einrichtung lesen', docs: 'Dokumentation lesen', encryption: 'Anhänge sind verschlüsselt und schützen so Dateiinhalte. Das bedeutet nicht, dass alle Aufgabendaten Ende-zu-Ende-verschlüsselt sind.' },
+  server: { title: 'Betreibe den Server selbst', text: "Betreibe Ditero auf deiner Infrastruktur. Prüfe den MIT-lizenzierten Code und bestimme, wer Zugriff hat. Anleitungen für Docker Compose und Helm sind verfügbar.", link: 'Anleitung zur Einrichtung lesen', docs: 'Dokumentation lesen', encryption: 'Anhänge sind verschlüsselt und schützen so Dateiinhalte. Das bedeutet nicht, dass alle Aufgabendaten Ende‑zu‑Ende‑verschlüsselt sind.' },
   support: { title: 'Entwicklung unterstützen', text: 'Ditero ist kostenlos und MIT-lizenziert. Es gibt keine kostenpflichtigen Funktionen. Unterstützung trägt zur Weiterentwicklung des Projekts bei.', kofi: 'Auf Ko-fi unterstützen', sponsor: 'Ditero sponsern' },
 };
 

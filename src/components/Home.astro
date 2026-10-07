@@ -165,7 +165,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
           </summary>
           <div class:list={['feature-body', { 'feature-body-short': group.items.length <= 3 }]}>
             <ul class="feature-items" role="list">{group.items.map(item => <li><FeatureText text={item} /></li>)}</ul>
-            <img class="feature-art" src={`/images/carousel/${featureArtwork[group.id]}.webp`} width="480" height="480" alt="" loading="lazy" decoding="async" />
+            <span class="feature-mat" aria-hidden="true"><img class="feature-art" src={`/images/carousel/${featureArtwork[group.id]}.webp`} width="480" height="480" alt="" loading="lazy" decoding="async" /></span>
           </div>
         </details>
       ))}
@@ -238,11 +238,11 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
         </div>
       </div>
       <div class="host-details">
-        <ol class="steps" role="list">
+        <div class="steps-mat"><ol class="steps" role="list">
           {x.setup.steps.map(step => (
             <li><span>{productCopy(step).map(part => typeof part === 'string' ? part : <span class="product-run">{part.before}<bdi class:list={{ 'product-term': part.name !== 'Web-App' }}>{part.name}</bdi>{part.after}</span>)}</span></li>
           ))}
-        </ol>
+        </ol></div>
         <p class="encryption-note"><FeatureText text={t.server.encryption} /></p>
       </div>
     </div>

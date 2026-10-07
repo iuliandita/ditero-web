@@ -14,9 +14,9 @@ Ditero is a self-hosted, local-first shared todo app. This website helps visitor
 
 ## Capabilities and Constraints
 
-The current public release is [v0.0.1-alpha.5](https://github.com/iuliandita/ditero/releases/tag/v0.0.1-alpha.5).
+The current public release is [v0.0.1-alpha.6](https://github.com/iuliandita/ditero/releases/tag/v0.0.1-alpha.6).
 
-One self-hostable server supports web, Android and desktop clients. Alpha.5 includes CLI, TUI and local MCP source clients plus a membership-scoped HTTP API. CLI, TUI and MCP run from source; standalone binaries are not in the alpha downloads. Calendar subscription feeds and task webhooks are included in Alpha.5; wider qualification remains in progress. Shared workspaces, typed lists, assignments, recurring tasks, reminders delivered to ntfy, Telegram, Discord, Slack or email, dashboards, comments and encrypted attachments. Offline changes sync on reconnect. File encryption does not mean all task data is end-to-end encrypted. MIT open source. Signed independent Android APK/AAB packages are an alpha release; desktop installers are experimental, with unsigned Windows installers and ad-hoc signed macOS builds without notarization. Broader native platform qualification remains incomplete. Keep release claims tied to a verified public release.
+One self-hostable server supports web, Android and desktop clients. Alpha.6 includes CLI, TUI and local MCP source clients plus a membership-scoped HTTP API. CLI, TUI and MCP run from source; standalone binaries are not in the alpha downloads. Calendar subscription feeds and task webhooks are included in Alpha.6; wider qualification remains in progress. Shared workspaces, typed lists, assignments, recurring tasks, reminders delivered to ntfy, Telegram, Discord, Slack or email, dashboards, comments and encrypted attachments. Offline changes sync on reconnect. File encryption does not mean all task data is end-to-end encrypted. MIT open source. Signed independent Android APK/AAB packages are an alpha release; desktop installers are experimental, with unsigned Windows installers and ad-hoc signed macOS builds without notarization. Broader native platform qualification remains incomplete. Keep release claims tied to a verified public release.
 
 ## Brand Commitments
 

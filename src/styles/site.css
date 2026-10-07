@@ -124,11 +124,11 @@ p { text-wrap: pretty; max-width: 66ch; }
 .tour-radio:checked + .tour-choice + .tour-panel { display: block; }
 .proof-media { min-width: 0; width: 100%; }
 .proof-media > .shots { width: min(100%, 27.4375rem); margin-inline: auto; }
-.proof-excerpts { display: grid; gap: 2px; }
-.proof-link { display: block; overflow: hidden; border-radius: 12px; background: var(--surface); box-shadow: 0 10px 30px -18px light-dark(rgb(24 48 43 / 0.27), rgb(0 0 0 / 0.65)); outline: 1px solid var(--line); outline-offset: -1px; }
+.proof-excerpts { display: grid; gap: 1rem; }
+.proof-link { display: block; }
 .proof-link:focus-visible, a.shot:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; }
 .proof-mobile { display: none; max-width: 24.375rem; margin-inline: auto; }
-.proof-excerpts img { width: 100%; }
+.proof-excerpts img { width: 100%; border-radius: 12px; outline: 1px solid var(--line); outline-offset: -1px; box-shadow: 0 10px 30px -18px light-dark(rgb(24 48 43 / 0.27), rgb(0 0 0 / 0.65)); }
 .tour-dashboard .capture { width: min(100%, 35.75rem); margin-inline: auto; }
 
 .features { display: grid; gap: 1.75rem; padding-block: var(--section) 0; }
@@ -275,16 +275,18 @@ p { text-wrap: pretty; max-width: 66ch; }
   .client-action { grid-column: 1; grid-row: 3; }
   .client-details > p { grid-column: 1; grid-row: 2; }
   @media (min-width: 901px) {
-    .feature-explorer { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem 1.25rem; border-bottom: 0; }
+    .feature-explorer { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 1.25rem; border-bottom: 0; }
     .feature-group, .feature-group::details-content { display: contents; }
     .feature-group:not([open])::details-content, .feature-group:not([open]) > .feature-body { display: none; }
     .feature-group > summary { grid-row: 1; padding-inline: 0.75rem; align-self: stretch; }
+    .feature-group[open] > summary { background: var(--surface); }
+    .feature-summary > span:first-child { min-height: 3.5rem; }
     .feature-group:nth-child(n + 5) > summary { grid-row: 2; }
     .feature-group:nth-child(4n + 1) > summary { grid-column: 1; }
     .feature-group:nth-child(4n + 2) > summary { grid-column: 2; }
     .feature-group:nth-child(4n + 3) > summary { grid-column: 3; }
     .feature-group:nth-child(4n + 4) > summary { grid-column: 4; }
-    .feature-body { display: grid; grid-template-columns: minmax(0, 1fr) 64px; align-items: start; gap: 2rem; grid-column: 1 / -1; grid-row: 3; margin-block: 1rem 0; padding: 1.75rem 2rem; }
+    .feature-body { display: grid; grid-template-columns: minmax(0, 1fr) 64px; align-items: start; gap: 2rem; grid-column: 1 / -1; grid-row: 3; margin-block: 0 0.75rem; padding: 1.75rem 2rem; border-start-start-radius: 0; border-start-end-radius: 0; }
     .feature-group:nth-child(-n + 4) .feature-body { grid-row: 2; }
     .feature-explorer:has(.feature-group:nth-child(-n + 4)[open]) .feature-group:nth-child(n + 5) > summary { grid-row: 3; }
     .feature-body-short { padding-block: 1rem; align-items: center; }
@@ -296,6 +298,8 @@ p { text-wrap: pretty; max-width: 66ch; }
 @media (min-width: 1101px) {
   .apps-content { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 3rem; align-items: start; }
   .apps-clients { min-width: 0; }
+  .apps-clients .platform-strip, .apps-clients .tool-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.5rem; }
+  .apps-clients .platform-client:nth-child(odd), .apps-clients .tool-client:nth-child(odd) { border-inline-start: 0; padding-inline-start: 0; }
   .apps-proof { display: block; padding-top: 2.5rem; }
 }
 @media (max-width: 600px) {
@@ -334,6 +338,7 @@ p { text-wrap: pretty; max-width: 66ch; }
   .fallback-mobile { display: block; }
   .hero .shot-responsive { --cw: 390; --ch: 470; width: min(100%, 24.375rem); margin-inline: 0; }
   .tour-choice { padding-block: 1rem; }
+  .tour-radio:not(:checked) + .tour-choice .choice-text { display: none; }
   .tour-radio { margin-block-start: 1.3125rem; }
   .proof-media > .shots { width: min(100%, 24.375rem); }
   .proof-desktop { display: none; }

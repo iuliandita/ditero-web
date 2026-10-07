@@ -175,7 +175,7 @@ const fr: HomeCopy = {
     proof: {
       'task-detail': { title: 'Répartissez les tâches', text: 'Attribuez des tâches, partagez des notes et décomposez les projets en sous-tâches.' },
       'recurrence-reminders': { title: 'Tâches ménagères et habitudes', text: 'Répétez les tâches ménagères. Créez des habitudes. Recevez vos rappels au bon moment.' },
-      'dashboard': { title: 'Tableaux de bord', text: 'Garde tes priorités en vue.' },
+      'dashboard': { title: 'Tableaux de bord', text: 'Gardez vos priorités en vue.' },
     },
   },
   access: {

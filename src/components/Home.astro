@@ -168,6 +168,8 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
       <h2 id="apps-title">{a.title}</h2>
       <p>{a.intro}</p>
     </header>
+    <div class="apps-content">
+    <div class="apps-clients">
     <div class="apps-stack">
       <h3 class="group">{a.publicTitle}</h3>
       <div class="platform-strip">
@@ -210,6 +212,17 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
           </article>
         ))}
       </div>
+    </div>
+    </div>
+    <figure class="apps-proof">
+      {(['light', 'dark'] as const).map(theme => (
+        <div class={`shots shots-${theme}`}>
+          <a class="shot" href={`/images/gallery/list-mobile-${theme}.png`} aria-label={`${t.capture.open}: ${t.capture.mobileAlt}`}>
+            <img src={`/images/list-mobile-${theme}.webp`} width="390" height="844" alt={t.capture.mobileAlt} loading="lazy" decoding="async" />
+          </a>
+        </div>
+      ))}
+    </figure>
     </div>
   </section>
 

@@ -224,6 +224,7 @@ p { text-wrap: pretty; max-width: 66ch; }
 .assistant-links .fold { flex: 0 1 auto; max-width: 100%; }
 
 .host h2 { display: block; }
+.host .text-link { color: var(--brand-hover); }
 .product-run { white-space: nowrap; }
 .product-term { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.92em; border: 1px solid var(--line); border-radius: 5px; padding-inline: 0.35em; background: var(--bg); white-space: nowrap; }
 .host-mark { width: 32px; height: 32px; border-radius: 8px; margin-bottom: 1rem; }

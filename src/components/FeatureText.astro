@@ -1,0 +1,9 @@
+---
+interface Props { text: string }
+const { text } = Astro.props;
+const featureCopy = (text: string) => text.split(/((?<![A-Za-z0-9])و?(?:end-to-end|HTTP API|Telegram|Discord|webhooks|Slack|Karma|TOTP|iCal|ntfy|CLI|TUI|MCP|API)[،؛:,.!?؟]?(?![A-Za-z0-9]))/gu).map(part => {
+  const term = /^(و?)(end-to-end|HTTP API|Telegram|Discord|webhooks|Slack|Karma|TOTP|iCal|ntfy|CLI|TUI|MCP|API)([،؛:,.!?؟]?)$/u.exec(part);
+  return term ? { before: term[1], name: term[2], after: term[3] } : part;
+});
+---
+{featureCopy(text).map(part => typeof part === 'string' ? part : <span class="feature-term-run">{part.before}<bdi dir="ltr">{part.name}</bdi>{part.after}</span>)}

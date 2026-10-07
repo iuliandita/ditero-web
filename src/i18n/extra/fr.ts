@@ -1,34 +1,34 @@
 import type { ExtraCopy } from './types';
 
 export const fr: ExtraCopy = {
-  ui: { details: 'Détails', menu: 'Menu', heroIntro: 'Courses, tâches ménagères et projets, ensemble. Gratuit, open source et auto-hébergé.', of: 'sur', groups: 'Groupes de fonctionnalités', docs: 'Documentation' },
+  ui: { view: 'Vue', desktop: 'Ordinateur', phone: 'Téléphone', tour: 'Découvrez Ditero', platforms: 'Web, Android et application de bureau expérimentale. CLI, TUI et MCP depuis le code source.', details: 'Détails', menu: 'Menu', heroIntro: 'Listes de courses partagées, tâches ménagères récurrentes et rappels pour votre foyer. Gratuit, open source et auto-hébergé.', groups: 'Groupes de fonctionnalités', docs: 'Documentation' },
   setup: { steps: ["Lancez votre serveur avec Docker Compose", "Créez votre compte dans l'application web", "Invitez des proches et partagez une liste"] },
   ai: {
-    title: 'Demandez à votre assistant de planifier',
-    intro: "Connectez un assistant d'IA compatible à Ditero via MCP, puis décrivez vos besoins avec vos propres mots. L'assistant crée et organise des tâches et peut définir des priorités et des échéances.",
+    title: "Planifiez avec votre assistant",
+    intro: "Connectez un assistant IA que vous utilisez déjà. Via MCP, il transforme vos demandes en tâches, priorités et échéances.",
     exampleLabel: 'Exemple de demande',
-    example: 'Planifiez le pique-nique de samedi, attribuez les courses et marquez la réservation du train comme prioritaire.',
+    example: 'Planifiez le pique‑nique de samedi, attribuez les courses et marquez la réservation du train comme prioritaire.',
     resultLabel: "Exemple de plan",
-    results: [{"title": "Organiser le pique-nique de samedi", "detail": "Samedi"}, {"title": "Acheter de quoi manger pour le pique-nique", "detail": "Attribuée à Alex"}, {"title": "Réserver le train", "detail": "Priorité élevée"}],
+    results: [{"title": "Organiser le pique‑nique de samedi", "detail": "Liste partagée"}, {"title": "Acheter de quoi manger pour le pique‑nique", "detail": "Attribuée à Alex"}, {"title": "Réserver le train", "detail": "Priorité élevée"}],
+    source: "Les téléchargements alpha ne comprennent pas de binaires autonomes.",
+    shortSource: "MCP se lance depuis le code source.",
     points: [
       "C'est un assistant externe que vous connectez. Ditero n'a pas de chatbot intégré et n'héberge aucun modèle d'IA.",
       'Votre client MCP décide où vont les résultats et les conversations. Utilisez un client de confiance.',
       "L'accès dépend du jeton d'accès personnel que vous fournissez et de ses appartenances à des espaces de travail.",
-      'MCP se trouve dans le code source de développement et les versions nightly, pas dans les téléchargements alpha.',
     ],
     link: 'Lire le guide MCP',
   },
-  carousel: {
-    note: 'Ces fonctionnalités sont disponibles dans le code source de développement. La version alpha publiée en contient un sous-ensemble.',
-    label: 'Carrousel des groupes de fonctionnalités',
+  features: {
     groups: [
-      { id: 'lists', tab: 'Listes', title: 'Listes et partage', items: ["Courses, projets et listes de contrôle", "Attribuez les tâches à vos proches", 'Listes typées pour différents types de travail', 'Sous-tâches dans les tâches', 'Priorités et étiquettes', 'Espaces de travail partagés avec appartenances', "Dossiers et modèles", "Saisie rapide avec dates et priorités", "Synchronisation hors ligne"] },
-      { id: 'routines', tab: 'Routines', title: 'Habitudes et routines', items: ["Tâches ménagères récurrentes", "Habitudes et séries", 'Un mode concentration pour la tâche en cours', "Minuteur de concentration", "Karma"] },
-      { id: 'reminders', tab: 'Rappels', title: 'Rappels', items: ["Rappels d'échéance", "Heures de silence", 'Envoi par ntfy, Telegram, Discord, Slack et e-mail', 'Accusé de réception des rappels', "Escalade des rappels sans réponse"] },
-      { id: 'views', tab: 'Vues', title: 'Façons de voir les tâches', items: ['Tableaux de bord', 'Calendrier', 'Tableau kanban', 'Tableau de données', 'Vues enregistrées'] },
-      { id: 'files', tab: 'Fichiers', title: 'Fichiers et récupération', items: ['Pièces jointes chiffrées', 'Commentaires sur les tâches', 'Historique des modifications', 'Export et import, avec exclusions documentées'] },
-      { id: 'access', tab: 'Accès', title: 'Connexion et intégrations', items: ['Passkeys et TOTP', "Jetons d'accès personnels", 'API HTTP, flux iCal et webhooks', 'CLI, TUI et MCP'] },
-      { id: 'custom', tab: 'Apparence', title: 'Personnalisation', items: ["Six langues d'interface, dont l'arabe de droite à gauche", "Thèmes clair et sombre", "Couleurs d'accent et thèmes partagés", 'Taille de lecture et option de contraste élevé'] },
+      { id: 'lists', title: 'Listes et partage', summary: "Courses et projets en groupe", items: ["Tâches, courses, listes de contrôle, projets et habitudes", "Attribuez les tâches à vos proches", 'Sous-tâches dans les tâches', 'Priorités et étiquettes', 'Espaces de travail à partager avec d\'autres personnes', "Dossiers et modèles", "Saisie rapide avec dates et priorités", "Les modifications hors ligne se synchronisent à la reconnexion"] },
+      { id: 'routines', title: 'Habitudes', summary: "Tâches récurrentes et habitudes", items: ["Tâches ménagères récurrentes", "Habitudes et séries", 'Minuteur de concentration lié aux tâches', "Points pour les tâches et habitudes accomplies (Karma)"] },
+      { id: 'reminders', title: 'Rappels', summary: "ntfy, Telegram, Discord, Slack et e-mail", items: ["Rappels d'échéance", "Heures de silence", 'Choisissez vos canaux de notification', 'Accusé de réception des rappels', "Escalade des rappels sans réponse"] },
+      { id: 'views', title: 'Vues des tâches', summary: "Calendrier, kanban et tableaux", items: ['Tableaux de bord', 'Calendrier', 'Tableau kanban', 'Tableau de données', 'Vues enregistrées'] },
+      { id: 'files', title: 'Fichiers', summary: "Commentaires et fichiers chiffrés", items: ['Pièces jointes chiffrées', 'Commentaires sur les tâches'] },
+      { id: 'recovery', title: 'Historique et export', summary: "Tâches terminées, import et export", items: ['Historique des tâches terminées', 'Export et import, avec exclusions documentées'] },
+      { id: 'access', title: 'Connexion et outils', summary: "Passkeys, API et assistants", items: ['Passkeys et TOTP', "Jetons d'accès personnels", "API HTTP et exports iCal", "Clients CLI, TUI et MCP depuis le code source", "Abonnements calendrier et webhooks entrants"] },
+      { id: 'custom', title: 'Personnalisation', summary: "Six langues, thèmes et options de lecture", items: ["Six langues d'interface, dont l'arabe de droite à gauche", "Thèmes clair et sombre", "Couleurs d'accent et thèmes partagés", 'Taille de lecture et option de contraste élevé'] },
     ],
   },
 };

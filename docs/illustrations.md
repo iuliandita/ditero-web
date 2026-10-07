@@ -4,7 +4,7 @@ Ditero uses tactile felt and layered paper artwork. Preserve the visible fuzzy f
 
 ## Palette and materials
 
-- Opaque deep green ground: `#1a2b29`.
+- Opaque deep teal ground: `#0f6f64`. The original dark-green plates remain the material reference; fresh plates use the brighter teal ground so their silhouette reads in both page themes.
 - Off-white paper: `#eef2f1`.
 - Bright teal felt: `#6fd0bf`.
 - Deep teal felt: `#0f6f64`.
@@ -14,7 +14,7 @@ Use front-facing cut-paper collages with a few distinct layers, believable edge 
 
 ## Feature meaning
 
-Each graphic supports its adjacent heading. Lists use grouped sheets and tabs; routines use repeating completion shapes; reminders use a signal and a quiet-hours crescent; views rearrange the same task shapes; files use a document wallet and earlier sheets; access uses a key and connected shapes; customization uses light/dark material halves, color swatches and size variations. Keep compositions clear at small sizes. The closed feature index remains plain text. An expanded feature panel may show one 64px decorative illustration in a 72px paper mount on desktop or 48px in a 56px mount on smaller screens; hide it at 360px and below. History and export uses a returning felt arrow around a paper clock, backed by record sheets. Keep the original image and use CSS sizing, without filters, motion or additional shadows. The hosting mark is 32px and the footer mark is 48px; hosting uses a quiet physical felt-paper backing around the opaque steps card, keeping copy off the texture. Do not enlarge feature artwork into hero stages or section backgrounds.
+Each graphic supports its adjacent heading. Lists use grouped sheets and tabs; routines use repeating completion shapes; reminders use two open signal arcs and a separate quiet-hours crescent; views rearrange the same task shapes; files use a document wallet and earlier sheets; access uses a key and connected shapes; customization uses a cream-backed square with light/dark material halves, three color dots and two text-size squares. Keep compositions clear at small sizes. The closed feature index remains plain text. An expanded feature panel may show one 64px decorative illustration in a 72px paper mount on desktop or 48px in a 56px mount on smaller screens; hide it at 360px and below. History and export uses a returning felt arrow around a paper clock, backed by record sheets. Use the fresh original and CSS sizing, without filters, motion or additional shadows. Keep all earlier originals in private design evidence. The hosting mark is 32px and the footer mark is 48px; hosting uses a quiet physical felt-paper backing around the opaque steps card, keeping copy off the texture. Do not enlarge feature artwork into hero stages or section backgrounds.
 
 Artwork is decorative, separate from real app captures. Do not add text, logos, fake interface elements or symbols that imply unsupported features. Supply empty alternative text and explicit square dimensions. Retain 480px and 720px originals for future uses; serve the 96px optimized brand variant in the footer. Maintain identical material and palette in both website themes.
 

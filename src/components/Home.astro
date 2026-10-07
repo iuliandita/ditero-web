@@ -233,7 +233,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
         </h2>
         <p>{productCopy(t.server.text).map(part => typeof part === 'string' ? part : <span class="product-run">{part.before}<bdi class:list={{ 'product-term': part.name !== 'Web-App' }}>{part.name}</bdi>{part.after}</span>)}</p>
         <div class="actions">
-          <a class="button" href={links.deploy}>{t.server.link}</a>
+          <a class="button" href={links.deploy}>{t.hero.primary}</a>
           <a class="text-link" href={links.docs}>{t.server.docs}</a>
         </div>
       </div>
@@ -249,8 +249,8 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
   </section>
 
   <section id="support" class="support wrap" aria-labelledby="support-title">
-    <h2 id="support-title">{t.support.title}</h2>
-    <div><p>{t.support.text}</p><p class="actions"><a class="text-link" href={links.support}>{t.support.kofi}</a><a class="text-link" href={links.sponsor}>{t.support.sponsor}</a></p></div>
+    <div class="support-copy"><h2 id="support-title">{t.support.title}</h2><p>{t.support.text}</p></div>
+    <p class="actions"><a class="text-link" href={links.support}>{t.support.kofi}</a><a class="text-link" href={links.sponsor}>{t.support.sponsor}</a></p>
   </section>
 </SiteLayout>
 

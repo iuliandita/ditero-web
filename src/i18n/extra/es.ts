@@ -21,13 +21,13 @@ export const es: ExtraCopy = {
   },
   features: {
     groups: [
-      { id: 'lists', title: 'Listas compartidas', summary: "Compras y proyectos en grupo", items: ["Compras, proyectos y listas de control", "Asigna tareas a otras personas", 'Tipos de listas para compras, proyectos y más', 'Subtareas dentro de las tareas', 'Prioridades y etiquetas', 'Espacios de trabajo para compartir con otras personas', "Carpetas y plantillas", "Entrada rápida con fechas y prioridades", "Sincronización sin conexión"] },
-      { id: 'routines', title: 'Hábitos y rutinas', summary: "Tareas recurrentes, hábitos y concentración", items: ["Tareas domésticas recurrentes", "Hábitos y rachas", 'Sesiones de concentración vinculadas a tareas', "Temporizador de concentración", "Puntos por tareas y hábitos completados (Karma)"] },
+      { id: 'lists', title: 'Listas compartidas', summary: "Compras y proyectos en grupo", items: ["Listas de tareas, compras, control, proyectos y hábitos", "Asigna tareas a otras personas", 'Subtareas dentro de las tareas', 'Prioridades y etiquetas', 'Espacios de trabajo para compartir con otras personas', "Carpetas y plantillas", "Entrada rápida con fechas y prioridades", "Sincronización sin conexión"] },
+      { id: 'routines', title: 'Hábitos y rutinas', summary: "Tareas recurrentes, hábitos y concentración", items: ["Tareas domésticas recurrentes", "Hábitos y rachas", 'Temporizador de concentración por tarea', "Puntos por tareas y hábitos completados (Karma)"] },
       { id: 'reminders', title: 'Recordatorios', summary: "ntfy, Telegram, Discord, Slack y email", items: ["Recordatorios de vencimiento", "Horas de silencio", 'Elige tus canales de envío', 'Confirmación de recordatorios', "Escalamiento de recordatorios sin respuesta"] },
       { id: 'views', title: 'Vistas de tareas', summary: "Calendario, tablero, tabla y paneles", items: ['Paneles', 'Calendario', 'Tablero', 'Tabla', 'Vistas guardadas'] },
       { id: 'files', title: 'Archivos', summary: "Comentarios y adjuntos cifrados", items: ['Archivos adjuntos cifrados', 'Comentarios en las tareas'] },
       { id: 'recovery', title: 'Historial', summary: "Tareas completadas, importación y exportación", items: ['Historial de finalización de tareas', 'Exportación e importación, con exclusiones documentadas'] },
-      { id: 'access', title: 'Acceso y API', summary: "Passkeys, API y asistentes", items: ['Passkeys y TOTP', 'Tokens de acceso personal', "API HTTP y exportaciones iCal", "Clientes CLI, TUI y MCP desde el código fuente", "Suscripciones de calendario y webhooks (alfa)"] },
+      { id: 'access', title: 'Acceso y API', summary: "Passkeys, API y asistentes", items: ['Passkeys y TOTP', 'Tokens de acceso personal', "API HTTP y exportaciones iCal", "Clientes CLI, TUI y MCP desde el código fuente", "Suscripciones de calendario y webhooks entrantes"] },
       { id: 'custom', title: 'Personalización', summary: "Seis idiomas, temas y opciones de lectura", items: ['Seis idiomas de interfaz, incluido el árabe de derecha a izquierda', "Temas claro y oscuro", 'Colores de acento y temas compartidos', 'Tamaño de lectura y una opción de alto contraste'] },
     ],
   },

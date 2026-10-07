@@ -21,13 +21,13 @@ export const fr: ExtraCopy = {
   },
   features: {
     groups: [
-      { id: 'lists', title: 'Listes et partage', summary: "Courses et projets en groupe", items: ["Courses, projets et listes de contrôle", "Attribuez les tâches à vos proches", 'Types de listes pour les courses, les projets et plus', 'Sous-tâches dans les tâches', 'Priorités et étiquettes', 'Espaces de travail à partager avec d\'autres personnes', "Dossiers et modèles", "Saisie rapide avec dates et priorités", "Synchronisation hors ligne"] },
-      { id: 'routines', title: 'Habitudes', summary: "Tâches récurrentes et habitudes", items: ["Tâches ménagères récurrentes", "Habitudes et séries", 'Sessions de concentration liées aux tâches', "Minuteur de concentration", "Points pour les tâches et habitudes accomplies (Karma)"] },
+      { id: 'lists', title: 'Listes et partage', summary: "Courses et projets en groupe", items: ["Tâches, courses, listes de contrôle, projets et habitudes", "Attribuez les tâches à vos proches", 'Sous-tâches dans les tâches', 'Priorités et étiquettes', 'Espaces de travail à partager avec d\'autres personnes', "Dossiers et modèles", "Saisie rapide avec dates et priorités", "Synchronisation hors ligne"] },
+      { id: 'routines', title: 'Habitudes', summary: "Tâches récurrentes et habitudes", items: ["Tâches ménagères récurrentes", "Habitudes et séries", 'Minuteur de concentration lié aux tâches', "Points pour les tâches et habitudes accomplies (Karma)"] },
       { id: 'reminders', title: 'Rappels', summary: "ntfy, Telegram, Discord, Slack et e-mail", items: ["Rappels d'échéance", "Heures de silence", 'Choisissez vos canaux de notification', 'Accusé de réception des rappels', "Escalade des rappels sans réponse"] },
       { id: 'views', title: 'Vues des tâches', summary: "Calendrier, kanban et tableaux", items: ['Tableaux de bord', 'Calendrier', 'Tableau kanban', 'Tableau de données', 'Vues enregistrées'] },
       { id: 'files', title: 'Fichiers', summary: "Commentaires et fichiers chiffrés", items: ['Pièces jointes chiffrées', 'Commentaires sur les tâches'] },
       { id: 'recovery', title: 'Historique et export', summary: "Tâches terminées, import et export", items: ['Historique des tâches terminées', 'Export et import, avec exclusions documentées'] },
-      { id: 'access', title: 'Connexion et outils', summary: "Passkeys, API et assistants", items: ['Passkeys et TOTP', "Jetons d'accès personnels", "API HTTP et exports iCal", "Clients CLI, TUI et MCP depuis le code source", "Abonnements calendrier et webhooks (alpha)"] },
+      { id: 'access', title: 'Connexion et outils', summary: "Passkeys, API et assistants", items: ['Passkeys et TOTP', "Jetons d'accès personnels", "API HTTP et exports iCal", "Clients CLI, TUI et MCP depuis le code source", "Abonnements calendrier et webhooks entrants"] },
       { id: 'custom', title: 'Personnalisation', summary: "Six langues, thèmes et options de lecture", items: ["Six langues d'interface, dont l'arabe de droite à gauche", "Thèmes clair et sombre", "Couleurs d'accent et thèmes partagés", 'Taille de lecture et option de contraste élevé'] },
     ],
   },

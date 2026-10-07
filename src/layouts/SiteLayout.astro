@@ -1,10 +1,16 @@
 ---
+import { Image } from 'astro:assets';
+import heroPreload from '../scripts/hero-preload.js?raw';
+import wordmarkLight from '../assets/ditero-wordmark-light.png';
+import wordmarkDark from '../assets/ditero-wordmark-dark.png';
+import groteskFont from '@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2?url';
+import arabicFont from '@fontsource-variable/noto-sans-arabic/files/noto-sans-arabic-arabic-wght-normal.woff2?url';
 import '@fontsource-variable/schibsted-grotesk/wght.css';
 import '@fontsource-variable/noto-sans-arabic/wght.css';
 import { copy, extra, locales, localeInfo, pageUrl, links, type Locale } from '../content';
 import '../styles/site.css';
-interface Props { locale: Locale; title?: string; description?: string; path?: string; noindex?: boolean }
-const { locale, title = copy[locale].meta.title, description = copy[locale].meta.description, path = '', noindex = false } = Astro.props;
+interface Props { locale: Locale; title?: string; description?: string; path?: string; noindex?: boolean; hero?: boolean }
+const { locale, title = copy[locale].meta.title, description = copy[locale].meta.description, path = '', noindex = false, hero = false } = Astro.props;
 const t = copy[locale];
 const x = extra[locale];
 const info = localeInfo[locale];
@@ -27,8 +33,10 @@ const nav: [string, string][] = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="color-scheme" content="light dark" />
+    <link rel="preload" href={locale === 'ar' ? arabicFont : groteskFont} as="font" type="font/woff2" crossorigin />
     <meta name="robots" content={production ? 'index, follow' : 'noindex, follow'} />
     <script is:inline src="/theme-init.js"></script>
+    {hero && <script is:inline set:html={heroPreload}></script>}
     {production && <>
       <link rel="canonical" href={canonical} />
       {locales.map(l => <link rel="alternate" hreflang={l} href={root + pageUrl(l, path)} />)}
@@ -51,8 +59,8 @@ const nav: [string, string][] = [
     <a class="skip" href="#main">{t.ui.skip}</a>
     <header class="site-header wrap">
       <a href={home} class="brand" aria-label={t.ui.home}>
-        <img class="wordmark-light" src="/brand/ditero-wordmark-light.png" width="148" height="49" alt="" />
-        <img class="wordmark-dark" src="/brand/ditero-wordmark-dark.png" width="148" height="49" alt="" />
+        <Image class="wordmark-light" src={wordmarkLight} width={148} height={49} densities={[1, 2]} format="webp" quality={90} alt="" loading="eager" />
+        <Image class="wordmark-dark" src={wordmarkDark} width={148} height={49} densities={[1, 2]} format="webp" quality={90} alt="" loading="eager" />
       </a>
       <nav class="main-nav" aria-label={t.ui.mainNav}>
         {nav.map(([label, href]) => <a href={href}>{label}</a>)}

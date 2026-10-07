@@ -44,12 +44,12 @@ const proofs = (['task-detail', 'recurrence-reminders'] as const).map(id => ({
 }));
 const dashboard = t.features.proof.dashboard;
 const featureArtwork: Record<string, string> = { lists: 'lists', routines: 'routines', reminders: 'reminders', views: 'views', files: 'files', recovery: 'history', access: 'access', custom: 'custom' };
-const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm)[.,;:!?،؛؟]?)/g).map(part => {
-  const term = /^(و?)(Docker Compose|Helm)([.,;:!?،؛؟]?)$/.exec(part);
+const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm|Web-App)[.,;:!?،؛؟]?)/g).map(part => {
+  const term = /^(و?)(Docker Compose|Helm|Web-App)([.,;:!?،؛؟]?)$/.exec(part);
   return term ? { before: term[1], name: term[2], after: term[3] } : part;
 });
 ---
-<SiteLayout locale={locale}>
+<SiteLayout locale={locale} hero>
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-copy wrap">
       <h1 id="hero-title"><span>{t.hero.line1}</span> <span>{t.hero.line2}</span></h1>
@@ -117,30 +117,6 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
     </fieldset>
   </section>
 
-  <section id="features" class="features wrap" aria-labelledby="features-title">
-    <header class="features-head">
-      <h2 id="features-title">{t.features.title}</h2>
-      <p>{t.features.intro}</p>
-      <a class="text-link feature-guide" href={links.docs}>{x.ui.docs}</a>
-    </header>
-    <div class="feature-explorer" role="group" aria-label={x.ui.groups}>
-      {x.features.groups.map(group => (
-        <details class="feature-group" id={`group-${group.id}`} name="features" open={group.id === 'lists'}>
-          <summary>
-            <span class="feature-summary">
-              <span><FeatureText text={group.title} /></span>
-              <span class="feature-preview"><FeatureText text={group.summary} /></span>
-            </span>
-          </summary>
-          <div class:list={['feature-body', { 'feature-body-short': group.items.length <= 3 }]}>
-            <ul class="feature-items">{group.items.map(item => <li><FeatureText text={item} /></li>)}</ul>
-            <img class="feature-art" src={`/images/carousel/${featureArtwork[group.id]}.webp`} width="480" height="480" alt="" loading="lazy" decoding="async" />
-          </div>
-        </details>
-      ))}
-    </div>
-  </section>
-
   <section id="assistant" class="assistant wrap" aria-labelledby="assistant-title">
     <div class="assistant-sheet">
       <header class="assistant-heading">
@@ -154,7 +130,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
         </figure>
         <div class="assistant-plan">
           <p class="plan-label" id="plan-label">{x.ai.resultLabel}</p>
-          <ul class="plan" aria-labelledby="plan-label">
+          <ul class="plan" role="list" aria-labelledby="plan-label">
             {x.ai.results.map(result => (
               <li><span class="plan-title">{result.title}</span><span class="plan-detail">{result.detail}</span></li>
             ))}
@@ -163,16 +139,41 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
       </div>
       <footer class="assistant-links">
         <a class="text-link" href={links.mcp}>{x.ai.link}</a>
-        <p class="source small">{x.ai.shortSource}</p>
         <details class="fold">
           <summary aria-label={`${x.ui.details}: ${x.ai.title}`}>{x.ui.details}</summary>
-          <ul class="plain">{x.ai.points.map(point => <li>{point}</li>)}</ul>
+          <ul class="plain" role="list">{x.ai.points.map(point => <li>{point}</li>)}</ul>
         </details>
+        <p class="source small">{x.ai.shortSource}</p>
       </footer>
     </div>
   </section>
 
-  <section id="access" class="apps wrap" aria-labelledby="apps-title">
+  <section id="features" class="features wrap" aria-labelledby="features-title">
+    <header class="features-head">
+      <h2 id="features-title">{t.features.title}</h2>
+      <p>{t.features.intro}</p>
+      <a class="text-link feature-guide" href={links.docs}>{x.ui.docs}</a>
+    </header>
+    <div class="feature-explorer" role="group" aria-label={x.ui.groups}>
+      {x.features.groups.map(group => (
+        <details class="feature-group" id={`group-${group.id}`} name="features">
+          <summary>
+            <span class="feature-summary">
+              <span><FeatureText text={group.title} /></span>
+              <span class="feature-preview"><FeatureText text={group.summary} /></span>
+            </span>
+          </summary>
+          <div class:list={['feature-body', { 'feature-body-short': group.items.length <= 3 }]}>
+            <ul class="feature-items" role="list">{group.items.map(item => <li><FeatureText text={item} /></li>)}</ul>
+            <img class="feature-art" src={`/images/carousel/${featureArtwork[group.id]}.webp`} width="480" height="480" alt="" loading="lazy" decoding="async" />
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section id="access" class="apps" aria-labelledby="apps-title">
+    <div class="wrap apps-sheet">
     <header class="apps-heading">
       <h2 id="apps-title">{a.title}</h2>
       <p>{a.intro}</p>
@@ -220,6 +221,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
         ))}
       </div>
     </div>
+    </div>
   </section>
 
   <section id="self-host" class="host" aria-labelledby="host-title">
@@ -229,7 +231,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
           <img class="host-mark" src="/brand/ditero-felt-96.webp" width="32" height="32" alt="" loading="lazy" decoding="async" />
           <span>{t.server.title}</span>
         </h2>
-        <p>{productCopy(t.server.text).map(part => typeof part === 'string' ? part : <span class="product-run">{part.before}<bdi class="product-term">{part.name}</bdi>{part.after}</span>)}</p>
+        <p>{productCopy(t.server.text).map(part => typeof part === 'string' ? part : <span class="product-run">{part.before}<bdi class:list={{ 'product-term': part.name !== 'Web-App' }}>{part.name}</bdi>{part.after}</span>)}</p>
         <div class="actions">
           <a class="button" href={links.deploy}>{t.server.link}</a>
           <a class="text-link" href={links.docs}>{t.server.docs}</a>
@@ -238,10 +240,10 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
       <div class="host-details">
         <ol class="steps" role="list">
           {x.setup.steps.map(step => (
-            <li><span>{productCopy(step).map(part => typeof part === 'string' ? part : <span class="product-run">{part.before}<bdi class="product-term">{part.name}</bdi>{part.after}</span>)}</span></li>
+            <li><span>{productCopy(step).map(part => typeof part === 'string' ? part : <span class="product-run">{part.before}<bdi class:list={{ 'product-term': part.name !== 'Web-App' }}>{part.name}</bdi>{part.after}</span>)}</span></li>
           ))}
         </ol>
-        <p class="encryption-note">{t.server.encryption}</p>
+        <p class="encryption-note"><FeatureText text={t.server.encryption} /></p>
       </div>
     </div>
   </section>

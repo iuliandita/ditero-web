@@ -21,13 +21,13 @@ export const ro: ExtraCopy = {
   },
   features: {
     groups: [
-      { id: 'lists', title: 'Liste și partajare', summary: "Cumpărături, proiecte și responsabilități comune", items: ["Cumpărături, proiecte și liste de verificare", "Atribuie sarcini oamenilor", 'Liste tipizate pentru diferite feluri de muncă', 'Subsarcini în cadrul sarcinilor', 'Priorități și etichete', 'Spații de lucru comune cu membri', "Dosare și șabloane", "Adăugare rapidă cu date și priorități", "Sincronizare offline"] },
+      { id: 'lists', title: 'Liste și partajare', summary: "Cumpărături și proiecte în grup", items: ["Cumpărături, proiecte și liste de verificare", "Atribuie sarcini oamenilor", 'Tipuri de liste pentru cumpărături, proiecte și altele', 'Subsarcini în cadrul sarcinilor', 'Priorități și etichete', 'Spații de lucru împărțite cu alți oameni', "Dosare și șabloane", "Adăugare rapidă cu date și priorități", "Sincronizare offline"] },
       { id: 'routines', title: 'Obiceiuri și rutine', summary: "Treburi recurente, obiceiuri și concentrare", items: ["Treburi casnice recurente", "Obiceiuri și serii", 'Un mod de concentrare pentru sarcina curentă', "Temporizator de concentrare", "Puncte pentru sarcini și obiceiuri finalizate (Karma)"] },
       { id: 'reminders', title: 'Mementouri', summary: "ntfy, Telegram, Discord, Slack și e-mail", items: ["Mementouri pentru termene", "Ore de liniște", 'Alege canalele de livrare', 'Confirmarea mementourilor', "Escaladarea mementourilor fără răspuns"] },
-      { id: 'views', title: 'Moduri de a vedea sarcinile', summary: "Calendar, tablă, tabel și panouri de control", items: ['Panouri de control', 'Calendar', 'Tablă', 'Tabel', 'Vizualizări salvate'] },
-      { id: 'files', title: 'Fișiere și comentarii', summary: "Discuții despre sarcini și atașamente criptate", items: ['Atașamente criptate', 'Comentarii la sarcini'] },
-      { id: 'recovery', title: 'Istoric și export', summary: "Istoricul finalizării sarcinilor, import și export", items: ['Istoricul finalizării sarcinilor', 'Export și import, cu excluderi documentate'] },
-      { id: 'access', title: 'Autentificare și integrări', summary: "Passkey-uri, API, calendare și instrumente pentru asistenți", items: ['Passkey-uri și TOTP', 'Token-uri personale de acces', "API HTTP și exporturi iCal", "Clienți CLI, TUI și MCP din sursă", "Abonamente la calendar și webhook-uri (alfa)"] },
+      { id: 'views', title: 'Vizualizări', summary: "Calendar, tablă, tabel și panouri de control", items: ['Panouri de control', 'Calendar', 'Tablă', 'Tabel', 'Vizualizări salvate'] },
+      { id: 'files', title: 'Fișiere și comentarii', summary: "Comentarii și atașamente criptate", items: ['Atașamente criptate', 'Comentarii la sarcini'] },
+      { id: 'recovery', title: 'Istoric și export', summary: "Sarcini încheiate, import și export", items: ['Istoricul finalizării sarcinilor', 'Export și import, cu excluderi documentate'] },
+      { id: 'access', title: 'Acces și instrumente', summary: "Passkey-uri, API și asistenți", items: ['Passkey-uri și TOTP', 'Token-uri personale de acces', "API HTTP și exporturi iCal", "Clienți CLI, TUI și MCP din sursă", "Abonamente la calendar și webhook-uri (alfa)"] },
       { id: 'custom', title: 'Personalizare', summary: "Șase limbi, teme și opțiuni de lectură", items: ['Șase limbi de interfață, inclusiv araba de la dreapta la stânga', "Teme luminoasă și întunecată", 'Culori de accent și teme partajate', 'Dimensiunea textului și o opțiune de contrast ridicat'] },
     ],
   },

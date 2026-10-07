@@ -21,13 +21,13 @@ export const de: ExtraCopy = {
   },
   features: {
     groups: [
-      { id: 'lists', title: 'Listen und Teilen', summary: "Einkäufe, Projekte und gemeinsame Aufgaben", items: ["Einkäufe, Projekte und Checklisten", "Aufgaben an Menschen zuweisen", 'Typisierte Listen für verschiedene Arten von Aufgaben', 'Unteraufgaben innerhalb von Aufgaben', 'Prioritäten und Labels', 'Gemeinsame Arbeitsbereiche mit Mitgliedschaften', "Ordner und Vorlagen", "Schnelleingabe mit Datum und Priorität", "Offline-Synchronisierung"] },
-      { id: 'routines', title: 'Gewohnheiten und Routinen', summary: "Wiederkehrende Hausarbeit, Gewohnheiten und Fokus", items: ["Wiederkehrende Hausarbeit", "Gewohnheiten und Serien", 'Ein Fokusmodus für die aktuelle Aufgabe', "Fokustimer", "Punkte für erledigte Aufgaben und Gewohnheiten (Karma)"] },
+      { id: 'lists', title: 'Listen und Teilen', summary: "Einkäufe und gemeinsame Aufgaben", items: ["Einkäufe, Projekte und Checklisten", "Aufgaben an Menschen zuweisen", 'Listenarten für Einkäufe, Projekte und mehr', 'Unteraufgaben innerhalb von Aufgaben', 'Prioritäten und Labels', 'Arbeitsbereiche mit anderen teilen', "Ordner und Vorlagen", "Schnelleingabe mit Datum und Priorität", "Offline-Synchronisierung"] },
+      { id: 'routines', title: 'Routinen', summary: "Hausarbeit, Gewohnheiten und Fokus", items: ["Wiederkehrende Hausarbeit", "Gewohnheiten und Serien", 'Ein Fokusmodus für die aktuelle Aufgabe', "Fokustimer", "Punkte für erledigte Aufgaben und Gewohnheiten (Karma)"] },
       { id: 'reminders', title: 'Erinnerungen', summary: "ntfy, Telegram, Discord, Slack und E-Mail", items: ["Erinnerungen an Fälligkeiten", "Ruhezeiten", 'Wähle deine Zustellungskanäle', 'Bestätigung von Erinnerungen', "Eskalation bei unbeantworteten Erinnerungen"] },
-      { id: 'views', title: 'Ansichten auf Aufgaben', summary: "Kalender, Board, Tabelle und Dashboards", items: ['Dashboards', 'Kalender', 'Board', 'Tabelle', 'Gespeicherte Ansichten'] },
-      { id: 'files', title: 'Dateien und Kommentare', summary: "Gespräche zu Aufgaben und verschlüsselte Anhänge", items: ['Verschlüsselte Anhänge', 'Kommentare zu Aufgaben'] },
+      { id: 'views', title: 'Ansichten', summary: "Kalender, Board, Tabelle und Dashboards", items: ['Dashboards', 'Kalender', 'Board', 'Tabelle', 'Gespeicherte Ansichten'] },
+      { id: 'files', title: 'Dateien', summary: "Kommentare und verschlüsselte Anhänge", items: ['Verschlüsselte Anhänge', 'Kommentare zu Aufgaben'] },
       { id: 'recovery', title: 'Verlauf und Export', summary: "Erledigungsverlauf, Import und Export", items: ['Erledigungsverlauf', 'Export und Import, mit dokumentierten Ausnahmen'] },
-      { id: 'access', title: 'Anmeldung und Integrationen', summary: "Passkeys, API, Kalender und Assistenten-Tools", items: ['Passkeys und TOTP', 'Persönliche Zugriffstoken', "HTTP-API und iCal-Exporte", "CLI-, TUI- und MCP-Clients im Quellcode", "Kalender-Abonnements und Webhooks (Alpha)"] },
+      { id: 'access', title: 'Zugang und Tools', summary: "Passkeys, API und Assistenten", items: ['Passkeys und TOTP', 'Persönliche Zugriffstoken', "HTTP-API und iCal-Exporte", "CLI-, TUI- und MCP-Clients im Quellcode", "Kalender-Abonnements und Webhooks (Alpha)"] },
       { id: 'custom', title: 'Anpassung', summary: "Sechs Sprachen, Designs und Leseoptionen", items: ['Sechs Oberflächensprachen, darunter Arabisch von rechts nach links', "Helles und dunkles Design", 'Akzentfarben und geteilte Designs', 'Lesegröße und eine Option mit hohem Kontrast'] },
     ],
   },

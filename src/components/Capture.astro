@@ -34,7 +34,7 @@ const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
   ) : themes.map(theme => (
     <div class={`shots shots-${theme}`}>
         <a class={`shot shot-desktop ${desktopCrop}`} href={`/images/gallery/dashboard-${theme}.png`} aria-label={`${open}: ${desktopAlt}`}>
-          <img src={src('desktop', theme)} width="604" height="562" alt={desktopAlt} loading="lazy" decoding="async" />
+          <img src={src('desktop', theme)} width="438" height="432" alt={desktopAlt} loading="lazy" decoding="async" />
         </a>
         <a class="shot shot-compact crop-dashboard-compact" href={`/images/gallery/dashboard-mobile-${theme}.png`} aria-label={`${open}: ${compactAlt}`}>
           <img src={src('mobile', theme)} width="390" height="536" alt={compactAlt} loading="lazy" decoding="async" />

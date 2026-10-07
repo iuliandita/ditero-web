@@ -138,12 +138,14 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
         </div>
       </div>
       <footer class="assistant-links">
-        <a class="text-link" href={links.mcp}>{x.ai.link}</a>
+        <div class="assistant-actions">
+          <a class="text-link" href={links.mcp}>{x.ai.link}</a>
+          <p class="source small">{x.ai.shortSource}</p>
+        </div>
         <details class="fold">
           <summary aria-label={`${x.ui.details}: ${x.ai.title}`}>{x.ui.details}</summary>
           <ul class="plain" role="list">{x.ai.points.map(point => <li>{point}</li>)}</ul>
         </details>
-        <p class="source small">{x.ai.shortSource}</p>
       </footer>
     </div>
   </section>
@@ -164,8 +166,8 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
             </span>
           </summary>
           <div class:list={['feature-body', { 'feature-body-short': group.items.length <= 3 }]}>
-            <ul class="feature-items" role="list">{group.items.map(item => <li><FeatureText text={item} /></li>)}</ul>
             <span class="feature-mat" aria-hidden="true"><img class="feature-art" src={`/images/carousel/${featureArtwork[group.id]}.webp`} width="480" height="480" alt="" loading="lazy" decoding="async" /></span>
+            <ul class="feature-items" role="list">{group.items.map(item => <li><FeatureText text={item} /></li>)}</ul>
           </div>
         </details>
       ))}

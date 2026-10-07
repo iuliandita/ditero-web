@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import heroPreload from '../scripts/hero-preload.js?raw';
+import themeInit from '../scripts/theme-init.js?raw';
 import wordmarkLight from '../assets/ditero-wordmark-light.png';
 import wordmarkDark from '../assets/ditero-wordmark-dark.png';
 import groteskFont from '@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2?url';
@@ -35,7 +36,7 @@ const nav: [string, string][] = [
     <meta name="color-scheme" content="light dark" />
     <link rel="preload" href={locale === 'ar' ? arabicFont : groteskFont} as="font" type="font/woff2" crossorigin />
     <meta name="robots" content={production ? 'index, follow' : 'noindex, follow'} />
-    <script is:inline src="/theme-init.js"></script>
+    <script is:inline set:html={themeInit}></script>
     {hero && <script is:inline set:html={heroPreload}></script>}
     {production && <>
       <link rel="canonical" href={canonical} />

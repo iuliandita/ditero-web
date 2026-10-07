@@ -155,7 +155,7 @@ p { text-wrap: pretty; max-width: 66ch; }
 .feature-group[open] > summary::before { transform: translateY(3px) rotate(-135deg); }
 .feature-term-run { white-space: nowrap; }
 .feature-summary { min-width: 0; display: grid; gap: 0.3rem; }
-.feature-preview { color: var(--muted); font-size: 0.95rem; font-weight: 400; line-height: 1.5; text-wrap: balance; }
+.feature-preview { color: var(--muted); font-size: 0.95rem; font-weight: 400; line-height: 1.5; text-wrap: pretty; }
 .feature-group > summary:focus-visible { outline-offset: 0; }
 .feature-body { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-block: 0.75rem 1rem; padding: 1.5rem; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
 .feature-art { position: absolute; inset-block-start: 1.5rem; inset-inline-end: 1.5rem; width: 48px; height: 48px; border-radius: 10px; outline: 1px solid var(--line); outline-offset: -1px; }
@@ -197,6 +197,7 @@ p { text-wrap: pretty; max-width: 66ch; }
 .client-details[open] .client-chevron { transform: translateY(2px) rotate(-135deg); }
 .client-details p { padding-block: 0.75rem 0.25rem; color: var(--muted); font-size: 0.95rem; }
 .state { max-width: 100%; font-size: 0.85rem; font-weight: 550; line-height: 1.5; color: var(--tint-muted); background: var(--tint); border-radius: 5px; padding: 0.15rem 0.5rem; }
+.apps .state { background: var(--bg); border: 1px solid var(--line); }
 .tools-stack { margin-top: 2.5rem; }
 .tools-source { max-width: none; color: var(--muted); font-size: 0.9rem; }
 .tool-strip { margin-top: 0.25rem; }
@@ -219,9 +220,10 @@ p { text-wrap: pretty; max-width: 66ch; }
 .plan li:first-child::before { inset-block-start: 0.7em; }
 .plan-title { min-width: 0; font-size: 0.95rem; font-weight: 550; }
 .plan-detail { color: var(--muted); font-size: 0.95rem; }
-.assistant-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0 1rem; }
+.assistant-links { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0 1rem; }
 .assistant-links .source { flex: 0 0 100%; max-width: none; margin: 0; color: var(--muted); font-size: 0.95rem; }
 .assistant-links .fold { flex: 0 1 auto; max-width: 100%; }
+.assistant-links .fold[open] { flex-basis: 100%; }
 
 .host h2 { display: block; }
 .host .text-link { color: var(--brand-hover); }

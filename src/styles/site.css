@@ -205,8 +205,11 @@ p { text-wrap: pretty; max-width: 66ch; }
 .assistant-sheet { display: grid; gap: 1rem; }
 .assistant-heading { display: grid; gap: 1rem; max-width: 40rem; }
 .assistant-heading > p { max-width: none; color: var(--muted); text-wrap: pretty; }
-.assistant-example { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 3rem; align-items: start; }
+.assistant-example { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(3rem, 8vw, 7rem); align-items: start; }
 .request { display: block; }
+.request figcaption, .plan-heading { min-height: 56px; display: flex; align-items: center; }
+.plan-heading { justify-content: space-between; gap: 1rem; }
+.assistant-robot { width: 56px; height: 56px; flex: none; object-fit: contain; }
 .request figcaption, .plan-label { font-size: 0.95rem; font-weight: 600; color: var(--muted); }
 .request blockquote { margin: 0.75rem 0 0; font-size: clamp(1.4rem, 1.1rem + 0.6vw, 1.6rem); font-weight: 500; line-height: 1.45; letter-spacing: -0.01em; text-wrap: pretty; }
 .plan { display: grid; margin-top: 0.75rem; }

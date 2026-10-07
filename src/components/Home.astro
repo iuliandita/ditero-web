@@ -129,7 +129,10 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
           <blockquote><p>{x.ai.example}</p></blockquote>
         </figure>
         <div class="assistant-plan">
-          <p class="plan-label" id="plan-label">{x.ai.resultLabel}</p>
+          <div class="plan-heading">
+            <p class="plan-label" id="plan-label">{x.ai.resultLabel}</p>
+            <img class="assistant-robot" src="/images/assistant-robot.webp" width="56" height="56" alt="" loading="lazy" decoding="async" />
+          </div>
           <ul class="plan" role="list" aria-labelledby="plan-label">
             {x.ai.results.map(result => (
               <li><span class="plan-title">{result.title}</span><span class="plan-detail">{result.detail}</span></li>

@@ -24,4 +24,6 @@ Generate a fresh original for every revision. Do not retouch the previous bitmap
 
 ## Felt brand mark
 
+The assistant example uses a small isolated felt-and-paper robot head beside its plan label. Keep its background transparent and its face neutral, with no outer glow, tile or added shadow. Serve the 168px WebP at 56px in both themes; the artwork stays decorative and separate from app screenshots.
+
 The decorative footer mark uses the existing Ditero clipboard silhouette in the same felt and paper materials. Preserve two checklist rows: the first checked, the second empty. Preserve its counterclockwise tilt: top-right higher than top-left, clipboard top leaning left. Keep the Ditero name as real page text beside the artwork.

@@ -8,8 +8,10 @@
     const saved = document.documentElement.dataset.theme;
     const dark = saved === 'dark' || (!saved && system.matches);
     const desktopSrc = dark ? capture.dataset.darkDesktop : capture.dataset.lightDesktop;
+    const desktopSrcset = dark ? capture.dataset.darkDesktopSrcset : capture.dataset.lightDesktopSrcset;
     const mobileSrc = dark ? capture.dataset.darkMobile : capture.dataset.lightMobile;
     if (source.getAttribute('srcset') !== mobileSrc) source.srcset = mobileSrc;
+    if (image.getAttribute('srcset') !== desktopSrcset) image.srcset = desktopSrcset;
     if (image.getAttribute('src') !== desktopSrc) image.src = desktopSrc;
   };
   update();

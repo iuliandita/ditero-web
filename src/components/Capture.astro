@@ -17,7 +17,7 @@ const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
     <div class="shot shot-responsive crop-list" data-hero-capture data-light-desktop={src('desktop', 'light')} data-dark-desktop={src('desktop', 'dark')} data-light-mobile={src('mobile', 'light')} data-dark-mobile={src('mobile', 'dark')}>
       <picture hidden>
         <source media="(max-width: 700px)" />
-        <img width="838" height="420" alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async" />
+        <img width="838" height="432" alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async" />
       </picture>
       <script is:inline set:html={heroInit}></script>
       <noscript>
@@ -25,7 +25,7 @@ const desktopCrop = name === 'dashboard' ? 'crop-dashboard' : 'crop-list';
           <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset={src('mobile', 'dark')} />
           <source media="(max-width: 700px)" srcset={src('mobile', 'light')} />
           <source media="(prefers-color-scheme: dark)" srcset={src('desktop', 'dark')} />
-          <img src={src('desktop', 'light')} width="838" height="420" alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async" />
+          <img src={src('desktop', 'light')} width="838" height="432" alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async" />
         </picture>
       </noscript>
       <div class="fallback-desktop">{themes.map(theme => <a class={`fallback-link shots-${theme}`} href={`/images/gallery/list-desktop-${theme}.png`} aria-label={`${open}: ${desktopAlt}`} />)}</div>

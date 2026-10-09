@@ -77,7 +77,7 @@ p { text-wrap: pretty; max-width: 66ch; }
 .hero-meta .status bdi { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.9rem; }
 
 /* Captured English pixels keep their physical orientation on RTL pages. */
-.crop-list { --cw: 838; --ch: 420; }
+.crop-list { --cw: 838; --ch: 432; }
 .crop-dashboard { --cw: 438; --ch: 432; }
 .crop-dashboard-compact { --cw: 390; --ch: 536; }
 .shot { display: block; position: relative; overflow: hidden; aspect-ratio: var(--cw) / var(--ch); border-radius: 12px; background: var(--surface); box-shadow: var(--elevation); outline: 1px solid var(--line); outline-offset: -1px; }

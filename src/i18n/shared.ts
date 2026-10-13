@@ -27,8 +27,6 @@ export const links = {
   mcp: `${repo}/blob/develop/docs/mcp.md`,
   api: `${repo}/blob/develop/docs/runbooks/public-api.md`,
   support: 'https://ko-fi.com/Q3O027XM2F',
-  sponsor: 'mailto:iulian.dita@gmail.com?subject=Ditero%20sponsorship',
-  contact: 'mailto:iulian.dita@gmail.com',
   cloudflarePrivacy: 'https://www.cloudflare.com/privacypolicy/',
 } as const;
 export type LinkKey = keyof typeof links;

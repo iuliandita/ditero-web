@@ -408,7 +408,7 @@ p { text-wrap: pretty; max-width: 66ch; }
   .menu { position: static; }
   .menu nav { inset-block-start: calc(100% - 0.5rem); }
 }
-@media (max-width: 340px) {
+@media (max-width: 360px) {
   .site-header { gap: 0.5rem; }
   .brand img { width: 96px; }
   .tools { gap: 0; }

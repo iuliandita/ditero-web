@@ -16,6 +16,8 @@ export const version = 'v0.0.1-alpha.12';
 
 const repo = 'https://github.com/iuliandita/ditero';
 export const links = {
+  creator: 'https://iuliandita.com',
+  otherProjects: 'https://iuliandita.com/projects/',
   project: repo,
   release: `${repo}/releases/tag/${version}`,
   deploy: `${repo}/tree/develop/deploy/docker`,

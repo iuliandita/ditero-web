@@ -139,6 +139,8 @@ const nav: [string, string][] = [
         <a href={links.project}>{t.ui.source}</a>
         <a href={links.license}>{t.ui.license}</a>
         <a href={links.issues}>{t.ui.issues}</a>
+        <a href={links.creator}><span>{t.ui.madeBy.split(/(Iulian Dita)/g).map(part => part === 'Iulian Dita' ? <bdi dir="ltr">{part}</bdi> : part)}</span></a>
+        <a href={links.otherProjects}>{t.ui.otherProjects}</a>
       </nav>
     </footer>
     <script>

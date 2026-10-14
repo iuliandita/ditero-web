@@ -408,6 +408,11 @@ p { text-wrap: pretty; max-width: 66ch; }
   .menu { position: static; }
   .menu nav { inset-block-start: calc(100% - 0.5rem); }
 }
+@media (max-width: 340px) {
+  .site-header { gap: 0.5rem; }
+  .brand img { width: 96px; }
+  .tools { gap: 0; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .feature-group > summary::before, .fold summary::after, .client-chevron, .button { transition: none; }

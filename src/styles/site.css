@@ -62,7 +62,7 @@ p { text-wrap: pretty; max-width: 66ch; }
 .lang li a, .menu nav a { display: flex; align-items: center; min-height: 44px; padding-inline: 0.75rem; border-radius: 6px; text-decoration: none; }
 .lang li a[aria-current] { color: var(--brand); font-weight: 650; }
 .menu { display: none; }
-.theme-toggle { display: inline-grid; place-items: center; width: 44px; height: 44px; background: transparent; color: var(--ink); border: 0; border-radius: 8px; cursor: pointer; }
+.theme-toggle, .github-link { display: inline-grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; background: transparent; color: var(--ink); border: 0; border-radius: 8px; cursor: pointer; }
 .theme-toggle .icon-moon, .theme-toggle[aria-pressed='true'] .icon-sun { display: none; }
 .theme-toggle[aria-pressed='true'] .icon-moon { display: block; }
 
@@ -420,7 +420,7 @@ p { text-wrap: pretty; max-width: 66ch; }
 @media (hover: hover) {
   a:hover { color: var(--brand); }
   .main-nav a:hover, .site-footer a:hover { text-decoration: underline; }
-  .lang summary:hover, .menu summary:hover, .theme-toggle:hover { background: var(--surface); }
+  .lang summary:hover, .menu summary:hover, .theme-toggle:hover, .github-link:hover { background: var(--surface); }
   .lang li a:hover, .menu nav a:hover { background: var(--surface); }
   .button:hover { background: var(--brand-hover); color: var(--on-brand); }
   .feature-guide:hover { background: var(--surface); }

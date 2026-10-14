@@ -2,6 +2,7 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Capture from './Capture.astro';
 import FeatureText from './FeatureText.astro';
+import Mail from './Mail.astro';
 import { copy, extra, links, version, type LinkKey, type Locale } from '../content';
 const { locale } = Astro.props as { locale: Locale };
 const t = copy[locale];
@@ -252,7 +253,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Helm
 
   <section id="support" class="support wrap" aria-labelledby="support-title">
     <div class="support-copy"><h2 id="support-title">{t.support.title}</h2><p>{t.support.text}</p></div>
-    <p class="actions"><a class="text-link" href={links.support}>{t.support.kofi}</a><a class="text-link" href={links.sponsor}>{t.support.sponsor}</a></p>
+    <p class="actions"><a class="text-link" href={links.support}>{t.support.kofi}</a><Mail class="text-link" label={t.support.sponsor} subject="Ditero sponsorship" /></p>
   </section>
 </SiteLayout>
 

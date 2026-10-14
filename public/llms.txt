@@ -1,0 +1,14 @@
+# Ditero
+
+> Ditero is an open-source, self-hosted todo app for households, clubs and small teams, free under the MIT license.
+
+## Pages
+
+- [Home](https://ditero.app/): Share shopping lists, chores, habits and projects from one server you run.
+- [About](https://ditero.app/about/): Shared tasks, shopping and routines for households and small groups on a server they run. The project is in early alpha.
+- [Privacy](https://ditero.app/privacy/): Privacy information for the Ditero project website.
+
+## Optional
+
+- [Application repository](https://github.com/iuliandita/ditero): Source code, issues and documentation for the Ditero application.
+- [Releases](https://github.com/iuliandita/ditero/releases): Downloads for each Ditero release.

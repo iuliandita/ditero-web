@@ -1,0 +1,15 @@
+---
+interface Props { label?: string; subject?: string; class?: string }
+const { label, subject, class: className } = Astro.props;
+---
+<a class={className} data-mail data-u="iulian.dita" data-d="gmail" data-t="com" data-s={subject} dir={label ? undefined : 'ltr'} hidden>{label}</a>
+<noscript>{label && `${label}: `}<span dir="ltr">iulian.dita at gmail dot com</span></noscript>
+<script>
+  document.querySelectorAll<HTMLAnchorElement>('a[data-mail]').forEach(link => {
+    const { u, d, t, s } = link.dataset;
+    const address = `${u}@${d}.${t}`;
+    link.href = `mailto:${address}${s ? `?subject=${encodeURIComponent(s)}` : ''}`;
+    if (!link.textContent) link.textContent = address;
+    link.hidden = false;
+  });
+</script>

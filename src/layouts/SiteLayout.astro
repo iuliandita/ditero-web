@@ -9,7 +9,7 @@ import groteskExtendedFont from '@fontsource-variable/schibsted-grotesk/files/sc
 import arabicFont from '@fontsource-variable/noto-sans-arabic/files/noto-sans-arabic-arabic-wght-normal.woff2?url';
 import '@fontsource-variable/schibsted-grotesk/wght.css';
 import '@fontsource-variable/noto-sans-arabic/wght.css';
-import { copy, extra, locales, localeInfo, pageUrl, links, type Locale } from '../content';
+import { copy, extra, locales, localeInfo, pageUrl, links, version, type Locale } from '../content';
 import '../styles/site.css';
 interface Props { locale: Locale; title?: string; description?: string; path?: string; noindex?: boolean; hero?: boolean }
 const { locale, title = copy[locale].meta.title, description = copy[locale].meta.description, path = '', noindex = false, hero = false } = Astro.props;
@@ -20,6 +20,23 @@ const production = import.meta.env.SITE_ENV === 'production' && !noindex;
 const root = 'https://ditero.app';
 const canonical = root + pageUrl(locale, path);
 const home = pageUrl(locale);
+const ogImage = root + '/og/ditero-og.png';
+const pageTitle = `${title} | Ditero`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Ditero',
+  description: t.meta.description,
+  inLanguage: locale,
+  softwareVersion: version,
+  url: root + home,
+  applicationCategory: 'ProductivityApplication',
+  operatingSystem: 'Web, Android',
+  isAccessibleForFree: true,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  license: 'https://opensource.org/licenses/MIT',
+  sameAs: links.project,
+};
 const nav: [string, string][] = [
   [t.ui.features, home + '#features'],
   [t.ui.access, home + '#access'],
@@ -45,25 +62,35 @@ const nav: [string, string][] = [
       {locales.map(l => <link rel="alternate" hreflang={l} href={root + pageUrl(l, path)} />)}
       <link rel="alternate" hreflang="x-default" href={root + pageUrl('en', path)} />
       <meta property="og:url" content={canonical} />
-      <meta property="og:image" content={root + '/icon.png'} />
     </>}
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')}></script>
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Ditero" />
-    <meta property="og:title" content={`${title} | Ditero`} />
+    <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:locale" content={info.og} />
     {locales.filter(l => l !== locale).map(l => <meta property="og:locale:alternate" content={localeInfo[l].og} />)}
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content={t.meta.title} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={t.meta.title} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" href="/icon.png" />
     <link rel="apple-touch-icon" href="/icon.png" />
-    <title>{title} | Ditero</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <a class="skip" href="#main">{t.ui.skip}</a>
     <header class="site-header wrap">
       <a href={home} class="brand" aria-label={t.ui.home}>
-        <Image class="wordmark-light" src={wordmarkLight} width={148} height={49} densities={[1, 2]} format="webp" quality={90} alt="" loading="eager" />
-        <Image class="wordmark-dark" src={wordmarkDark} width={148} height={49} densities={[1, 2]} format="webp" quality={90} alt="" loading="eager" />
+        <Image class="wordmark-light" src={wordmarkLight} width={148} height={49} densities={[1, 2]} format="webp" quality={90} alt="Ditero" loading="eager" />
+        <Image class="wordmark-dark" src={wordmarkDark} width={148} height={49} densities={[1, 2]} format="webp" quality={90} alt="Ditero" loading="eager" />
       </a>
       <nav class="main-nav" aria-label={t.ui.mainNav}>
         {nav.map(([label, href]) => <a href={href}>{label}</a>)}

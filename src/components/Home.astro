@@ -118,6 +118,31 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Post
     </fieldset>
   </section>
 
+  <section id="features" class="features wrap" aria-labelledby="features-title">
+    <header class="features-head">
+      <h2 id="features-title">{t.features.title}</h2>
+      <p>{t.features.intro}</p>
+      <a class="text-link feature-guide" href={links.docs}>{x.ui.docs}</a>
+    </header>
+    <div class="feature-explorer" role="group" aria-label={x.ui.groups}>
+      {x.features.groups.map(group => (
+        <details class="feature-group" id={`group-${group.id}`} name="features">
+          <summary>
+            <span class="feature-summary">
+              <span><FeatureText text={group.title} /></span>
+              <span class="feature-preview"><FeatureText text={group.summary} /></span>
+            </span>
+          </summary>
+          <div class:list={['feature-body', { 'feature-body-short': group.items.length <= 3 }]}>
+            <span class="feature-mat" aria-hidden="true"><img class="feature-art" src={`/images/carousel/${featureArtwork[group.id]}.webp`} width="480" height="480" alt="" loading="lazy" decoding="async" /></span>
+            <ul class="feature-items" role="list">{group.items.map(item => <li><FeatureText text={item} /></li>)}</ul>
+            {group.id === 'recovery' && <p class="feature-note"><a href={links.portability}><FeatureText text={x.features.importNote} /></a></p>}
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
   <section id="assistant" class="assistant wrap" aria-labelledby="assistant-title">
     <div class="assistant-sheet">
       <header class="assistant-heading">
@@ -151,31 +176,6 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Post
           <ul class="plain" role="list">{x.ai.points.map(point => <li>{point}</li>)}</ul>
         </details>
       </footer>
-    </div>
-  </section>
-
-  <section id="features" class="features wrap" aria-labelledby="features-title">
-    <header class="features-head">
-      <h2 id="features-title">{t.features.title}</h2>
-      <p>{t.features.intro}</p>
-      <a class="text-link feature-guide" href={links.docs}>{x.ui.docs}</a>
-    </header>
-    <div class="feature-explorer" role="group" aria-label={x.ui.groups}>
-      {x.features.groups.map(group => (
-        <details class="feature-group" id={`group-${group.id}`} name="features">
-          <summary>
-            <span class="feature-summary">
-              <span><FeatureText text={group.title} /></span>
-              <span class="feature-preview"><FeatureText text={group.summary} /></span>
-            </span>
-          </summary>
-          <div class:list={['feature-body', { 'feature-body-short': group.items.length <= 3 }]}>
-            <span class="feature-mat" aria-hidden="true"><img class="feature-art" src={`/images/carousel/${featureArtwork[group.id]}.webp`} width="480" height="480" alt="" loading="lazy" decoding="async" /></span>
-            <ul class="feature-items" role="list">{group.items.map(item => <li><FeatureText text={item} /></li>)}</ul>
-            {group.id === 'recovery' && <p class="feature-note"><a href={links.portability}><FeatureText text={x.features.importNote} /></a></p>}
-          </div>
-        </details>
-      ))}
     </div>
   </section>
 

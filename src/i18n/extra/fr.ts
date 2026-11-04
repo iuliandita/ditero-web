@@ -1,7 +1,7 @@
 import type { ExtraCopy } from './types';
 
 export const fr: ExtraCopy = {
-  ui: { view: 'Vue', desktop: 'Ordinateur', phone: 'Téléphone', tour: 'Découvrez Ditero', platforms: "Le web, Android et les applications de bureau sont en bêta ; CLI, TUI et MCP sont fournis en bundles Bun.", details: 'Détails', menu: 'Menu', heroIntro: 'Listes de courses partagées, tâches ménagères récurrentes et rappels pour votre foyer. Gratuit, open source et auto-hébergé.', groups: 'Groupes de fonctionnalités', docs: 'Documentation' },
+  ui: { view: 'Vue', desktop: 'Ordinateur', phone: 'Téléphone', tour: 'Découvrez Ditero', platforms: "Le web est en bêta ; Android et les applications de bureau sont expérimentaux ; CLI, TUI et MCP sont fournis en bundles Bun.", details: 'Détails', menu: 'Menu', heroIntro: 'Listes de courses partagées, tâches ménagères récurrentes et rappels pour votre foyer. Gratuit, open source et auto-hébergé.', groups: 'Groupes de fonctionnalités', docs: 'Documentation' },
   setup: { steps: ["Lancez votre serveur avec Docker Compose", "Créez votre compte dans l'application web", "Invitez des proches et partagez une liste"] },
   ai: {
     title: "Planifiez avec votre assistant",
@@ -10,7 +10,7 @@ export const fr: ExtraCopy = {
     example: "Organisez le trajet en train de samedi, confiez le choix de l’itinéraire à Alex et donnez la priorité à la réservation des billets.",
     resultLabel: "Exemple de plan",
     results: [{"title": "Organiser le trajet en train de samedi", "detail": "Liste partagée"}, {"title": "Choisir l’itinéraire", "detail": "Attribuée à Alex"}, {"title": "Réserver les billets de train", "detail": "Priorité élevée"}],
-    source: "Les bundles nécessitent Bun 1.3.14 ou plus et sont qualifiés sur Linux x64.",
+    source: "Les bundles CLI, TUI et MCP nécessitent Bun 1.3.14 ou plus et sont qualifiés sur Linux x64.",
     shortSource: "MCP est fourni en bundle Bun.",
     points: [
       "C'est un assistant externe que vous connectez. Ditero n'a pas de chatbot intégré et n'héberge aucun modèle d'IA.",

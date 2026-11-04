@@ -45,8 +45,8 @@ const proofs = (['task-detail', 'recurrence-reminders'] as const).map(id => ({
 }));
 const dashboard = t.features.proof.dashboard;
 const featureArtwork: Record<string, string> = { lists: 'lists', routines: 'routines', reminders: 'reminders', views: 'views', files: 'files', recovery: 'history', access: 'access', custom: 'custom' };
-const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|PostgreSQL 15\+|Helm|Web-App)[.,;:!?،؛؟]?)/g).map(part => {
-  const term = /^(و?)(Docker Compose|PostgreSQL 15\+|Helm|Web-App)([.,;:!?،؛؟]?)$/.exec(part);
+const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|PostgreSQL 15\+|DITERO_IMAGE_TAG=\d[\w.-]*\w|Helm|Web-App)[.,;:!?،؛؟]?)/g).map(part => {
+  const term = /^(و?)(Docker Compose|PostgreSQL 15\+|DITERO_IMAGE_TAG=\d[\w.-]*\w|Helm|Web-App)([.,;:!?،؛؟]?)$/.exec(part);
   return term ? { before: term[1], name: term[2], after: term[3] } : part;
 });
 ---
@@ -61,7 +61,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Post
       </div>
       <div class="hero-meta">
         <p class="platforms small">{x.ui.platforms.split(/(Android|CLI|TUI|MCP|Bun)/g).map(part => ['Android', 'CLI', 'TUI', 'MCP', 'Bun'].includes(part) ? <bdi dir="ltr" class="feature-term-run">{part}</bdi> : part)}</p>
-        <a class="status small" href={links.release}><bdi dir="ltr">{t.hero.status}{' '}{version}</bdi></a>
+        <a class="status small" href={links.release}>{t.hero.status}{' '}<bdi dir="ltr">{version}</bdi></a>
       </div>
     </div>
     <div class="hero-media"><Capture name="list" variant="hero" {...cap} /></div>
@@ -247,7 +247,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Post
             <li><span>{productCopy(step).map(part => typeof part === 'string' ? part : <span class="product-run">{part.before}<bdi dir="ltr" class:list={{ 'product-term': part.name !== 'Web-App' }}>{part.name}</bdi>{part.after}</span>)}</span></li>
           ))}
         </ol></div>
-        <p class="encryption-note">{productCopy(t.server.prerequisites).map(part => typeof part === 'string' ? part : <span class="product-run">{part.before}<bdi dir="ltr" class="product-term">{part.name}</bdi>{part.after}</span>)}</p>
+        <p class="encryption-note">{productCopy(t.server.prerequisites.replace('{imageTag}', version.slice(1))).map(part => typeof part === 'string' ? part : <span class="product-run">{part.before}<bdi dir="ltr" class="product-term">{part.name}</bdi>{part.after}</span>)}</p>
         <p class="encryption-note">{t.server.cost}</p>
         <p class="encryption-note"><a href={links.backup}><FeatureText text={t.server.recovery} /></a></p>
         <p class="encryption-note"><a href={links.security}>{t.server.encryption}</a></p>

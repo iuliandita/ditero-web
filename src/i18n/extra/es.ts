@@ -1,7 +1,7 @@
 import type { ExtraCopy } from './types';
 
 export const es: ExtraCopy = {
-  ui: { view: 'Vista', desktop: 'Escritorio', phone: 'Teléfono', tour: 'Explora Ditero', platforms: "Web, Android y escritorio están en beta; CLI, TUI y MCP se distribuyen como paquetes Bun.", details: 'Detalles', menu: 'Menú', heroIntro: 'Listas de la compra compartidas, tareas del hogar recurrentes y recordatorios para tu hogar. Gratis, de código abierto y autoalojado.', groups: 'Grupos de funciones', docs: 'Documentación' },
+  ui: { view: 'Vista', desktop: 'Escritorio', phone: 'Teléfono', tour: 'Explora Ditero', platforms: "La web está en beta; Android y escritorio son experimentales; CLI, TUI y MCP se distribuyen como paquetes Bun.", details: 'Detalles', menu: 'Menú', heroIntro: 'Listas de la compra compartidas, tareas del hogar recurrentes y recordatorios para tu hogar. Gratis, de código abierto y autoalojado.', groups: 'Grupos de funciones', docs: 'Documentación' },
   setup: { steps: ["Inicia tu servidor con Docker Compose", "Crea tu cuenta en la aplicación web", "Invita a otras personas y comparte una lista"] },
   ai: {
     title: "Planifica con tu asistente",
@@ -10,7 +10,7 @@ export const es: ExtraCopy = {
     example: "Planifica el viaje en tren del sábado, asigna a Alex la elección de la ruta y marca la compra de billetes como prioridad alta.",
     resultLabel: "Plan de ejemplo",
     results: [{"title": "Planificar el viaje en tren del sábado", "detail": "Lista compartida"}, {"title": "Elegir la ruta", "detail": "Asignada a Alex"}, {"title": "Comprar billetes de tren", "detail": "Prioridad alta"}],
-    source: "Los paquetes necesitan Bun 1.3.14 o posterior y están cualificados en Linux x64.",
+    source: "Los paquetes de CLI, TUI y MCP necesitan Bun 1.3.14 o posterior y están cualificados en Linux x64.",
     shortSource: "MCP se distribuye como paquete Bun.",
     points: [
       'Es un asistente externo que tú conectas. Ditero no tiene chatbot integrado ni aloja ningún modelo de IA.',

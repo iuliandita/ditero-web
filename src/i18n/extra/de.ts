@@ -1,7 +1,7 @@
 import type { ExtraCopy } from './types';
 
 export const de: ExtraCopy = {
-  ui: { view: 'Ansicht', desktop: 'Desktop', phone: 'Smartphone', tour: 'Ditero entdecken', platforms: "Web, Android und Desktop sind in der Beta; CLI, TUI und MCP erscheinen als Bun-Bundles.", details: 'Details', menu: 'Menü', heroIntro: 'Gemeinsame Einkaufslisten, wiederkehrende Hausarbeit und Erinnerungen für deinen Haushalt. Kostenlos, quelloffen und selbst gehostet.', groups: 'Funktionsgruppen', docs: 'Dokumentation' },
+  ui: { view: 'Ansicht', desktop: 'Desktop', phone: 'Smartphone', tour: 'Ditero entdecken', platforms: "Web ist in der Beta, Android und Desktop sind experimentell; CLI, TUI und MCP erscheinen als Bun-Bundles.", details: 'Details', menu: 'Menü', heroIntro: 'Gemeinsame Einkaufslisten, wiederkehrende Hausarbeit und Erinnerungen für deinen Haushalt. Kostenlos, quelloffen und selbst gehostet.', groups: 'Funktionsgruppen', docs: 'Dokumentation' },
   setup: { steps: ["Starte den Server mit Docker Compose", "Lege dein Konto in der Web-App an", "Lade Leute ein und teile eine Liste"] },
   ai: {
     title: "Plane mit deinem Assistenten",
@@ -10,7 +10,7 @@ export const de: ExtraCopy = {
     example: "Plane die Zugreise am Samstag, weise Alex die Routenwahl zu und markiere die Ticketbuchung mit hoher Priorität.",
     resultLabel: "Beispielplan",
     results: [{"title": "Zugreise am Samstag planen", "detail": "Gemeinsame Liste"}, {"title": "Route auswählen", "detail": "Alex zugewiesen"}, {"title": "Zugtickets buchen", "detail": "Hohe Priorität"}],
-    source: "Die Bun-Bundles benötigen Bun 1.3.14 oder neuer und sind für Linux x64 qualifiziert.",
+    source: "Die CLI-, TUI- und MCP-Bundles benötigen Bun 1.3.14 oder neuer und sind für Linux x64 qualifiziert.",
     shortSource: "MCP wird als Bun-Bundle bereitgestellt.",
     points: [
       'Es ist ein externer Assistent, den du anbindest. Ditero hat keinen eingebauten Chatbot und hostet kein KI-Modell.',

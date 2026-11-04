@@ -52,8 +52,8 @@ const en: HomeCopy = {
     publicTitle: 'Apps', devTitle: "Tools and API",
     public: {
       web: { name: 'Web', state: 'Beta', text: 'Use Ditero in your browser, with offline changes synced when you reconnect.' },
-      android: { name: 'Android', state: 'Beta', text: "Signed independent APK and AAB; no store distribution." },
-      desktop: { name: 'Desktop', state: 'Beta', text: "Windows and Linux installers are unsigned; macOS builds are ad-hoc signed without notarization." },
+      android: { name: 'Android', state: 'Experimental', text: "Signed independent APK and AAB; no store distribution." },
+      desktop: { name: 'Desktop', state: 'Experimental', text: "Windows and Linux installers are unsigned; macOS builds are ad-hoc signed without notarization." },
       ios: { name: 'iOS', state: 'Not available yet', text: 'There is no native iOS app yet.' },
     },
     dev: {
@@ -64,7 +64,7 @@ const en: HomeCopy = {
     },
     labels: { setup: 'Setup guide', release: 'Downloads', guide: 'Guide' },
   },
-  server: { title: 'Run the server yourself', text: "Run Ditero on your infrastructure. Inspect the MIT‑licensed code and decide who has access. Docker Compose and Helm guides are available.", link: 'Read the deployment guide', docs: 'Read the documentation', prerequisites: "Docker Compose includes PostgreSQL 15+ with logical replication; ports 3000 and 4848 are needed.", cost: "The software is free, but someone in your group runs the machine.", recovery: "Back up the database, attachments and encryption keys, and test a restore before inviting people. JSON export is not a full backup.", encryption: "Attachment encryption (opt-in): file contents, filenames, types and thumbnails are encrypted in the browser; sizes, times, uploader and task text are not." },
+  server: { title: 'Run the server yourself', text: "Run Ditero on your infrastructure. Inspect the MIT‑licensed code and decide who has access. Docker Compose and Helm guides are available.", link: 'Read the deployment guide', docs: 'Read the documentation', prerequisites: "PostgreSQL 15+ with logical replication is required; Docker Compose bundles it. Ports 3000 and 4848 are needed. Set DITERO_IMAGE_TAG={imageTag} to run this release.", cost: "The software is free, but someone in your group runs the machine.", recovery: "Back up the database, attachments and encryption keys, and test a restore before inviting people. JSON export is not a full backup.", encryption: "Attachment encryption (opt-in): file contents, filenames, types and thumbnails are encrypted in the browser; sizes, times, uploader and task text are not." },
   support: { title: 'Support development', text: "Ditero is free and MIT licensed. There are no paid feature unlocks. Donations pay for my time on fixes and releases.", kofi: 'Support on Ko-fi', sponsor: "Ask about sponsorship" },
 };
 
@@ -97,8 +97,8 @@ const de: HomeCopy = {
     publicTitle: 'Apps', devTitle: "Werkzeuge und API",
     public: {
       web: { name: 'Web', state: 'Beta', text: 'Nutze Ditero im Browser; offline vorgenommene Änderungen werden synchronisiert, sobald du wieder verbunden bist.' },
-      android: { name: 'Android', state: 'Beta', text: "Signierte unabhängige APK und AAB; keine Verteilung über einen Store." },
-      desktop: { name: 'Desktop', state: 'Beta', text: "Windows- und Linux-Installer sind unsigniert; macOS-Versionen sind ad hoc signiert und nicht notarisiert." },
+      android: { name: 'Android', state: 'Experimentell', text: "Signierte unabhängige APK und AAB; keine Verteilung über einen Store." },
+      desktop: { name: 'Desktop', state: 'Experimentell', text: "Windows- und Linux-Installer sind unsigniert; macOS-Versionen sind ad hoc signiert und nicht notarisiert." },
       ios: { name: 'iOS', state: 'Noch nicht verfügbar', text: 'Es gibt noch keine native iOS-App.' },
     },
     dev: {
@@ -109,7 +109,7 @@ const de: HomeCopy = {
     },
     labels: { setup: 'Einrichtungsanleitung', release: 'Downloads', guide: 'Anleitung' },
   },
-  server: { title: 'Betreibe den Server selbst', text: "Betreibe Ditero auf deiner Infrastruktur. Prüfe den MIT-lizenzierten Code und bestimme, wer Zugriff hat. Anleitungen für Docker Compose und Helm sind verfügbar.", link: 'Anleitung zur Einrichtung lesen', docs: 'Dokumentation lesen', prerequisites: "Docker Compose enthält PostgreSQL 15+ mit logischer Replikation; Ports 3000 und 4848 werden benötigt.", cost: "Die Software ist kostenlos, aber jemand aus deiner Gruppe betreibt den Rechner.", recovery: "Sichere Datenbank, Anhänge und Verschlüsselungsschlüssel und teste eine Wiederherstellung, bevor du Leute einlädst. Der JSON-Export ist kein vollständiges Backup.", encryption: "Verschlüsselung der Anhänge (optional): Dateiinhalte, Dateinamen, Typen und Vorschaubilder werden im Browser verschlüsselt; Größen, Zeiten, hochladende Person und Aufgabentext nicht." },
+  server: { title: 'Betreibe den Server selbst', text: "Betreibe Ditero auf deiner Infrastruktur. Prüfe den MIT-lizenzierten Code und bestimme, wer Zugriff hat. Anleitungen für Docker Compose und Helm sind verfügbar.", link: 'Anleitung zur Einrichtung lesen', docs: 'Dokumentation lesen', prerequisites: "PostgreSQL 15+ mit logischer Replikation ist erforderlich; Docker Compose bringt es mit. Die Ports 3000 und 4848 werden benötigt. Setze DITERO_IMAGE_TAG={imageTag}, um dieses Release zu starten.", cost: "Die Software ist kostenlos, aber jemand aus deiner Gruppe betreibt den Rechner.", recovery: "Sichere Datenbank, Anhänge und Verschlüsselungsschlüssel und teste eine Wiederherstellung, bevor du Leute einlädst. Der JSON-Export ist kein vollständiges Backup.", encryption: "Verschlüsselung der Anhänge (optional): Dateiinhalte, Dateinamen, Typen und Vorschaubilder werden im Browser verschlüsselt; Größen, Zeiten, hochladende Person und Aufgabentext nicht." },
   support: { title: 'Entwicklung unterstützen', text: "Ditero ist kostenlos und MIT-lizenziert. Es gibt keine kostenpflichtigen Funktionen. Spenden finanzieren meine Zeit für Fehlerbehebungen und Releases.", kofi: 'Auf Ko-fi unterstützen', sponsor: "Nach Sponsoring fragen" },
 };
 
@@ -142,8 +142,8 @@ const es: HomeCopy = {
     publicTitle: 'Aplicaciones', devTitle: "Herramientas y API",
     public: {
       web: { name: 'Web', state: 'Beta', text: 'Usa Ditero en el navegador, con sincronización de los cambios sin conexión al reconectarte.' },
-      android: { name: 'Android', state: 'Beta', text: "APK y AAB independientes y firmados; sin distribución en tiendas." },
-      desktop: { name: 'Escritorio', state: 'Beta', text: "Los instaladores de Windows y Linux no están firmados; las versiones de macOS tienen firma ad hoc y no están notarizadas." },
+      android: { name: 'Android', state: 'Experimental', text: "APK y AAB independientes y firmados; sin distribución en tiendas." },
+      desktop: { name: 'Escritorio', state: 'Experimental', text: "Los instaladores de Windows y Linux no están firmados; las versiones de macOS tienen firma ad hoc y no están notarizadas." },
       ios: { name: 'iOS', state: 'Aún no disponible', text: 'Todavía no hay una app nativa para iOS.' },
     },
     dev: {
@@ -154,14 +154,14 @@ const es: HomeCopy = {
     },
     labels: { setup: 'Guía de instalación', release: 'Descargas', guide: 'Guía' },
   },
-  server: { title: 'Gestiona tú el servidor', text: "Ejecuta Ditero en tu infraestructura. Revisa el código con licencia MIT y decide quién tiene acceso. Hay guías de Docker Compose y Helm.", link: 'Leer la guía de despliegue', docs: 'Leer la documentación', prerequisites: "Docker Compose incluye PostgreSQL 15+ con replicación lógica; se necesitan los puertos 3000 y 4848.", cost: "El software es gratis, pero alguien del grupo administra la máquina.", recovery: "Haz copias de la base de datos, los adjuntos y las claves de cifrado y prueba la restauración antes de invitar a otras personas. La exportación JSON no es una copia completa.", encryption: "Cifrado de adjuntos (opcional): el contenido, los nombres, los tipos y las miniaturas se cifran en el navegador; los tamaños, las fechas, quién subió el archivo y el texto de las tareas no." },
+  server: { title: 'Gestiona tú el servidor', text: "Ejecuta Ditero en tu infraestructura. Revisa el código con licencia MIT y decide quién tiene acceso. Hay guías de Docker Compose y Helm.", link: 'Leer la guía de despliegue', docs: 'Leer la documentación', prerequisites: "Se necesita PostgreSQL 15+ con replicación lógica; Docker Compose lo incluye. Se necesitan los puertos 3000 y 4848. Define DITERO_IMAGE_TAG={imageTag} para ejecutar esta versión.", cost: "El software es gratis, pero alguien del grupo administra la máquina.", recovery: "Haz copias de la base de datos, los adjuntos y las claves de cifrado y prueba la restauración antes de invitar a otras personas. La exportación JSON no es una copia completa.", encryption: "Cifrado de adjuntos (opcional): el contenido, los nombres, los tipos y las miniaturas se cifran en el navegador; los tamaños, las fechas, quién subió el archivo y el texto de las tareas no." },
   support: { title: 'Apoyar el desarrollo', text: "Ditero es gratuito y tiene licencia MIT. No hay funciones de pago. Las donaciones financian mi tiempo dedicado a corregir errores y publicar versiones.", kofi: 'Apoyar en Ko-fi', sponsor: "Consultar sobre patrocinio" },
 };
 
 const fr: HomeCopy = {
   meta: { title: 'Listes partagées. Votre serveur.', description: 'Ditero est une application de tâches open source et auto-hébergée pour les foyers, les associations et les petites équipes. Partagez listes de courses, tâches ménagères, habitudes et projets depuis un serveur que vous gérez.' },
   ui: { selfHost: 'Auto-héberger', skip: 'Aller au contenu', mainNav: 'Navigation principale', footerNav: 'Liens de pied de page', features: 'Fonctionnalités', access: 'Apps et outils', support: 'Soutenir', source: 'Code source', about: 'À propos', privacy: 'Confidentialité', license: 'Licence MIT', issues: 'Signaler un problème', language: 'Langue', theme: 'Thème sombre', footerNote: 'Open source sous licence MIT.', home: 'Accueil Ditero', madeBy: 'Créé par Iulian Dita', otherProjects: 'Autres projets' },
-  hero: { line1: 'Listes partagées.', line2: 'Votre serveur.', intro: 'Tâches, courses et routines partagées pour les foyers et petits groupes. Sur votre serveur, avec synchronisation hors ligne et clients web, mobiles, de bureau et en terminal.', primary: 'Installer votre serveur', apps: 'Apps et outils', status: "Beta:" },
+  hero: { line1: 'Listes partagées.', line2: 'Votre serveur.', intro: 'Tâches, courses et routines partagées pour les foyers et petits groupes. Sur votre serveur, avec synchronisation hors ligne et clients web, mobiles, de bureau et en terminal.', primary: 'Installer votre serveur', apps: 'Apps et outils', status: "Bêta :" },
   capture: { dashboardCompactAlt: 'Tableau de bord du foyer Ditero avec les priorités des tâches.', dashboardAlt: "Tableau de bord Ditero affichant cinq priorités du foyer.", desktopAlt: "Tâches personnelles et partagées dans Ditero, regroupées par priorité.", mobileAlt: "L'application mobile Ditero affichant une liste partagée avec des tâches d'exemple.", open: 'Ouvrir la capture en taille réelle' },
   gallery: {
     title: "Voir de plus près",
@@ -186,20 +186,20 @@ const fr: HomeCopy = {
     invited: "Une personne vous a invité ? Ouvrez le lien reçu : vous n’avez rien à installer.",
     publicTitle: 'Applications', devTitle: "Outils et API",
     public: {
-      web: { name: 'Web', state: 'Beta', text: "Utilisez Ditero dans votre navigateur, avec synchronisation des modifications hors ligne à la reconnexion." },
-      android: { name: 'Android', state: 'Beta', text: "APK et AAB indépendants et signés ; aucune distribution en boutique." },
-      desktop: { name: 'Bureau', state: 'Beta', text: "Les installateurs Windows et Linux ne sont pas signés ; les versions macOS sont signées ad hoc sans notarisation." },
+      web: { name: 'Web', state: 'Bêta', text: "Utilisez Ditero dans votre navigateur, avec synchronisation des modifications hors ligne à la reconnexion." },
+      android: { name: 'Android', state: 'Expérimental', text: "APK et AAB indépendants et signés ; aucune distribution en boutique." },
+      desktop: { name: 'Bureau', state: 'Expérimental', text: "Les installateurs Windows et Linux ne sont pas signés ; les versions macOS sont signées ad hoc sans notarisation." },
       ios: { name: 'iOS', state: 'Pas encore disponible', text: "Il n'existe pas encore d'application iOS native." },
     },
     dev: {
-      cli: { name: 'CLI', state: 'Beta', text: 'Consultez, créez et modifiez des tâches en ligne de commande.' },
-      tui: { name: 'TUI', state: 'Beta', text: 'Parcourez et gérez les tâches de façon interactive au clavier.' },
-      api: { name: 'API', state: "Beta", text: "Connectez vos clients HTTP avec des jetons d'accès personnels et OpenAPI." },
-      mcp: { name: 'MCP', state: 'Beta', text: 'Laissez un assistant connecté planifier, créer et gérer des tâches.' },
+      cli: { name: 'CLI', state: 'Bêta', text: 'Consultez, créez et modifiez des tâches en ligne de commande.' },
+      tui: { name: 'TUI', state: 'Bêta', text: 'Parcourez et gérez les tâches de façon interactive au clavier.' },
+      api: { name: 'API', state: "Bêta", text: "Connectez vos clients HTTP avec des jetons d'accès personnels et OpenAPI." },
+      mcp: { name: 'MCP', state: 'Bêta', text: 'Laissez un assistant connecté planifier, créer et gérer des tâches.' },
     },
     labels: { setup: "Guide d'installation", release: 'Téléchargements', guide: 'Guide' },
   },
-  server: { title: 'Gérez le serveur vous-même', text: "Hébergez Ditero sur votre infrastructure. Consultez le code sous licence MIT et choisissez qui y accède. Guides Docker Compose et Helm disponibles.", link: 'Lire le guide de déploiement', docs: 'Lire la documentation', prerequisites: "Docker Compose inclut PostgreSQL 15+ avec réplication logique ; les ports 3000 et 4848 sont nécessaires.", cost: "Le logiciel est gratuit, mais une personne du groupe gère la machine.", recovery: "Sauvegardez la base de données, les pièces jointes et les clés de chiffrement, puis testez une restauration avant d’inviter des personnes. L’export JSON n’est pas une sauvegarde complète.", encryption: "Chiffrement des pièces jointes (facultatif) : contenu, noms, types et miniatures sont chiffrés dans le navigateur ; tailles, dates, personne ayant envoyé le fichier et texte des tâches ne le sont pas." },
+  server: { title: 'Gérez le serveur vous-même', text: "Hébergez Ditero sur votre infrastructure. Consultez le code sous licence MIT et choisissez qui y accède. Guides Docker Compose et Helm disponibles.", link: 'Lire le guide de déploiement', docs: 'Lire la documentation', prerequisites: "PostgreSQL 15+ avec réplication logique est requis ; Docker Compose l'inclut. Les ports 3000 et 4848 sont nécessaires. Définissez DITERO_IMAGE_TAG={imageTag} pour lancer cette version.", cost: "Le logiciel est gratuit, mais une personne du groupe gère la machine.", recovery: "Sauvegardez la base de données, les pièces jointes et les clés de chiffrement, puis testez une restauration avant d'inviter des personnes. L'export JSON n’est pas une sauvegarde complète.", encryption: "Chiffrement des pièces jointes (facultatif) : contenu, noms, types et miniatures sont chiffrés dans le navigateur ; tailles, dates, personne ayant envoyé le fichier et texte des tâches ne le sont pas." },
   support: { title: 'Soutenir le développement', text: "Ditero est gratuit et sous licence MIT. Aucune fonctionnalité n’est payante. Les dons financent le temps que je consacre aux corrections et aux nouvelles versions.", kofi: 'Soutenir sur Ko-fi', sponsor: "Se renseigner sur le sponsoring" },
 };
 
@@ -232,8 +232,8 @@ const ro: HomeCopy = {
     publicTitle: 'Aplicații', devTitle: "Instrumente și API",
     public: {
       web: { name: 'Web', state: 'Beta', text: 'Folosește Ditero în browser, cu sincronizarea modificărilor offline când te reconectezi.' },
-      android: { name: 'Android', state: 'Beta', text: "APK și AAB independente și semnate; fără distribuție în magazine." },
-      desktop: { name: 'Desktop', state: 'Beta', text: "Programele de instalare Windows și Linux sunt nesemnate; versiunile macOS sunt semnate ad hoc, fără notarizare." },
+      android: { name: 'Android', state: 'Experimental', text: "APK și AAB independente și semnate; fără distribuție în magazine." },
+      desktop: { name: 'Desktop', state: 'Experimental', text: "Programele de instalare Windows și Linux sunt nesemnate; versiunile macOS sunt semnate ad hoc, fără notarizare." },
       ios: { name: 'iOS', state: 'Încă indisponibil', text: 'Încă nu există o aplicație iOS nativă.' },
     },
     dev: {
@@ -244,14 +244,14 @@ const ro: HomeCopy = {
     },
     labels: { setup: 'Ghid de instalare', release: 'Descărcări', guide: 'Ghid' },
   },
-  server: { title: 'Administrează serverul tu însuți', text: "Rulează Ditero pe infrastructura ta. Verifică sursa sub licență MIT și decide cine are acces. Ai ghiduri pentru Docker Compose și Helm.", link: 'Citește ghidul de implementare', docs: 'Citește documentația', prerequisites: "Docker Compose include PostgreSQL 15+ cu replicare logică; sunt necesare porturile 3000 și 4848.", cost: "Software-ul este gratuit, dar cineva din grup administrează calculatorul.", recovery: "Fă copii pentru baza de date, atașamente și cheile de criptare și testează restaurarea înainte să inviți persoane. Exportul JSON nu este un backup complet.", encryption: "Criptarea atașamentelor (opțională): conținutul, numele, tipurile și miniaturile sunt criptate în browser; dimensiunile, datele, persoana care a încărcat fișierul și textul sarcinilor nu sunt." },
+  server: { title: 'Administrează serverul tu însuți', text: "Rulează Ditero pe infrastructura ta. Verifică sursa sub licență MIT și decide cine are acces. Ai ghiduri pentru Docker Compose și Helm.", link: 'Citește ghidul de implementare', docs: 'Citește documentația', prerequisites: "Este necesar PostgreSQL 15+ cu replicare logică; Docker Compose îl include. Sunt necesare porturile 3000 și 4848. Setează DITERO_IMAGE_TAG={imageTag} pentru a rula această versiune.", cost: "Software-ul este gratuit, dar cineva din grup administrează calculatorul.", recovery: "Fă copii de rezervă ale bazei de date, ale atașamentelor și ale cheilor de criptare și testează restaurarea înainte să inviți persoane. Exportul JSON nu este un backup complet.", encryption: "Criptarea atașamentelor (opțională): conținutul, numele, tipurile și miniaturile sunt criptate în browser; dimensiunile, marcajele de timp, persoana care a încărcat fișierul și textul sarcinilor nu sunt." },
   support: { title: 'Sprijină dezvoltarea', text: "Ditero este gratuit și are licență MIT. Nu există funcții cu plată. Donațiile îmi plătesc timpul dedicat corecturilor și lansărilor.", kofi: 'Sprijină pe Ko-fi', sponsor: "Întreabă despre sponsorizare" },
 };
 
 const ar: HomeCopy = {
   meta: { title: 'قوائم مشتركة. خادمك.', description: 'Ditero تطبيق مهام مفتوح المصدر ومستضاف ذاتيًا للأسر والنوادي والفرق الصغيرة. شارك قوائم التسوق والمهام المنزلية والعادات والمشاريع من خادم تديره بنفسك.' },
   ui: { selfHost: 'استضافة ذاتية', skip: 'تخطَّ إلى المحتوى', mainNav: 'التنقل الرئيسي', footerNav: 'روابط التذييل', features: 'الميزات', access: 'التطبيقات والأدوات', support: 'الدعم', source: 'الشيفرة المصدرية', about: 'حول', privacy: 'الخصوصية', license: 'ترخيص MIT', issues: 'المشكلات', language: 'اللغة', theme: 'السمة الداكنة', footerNote: 'مفتوح المصدر بترخيص MIT.', home: 'الصفحة الرئيسية لـ Ditero', madeBy: 'من تطوير Iulian Dita', otherProjects: 'مشاريع أخرى' },
-  hero: { line1: 'قوائم مشتركة.', line2: 'خادمك.', intro: 'مهام وتسوق وروتين مشترك للأسر والمجموعات الصغيرة. على خادمك، مع مزامنة دون اتصال وتطبيقات للويب والجوال وسطح المكتب والطرفية.', primary: 'إعداد الخادم الخاص بك', apps: 'التطبيقات والأدوات', status: "Beta:" },
+  hero: { line1: 'قوائم مشتركة.', line2: 'خادمك.', intro: 'مهام وتسوق وروتين مشترك للأسر والمجموعات الصغيرة. على خادمك، مع مزامنة دون اتصال وتطبيقات للويب والجوال وسطح المكتب والطرفية.', primary: 'إعداد الخادم الخاص بك', apps: 'التطبيقات والأدوات', status: "بيتا:" },
   capture: { dashboardCompactAlt: 'لوحة الأسرة في Ditero تعرض أولويات المهام.', dashboardAlt: "لوحة معلومات Ditero تعرض خمس أولويات للأسرة.", desktopAlt: "مهام شخصية ومشتركة في Ditero مجمّعة حسب الأولوية.", mobileAlt: 'تطبيق Ditero على الجوال يعرض قائمة مشتركة بمهام تجريبية.', open: 'افتح لقطة الشاشة بالحجم الكامل' },
   gallery: {
     title: "نظرة أقرب",
@@ -276,20 +276,20 @@ const ar: HomeCopy = {
     invited: "دعاك أحدهم؟ افتح الرابط الذي أرسله إليك؛ لا تحتاج إلى تثبيت أي شيء.",
     publicTitle: 'التطبيقات', devTitle: "الأدوات وواجهة API",
     public: {
-      web: { name: 'الويب', state: 'Beta', text: 'استخدم Ditero في متصفحك، مع مزامنة التغييرات التي أجريتها دون اتصال عند إعادة الاتصال.' },
-      android: { name: 'Android', state: 'Beta', text: "ملفا APK وAAB مستقلان وموقّعان، ولا يتوفران عبر متجر." },
-      desktop: { name: 'سطح المكتب', state: 'Beta', text: "مثبّتات Windows وLinux غير موقّعة، وإصدارات macOS موقّعة توقيعًا مؤقتًا دون توثيق من Apple." },
+      web: { name: 'الويب', state: 'بيتا', text: 'استخدم Ditero في متصفحك، مع مزامنة التغييرات التي أجريتها دون اتصال عند إعادة الاتصال.' },
+      android: { name: 'Android', state: 'تجريبي', text: "ملفا APK وAAB مستقلان وموقّعان، ولا يتوفران عبر متجر." },
+      desktop: { name: 'سطح المكتب', state: 'تجريبي', text: "مثبّتات Windows وLinux غير موقّعة، وإصدارات macOS موقّعة بتوقيع ad hoc (دون هوية مطوّر) ودون توثيق (notarization) من Apple." },
       ios: { name: 'iOS', state: 'غير متاح بعد', text: 'لا يوجد تطبيق iOS أصلي بعد.' },
     },
     dev: {
-      cli: { name: 'CLI', state: 'Beta', text: 'اعرض المهام وأنشئها وحدّثها من سطر الأوامر.' },
-      tui: { name: 'TUI', state: 'Beta', text: 'تصفّح المهام وأدِرها تفاعليًا باستخدام لوحة المفاتيح.' },
-      api: { name: 'API', state: "Beta", text: 'اربط عملاء HTTP باستخدام رموز الوصول الشخصية وOpenAPI.' },
-      mcp: { name: 'MCP', state: 'Beta', text: 'دع مساعدًا متصلًا يخطط للمهام وينشئها ويديرها.' },
+      cli: { name: 'CLI', state: 'بيتا', text: 'اعرض المهام وأنشئها وحدّثها من سطر الأوامر.' },
+      tui: { name: 'TUI', state: 'بيتا', text: 'تصفّح المهام وأدِرها تفاعليًا باستخدام لوحة المفاتيح.' },
+      api: { name: 'API', state: "بيتا", text: 'اربط عملاء HTTP باستخدام رموز الوصول الشخصية وOpenAPI.' },
+      mcp: { name: 'MCP', state: 'بيتا', text: 'دع مساعدًا متصلًا يخطط للمهام وينشئها ويديرها.' },
     },
     labels: { setup: 'دليل الإعداد', release: 'التنزيلات', guide: 'الدليل' },
   },
-  server: { title: 'شغّل الخادم بنفسك', text: "شغّل Ditero على بنيتك التحتية. افحص الشيفرة بترخيص MIT وحدد من يملك الوصول. تتوفر أدلة Docker Compose وHelm.", link: 'اقرأ دليل النشر', docs: 'اقرأ الوثائق', prerequisites: "يتضمن Docker Compose قاعدة PostgreSQL 15+ مع النسخ المنطقي؛ ويلزم المنفذان 3000 و4848.", cost: "البرنامج مجاني، لكن أحد أفراد المجموعة يدير الجهاز.", recovery: "انسخ قاعدة البيانات والمرفقات ومفاتيح التشفير احتياطيًا، واختبر الاستعادة قبل دعوة الآخرين. تصدير JSON ليس نسخة احتياطية كاملة.", encryption: "تشفير المرفقات (اختياري): يُشفّر محتوى الملفات وأسماؤها وأنواعها وصورها المصغّرة في المتصفح؛ أما الأحجام والأوقات وهوية الرافع ونص المهام فلا تُشفّر." },
+  server: { title: 'شغّل الخادم بنفسك', text: "شغّل Ditero على بنيتك التحتية. افحص الشيفرة بترخيص MIT وحدد من يملك الوصول. تتوفر أدلة Docker Compose وHelm.", link: 'اقرأ دليل النشر', docs: 'اقرأ الوثائق', prerequisites: "يلزم PostgreSQL 15+ مع النسخ المتماثل المنطقي، ويتضمنه Docker Compose. ويلزم المنفذان 3000 و4848. اضبط DITERO_IMAGE_TAG={imageTag} لتشغيل هذا الإصدار.", cost: "البرنامج مجاني، لكن أحد أفراد المجموعة يدير الجهاز.", recovery: "انسخ قاعدة البيانات والمرفقات ومفاتيح التشفير احتياطيًا، واختبر الاستعادة قبل دعوة الآخرين. تصدير JSON ليس نسخة احتياطية كاملة.", encryption: "تشفير المرفقات (اختياري): يُشفّر محتوى الملفات وأسماؤها وأنواعها وصورها المصغّرة في المتصفح؛ أما الأحجام والأوقات ومن رفع الملف ونص المهام فلا تُشفّر." },
   support: { title: 'ادعم التطوير', text: "Ditero مجاني وبترخيص MIT. لا توجد ميزات مدفوعة. تموّل التبرعات وقتي المخصص للإصلاحات وإصدار النسخ الجديدة.", kofi: 'ادعم على Ko-fi', sponsor: "استفسر عن الرعاية" },
 };
 

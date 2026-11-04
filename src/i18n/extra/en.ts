@@ -1,7 +1,7 @@
 import type { ExtraCopy } from './types';
 
 export const en: ExtraCopy = {
-  ui: { view: 'View', desktop: 'Desktop', phone: 'Phone', tour: 'Explore Ditero', platforms: 'Web, Android, experimental desktop. CLI, TUI and MCP from source.', details: 'Details', menu: 'Menu', heroIntro: 'Shared shopping lists, recurring chores and reminders for your household. Free, open source and self-hosted.', groups: 'Feature groups', docs: 'Documentation' },
+  ui: { view: 'View', desktop: 'Desktop', phone: 'Phone', tour: 'Explore Ditero', platforms: "Web, Android and desktop are in beta; CLI, TUI and MCP ship as Bun bundles.", details: 'Details', menu: 'Menu', heroIntro: 'Shared shopping lists, recurring chores and reminders for your household. Free, open source and self-hosted.', groups: 'Feature groups', docs: 'Documentation' },
   setup: { steps: ["Run your server with Docker Compose", "Create your account in the web app", "Invite people and share a list"] },
   ai: {
     title: "Plan with your assistant",
@@ -10,8 +10,8 @@ export const en: ExtraCopy = {
     example: "Plan Saturday's picnic, assign the shopping, and mark booking the train as high priority.",
     resultLabel: "Example plan",
     results: [{"title": "Plan Saturday's picnic", "detail": "Shared list"}, {"title": "Buy food for the picnic", "detail": "Assigned to Alex"}, {"title": "Book the train", "detail": "High priority"}],
-    source: "Standalone binaries are not included in the alpha downloads.",
-    shortSource: "MCP runs from source.",
+    source: "Bun bundles require Bun 1.3.14 or newer and are qualified on Linux x64.",
+    shortSource: "MCP ships as a Bun bundle.",
     points: [
       'It is an external assistant that you connect. Ditero has no built-in chatbot and does not host any AI model.',
       'Your MCP client decides where results and conversations go. Use a client you trust.',

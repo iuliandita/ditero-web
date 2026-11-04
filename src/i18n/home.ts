@@ -19,14 +19,14 @@ export interface HomeCopy {
     dev: Record<'cli' | 'tui' | 'api' | 'mcp', Row>;
     labels: { setup: string; release: string; guide: string };
   };
-  server: { title: string; text: string; link: string; docs: string; encryption: string };
+  server: { title: string; text: string; link: string; docs: string; prerequisites: string; cost: string; recovery: string; encryption: string };
   support: { title: string; text: string; kofi: string; sponsor: string };
 }
 
 const en: HomeCopy = {
   meta: { title: 'Shared lists. Your server.', description: 'Ditero is an open-source, self-hosted todo app for households, clubs and small teams. Share shopping lists, chores, habits and projects from one server you run.' },
   ui: { selfHost: 'Self-host', skip: 'Skip to content', mainNav: 'Main navigation', footerNav: 'Footer links', features: 'Features', access: 'Apps and tools', support: 'Support', source: 'Source code', about: 'About', privacy: 'Privacy', license: 'MIT license', issues: 'Issues', language: 'Language', theme: 'Dark theme', footerNote: 'Open source under the MIT license.', home: 'Ditero home', madeBy: 'Made by Iulian Dita', otherProjects: 'Other projects' },
-  hero: { line1: 'Shared lists.', line2: 'Your server.', intro: 'Shared tasks, shopping and routines for households and small groups. Self-hosted, with offline sync and web, mobile, desktop and terminal clients.', primary: 'Set up your server', apps: 'Apps and tools', status: "Alpha:" },
+  hero: { line1: 'Shared lists.', line2: 'Your server.', intro: 'Shared tasks, shopping and routines for households and small groups. Self-hosted, with offline sync and web, mobile, desktop and terminal clients.', primary: 'Set up your server', apps: 'Apps and tools', status: "Beta:" },
   capture: { dashboardCompactAlt: 'Ditero household dashboard showing task priorities.', dashboardAlt: "Ditero dashboard showing five household priorities.", desktopAlt: "Personal and shared tasks in Ditero, grouped by priority.", mobileAlt: 'The Ditero mobile app showing a shared list with example tasks.', open: 'Open full-size screenshot' },
   gallery: {
     title: "A closer look",
@@ -50,27 +50,27 @@ const en: HomeCopy = {
     title: 'Apps and tools', intro: "One server for your group. Reach it from the web, your phone, your desktop or your own tools.",
     publicTitle: 'Apps', devTitle: "Tools and API",
     public: {
-      web: { name: 'Web', state: 'Alpha', text: 'Use Ditero in your browser, with offline changes synced when you reconnect.' },
-      android: { name: 'Android', state: 'Alpha', text: 'Signed, independent Android downloads.' },
-      desktop: { name: 'Desktop', state: 'Experimental', text: 'Windows installers are unsigned and macOS builds are ad-hoc signed. Platform qualification is not complete.' },
+      web: { name: 'Web', state: 'Beta', text: 'Use Ditero in your browser, with offline changes synced when you reconnect.' },
+      android: { name: 'Android', state: 'Beta', text: "Signed independent APK and AAB; no store distribution." },
+      desktop: { name: 'Desktop', state: 'Beta', text: "Windows and Linux installers are unsigned; macOS builds are ad-hoc signed without notarization." },
       ios: { name: 'iOS', state: 'Not available yet', text: 'There is no native iOS app yet.' },
     },
     dev: {
-      cli: { name: 'CLI', state: 'Run from source', text: 'View, create and update tasks from the command line.' },
-      tui: { name: 'TUI', state: 'Run from source', text: 'Browse and manage tasks interactively with the keyboard.' },
-      api: { name: 'API', state: "Alpha", text: 'Connect your HTTP clients using personal access tokens and OpenAPI.' },
-      mcp: { name: 'MCP', state: 'Run from source', text: 'Let a connected assistant plan, create and manage tasks.' },
+      cli: { name: 'CLI', state: 'Beta', text: 'View, create and update tasks from the command line.' },
+      tui: { name: 'TUI', state: 'Beta', text: 'Browse and manage tasks interactively with the keyboard.' },
+      api: { name: 'API', state: "Beta", text: 'Connect your HTTP clients using personal access tokens and OpenAPI.' },
+      mcp: { name: 'MCP', state: 'Beta', text: 'Let a connected assistant plan, create and manage tasks.' },
     },
     labels: { setup: 'Setup guide', release: 'Downloads', guide: 'Guide' },
   },
-  server: { title: 'Run the server yourself', text: "Run Ditero on your infrastructure. Inspect the MIT‑licensed code and decide who has access. Docker Compose and Helm guides are available.", link: 'Read the deployment guide', docs: 'Read the documentation', encryption: 'Attachments are encrypted, which protects file content. This does not mean all task data is end-to-end encrypted.' },
+  server: { title: 'Run the server yourself', text: "Run Ditero on your infrastructure. Inspect the MIT‑licensed code and decide who has access. Docker Compose and Helm guides are available.", link: 'Read the deployment guide', docs: 'Read the documentation', prerequisites: "Docker Compose includes PostgreSQL 15+ with logical replication; ports 3000 and 4848 are needed.", cost: "The software is free, but someone in your group runs the machine.", recovery: "Back up the database, attachments and encryption keys, and test a restore before inviting people. JSON export is not a full backup.", encryption: "Attachment encryption (opt-in): file contents, filenames, types and thumbnails are encrypted in the browser; sizes, times, uploader and task text are not." },
   support: { title: 'Support development', text: 'Ditero is free and MIT licensed. There are no paid feature unlocks. Support contributes to the development of the project.', kofi: 'Support on Ko-fi', sponsor: 'Sponsor Ditero' },
 };
 
 const de: HomeCopy = {
   meta: { title: 'Gemeinsame Listen. Dein Server.', description: 'Ditero ist eine quelloffene, selbst gehostete Aufgaben-App für Haushalte, Vereine und kleine Teams. Teile Einkaufslisten, Hausarbeit, Gewohnheiten und Projekte von einem Server, den du selbst betreibst.' },
   ui: { selfHost: 'Selbst hosten', skip: 'Zum Inhalt springen', mainNav: 'Hauptnavigation', footerNav: 'Weitere Links', features: 'Funktionen', access: 'Apps und Werkzeuge', support: 'Unterstützen', source: 'Quellcode', about: 'Über Ditero', privacy: 'Datenschutz', license: 'MIT-Lizenz', issues: 'Fehler melden', language: 'Sprache', theme: 'Dunkles Design', footerNote: 'Quelloffen unter der MIT-Lizenz.', home: 'Ditero Startseite', madeBy: 'Von Iulian Dita', otherProjects: 'Weitere Projekte' },
-  hero: { line1: 'Gemeinsame Listen.', line2: 'Dein Server.', intro: 'Gemeinsame Aufgaben, Einkäufe und Routinen für Haushalte und kleine Gruppen. Selbst gehostet, mit Offline-Sync und Clients für Web, Mobilgeräte, Desktop und Terminal.', primary: 'Server einrichten', apps: 'Apps und Werkzeuge', status: "Alpha:" },
+  hero: { line1: 'Gemeinsame Listen.', line2: 'Dein Server.', intro: 'Gemeinsame Aufgaben, Einkäufe und Routinen für Haushalte und kleine Gruppen. Selbst gehostet, mit Offline-Sync und Clients für Web, Mobilgeräte, Desktop und Terminal.', primary: 'Server einrichten', apps: 'Apps und Werkzeuge', status: "Beta:" },
   capture: { dashboardCompactAlt: 'Ditero-Haushaltsdashboard mit Aufgabenprioritäten.', dashboardAlt: "Ditero-Dashboard mit fünf Prioritäten für den Haushalt.", desktopAlt: "Persönliche und gemeinsame Aufgaben in Ditero, nach Priorität gruppiert.", mobileAlt: 'Die mobile Ditero-App mit einer gemeinsamen Liste und Beispielaufgaben.', open: 'Screenshot in voller Größe öffnen' },
   gallery: {
     title: "Genauer hinsehen",
@@ -94,27 +94,27 @@ const de: HomeCopy = {
     title: 'Apps und Werkzeuge', intro: "Ein Server für deine Gruppe. Nutze ihn im Web, auf dem Smartphone, am Desktop oder mit deinen eigenen Werkzeugen.",
     publicTitle: 'Apps', devTitle: "Werkzeuge und API",
     public: {
-      web: { name: 'Web', state: 'Alpha', text: 'Nutze Ditero im Browser; offline vorgenommene Änderungen werden synchronisiert, sobald du wieder verbunden bist.' },
-      android: { name: 'Android', state: 'Alpha', text: 'Signierte, unabhängige Android-Downloads.' },
-      desktop: { name: 'Desktop', state: 'Experimentell', text: 'Windows-Installer sind unsigniert, macOS-Builds sind ad-hoc signiert. Die Plattformqualifizierung ist nicht abgeschlossen.' },
+      web: { name: 'Web', state: 'Beta', text: 'Nutze Ditero im Browser; offline vorgenommene Änderungen werden synchronisiert, sobald du wieder verbunden bist.' },
+      android: { name: 'Android', state: 'Beta', text: "Signierte unabhängige APK und AAB; keine Verteilung über einen Store." },
+      desktop: { name: 'Desktop', state: 'Beta', text: "Windows- und Linux-Installer sind unsigniert; macOS-Versionen sind ad hoc signiert und nicht notarisiert." },
       ios: { name: 'iOS', state: 'Noch nicht verfügbar', text: 'Es gibt noch keine native iOS-App.' },
     },
     dev: {
-      cli: { name: 'CLI', state: 'Aus Quellcode starten', text: 'Zeige, erstelle und bearbeite Aufgaben über die Kommandozeile.' },
-      tui: { name: 'TUI', state: 'Aus Quellcode starten', text: 'Durchsuche und verwalte Aufgaben interaktiv mit der Tastatur.' },
-      api: { name: 'API', state: "Alpha", text: 'Binde deine HTTP-Clients mit persönlichen Zugriffstoken und OpenAPI an.' },
-      mcp: { name: 'MCP', state: 'Aus Quellcode starten', text: 'Lass einen verbundenen Assistenten Aufgaben planen, erstellen und verwalten.' },
+      cli: { name: 'CLI', state: 'Beta', text: 'Zeige, erstelle und bearbeite Aufgaben über die Kommandozeile.' },
+      tui: { name: 'TUI', state: 'Beta', text: 'Durchsuche und verwalte Aufgaben interaktiv mit der Tastatur.' },
+      api: { name: 'API', state: "Beta", text: 'Binde deine HTTP-Clients mit persönlichen Zugriffstoken und OpenAPI an.' },
+      mcp: { name: 'MCP', state: 'Beta', text: 'Lass einen verbundenen Assistenten Aufgaben planen, erstellen und verwalten.' },
     },
     labels: { setup: 'Einrichtungsanleitung', release: 'Downloads', guide: 'Anleitung' },
   },
-  server: { title: 'Betreibe den Server selbst', text: "Betreibe Ditero auf deiner Infrastruktur. Prüfe den MIT-lizenzierten Code und bestimme, wer Zugriff hat. Anleitungen für Docker Compose und Helm sind verfügbar.", link: 'Anleitung zur Einrichtung lesen', docs: 'Dokumentation lesen', encryption: 'Anhänge sind verschlüsselt und schützen so Dateiinhalte. Das bedeutet nicht, dass alle Aufgabendaten Ende‑zu‑Ende‑verschlüsselt sind.' },
+  server: { title: 'Betreibe den Server selbst', text: "Betreibe Ditero auf deiner Infrastruktur. Prüfe den MIT-lizenzierten Code und bestimme, wer Zugriff hat. Anleitungen für Docker Compose und Helm sind verfügbar.", link: 'Anleitung zur Einrichtung lesen', docs: 'Dokumentation lesen', prerequisites: "Docker Compose enthält PostgreSQL 15+ mit logischer Replikation; Ports 3000 und 4848 werden benötigt.", cost: "Die Software ist kostenlos, aber jemand aus deiner Gruppe betreibt den Rechner.", recovery: "Sichere Datenbank, Anhänge und Verschlüsselungsschlüssel und teste eine Wiederherstellung, bevor du Leute einlädst. Der JSON-Export ist kein vollständiges Backup.", encryption: "Verschlüsselung der Anhänge (optional): Dateiinhalte, Dateinamen, Typen und Vorschaubilder werden im Browser verschlüsselt; Größen, Zeiten, hochladende Person und Aufgabentext nicht." },
   support: { title: 'Entwicklung unterstützen', text: 'Ditero ist kostenlos und MIT-lizenziert. Es gibt keine kostenpflichtigen Funktionen. Unterstützung trägt zur Weiterentwicklung des Projekts bei.', kofi: 'Auf Ko-fi unterstützen', sponsor: 'Ditero sponsern' },
 };
 
 const es: HomeCopy = {
   meta: { title: 'Listas compartidas. Tu servidor.', description: 'Ditero es una aplicación de tareas de código abierto y autoalojada para hogares, clubes y equipos pequeños. Comparte listas de la compra, tareas del hogar, hábitos y proyectos desde un servidor que gestionas tú.' },
   ui: { selfHost: 'Autoalojar', skip: 'Saltar al contenido', mainNav: 'Navegación principal', footerNav: 'Enlaces del pie de página', features: 'Funciones', access: 'Apps y herramientas', support: 'Apoyar', source: 'Código fuente', about: 'Acerca de', privacy: 'Privacidad', license: 'Licencia MIT', issues: 'Incidencias', language: 'Idioma', theme: 'Tema oscuro', footerNote: 'Código abierto con licencia MIT.', home: 'Inicio de Ditero', madeBy: 'Creado por Iulian Dita', otherProjects: 'Otros proyectos' },
-  hero: { line1: 'Listas compartidas.', line2: 'Tu servidor.', intro: 'Tareas, compras y rutinas compartidas para hogares y grupos pequeños. En tu servidor, con sincronización sin conexión y clientes web, móviles, de escritorio y terminal.', primary: 'Configurar tu servidor', apps: 'Apps y herramientas', status: "Alfa:" },
+  hero: { line1: 'Listas compartidas.', line2: 'Tu servidor.', intro: 'Tareas, compras y rutinas compartidas para hogares y grupos pequeños. En tu servidor, con sincronización sin conexión y clientes web, móviles, de escritorio y terminal.', primary: 'Configurar tu servidor', apps: 'Apps y herramientas', status: "Beta:" },
   capture: { dashboardCompactAlt: 'Panel del hogar en Ditero con las prioridades de las tareas.', dashboardAlt: "Panel de Ditero con cinco prioridades del hogar.", desktopAlt: "Tareas personales y compartidas en Ditero, agrupadas por prioridad.", mobileAlt: 'La aplicación móvil de Ditero con una lista compartida y tareas de ejemplo.', open: 'Abrir la captura a tamaño completo' },
   gallery: {
     title: "Una mirada más de cerca",
@@ -138,27 +138,27 @@ const es: HomeCopy = {
     title: 'Apps y herramientas', intro: "Un servidor para tu grupo. Accede desde la web, el móvil, el escritorio o tus propias herramientas.",
     publicTitle: 'Aplicaciones', devTitle: "Herramientas y API",
     public: {
-      web: { name: 'Web', state: 'Alfa', text: 'Usa Ditero en el navegador, con sincronización de los cambios sin conexión al reconectarte.' },
-      android: { name: 'Android', state: 'Alfa', text: 'Descargas de Android independientes y firmadas.' },
-      desktop: { name: 'Escritorio', state: 'Experimental', text: 'Los instaladores de Windows no están firmados y las compilaciones de macOS tienen firma ad hoc. La cualificación de plataformas no está completa.' },
+      web: { name: 'Web', state: 'Beta', text: 'Usa Ditero en el navegador, con sincronización de los cambios sin conexión al reconectarte.' },
+      android: { name: 'Android', state: 'Beta', text: "APK y AAB independientes y firmados; sin distribución en tiendas." },
+      desktop: { name: 'Escritorio', state: 'Beta', text: "Los instaladores de Windows y Linux no están firmados; las versiones de macOS tienen firma ad hoc y no están notarizadas." },
       ios: { name: 'iOS', state: 'Aún no disponible', text: 'Todavía no hay una app nativa para iOS.' },
     },
     dev: {
-      cli: { name: 'CLI', state: 'Desde código fuente', text: 'Consulta, crea y actualiza tareas desde la línea de comandos.' },
-      tui: { name: 'TUI', state: 'Desde código fuente', text: 'Explora y gestiona tareas de forma interactiva con el teclado.' },
-      api: { name: 'API', state: "Alfa", text: 'Conecta tus clientes HTTP con tokens de acceso personal y OpenAPI.' },
-      mcp: { name: 'MCP', state: 'Desde código fuente', text: 'Deja que un asistente conectado planifique, cree y gestione tareas.' },
+      cli: { name: 'CLI', state: 'Beta', text: 'Consulta, crea y actualiza tareas desde la línea de comandos.' },
+      tui: { name: 'TUI', state: 'Beta', text: 'Explora y gestiona tareas de forma interactiva con el teclado.' },
+      api: { name: 'API', state: "Beta", text: 'Conecta tus clientes HTTP con tokens de acceso personal y OpenAPI.' },
+      mcp: { name: 'MCP', state: 'Beta', text: 'Deja que un asistente conectado planifique, cree y gestione tareas.' },
     },
     labels: { setup: 'Guía de instalación', release: 'Descargas', guide: 'Guía' },
   },
-  server: { title: 'Gestiona tú el servidor', text: "Ejecuta Ditero en tu infraestructura. Revisa el código con licencia MIT y decide quién tiene acceso. Hay guías de Docker Compose y Helm.", link: 'Leer la guía de despliegue', docs: 'Leer la documentación', encryption: 'Los archivos adjuntos están cifrados, lo que protege su contenido. Esto no significa que todos los datos de las tareas tengan cifrado de extremo a extremo.' },
+  server: { title: 'Gestiona tú el servidor', text: "Ejecuta Ditero en tu infraestructura. Revisa el código con licencia MIT y decide quién tiene acceso. Hay guías de Docker Compose y Helm.", link: 'Leer la guía de despliegue', docs: 'Leer la documentación', prerequisites: "Docker Compose incluye PostgreSQL 15+ con replicación lógica; se necesitan los puertos 3000 y 4848.", cost: "El software es gratis, pero alguien del grupo administra la máquina.", recovery: "Haz copias de la base de datos, los adjuntos y las claves de cifrado y prueba la restauración antes de invitar a otras personas. La exportación JSON no es una copia completa.", encryption: "Cifrado de adjuntos (opcional): el contenido, los nombres, los tipos y las miniaturas se cifran en el navegador; los tamaños, las fechas, quién subió el archivo y el texto de las tareas no." },
   support: { title: 'Apoyar el desarrollo', text: 'Ditero es gratuito y tiene licencia MIT. No hay funciones de pago. El apoyo contribuye al desarrollo del proyecto.', kofi: 'Apoyar en Ko-fi', sponsor: 'Patrocinar Ditero' },
 };
 
 const fr: HomeCopy = {
   meta: { title: 'Listes partagées. Votre serveur.', description: 'Ditero est une application de tâches open source et auto-hébergée pour les foyers, les associations et les petites équipes. Partagez listes de courses, tâches ménagères, habitudes et projets depuis un serveur que vous gérez.' },
   ui: { selfHost: 'Auto-héberger', skip: 'Aller au contenu', mainNav: 'Navigation principale', footerNav: 'Liens de pied de page', features: 'Fonctionnalités', access: 'Apps et outils', support: 'Soutenir', source: 'Code source', about: 'À propos', privacy: 'Confidentialité', license: 'Licence MIT', issues: 'Signaler un problème', language: 'Langue', theme: 'Thème sombre', footerNote: 'Open source sous licence MIT.', home: 'Accueil Ditero', madeBy: 'Créé par Iulian Dita', otherProjects: 'Autres projets' },
-  hero: { line1: 'Listes partagées.', line2: 'Votre serveur.', intro: 'Tâches, courses et routines partagées pour les foyers et petits groupes. Sur votre serveur, avec synchronisation hors ligne et clients web, mobiles, de bureau et en terminal.', primary: 'Installer votre serveur', apps: 'Apps et outils', status: "Alpha :" },
+  hero: { line1: 'Listes partagées.', line2: 'Votre serveur.', intro: 'Tâches, courses et routines partagées pour les foyers et petits groupes. Sur votre serveur, avec synchronisation hors ligne et clients web, mobiles, de bureau et en terminal.', primary: 'Installer votre serveur', apps: 'Apps et outils', status: "Beta:" },
   capture: { dashboardCompactAlt: 'Tableau de bord du foyer Ditero avec les priorités des tâches.', dashboardAlt: "Tableau de bord Ditero affichant cinq priorités du foyer.", desktopAlt: "Tâches personnelles et partagées dans Ditero, regroupées par priorité.", mobileAlt: "L'application mobile Ditero affichant une liste partagée avec des tâches d'exemple.", open: 'Ouvrir la capture en taille réelle' },
   gallery: {
     title: "Voir de plus près",
@@ -182,27 +182,27 @@ const fr: HomeCopy = {
     title: 'Apps et outils', intro: "Un serveur pour votre groupe. Accédez-y depuis le web, votre téléphone, votre ordinateur ou vos propres outils.",
     publicTitle: 'Applications', devTitle: "Outils et API",
     public: {
-      web: { name: 'Web', state: 'Alpha', text: "Utilisez Ditero dans votre navigateur, avec synchronisation des modifications hors ligne à la reconnexion." },
-      android: { name: 'Android', state: 'Alpha', text: 'Téléchargements Android signés et indépendants.' },
-      desktop: { name: 'Bureau', state: 'Expérimental', text: "Les installateurs Windows ne sont pas signés et les versions macOS ont une signature ad hoc. La qualification des plateformes n'est pas terminée." },
+      web: { name: 'Web', state: 'Beta', text: "Utilisez Ditero dans votre navigateur, avec synchronisation des modifications hors ligne à la reconnexion." },
+      android: { name: 'Android', state: 'Beta', text: "APK et AAB indépendants et signés ; aucune distribution en boutique." },
+      desktop: { name: 'Bureau', state: 'Beta', text: "Les installateurs Windows et Linux ne sont pas signés ; les versions macOS sont signées ad hoc sans notarisation." },
       ios: { name: 'iOS', state: 'Pas encore disponible', text: "Il n'existe pas encore d'application iOS native." },
     },
     dev: {
-      cli: { name: 'CLI', state: 'Lancer depuis les sources', text: 'Consultez, créez et modifiez des tâches en ligne de commande.' },
-      tui: { name: 'TUI', state: 'Lancer depuis les sources', text: 'Parcourez et gérez les tâches de façon interactive au clavier.' },
-      api: { name: 'API', state: "Alpha", text: "Connectez vos clients HTTP avec des jetons d'accès personnels et OpenAPI." },
-      mcp: { name: 'MCP', state: 'Lancer depuis les sources', text: 'Laissez un assistant connecté planifier, créer et gérer des tâches.' },
+      cli: { name: 'CLI', state: 'Beta', text: 'Consultez, créez et modifiez des tâches en ligne de commande.' },
+      tui: { name: 'TUI', state: 'Beta', text: 'Parcourez et gérez les tâches de façon interactive au clavier.' },
+      api: { name: 'API', state: "Beta", text: "Connectez vos clients HTTP avec des jetons d'accès personnels et OpenAPI." },
+      mcp: { name: 'MCP', state: 'Beta', text: 'Laissez un assistant connecté planifier, créer et gérer des tâches.' },
     },
     labels: { setup: "Guide d'installation", release: 'Téléchargements', guide: 'Guide' },
   },
-  server: { title: 'Gérez le serveur vous-même', text: "Hébergez Ditero sur votre infrastructure. Consultez le code sous licence MIT et choisissez qui y accède. Guides Docker Compose et Helm disponibles.", link: 'Lire le guide de déploiement', docs: 'Lire la documentation', encryption: 'Les pièces jointes sont chiffrées, ce qui protège le contenu des fichiers. Cela ne signifie pas que toutes les données des tâches sont chiffrées de bout en bout.' },
+  server: { title: 'Gérez le serveur vous-même', text: "Hébergez Ditero sur votre infrastructure. Consultez le code sous licence MIT et choisissez qui y accède. Guides Docker Compose et Helm disponibles.", link: 'Lire le guide de déploiement', docs: 'Lire la documentation', prerequisites: "Docker Compose inclut PostgreSQL 15+ avec réplication logique ; les ports 3000 et 4848 sont nécessaires.", cost: "Le logiciel est gratuit, mais une personne du groupe gère la machine.", recovery: "Sauvegardez la base de données, les pièces jointes et les clés de chiffrement, puis testez une restauration avant d’inviter des personnes. L’export JSON n’est pas une sauvegarde complète.", encryption: "Chiffrement des pièces jointes (facultatif) : contenu, noms, types et miniatures sont chiffrés dans le navigateur ; tailles, dates, personne ayant envoyé le fichier et texte des tâches ne le sont pas." },
   support: { title: 'Soutenir le développement', text: "Ditero est gratuit et sous licence MIT. Aucune fonctionnalité n'est payante. Le soutien contribue au développement du projet.", kofi: 'Soutenir sur Ko-fi', sponsor: 'Sponsoriser Ditero' },
 };
 
 const ro: HomeCopy = {
   meta: { title: 'Liste comune. Serverul tău.', description: 'Ditero este o aplicație de sarcini open source, găzduită de tine, pentru gospodării, cluburi și echipe mici. Partajează liste de cumpărături, treburi casnice, obiceiuri și proiecte de pe un server pe care îl administrezi tu.' },
   ui: { selfHost: 'Găzduiește', skip: 'Treci la conținut', mainNav: 'Navigare principală', footerNav: 'Linkuri din subsol', features: 'Funcții', access: 'Aplicații și instrumente', support: 'Sprijină', source: 'Cod sursă', about: 'Despre', privacy: 'Confidențialitate', license: 'Licența MIT', issues: 'Probleme', language: 'Limba', theme: 'Temă întunecată', footerNote: 'Open source sub licență MIT.', home: 'Pagina principală Ditero', madeBy: 'Creat de Iulian Dita', otherProjects: 'Alte proiecte' },
-  hero: { line1: 'Liste comune.', line2: 'Serverul tău.', intro: 'Sarcini, cumpărături și rutine comune pentru gospodării și grupuri mici. Pe serverul tău, cu sincronizare offline și clienți web, mobili, desktop și terminal.', primary: 'Configurează-ți serverul', apps: 'Aplicații și instrumente', status: "Alfa:" },
+  hero: { line1: 'Liste comune.', line2: 'Serverul tău.', intro: 'Sarcini, cumpărături și rutine comune pentru gospodării și grupuri mici. Pe serverul tău, cu sincronizare offline și clienți web, mobili, desktop și terminal.', primary: 'Configurează-ți serverul', apps: 'Aplicații și instrumente', status: "Beta:" },
   capture: { dashboardCompactAlt: 'Tabloul de bord al gospodăriei în Ditero, cu prioritățile sarcinilor.', dashboardAlt: "Tablou de bord Ditero cu cinci priorități ale gospodăriei.", desktopAlt: "Sarcini personale și comune în Ditero, grupate după prioritate.", mobileAlt: 'Aplicația mobilă Ditero afișând o listă comună cu sarcini de exemplu.', open: 'Deschide captura de ecran la dimensiune completă' },
   gallery: {
     title: "O privire mai atentă",
@@ -226,27 +226,27 @@ const ro: HomeCopy = {
     title: 'Aplicații și instrumente', intro: "Un server pentru grupul tău. Accesează-l din browser, de pe telefon, desktop sau prin propriile instrumente.",
     publicTitle: 'Aplicații', devTitle: "Instrumente și API",
     public: {
-      web: { name: 'Web', state: 'Alfa', text: 'Folosește Ditero în browser, cu sincronizarea modificărilor offline când te reconectezi.' },
-      android: { name: 'Android', state: 'Alfa', text: 'Descărcări Android semnate și independente.' },
-      desktop: { name: 'Desktop', state: 'Experimental', text: 'Programele de instalare pentru Windows nu sunt semnate, iar versiunile pentru macOS au semnătură ad hoc. Calificarea platformelor nu este încheiată.' },
+      web: { name: 'Web', state: 'Beta', text: 'Folosește Ditero în browser, cu sincronizarea modificărilor offline când te reconectezi.' },
+      android: { name: 'Android', state: 'Beta', text: "APK și AAB independente și semnate; fără distribuție în magazine." },
+      desktop: { name: 'Desktop', state: 'Beta', text: "Programele de instalare Windows și Linux sunt nesemnate; versiunile macOS sunt semnate ad hoc, fără notarizare." },
       ios: { name: 'iOS', state: 'Încă indisponibil', text: 'Încă nu există o aplicație iOS nativă.' },
     },
     dev: {
-      cli: { name: 'CLI', state: 'Rulează din sursă', text: 'Vezi, creează și actualizează sarcini din linia de comandă.' },
-      tui: { name: 'TUI', state: 'Rulează din sursă', text: 'Navighează și gestionează sarcinile interactiv cu tastatura.' },
-      api: { name: 'API', state: "Alfa", text: 'Conectează clienții HTTP folosind token-uri personale de acces și OpenAPI.' },
-      mcp: { name: 'MCP', state: 'Rulează din sursă', text: 'Lasă un asistent conectat să planifice, să creeze și să gestioneze sarcini.' },
+      cli: { name: 'CLI', state: 'Beta', text: 'Vezi, creează și actualizează sarcini din linia de comandă.' },
+      tui: { name: 'TUI', state: 'Beta', text: 'Navighează și gestionează sarcinile interactiv cu tastatura.' },
+      api: { name: 'API', state: "Beta", text: 'Conectează clienții HTTP folosind token-uri personale de acces și OpenAPI.' },
+      mcp: { name: 'MCP', state: 'Beta', text: 'Lasă un asistent conectat să planifice, să creeze și să gestioneze sarcini.' },
     },
     labels: { setup: 'Ghid de instalare', release: 'Descărcări', guide: 'Ghid' },
   },
-  server: { title: 'Administrează serverul tu însuți', text: "Rulează Ditero pe infrastructura ta. Verifică sursa sub licență MIT și decide cine are acces. Ai ghiduri pentru Docker Compose și Helm.", link: 'Citește ghidul de implementare', docs: 'Citește documentația', encryption: 'Atașamentele sunt criptate, ceea ce protejează conținutul fișierelor. Asta nu înseamnă că toate datele sarcinilor sunt criptate integral (end-to-end).' },
+  server: { title: 'Administrează serverul tu însuți', text: "Rulează Ditero pe infrastructura ta. Verifică sursa sub licență MIT și decide cine are acces. Ai ghiduri pentru Docker Compose și Helm.", link: 'Citește ghidul de implementare', docs: 'Citește documentația', prerequisites: "Docker Compose include PostgreSQL 15+ cu replicare logică; sunt necesare porturile 3000 și 4848.", cost: "Software-ul este gratuit, dar cineva din grup administrează calculatorul.", recovery: "Fă copii pentru baza de date, atașamente și cheile de criptare și testează restaurarea înainte să inviți persoane. Exportul JSON nu este un backup complet.", encryption: "Criptarea atașamentelor (opțională): conținutul, numele, tipurile și miniaturile sunt criptate în browser; dimensiunile, datele, persoana care a încărcat fișierul și textul sarcinilor nu sunt." },
   support: { title: 'Sprijină dezvoltarea', text: 'Ditero este gratuit și are licență MIT. Nu există funcții cu plată. Sprijinul contribuie la dezvoltarea proiectului.', kofi: 'Sprijină pe Ko-fi', sponsor: 'Sponsorizează Ditero' },
 };
 
 const ar: HomeCopy = {
   meta: { title: 'قوائم مشتركة. خادمك.', description: 'Ditero تطبيق مهام مفتوح المصدر ومستضاف ذاتيًا للأسر والنوادي والفرق الصغيرة. شارك قوائم التسوق والمهام المنزلية والعادات والمشاريع من خادم تديره بنفسك.' },
   ui: { selfHost: 'استضافة ذاتية', skip: 'تخطَّ إلى المحتوى', mainNav: 'التنقل الرئيسي', footerNav: 'روابط التذييل', features: 'الميزات', access: 'التطبيقات والأدوات', support: 'الدعم', source: 'الشيفرة المصدرية', about: 'حول', privacy: 'الخصوصية', license: 'ترخيص MIT', issues: 'المشكلات', language: 'اللغة', theme: 'السمة الداكنة', footerNote: 'مفتوح المصدر بترخيص MIT.', home: 'الصفحة الرئيسية لـ Ditero', madeBy: 'من تطوير Iulian Dita', otherProjects: 'مشاريع أخرى' },
-  hero: { line1: 'قوائم مشتركة.', line2: 'خادمك.', intro: 'مهام وتسوق وروتين مشترك للأسر والمجموعات الصغيرة. على خادمك، مع مزامنة دون اتصال وتطبيقات للويب والجوال وسطح المكتب والطرفية.', primary: 'إعداد الخادم الخاص بك', apps: 'التطبيقات والأدوات', status: "ألفا:" },
+  hero: { line1: 'قوائم مشتركة.', line2: 'خادمك.', intro: 'مهام وتسوق وروتين مشترك للأسر والمجموعات الصغيرة. على خادمك، مع مزامنة دون اتصال وتطبيقات للويب والجوال وسطح المكتب والطرفية.', primary: 'إعداد الخادم الخاص بك', apps: 'التطبيقات والأدوات', status: "Beta:" },
   capture: { dashboardCompactAlt: 'لوحة الأسرة في Ditero تعرض أولويات المهام.', dashboardAlt: "لوحة معلومات Ditero تعرض خمس أولويات للأسرة.", desktopAlt: "مهام شخصية ومشتركة في Ditero مجمّعة حسب الأولوية.", mobileAlt: 'تطبيق Ditero على الجوال يعرض قائمة مشتركة بمهام تجريبية.', open: 'افتح لقطة الشاشة بالحجم الكامل' },
   gallery: {
     title: "نظرة أقرب",
@@ -270,20 +270,20 @@ const ar: HomeCopy = {
     title: 'التطبيقات والأدوات', intro: "خادم واحد لمجموعتك. استخدمه عبر الويب أو الهاتف أو سطح المكتب أو أدواتك الخاصة.",
     publicTitle: 'التطبيقات', devTitle: "الأدوات وواجهة API",
     public: {
-      web: { name: 'الويب', state: 'ألفا', text: 'استخدم Ditero في متصفحك، مع مزامنة التغييرات التي أجريتها دون اتصال عند إعادة الاتصال.' },
-      android: { name: 'Android', state: 'ألفا', text: 'تنزيلات Android موقّعة ومستقلة.' },
-      desktop: { name: 'سطح المكتب', state: 'تجريبي', text: 'مثبّتات Windows غير موقّعة، وإصدارات macOS موقّعة توقيعًا مؤقتًا (ad hoc). لم يكتمل تأهيل المنصات بعد.' },
+      web: { name: 'الويب', state: 'Beta', text: 'استخدم Ditero في متصفحك، مع مزامنة التغييرات التي أجريتها دون اتصال عند إعادة الاتصال.' },
+      android: { name: 'Android', state: 'Beta', text: "ملفا APK وAAB مستقلان وموقّعان، ولا يتوفران عبر متجر." },
+      desktop: { name: 'سطح المكتب', state: 'Beta', text: "مثبّتات Windows وLinux غير موقّعة، وإصدارات macOS موقّعة توقيعًا مؤقتًا دون توثيق من Apple." },
       ios: { name: 'iOS', state: 'غير متاح بعد', text: 'لا يوجد تطبيق iOS أصلي بعد.' },
     },
     dev: {
-      cli: { name: 'CLI', state: 'التشغيل من المصدر', text: 'اعرض المهام وأنشئها وحدّثها من سطر الأوامر.' },
-      tui: { name: 'TUI', state: 'التشغيل من المصدر', text: 'تصفّح المهام وأدِرها تفاعليًا باستخدام لوحة المفاتيح.' },
-      api: { name: 'API', state: "ألفا", text: 'اربط عملاء HTTP باستخدام رموز الوصول الشخصية وOpenAPI.' },
-      mcp: { name: 'MCP', state: 'التشغيل من المصدر', text: 'دع مساعدًا متصلًا يخطط للمهام وينشئها ويديرها.' },
+      cli: { name: 'CLI', state: 'Beta', text: 'اعرض المهام وأنشئها وحدّثها من سطر الأوامر.' },
+      tui: { name: 'TUI', state: 'Beta', text: 'تصفّح المهام وأدِرها تفاعليًا باستخدام لوحة المفاتيح.' },
+      api: { name: 'API', state: "Beta", text: 'اربط عملاء HTTP باستخدام رموز الوصول الشخصية وOpenAPI.' },
+      mcp: { name: 'MCP', state: 'Beta', text: 'دع مساعدًا متصلًا يخطط للمهام وينشئها ويديرها.' },
     },
     labels: { setup: 'دليل الإعداد', release: 'التنزيلات', guide: 'الدليل' },
   },
-  server: { title: 'شغّل الخادم بنفسك', text: "شغّل Ditero على بنيتك التحتية. افحص الشيفرة بترخيص MIT وحدد من يملك الوصول. تتوفر أدلة Docker Compose وHelm.", link: 'اقرأ دليل النشر', docs: 'اقرأ الوثائق', encryption: 'المرفقات مشفرة، مما يحمي محتوى الملفات. لا يعني ذلك أن كل بيانات المهام مشفرة من طرف إلى طرف.' },
+  server: { title: 'شغّل الخادم بنفسك', text: "شغّل Ditero على بنيتك التحتية. افحص الشيفرة بترخيص MIT وحدد من يملك الوصول. تتوفر أدلة Docker Compose وHelm.", link: 'اقرأ دليل النشر', docs: 'اقرأ الوثائق', prerequisites: "يتضمن Docker Compose قاعدة PostgreSQL 15+ مع النسخ المنطقي؛ ويلزم المنفذان 3000 و4848.", cost: "البرنامج مجاني، لكن أحد أفراد المجموعة يدير الجهاز.", recovery: "انسخ قاعدة البيانات والمرفقات ومفاتيح التشفير احتياطيًا، واختبر الاستعادة قبل دعوة الآخرين. تصدير JSON ليس نسخة احتياطية كاملة.", encryption: "تشفير المرفقات (اختياري): يُشفّر محتوى الملفات وأسماؤها وأنواعها وصورها المصغّرة في المتصفح؛ أما الأحجام والأوقات وهوية الرافع ونص المهام فلا تُشفّر." },
   support: { title: 'ادعم التطوير', text: 'Ditero مجاني وبترخيص MIT. لا توجد ميزات مدفوعة. يساهم الدعم في تطوير المشروع.', kofi: 'ادعم على Ko-fi', sponsor: 'كن راعيًا لـ Ditero' },
 };
 

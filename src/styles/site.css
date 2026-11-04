@@ -194,8 +194,7 @@ p { text-wrap: pretty; max-width: 66ch; }
 .client-chevron { display: inline-block; flex: none; width: 0.5rem; height: 0.5rem; border: solid var(--muted); border-width: 0 1.5px 1.5px 0; transform: translateY(-2px) rotate(45deg); transition: transform 180ms var(--ease); }
 .client-details[open] .client-chevron { transform: translateY(2px) rotate(-135deg); }
 .client-details p { padding-block: 0.75rem 0.25rem; color: var(--muted); font-size: 0.95rem; }
-.state { max-width: 100%; font-size: 0.85rem; font-weight: 550; line-height: 1.5; color: var(--tint-muted); background: var(--tint); border-radius: 5px; padding: 0.15rem 0.5rem; }
-.apps .state { background: var(--bg); border: 1px solid var(--line); }
+.state { max-width: 100%; font-size: 0.85rem; line-height: 1.5; color: var(--muted); }
 .tools-stack { margin-top: 2.5rem; }
 .tools-source { max-width: none; color: var(--muted); font-size: 0.9rem; }
 .tool-strip { margin-top: 0.25rem; }

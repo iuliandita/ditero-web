@@ -1,7 +1,7 @@
 import type { ExtraCopy } from './types';
 
 export const fr: ExtraCopy = {
-  ui: { view: 'Vue', desktop: 'Ordinateur', phone: 'Téléphone', tour: 'Découvrez Ditero', platforms: 'Web, Android et application de bureau expérimentale. CLI, TUI et MCP depuis le code source.', details: 'Détails', menu: 'Menu', heroIntro: 'Listes de courses partagées, tâches ménagères récurrentes et rappels pour votre foyer. Gratuit, open source et auto-hébergé.', groups: 'Groupes de fonctionnalités', docs: 'Documentation' },
+  ui: { view: 'Vue', desktop: 'Ordinateur', phone: 'Téléphone', tour: 'Découvrez Ditero', platforms: "Le web, Android et les applications de bureau sont en bêta ; CLI, TUI et MCP sont fournis en bundles Bun.", details: 'Détails', menu: 'Menu', heroIntro: 'Listes de courses partagées, tâches ménagères récurrentes et rappels pour votre foyer. Gratuit, open source et auto-hébergé.', groups: 'Groupes de fonctionnalités', docs: 'Documentation' },
   setup: { steps: ["Lancez votre serveur avec Docker Compose", "Créez votre compte dans l'application web", "Invitez des proches et partagez une liste"] },
   ai: {
     title: "Planifiez avec votre assistant",
@@ -10,8 +10,8 @@ export const fr: ExtraCopy = {
     example: 'Planifiez le pique‑nique de samedi, attribuez les courses et marquez la réservation du train comme prioritaire.',
     resultLabel: "Exemple de plan",
     results: [{"title": "Organiser le pique‑nique de samedi", "detail": "Liste partagée"}, {"title": "Acheter de quoi manger pour le pique‑nique", "detail": "Attribuée à Alex"}, {"title": "Réserver le train", "detail": "Priorité élevée"}],
-    source: "Les téléchargements alpha ne comprennent pas de binaires autonomes.",
-    shortSource: "MCP se lance depuis le code source.",
+    source: "Les bundles nécessitent Bun 1.3.14 ou plus et sont qualifiés sur Linux x64.",
+    shortSource: "MCP est fourni en bundle Bun.",
     points: [
       "C'est un assistant externe que vous connectez. Ditero n'a pas de chatbot intégré et n'héberge aucun modèle d'IA.",
       'Votre client MCP décide où vont les résultats et les conversations. Utilisez un client de confiance.',

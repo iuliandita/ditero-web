@@ -14,7 +14,7 @@ export interface HomeCopy {
   gallery: { title: string; note: string; items: Record<'priorities' | 'task-detail' | 'recurrence-reminders' | 'saved-filters', { title: string; caption: string; alt: string }> };
   features: { title: string; intro: string; proof: Record<'task-detail' | 'recurrence-reminders' | 'dashboard', Item> };
   access: {
-    title: string; intro: string; publicTitle: string; devTitle: string;
+    title: string; intro: string; invited: string; publicTitle: string; devTitle: string;
     public: Record<'web' | 'android' | 'desktop' | 'ios', Row>;
     dev: Record<'cli' | 'tui' | 'api' | 'mcp', Row>;
     labels: { setup: string; release: string; guide: string };
@@ -42,12 +42,13 @@ const en: HomeCopy = {
     title: 'What Ditero does', intro: 'Lists and tasks for people who share a home, a club or a small team.',
     proof: {
       'task-detail': { title: 'Share the work', text: 'Assign tasks, share notes, and break plans into subtasks.' },
-      'recurrence-reminders': { title: 'Chores and habits', text: 'Repeat the chores. Build habits. Set reminders for the right time.' },
+      'recurrence-reminders': { title: "Chores and reminders", text: 'Repeat the chores. Build habits. Set reminders for the right time.' },
       'dashboard': { title: 'Dashboards', text: 'Keep your priorities in view.' },
     },
   },
   access: {
     title: 'Apps and tools', intro: "One server for your group. Reach it from the web, your phone, your desktop or your own tools.",
+    invited: "Invited by someone? Open the link they sent you; there is nothing to install.",
     publicTitle: 'Apps', devTitle: "Tools and API",
     public: {
       web: { name: 'Web', state: 'Beta', text: 'Use Ditero in your browser, with offline changes synced when you reconnect.' },
@@ -64,7 +65,7 @@ const en: HomeCopy = {
     labels: { setup: 'Setup guide', release: 'Downloads', guide: 'Guide' },
   },
   server: { title: 'Run the server yourself', text: "Run Ditero on your infrastructure. Inspect the MIT‑licensed code and decide who has access. Docker Compose and Helm guides are available.", link: 'Read the deployment guide', docs: 'Read the documentation', prerequisites: "PostgreSQL 15+ with logical replication is required; Docker Compose bundles it. Ports 3000 and 4848 are needed. Set DITERO_IMAGE_TAG={imageTag} to run this release.", cost: "The software is free, but someone in your group runs the machine.", recovery: "Back up the database, attachments and encryption keys, and test a restore before inviting people. JSON export is not a full backup.", encryption: "Attachment encryption (opt-in): file contents, filenames, types and thumbnails are encrypted in the browser; sizes, times, uploader and task text are not." },
-  support: { title: 'Support development', text: 'Ditero is free and MIT licensed. There are no paid feature unlocks. Support contributes to the development of the project.', kofi: 'Support on Ko-fi', sponsor: 'Sponsor Ditero' },
+  support: { title: 'Support development', text: "Ditero is free and MIT licensed. There are no paid feature unlocks. Donations pay for my time on fixes and releases.", kofi: 'Support on Ko-fi', sponsor: "Ask about sponsorship" },
 };
 
 const de: HomeCopy = {
@@ -86,12 +87,13 @@ const de: HomeCopy = {
     title: 'Was Ditero kann', intro: 'Listen und Aufgaben für Menschen, die sich ein Zuhause, einen Verein oder ein kleines Team teilen.',
     proof: {
       'task-detail': { title: 'Aufgaben gemeinsam verteilen', text: 'Weise Aufgaben zu, teile Notizen und zerlege Pläne in Unteraufgaben.' },
-      'recurrence-reminders': { title: 'Hausarbeit und Gewohnheiten', text: 'Wiederhole Hausarbeit. Baue Gewohnheiten auf. Lass dich rechtzeitig erinnern.' },
+      'recurrence-reminders': { title: "Hausarbeit und Erinnerungen", text: 'Wiederhole Hausarbeit. Baue Gewohnheiten auf. Lass dich rechtzeitig erinnern.' },
       'dashboard': { title: 'Dashboards', text: 'Behalte deine Prioritäten im Blick.' },
     },
   },
   access: {
     title: 'Apps und Werkzeuge', intro: "Ein Server für deine Gruppe. Nutze ihn im Web, auf dem Smartphone, am Desktop oder mit deinen eigenen Werkzeugen.",
+    invited: "Hat dich jemand eingeladen? Öffne den Link, den du bekommen hast. Du musst nichts installieren.",
     publicTitle: 'Apps', devTitle: "Werkzeuge und API",
     public: {
       web: { name: 'Web', state: 'Beta', text: 'Nutze Ditero im Browser; offline vorgenommene Änderungen werden synchronisiert, sobald du wieder verbunden bist.' },
@@ -108,7 +110,7 @@ const de: HomeCopy = {
     labels: { setup: 'Einrichtungsanleitung', release: 'Downloads', guide: 'Anleitung' },
   },
   server: { title: 'Betreibe den Server selbst', text: "Betreibe Ditero auf deiner Infrastruktur. Prüfe den MIT-lizenzierten Code und bestimme, wer Zugriff hat. Anleitungen für Docker Compose und Helm sind verfügbar.", link: 'Anleitung zur Einrichtung lesen', docs: 'Dokumentation lesen', prerequisites: "PostgreSQL 15+ mit logischer Replikation ist erforderlich; Docker Compose bringt es mit. Die Ports 3000 und 4848 werden benötigt. Setze DITERO_IMAGE_TAG={imageTag}, um dieses Release zu starten.", cost: "Die Software ist kostenlos, aber jemand aus deiner Gruppe betreibt den Rechner.", recovery: "Sichere Datenbank, Anhänge und Verschlüsselungsschlüssel und teste eine Wiederherstellung, bevor du Leute einlädst. Der JSON-Export ist kein vollständiges Backup.", encryption: "Verschlüsselung der Anhänge (optional): Dateiinhalte, Dateinamen, Typen und Vorschaubilder werden im Browser verschlüsselt; Größen, Zeiten, hochladende Person und Aufgabentext nicht." },
-  support: { title: 'Entwicklung unterstützen', text: 'Ditero ist kostenlos und MIT-lizenziert. Es gibt keine kostenpflichtigen Funktionen. Unterstützung trägt zur Weiterentwicklung des Projekts bei.', kofi: 'Auf Ko-fi unterstützen', sponsor: 'Ditero sponsern' },
+  support: { title: 'Entwicklung unterstützen', text: "Ditero ist kostenlos und MIT-lizenziert. Es gibt keine kostenpflichtigen Funktionen. Spenden finanzieren meine Zeit für Fehlerbehebungen und Releases.", kofi: 'Auf Ko-fi unterstützen', sponsor: "Nach Sponsoring fragen" },
 };
 
 const es: HomeCopy = {
@@ -130,12 +132,13 @@ const es: HomeCopy = {
     title: 'Qué hace Ditero', intro: 'Listas y tareas para quienes comparten casa, club o equipo pequeño.',
     proof: {
       'task-detail': { title: 'Repartir las tareas', text: 'Asigna tareas, comparte notas y divide los planes en subtareas.' },
-      'recurrence-reminders': { title: 'Tareas del hogar y hábitos', text: 'Repite las tareas del hogar. Crea hábitos. Recibe recordatorios a tiempo.' },
+      'recurrence-reminders': { title: "Tareas del hogar y recordatorios", text: 'Repite las tareas del hogar. Crea hábitos. Recibe recordatorios a tiempo.' },
       'dashboard': { title: 'Paneles', text: 'Ten tus prioridades a la vista.' },
     },
   },
   access: {
     title: 'Apps y herramientas', intro: "Un servidor para tu grupo. Accede desde la web, el móvil, el escritorio o tus propias herramientas.",
+    invited: "¿Te ha invitado alguien? Abre el enlace que te envió; no necesitas instalar nada.",
     publicTitle: 'Aplicaciones', devTitle: "Herramientas y API",
     public: {
       web: { name: 'Web', state: 'Beta', text: 'Usa Ditero en el navegador, con sincronización de los cambios sin conexión al reconectarte.' },
@@ -152,7 +155,7 @@ const es: HomeCopy = {
     labels: { setup: 'Guía de instalación', release: 'Descargas', guide: 'Guía' },
   },
   server: { title: 'Gestiona tú el servidor', text: "Ejecuta Ditero en tu infraestructura. Revisa el código con licencia MIT y decide quién tiene acceso. Hay guías de Docker Compose y Helm.", link: 'Leer la guía de despliegue', docs: 'Leer la documentación', prerequisites: "Se necesita PostgreSQL 15+ con replicación lógica; Docker Compose lo incluye. Se necesitan los puertos 3000 y 4848. Define DITERO_IMAGE_TAG={imageTag} para ejecutar esta versión.", cost: "El software es gratis, pero alguien del grupo administra la máquina.", recovery: "Haz copias de la base de datos, los adjuntos y las claves de cifrado y prueba la restauración antes de invitar a otras personas. La exportación JSON no es una copia completa.", encryption: "Cifrado de adjuntos (opcional): el contenido, los nombres, los tipos y las miniaturas se cifran en el navegador; los tamaños, las fechas, quién subió el archivo y el texto de las tareas no." },
-  support: { title: 'Apoyar el desarrollo', text: 'Ditero es gratuito y tiene licencia MIT. No hay funciones de pago. El apoyo contribuye al desarrollo del proyecto.', kofi: 'Apoyar en Ko-fi', sponsor: 'Patrocinar Ditero' },
+  support: { title: 'Apoyar el desarrollo', text: "Ditero es gratuito y tiene licencia MIT. No hay funciones de pago. Las donaciones financian mi tiempo dedicado a corregir errores y publicar versiones.", kofi: 'Apoyar en Ko-fi', sponsor: "Consultar sobre patrocinio" },
 };
 
 const fr: HomeCopy = {
@@ -174,12 +177,13 @@ const fr: HomeCopy = {
     title: 'Ce que fait Ditero', intro: 'Des listes et des tâches pour celles et ceux qui partagent un foyer, une association ou une petite équipe.',
     proof: {
       'task-detail': { title: 'Répartissez les tâches', text: 'Attribuez des tâches, partagez des notes et décomposez les projets en sous-tâches.' },
-      'recurrence-reminders': { title: 'Tâches ménagères et habitudes', text: 'Répétez les tâches ménagères. Créez des habitudes. Recevez vos rappels au bon moment.' },
+      'recurrence-reminders': { title: "Tâches ménagères et rappels", text: 'Répétez les tâches ménagères. Créez des habitudes. Recevez vos rappels au bon moment.' },
       'dashboard': { title: 'Tableaux de bord', text: 'Gardez vos priorités en vue.' },
     },
   },
   access: {
     title: 'Apps et outils', intro: "Un serveur pour votre groupe. Accédez-y depuis le web, votre téléphone, votre ordinateur ou vos propres outils.",
+    invited: "Une personne vous a invité ? Ouvrez le lien reçu : vous n’avez rien à installer.",
     publicTitle: 'Applications', devTitle: "Outils et API",
     public: {
       web: { name: 'Web', state: 'Bêta', text: "Utilisez Ditero dans votre navigateur, avec synchronisation des modifications hors ligne à la reconnexion." },
@@ -196,7 +200,7 @@ const fr: HomeCopy = {
     labels: { setup: "Guide d'installation", release: 'Téléchargements', guide: 'Guide' },
   },
   server: { title: 'Gérez le serveur vous-même', text: "Hébergez Ditero sur votre infrastructure. Consultez le code sous licence MIT et choisissez qui y accède. Guides Docker Compose et Helm disponibles.", link: 'Lire le guide de déploiement', docs: 'Lire la documentation', prerequisites: "PostgreSQL 15+ avec réplication logique est requis ; Docker Compose l'inclut. Les ports 3000 et 4848 sont nécessaires. Définissez DITERO_IMAGE_TAG={imageTag} pour lancer cette version.", cost: "Le logiciel est gratuit, mais une personne du groupe gère la machine.", recovery: "Sauvegardez la base de données, les pièces jointes et les clés de chiffrement, puis testez une restauration avant d'inviter des personnes. L'export JSON n’est pas une sauvegarde complète.", encryption: "Chiffrement des pièces jointes (facultatif) : contenu, noms, types et miniatures sont chiffrés dans le navigateur ; tailles, dates, personne ayant envoyé le fichier et texte des tâches ne le sont pas." },
-  support: { title: 'Soutenir le développement', text: "Ditero est gratuit et sous licence MIT. Aucune fonctionnalité n'est payante. Le soutien contribue au développement du projet.", kofi: 'Soutenir sur Ko-fi', sponsor: 'Sponsoriser Ditero' },
+  support: { title: 'Soutenir le développement', text: "Ditero est gratuit et sous licence MIT. Aucune fonctionnalité n'est payante. Les dons financent le temps que je consacre aux corrections et aux nouvelles versions.", kofi: 'Soutenir sur Ko-fi', sponsor: "Se renseigner sur le sponsoring" },
 };
 
 const ro: HomeCopy = {
@@ -218,12 +222,13 @@ const ro: HomeCopy = {
     title: 'Ce face Ditero', intro: 'Liste și sarcini pentru oamenii care împart o casă, un club sau o echipă mică.',
     proof: {
       'task-detail': { title: 'Împarte sarcinile', text: 'Atribuie sarcini, adaugă note și împarte planurile în subsarcini.' },
-      'recurrence-reminders': { title: 'Treburi casnice și obiceiuri', text: 'Repetă treburile casnice. Formează obiceiuri. Primește mementouri la timp.' },
+      'recurrence-reminders': { title: "Treburi casnice și mementouri", text: 'Repetă treburile casnice. Formează obiceiuri. Primește mementouri la timp.' },
       'dashboard': { title: 'Panouri de control', text: 'Prioritățile tale, într-un singur loc.' },
     },
   },
   access: {
     title: 'Aplicații și instrumente', intro: "Un server pentru grupul tău. Accesează-l din browser, de pe telefon, desktop sau prin propriile instrumente.",
+    invited: "Te-a invitat cineva? Deschide linkul primit; nu trebuie să instalezi nimic.",
     publicTitle: 'Aplicații', devTitle: "Instrumente și API",
     public: {
       web: { name: 'Web', state: 'Beta', text: 'Folosește Ditero în browser, cu sincronizarea modificărilor offline când te reconectezi.' },
@@ -240,7 +245,7 @@ const ro: HomeCopy = {
     labels: { setup: 'Ghid de instalare', release: 'Descărcări', guide: 'Ghid' },
   },
   server: { title: 'Administrează serverul tu însuți', text: "Rulează Ditero pe infrastructura ta. Verifică sursa sub licență MIT și decide cine are acces. Ai ghiduri pentru Docker Compose și Helm.", link: 'Citește ghidul de implementare', docs: 'Citește documentația', prerequisites: "Este necesar PostgreSQL 15+ cu replicare logică; Docker Compose îl include. Sunt necesare porturile 3000 și 4848. Setează DITERO_IMAGE_TAG={imageTag} pentru a rula această versiune.", cost: "Software-ul este gratuit, dar cineva din grup administrează calculatorul.", recovery: "Fă copii de rezervă ale bazei de date, ale atașamentelor și ale cheilor de criptare și testează restaurarea înainte să inviți persoane. Exportul JSON nu este un backup complet.", encryption: "Criptarea atașamentelor (opțională): conținutul, numele, tipurile și miniaturile sunt criptate în browser; dimensiunile, marcajele de timp, persoana care a încărcat fișierul și textul sarcinilor nu sunt." },
-  support: { title: 'Sprijină dezvoltarea', text: 'Ditero este gratuit și are licență MIT. Nu există funcții cu plată. Sprijinul contribuie la dezvoltarea proiectului.', kofi: 'Sprijină pe Ko-fi', sponsor: 'Sponsorizează Ditero' },
+  support: { title: 'Sprijină dezvoltarea', text: "Ditero este gratuit și are licență MIT. Nu există funcții cu plată. Donațiile îmi plătesc timpul dedicat corecturilor și lansărilor.", kofi: 'Sprijină pe Ko-fi', sponsor: "Întreabă despre sponsorizare" },
 };
 
 const ar: HomeCopy = {
@@ -262,12 +267,13 @@ const ar: HomeCopy = {
     title: 'ماذا يفعل Ditero', intro: 'قوائم ومهام لمن يتشاركون منزلًا أو ناديًا أو فريقًا صغيرًا.',
     proof: {
       'task-detail': { title: 'تقاسم المهام', text: 'أسنِد المهام، وشارك الملاحظات، وقسّم الخطط إلى مهام فرعية.' },
-      'recurrence-reminders': { title: 'المهام المنزلية والعادات', text: 'كرّر المهام المنزلية. ابنِ عادات. اضبط التذكيرات في الوقت المناسب.' },
+      'recurrence-reminders': { title: "المهام المنزلية والتذكيرات", text: 'كرّر المهام المنزلية. ابنِ عادات. اضبط التذكيرات في الوقت المناسب.' },
       'dashboard': { title: 'لوحات المعلومات', text: 'أبقِ أولوياتك واضحة.' },
     },
   },
   access: {
     title: 'التطبيقات والأدوات', intro: "خادم واحد لمجموعتك. استخدمه عبر الويب أو الهاتف أو سطح المكتب أو أدواتك الخاصة.",
+    invited: "دعاك أحدهم؟ افتح الرابط الذي أرسله إليك؛ لا تحتاج إلى تثبيت أي شيء.",
     publicTitle: 'التطبيقات', devTitle: "الأدوات وواجهة API",
     public: {
       web: { name: 'الويب', state: 'بيتا', text: 'استخدم Ditero في متصفحك، مع مزامنة التغييرات التي أجريتها دون اتصال عند إعادة الاتصال.' },
@@ -284,7 +290,7 @@ const ar: HomeCopy = {
     labels: { setup: 'دليل الإعداد', release: 'التنزيلات', guide: 'الدليل' },
   },
   server: { title: 'شغّل الخادم بنفسك', text: "شغّل Ditero على بنيتك التحتية. افحص الشيفرة بترخيص MIT وحدد من يملك الوصول. تتوفر أدلة Docker Compose وHelm.", link: 'اقرأ دليل النشر', docs: 'اقرأ الوثائق', prerequisites: "يلزم PostgreSQL 15+ مع النسخ المتماثل المنطقي، ويتضمنه Docker Compose. ويلزم المنفذان 3000 و4848. اضبط DITERO_IMAGE_TAG={imageTag} لتشغيل هذا الإصدار.", cost: "البرنامج مجاني، لكن أحد أفراد المجموعة يدير الجهاز.", recovery: "انسخ قاعدة البيانات والمرفقات ومفاتيح التشفير احتياطيًا، واختبر الاستعادة قبل دعوة الآخرين. تصدير JSON ليس نسخة احتياطية كاملة.", encryption: "تشفير المرفقات (اختياري): يُشفّر محتوى الملفات وأسماؤها وأنواعها وصورها المصغّرة في المتصفح؛ أما الأحجام والأوقات ومن رفع الملف ونص المهام فلا تُشفّر." },
-  support: { title: 'ادعم التطوير', text: 'Ditero مجاني وبترخيص MIT. لا توجد ميزات مدفوعة. يساهم الدعم في تطوير المشروع.', kofi: 'ادعم على Ko-fi', sponsor: 'كن راعيًا لـ Ditero' },
+  support: { title: 'ادعم التطوير', text: "Ditero مجاني وبترخيص MIT. لا توجد ميزات مدفوعة. تموّل التبرعات وقتي المخصص للإصلاحات وإصدار النسخ الجديدة.", kofi: 'ادعم على Ko-fi', sponsor: "استفسر عن الرعاية" },
 };
 
 export const copy: Record<Locale, HomeCopy> = { en, de, es, fr, ro, ar };

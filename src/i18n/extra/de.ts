@@ -7,9 +7,9 @@ export const de: ExtraCopy = {
     title: "Plane mit deinem Assistenten",
     intro: "Verbinde einen KI-Assistenten, den du schon nutzt. Über MCP erstellt er aus deinen Anfragen Aufgaben, Prioritäten und Termine.",
     exampleLabel: 'Beispielanfrage',
-    example: 'Plane das Picknick am Samstag, weise die Einkäufe zu und markiere die Zugbuchung mit hoher Priorität.',
+    example: "Plane die Zugreise am Samstag, weise Alex die Routenwahl zu und markiere die Ticketbuchung mit hoher Priorität.",
     resultLabel: "Beispielplan",
-    results: [{"title": "Picknick am Samstag planen", "detail": "Gemeinsame Liste"}, {"title": "Essen fürs Picknick kaufen", "detail": "Alex zugewiesen"}, {"title": "Zug buchen", "detail": "Hohe Priorität"}],
+    results: [{"title": "Zugreise am Samstag planen", "detail": "Gemeinsame Liste"}, {"title": "Route auswählen", "detail": "Alex zugewiesen"}, {"title": "Zugtickets buchen", "detail": "Hohe Priorität"}],
     source: "Die CLI-, TUI- und MCP-Bundles benötigen Bun 1.3.14 oder neuer und sind für Linux x64 qualifiziert.",
     shortSource: "MCP wird als Bun-Bundle bereitgestellt.",
     points: [
@@ -20,12 +20,13 @@ export const de: ExtraCopy = {
     link: 'MCP-Anleitung lesen',
   },
   features: {
+    importNote: "Import aus Todoist, TickTick, Microsoft To Do (Outlook CSV), Trello und CSV.",
     groups: [
       { id: 'lists', title: 'Listen und Teilen', summary: "Einkäufe und gemeinsame Aufgaben", items: ["Listen für Aufgaben, Einkäufe, Checklisten, Projekte und Gewohnheiten", "Aufgaben an Menschen zuweisen", 'Unteraufgaben innerhalb von Aufgaben', 'Prioritäten und Labels', 'Arbeitsbereiche mit anderen teilen', "Ordner und Vorlagen", "Schnelleingabe mit Datum und Priorität", "Offline-Änderungen werden bei erneuter Verbindung synchronisiert"] },
       { id: 'routines', title: 'Routinen', summary: "Hausarbeit, Gewohnheiten und Fokus", items: ["Wiederkehrende Hausarbeit", "Gewohnheiten und Serien", 'Fokustimer für einzelne Aufgaben', "Punkte für erledigte Aufgaben und Gewohnheiten (Karma)"] },
-      { id: 'reminders', title: 'Erinnerungen', summary: "ntfy, Telegram, Discord, Slack und E-Mail", items: ["Erinnerungen an Fälligkeiten", "Ruhezeiten", 'Wähle deine Zustellungskanäle', 'Bestätigung von Erinnerungen', "Eskalation bei unbeantworteten Erinnerungen"] },
+      { id: 'reminders', title: 'Erinnerungen', summary: "Erinnerungen in der Nachricht oder in der App bestätigen", items: ["Erinnerungen an Fälligkeiten", "Ruhezeiten", 'Wähle deine Zustellungskanäle', 'Bestätigung von Erinnerungen', "Eskalation bei unbeantworteten Erinnerungen"] },
       { id: 'views', title: 'Ansichten', summary: "Kalender, Board, Tabelle und Dashboards", items: ['Dashboards', 'Kalender', 'Board', 'Tabelle', 'Gespeicherte Ansichten'] },
-      { id: 'files', title: 'Dateien', summary: "Kommentare und verschlüsselte Anhänge", items: ['Verschlüsselte Anhänge', 'Kommentare zu Aufgaben'] },
+      { id: 'files', title: 'Dateien', summary: "Kommentare und optional verschlüsselte Anhänge", items: ['Verschlüsselte Anhänge', 'Kommentare zu Aufgaben'] },
       { id: 'recovery', title: 'Verlauf und Export', summary: "Erledigungsverlauf, Import und Export", items: ['Erledigungsverlauf', 'Export und Import, mit dokumentierten Ausnahmen'] },
       { id: 'access', title: 'Zugang und Tools', summary: "Passkeys, API und Assistenten", items: ['Passkeys und TOTP', 'Persönliche Zugriffstoken', "HTTP-API und iCal-Exporte", "CLI-, TUI- und MCP-Clients im Quellcode", "Kalender-Abonnements und eingehende Webhooks"] },
       { id: 'custom', title: 'Anpassung', summary: "Sechs Sprachen, Designs und Leseoptionen", items: ['Sechs Oberflächensprachen, darunter Arabisch von rechts nach links', "Helles und dunkles Design", 'Akzentfarben und geteilte Designs', 'Lesegröße und eine Option mit hohem Kontrast'] },

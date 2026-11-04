@@ -125,6 +125,7 @@ p { text-wrap: pretty; max-width: 66ch; }
   .tour:has(#proof-phone:checked) .tour-dashboard .capture { width: min(100%, 24.375rem); }
 }
 @media (max-width: 700px) { .tour-device { display: none; } }
+@media (max-width: 760px) { #hero-tour { display: none; } }
 .tour .shot { box-shadow: 0 10px 30px -18px light-dark(rgb(24 48 43 / 0.27), rgb(0 0 0 / 0.65)); }
 .tour-stage { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(3, auto) 1fr; border: 0; padding: 0; min-width: 0; }
 .tour-radio { position: relative; z-index: 1; grid-column: 1; align-self: start; justify-self: start; width: 1rem; height: 1rem; margin: 0; margin-inline-start: 1rem; margin-block-start: 1.5625rem; appearance: none; border: 1.5px solid var(--muted); border-radius: 50%; background: transparent; cursor: pointer; }
@@ -445,7 +446,7 @@ p { text-wrap: pretty; max-width: 66ch; }
   .feature-guide:hover { background: var(--surface); }
   .feature-group > summary:hover { color: var(--brand); border-top-color: var(--brand); }
   .client-details summary:hover { color: var(--brand); }
-  .device-choice:hover { background: var(--bg); text-decoration: underline; text-underline-offset: 0.2em; }
+  .device-choice:hover { background: var(--surface); text-decoration: underline; text-underline-offset: 0.2em; }
   .tour-choice:hover .choice-title { text-decoration: underline; text-underline-offset: 0.2em; }
 }
 

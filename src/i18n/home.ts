@@ -34,7 +34,7 @@ const en: HomeCopy = {
     items: {
       'priorities': { title: "Priorities at a glance", caption: "Group tasks by priority, with assignees, dates and labels in view.", alt: "Dark Ditero board with high, medium, low and unprioritized tasks, assignees, dates and labels." },
       'task-detail': { title: "Shared task details", caption: "See assignees, subtasks, notes and comments together.", alt: "Ditero task details with two assignees, notes and three subtasks." },
-      'recurrence-reminders': { title: "Recurrence and reminders", caption: "Set weekly repeats and a reminder time in task details.", alt: "Two Ditero task-detail excerpts showing the task title, weekly Saturday repeat and 9 AM reminder controls." },
+      'recurrence-reminders': { title: "Recurrence and reminders", caption: "Set weekly repeats and a reminder time in task details.", alt: "Ditero task settings showing a weekly Saturday repeat and 9 AM reminder." },
       'saved-filters': { title: "Saved filters and views", caption: "Save list and status filters with a board layout and priority grouping.", alt: "Dark Ditero saved view editor with list and status conditions, board layout and priority grouping." },
     },
   },
@@ -79,7 +79,7 @@ const de: HomeCopy = {
     items: {
       'priorities': { title: "Prioritäten auf einen Blick", caption: "Gruppiere Aufgaben nach Priorität und behalte Zuständige, Termine und Labels im Blick.", alt: "Dunkles Ditero-Board mit Aufgaben hoher, mittlerer, niedriger und ohne Priorität, Zuständigen, Terminen und Labels." },
       'task-detail': { title: "Details gemeinsamer Aufgaben", caption: "Sieh Zuständige, Unteraufgaben, Notizen und Kommentare zusammen.", alt: "Ditero-Aufgabendetails mit zwei Zuständigen, Notizen und drei Unteraufgaben." },
-      'recurrence-reminders': { title: "Wiederholungen und Erinnerungen", caption: "Lege wöchentliche Wiederholungen und eine Erinnerungszeit in den Aufgabendetails fest.", alt: "Zwei Ausschnitte der Ditero-Aufgabendetails mit Aufgabentitel, wöchentlicher Wiederholung am Samstag und Erinnerung um 9 Uhr." },
+      'recurrence-reminders': { title: "Wiederholungen und Erinnerungen", caption: "Lege wöchentliche Wiederholungen und eine Erinnerungszeit in den Aufgabendetails fest.", alt: "Ditero-Aufgabeneinstellungen mit wöchentlicher Wiederholung am Samstag und Erinnerung um 9 Uhr." },
       'saved-filters': { title: "Gespeicherte Filter und Ansichten", caption: "Speichere Listen- und Statusfilter mit Board-Layout und Gruppierung nach Priorität.", alt: "Dunkler Ditero-Ansichtseditor mit Listen- und Statusbedingungen, Board-Layout und Gruppierung nach Priorität." },
     },
   },
@@ -124,7 +124,7 @@ const es: HomeCopy = {
     items: {
       'priorities': { title: "Prioridades de un vistazo", caption: "Agrupa tareas por prioridad y consulta responsables, fechas y etiquetas.", alt: "Tablero oscuro de Ditero con tareas de prioridad alta, media, baja y sin prioridad, responsables, fechas y etiquetas." },
       'task-detail': { title: "Detalles de tareas compartidas", caption: "Consulta responsables, subtareas, notas y comentarios juntos.", alt: "Detalles de Ditero con dos responsables, notas y tres subtareas." },
-      'recurrence-reminders': { title: "Repeticiones y recordatorios", caption: "Configura repeticiones semanales y una hora de recordatorio en los detalles de la tarea.", alt: "Dos fragmentos de los detalles de Ditero con el título, la repetición semanal los sábados y los controles del recordatorio a las 9 de la mañana." },
+      'recurrence-reminders': { title: "Repeticiones y recordatorios", caption: "Configura repeticiones semanales y una hora de recordatorio en los detalles de la tarea.", alt: "Configuración de una tarea de Ditero con repetición semanal los sábados y recordatorio a las 9 de la mañana." },
       'saved-filters': { title: "Filtros y vistas guardados", caption: "Guarda filtros de lista y estado con diseño de tablero y agrupación por prioridad.", alt: "Editor oscuro de vistas de Ditero con condiciones de lista y estado, diseño de tablero y agrupación por prioridad." },
     },
   },
@@ -169,7 +169,7 @@ const fr: HomeCopy = {
     items: {
       'priorities': { title: "Les priorités en un coup d’œil", caption: "Regroupez les tâches par priorité, avec les responsables, les dates et les étiquettes à portée de vue.", alt: "Tableau sombre de Ditero avec des tâches de priorité haute, moyenne, basse et sans priorité, leurs responsables, dates et étiquettes." },
       'task-detail': { title: "Détails des tâches partagées", caption: "Retrouvez les responsables, les sous-tâches, les notes et les commentaires ensemble.", alt: "Détails de Ditero avec deux responsables, des notes et trois sous-tâches." },
-      'recurrence-reminders': { title: "Récurrence et rappels", caption: "Réglez les répétitions hebdomadaires et l’heure du rappel dans les détails de la tâche.", alt: "Deux extraits des détails de Ditero avec le titre, la répétition chaque samedi et les réglages du rappel à 9 heures." },
+      'recurrence-reminders': { title: "Récurrence et rappels", caption: "Réglez les répétitions hebdomadaires et l’heure du rappel dans les détails de la tâche.", alt: "Réglages d’une tâche Ditero avec répétition chaque samedi et rappel à 9 heures." },
       'saved-filters': { title: "Filtres et vues enregistrés", caption: "Enregistrez des filtres de liste et de statut avec une disposition en tableau et un regroupement par priorité.", alt: "Éditeur sombre de vues Ditero avec des conditions de liste et de statut, une disposition en tableau et un regroupement par priorité." },
     },
   },
@@ -214,7 +214,7 @@ const ro: HomeCopy = {
     items: {
       'priorities': { title: "Priorități dintr-o privire", caption: "Grupează sarcinile după prioritate și vezi responsabilii, datele și etichetele.", alt: "Panou Ditero întunecat cu sarcini de prioritate mare, medie, mică și fără prioritate, responsabili, date și etichete." },
       'task-detail': { title: "Detalii pentru sarcini comune", caption: "Vezi responsabilii, subsarcinile, notele și comentariile la un loc.", alt: "Detalii Ditero cu doi responsabili, note și trei subsarcini." },
-      'recurrence-reminders': { title: "Recurență și mementouri", caption: "Configurează repetări săptămânale și ora mementoului în detaliile sarcinii.", alt: "Două fragmente din detaliile Ditero cu titlul sarcinii, repetarea săptămânală sâmbăta și setările mementoului de la ora 9 dimineața." },
+      'recurrence-reminders': { title: "Recurență și mementouri", caption: "Configurează repetări săptămânale și ora mementoului în detaliile sarcinii.", alt: "Setările unei sarcini Ditero cu repetare săptămânală sâmbăta și memento la ora 9 dimineața." },
       'saved-filters': { title: "Filtre și vizualizări salvate", caption: "Salvează filtre pentru listă și stare, cu afișare pe coloane și grupare după prioritate.", alt: "Editor Ditero întunecat pentru vizualizări, cu condiții pentru listă și stare, afișare pe coloane și grupare după prioritate." },
     },
   },
@@ -259,7 +259,7 @@ const ar: HomeCopy = {
     items: {
       'priorities': { title: "الأولويات في لمحة", caption: "جمّع المهام حسب الأولوية، وشاهد المسؤولين والتواريخ والتصنيفات.", alt: "لوحة Ditero داكنة بمهام ذات أولوية عالية ومتوسطة ومنخفضة ومهام دون أولوية، مع المسؤولين والتواريخ والتصنيفات." },
       'task-detail': { title: "تفاصيل المهام المشتركة", caption: "شاهد المسؤولين والمهام الفرعية والملاحظات والتعليقات معًا.", alt: "تفاصيل Ditero تعرض مسؤولَين وملاحظات وثلاث مهام فرعية." },
-      'recurrence-reminders': { title: "التكرار والتذكيرات", caption: "اضبط التكرار الأسبوعي ووقت التذكير في تفاصيل المهمة.", alt: "مقتطفان من تفاصيل Ditero يعرضان عنوان المهمة والتكرار الأسبوعي يوم السبت وإعدادات التذكير الساعة التاسعة صباحًا." },
+      'recurrence-reminders': { title: "التكرار والتذكيرات", caption: "اضبط التكرار الأسبوعي ووقت التذكير في تفاصيل المهمة.", alt: "إعدادات مهمة في Ditero تعرض التكرار الأسبوعي يوم السبت والتذكير الساعة التاسعة صباحًا." },
       'saved-filters': { title: "الفلاتر والعروض المحفوظة", caption: "احفظ فلاتر القائمة والحالة مع تخطيط لوحة وتجميع حسب الأولوية.", alt: "محرر عروض داكن في Ditero يعرض شروط القائمة والحالة وتخطيط لوحة وتجميعًا حسب الأولوية." },
     },
   },

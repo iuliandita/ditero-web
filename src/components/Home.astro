@@ -291,8 +291,8 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Post
     }
   }
   document.getElementById('hero-tour')?.addEventListener('click', () => {
-    const sharing = document.getElementById('tour-task-detail');
-    if (sharing instanceof HTMLInputElement) sharing.checked = true;
+    const first = document.getElementById('tour-shopping');
+    if (first instanceof HTMLInputElement) first.checked = true;
   });
   const revealTourFragment = (): void => {
     const id = location.hash.slice(1);

@@ -356,12 +356,12 @@ p { text-wrap: pretty; max-width: 66ch; }
   .site-header { padding-block: 1rem; }
   .brand img { width: 118px; }
   .menu-name { display: none; }
-  .hero { text-align: start; padding-block: 2.5rem 3rem; }
+  .hero { text-align: start; padding-block: 2rem 3rem; }
   .hero-copy { justify-items: start; }
   .hero-meta { justify-content: start; }
   .hero-meta .platforms { margin-inline-end: 0.75rem; }
   .hero-copy .actions { justify-content: start; }
-  .hero-media { margin-top: 2.5rem; }
+  .hero-media { margin-top: 1.5rem; }
   .hero-media::before { bottom: -3rem; }
   .hero h1 { font-size: clamp(2.8rem, 10vw, 3.5rem); }
   .hero h1 span { display: block; }

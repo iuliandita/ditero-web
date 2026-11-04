@@ -5,7 +5,7 @@
 ## Pages
 
 - [Home](https://ditero.app/): Share shopping lists, chores, habits and projects from one server you run.
-- [About](https://ditero.app/about/): Shared tasks, shopping and routines for households and small groups on a server they run. The project is in early alpha.
+- [About](https://ditero.app/about/): Shared tasks, shopping and routines for households and small groups on a server they run. The project is in beta.
 - [Privacy](https://ditero.app/privacy/): Privacy information for the Ditero project website.
 
 ## Optional

@@ -12,7 +12,7 @@ export const localeInfo: Record<Locale, { name: string; dir: 'ltr' | 'rtl'; og: 
 
 export const pageUrl = (locale: Locale, path = '') => `${locale === 'en' ? '/' : `/${locale}/`}${path ? `${path}/` : ''}`;
 
-export const version = 'v0.0.1-alpha.12';
+export const version = 'v0.1.0-beta.2';
 
 const repo = 'https://github.com/iuliandita/ditero';
 export const links = {
@@ -20,14 +20,17 @@ export const links = {
   otherProjects: 'https://iuliandita.com/projects/',
   project: repo,
   release: `${repo}/releases/tag/${version}`,
-  deploy: `${repo}/tree/develop/deploy/docker`,
-  docs: `${repo}/tree/develop/docs`,
+  deploy: `${repo}/blob/${version}/README.md#run-it-docker-compose`,
+  docs: `${repo}/tree/${version}/docs`,
+  portability: `${repo}/blob/${version}/docs/runbooks/data-portability.md`,
+  backup: `${repo}/blob/${version}/docs/runbooks/backup-restore.md`,
+  security: `${repo}/blob/${version}/docs/security.md#operator-blind-attachments`,
   issues: `${repo}/issues`,
-  license: `${repo}/blob/develop/LICENSE`,
-  cli: `${repo}/blob/develop/docs/cli.md`,
-  tui: `${repo}/blob/develop/docs/tui.md`,
-  mcp: `${repo}/blob/develop/docs/mcp.md`,
-  api: `${repo}/blob/develop/docs/runbooks/public-api.md`,
+  license: `${repo}/blob/${version}/LICENSE`,
+  cli: `${repo}/blob/${version}/docs/cli.md`,
+  tui: `${repo}/blob/${version}/docs/tui.md`,
+  mcp: `${repo}/blob/${version}/docs/mcp.md`,
+  api: `${repo}/blob/${version}/docs/runbooks/public-api.md`,
   support: 'https://ko-fi.com/Q3O027XM2F',
   cloudflarePrivacy: 'https://www.cloudflare.com/privacypolicy/',
 } as const;

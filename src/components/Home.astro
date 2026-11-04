@@ -263,6 +263,20 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Post
 </SiteLayout>
 
 <script>
+  const mat = document.querySelector('.steps-mat');
+  if (mat) {
+    if (typeof IntersectionObserver !== 'undefined') {
+      const observer = new IntersectionObserver(entries => {
+        if (entries.some(entry => entry.isIntersecting)) {
+          mat.classList.add('is-visible');
+          observer.disconnect();
+        }
+      }, { rootMargin: '200px' });
+      observer.observe(mat);
+    } else {
+      window.addEventListener('load', () => mat.classList.add('is-visible'));
+    }
+  }
   const revealTourFragment = (): void => {
     const id = location.hash.slice(1);
     if (!id) return;

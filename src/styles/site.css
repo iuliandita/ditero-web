@@ -244,9 +244,9 @@ p { text-wrap: pretty; max-width: 66ch; }
 .product-run { white-space: nowrap; }
 .product-term { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.92em; border: 1px solid var(--line); border-radius: 5px; padding-inline: 0.35em; background: var(--bg); white-space: nowrap; }
 .host { position: relative; isolation: isolate; background: var(--bg); padding-block: var(--section) 3rem; }
-.steps-mat::before { content: ""; position: absolute; inset: 0; z-index: -1; background: url("/brand/felt-paper.webp") repeat; background-size: 40rem; opacity: 0.6; mix-blend-mode: multiply; border-radius: inherit; pointer-events: none; }
-:root[data-theme='dark'] .steps-mat::before { opacity: 0.65; mix-blend-mode: soft-light; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme='light']) .steps-mat::before { opacity: 0.65; mix-blend-mode: soft-light; } }
+.steps-mat.is-visible::before { content: ""; position: absolute; inset: 0; z-index: -1; background: url("/brand/felt-paper.webp") repeat; background-size: 40rem; opacity: 0.6; mix-blend-mode: multiply; border-radius: inherit; pointer-events: none; }
+:root[data-theme='dark'] .steps-mat::before { opacity: 0.65; mix-blend-mode: soft-light; background-size: 28rem; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme='light']) .steps-mat::before { opacity: 0.65; mix-blend-mode: soft-light; background-size: 28rem; } }
 .host-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: start; }
 .host-copy h2 { margin-bottom: 1.25rem; }
 .host-copy > p { color: var(--muted); }

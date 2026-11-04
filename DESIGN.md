@@ -201,7 +201,7 @@ Use logical padding, margins and insets for content. Feature titles, previews an
 
 ## Elevation & Depth
 
-Tonal surfaces and 1px hairlines carry structure. The hero has an ambient shadow; framed tour proofs use a softer shadow. Menus retain the existing elevation. Features, assistant, hosting steps and controls stay flat. Only the backing around the hosting steps uses the physical felt-paper image, repeated at 40rem. Light mode uses multiply blending at 0.6 opacity; dark mode uses soft-light at 0.65 so the grain remains visible without lifting the whole page. The opaque steps card and adjacent running copy keep text off the texture.
+Tonal surfaces and 1px hairlines carry structure. The hero has an ambient shadow; framed tour proofs use a softer shadow. Menus retain the existing elevation. Features, assistant, hosting steps and controls stay flat. Only the backing around the hosting steps uses the physical felt-paper image, loaded near the hosting section and repeated at 40rem in light mode and 28rem in dark mode. Light mode uses multiply blending at 0.6 opacity; dark mode uses soft-light at 0.65 so the grain remains visible without lifting the whole page. The opaque steps card and adjacent running copy keep text off the texture.
 
 ### Shadow Vocabulary
 

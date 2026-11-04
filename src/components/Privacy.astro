@@ -4,6 +4,8 @@ import Mail from './Mail.astro';
 import { documents, links, type Locale } from '../content';
 const { locale } = Astro.props as { locale: Locale };
 const d = documents[locale].privacy;
+const terms = /(static\.cloudflareinsights\.com|a\.nel\.cloudflare\.com|Cloudflare Web Analytics|Cloudflare|GDPR|NEL|DSGVO|RGPD|6\(1\)\(f\))/g;
+
 ---
 <SiteLayout locale={locale} path="privacy" title={d.title} description={d.description}>
   <article class="document">
@@ -11,6 +13,8 @@ const d = documents[locale].privacy;
     <p class="lead">{d.lead}</p>
     <h2>{d.servingH}</h2><p>{d.servingText} <a href={links.cloudflarePrivacy}>{d.cloudflare}</a>.</p>
     <h2>Cloudflare Web Analytics</h2><p>{d.analyticsText}</p>
+    <p>{d.telemetryText.split(terms).map((part, index) => index % 2 ? <bdi dir="ltr">{part}</bdi> : part)}</p>
+    <p>{d.legalBasis.split(terms).map((part, index) => index % 2 ? <bdi dir="ltr">{part}</bdi> : part)}</p>
     <h2>Google Search Console</h2><p>{d.gscText}</p>
     <h2>{d.themeH}</h2><p>{d.themeText}</p>
     <h2>{d.externalH}</h2><p>{d.contactBefore} <Mail />{d.contactAfter}</p>

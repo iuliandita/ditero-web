@@ -7,9 +7,9 @@ export const fr: ExtraCopy = {
     title: "Planifiez avec votre assistant",
     intro: "Connectez un assistant IA que vous utilisez déjà. Via MCP, il transforme vos demandes en tâches, priorités et échéances.",
     exampleLabel: 'Exemple de demande',
-    example: 'Planifiez le pique‑nique de samedi, attribuez les courses et marquez la réservation du train comme prioritaire.',
+    example: "Organisez le trajet en train de samedi, confiez le choix de l’itinéraire à Alex et donnez la priorité à la réservation des billets.",
     resultLabel: "Exemple de plan",
-    results: [{"title": "Organiser le pique‑nique de samedi", "detail": "Liste partagée"}, {"title": "Acheter de quoi manger pour le pique‑nique", "detail": "Attribuée à Alex"}, {"title": "Réserver le train", "detail": "Priorité élevée"}],
+    results: [{"title": "Organiser le trajet en train de samedi", "detail": "Liste partagée"}, {"title": "Choisir l’itinéraire", "detail": "Attribuée à Alex"}, {"title": "Réserver les billets de train", "detail": "Priorité élevée"}],
     source: "Les bundles nécessitent Bun 1.3.14 ou plus et sont qualifiés sur Linux x64.",
     shortSource: "MCP est fourni en bundle Bun.",
     points: [
@@ -20,12 +20,13 @@ export const fr: ExtraCopy = {
     link: 'Lire le guide MCP',
   },
   features: {
+    importNote: "Importez depuis Todoist, TickTick, Microsoft To Do (Outlook CSV), Trello et CSV.",
     groups: [
       { id: 'lists', title: 'Listes et partage', summary: "Courses et projets en groupe", items: ["Tâches, courses, listes de contrôle, projets et habitudes", "Attribuez les tâches à vos proches", 'Sous-tâches dans les tâches', 'Priorités et étiquettes', 'Espaces de travail à partager avec d\'autres personnes', "Dossiers et modèles", "Saisie rapide avec dates et priorités", "Les modifications hors ligne se synchronisent à la reconnexion"] },
       { id: 'routines', title: 'Habitudes', summary: "Tâches récurrentes et habitudes", items: ["Tâches ménagères récurrentes", "Habitudes et séries", 'Minuteur de concentration lié aux tâches', "Points pour les tâches et habitudes accomplies (Karma)"] },
-      { id: 'reminders', title: 'Rappels', summary: "ntfy, Telegram, Discord, Slack et e-mail", items: ["Rappels d'échéance", "Heures de silence", 'Choisissez vos canaux de notification', 'Accusé de réception des rappels', "Escalade des rappels sans réponse"] },
+      { id: 'reminders', title: 'Rappels', summary: "Confirmez les rappels sur les canaux de votre choix", items: ["Rappels d'échéance", "Heures de silence", 'Choisissez vos canaux de notification', 'Accusé de réception des rappels', "Escalade des rappels sans réponse"] },
       { id: 'views', title: 'Vues des tâches', summary: "Calendrier, kanban et tableaux", items: ['Tableaux de bord', 'Calendrier', 'Tableau kanban', 'Tableau de données', 'Vues enregistrées'] },
-      { id: 'files', title: 'Fichiers', summary: "Commentaires et fichiers chiffrés", items: ['Pièces jointes chiffrées', 'Commentaires sur les tâches'] },
+      { id: 'files', title: 'Fichiers', summary: "Commentaires et pièces jointes chiffrées en option", items: ['Pièces jointes chiffrées', 'Commentaires sur les tâches'] },
       { id: 'recovery', title: 'Historique et export', summary: "Tâches terminées, import et export", items: ['Historique des tâches terminées', 'Export et import, avec exclusions documentées'] },
       { id: 'access', title: 'Connexion et outils', summary: "Passkeys, API et assistants", items: ['Passkeys et TOTP', "Jetons d'accès personnels", "API HTTP et exports iCal", "Clients CLI, TUI et MCP depuis le code source", "Abonnements calendrier et webhooks entrants"] },
       { id: 'custom', title: 'Personnalisation', summary: "Six langues, thèmes et options de lecture", items: ["Six langues d'interface, dont l'arabe de droite à gauche", "Thèmes clair et sombre", "Couleurs d'accent et thèmes partagés", 'Taille de lecture et option de contraste élevé'] },

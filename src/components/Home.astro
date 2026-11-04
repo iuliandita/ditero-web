@@ -127,7 +127,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Post
       <div class="assistant-example">
         <figure class="request">
           <figcaption>{x.ai.exampleLabel}</figcaption>
-          <blockquote><p>{x.ai.example}</p></blockquote>
+          <blockquote><p><FeatureText text={x.ai.example} /></p></blockquote>
         </figure>
         <div class="assistant-plan">
           <div class="plan-heading">
@@ -136,7 +136,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Post
           </div>
           <ul class="plan" role="list" aria-labelledby="plan-label">
             {x.ai.results.map(result => (
-              <li><span class="plan-title">{result.title}</span><span class="plan-detail">{result.detail}</span></li>
+              <li><span class="plan-title">{result.title}</span><span class="plan-detail"><FeatureText text={result.detail} /></span></li>
             ))}
           </ul>
         </div>
@@ -171,7 +171,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Post
           </summary>
           <div class:list={['feature-body', { 'feature-body-short': group.items.length <= 3 }]}>
             <span class="feature-mat" aria-hidden="true"><img class="feature-art" src={`/images/carousel/${featureArtwork[group.id]}.webp`} width="480" height="480" alt="" loading="lazy" decoding="async" /></span>
-            <ul class="feature-items" role="list">{group.items.map(item => <li><FeatureText text={item} /></li>)}</ul>
+            <div><ul class="feature-items" role="list">{group.items.map(item => <li><FeatureText text={item} /></li>)}</ul>{group.id === 'recovery' && <p><a href={links.portability}><FeatureText text={x.features.importNote} /></a></p>}</div>
           </div>
         </details>
       ))}
@@ -183,6 +183,7 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Post
     <header class="apps-heading">
       <h2 id="apps-title">{a.title}</h2>
       <p>{a.intro}</p>
+      <p>{a.invited}</p>
     </header>
     <div class="apps-stack">
       <h3 class="group">{a.publicTitle}</h3>

@@ -22,6 +22,7 @@ export const links = {
   release: `${repo}/releases/tag/${version}`,
   deploy: `${repo}/blob/${version}/README.md#run-it-docker-compose`,
   docs: `${repo}/tree/${version}/docs`,
+  portability: `${repo}/blob/${version}/docs/runbooks/data-portability.md`,
   backup: `${repo}/blob/${version}/docs/runbooks/backup-restore.md`,
   security: `${repo}/blob/${version}/docs/security.md#operator-blind-attachments`,
   issues: `${repo}/issues`,

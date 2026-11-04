@@ -267,6 +267,7 @@ p { text-wrap: pretty; max-width: 66ch; }
 .document .lead { margin-bottom: 2rem; }
 .document h2 { font-size: 1.4rem; margin-block: 2.25rem 0.5rem; }
 .document p { color: var(--muted); }
+.document p + p { margin-block-start: 0.75rem; }
 .document a { color: var(--brand); }
 
 @media (min-width: 61rem) {

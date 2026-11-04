@@ -171,7 +171,8 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Post
           </summary>
           <div class:list={['feature-body', { 'feature-body-short': group.items.length <= 3 }]}>
             <span class="feature-mat" aria-hidden="true"><img class="feature-art" src={`/images/carousel/${featureArtwork[group.id]}.webp`} width="480" height="480" alt="" loading="lazy" decoding="async" /></span>
-            <div><ul class="feature-items" role="list">{group.items.map(item => <li><FeatureText text={item} /></li>)}</ul>{group.id === 'recovery' && <p><a href={links.portability}><FeatureText text={x.features.importNote} /></a></p>}</div>
+            <ul class="feature-items" role="list">{group.items.map(item => <li><FeatureText text={item} /></li>)}</ul>
+            {group.id === 'recovery' && <p class="feature-note"><a href={links.portability}><FeatureText text={x.features.importNote} /></a></p>}
           </div>
         </details>
       ))}

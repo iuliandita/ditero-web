@@ -200,7 +200,7 @@ const fr: HomeCopy = {
     labels: { setup: "Guide d'installation", release: 'Téléchargements', guide: 'Guide' },
   },
   server: { title: 'Gérez le serveur vous-même', text: "Hébergez Ditero sur votre infrastructure. Consultez le code sous licence MIT et choisissez qui y accède. Guides Docker Compose et Helm disponibles.", link: 'Lire le guide de déploiement', docs: 'Lire la documentation', prerequisites: "PostgreSQL 15+ avec réplication logique est requis ; Docker Compose l'inclut. Les ports 3000 et 4848 sont nécessaires. Définissez DITERO_IMAGE_TAG={imageTag} pour lancer cette version.", cost: "Le logiciel est gratuit, mais une personne du groupe gère la machine.", recovery: "Sauvegardez la base de données, les pièces jointes et les clés de chiffrement, puis testez une restauration avant d'inviter des personnes. L'export JSON n’est pas une sauvegarde complète.", encryption: "Chiffrement des pièces jointes (facultatif) : contenu, noms, types et miniatures sont chiffrés dans le navigateur ; tailles, dates, personne ayant envoyé le fichier et texte des tâches ne le sont pas." },
-  support: { title: 'Soutenir le développement', text: "Ditero est gratuit et sous licence MIT. Aucune fonctionnalité n’est payante. Les dons financent le temps que je consacre aux corrections et aux nouvelles versions.", kofi: 'Soutenir sur Ko-fi', sponsor: "Se renseigner sur le sponsoring" },
+  support: { title: 'Soutenir le développement', text: "Ditero est gratuit et sous licence MIT. Aucune fonctionnalité n'est payante. Les dons financent le temps que je consacre aux corrections et aux nouvelles versions.", kofi: 'Soutenir sur Ko-fi', sponsor: "Se renseigner sur le sponsoring" },
 };
 
 const ro: HomeCopy = {

@@ -9,7 +9,7 @@ const d = documents[locale].about;
   <article class="document">
     <h1>{d.h1}</h1>
     <p class="lead">{d.lead}</p>
-    <p>{d.creatorNote.split(/(Ditero)/g).map(part => part === 'Ditero' ? <bdi dir="ltr">{part}</bdi> : part)}</p>
+    <p>{d.creatorNote.split(/(Ditero|MIT|GitHub)/g).map(part => ['Ditero', 'MIT', 'GitHub'].includes(part) ? <bdi dir="ltr">{part}</bdi> : part)}</p>
     <h2>{d.statusH}</h2><p>{d.statusText}</p>
     <h2>{d.contribH}</h2><p>{d.contribText.split(/(iuliandita)/g).map(part => part === 'iuliandita' ? <a href={links.creator}><bdi dir="ltr">{part}</bdi></a> : part)}</p>
     <p><a href={links.project}>{d.project}</a> · <a href={links.issues}>{d.issues}</a> · <Mail /></p>

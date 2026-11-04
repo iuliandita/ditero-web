@@ -24,28 +24,27 @@ const devRows: { row: typeof a.dev.cli; link: [LinkKey, 'guide'] }[] = [
 const cap = { desktopAlt: t.capture.desktopAlt, mobileAlt: t.capture.mobileAlt, open: t.capture.open };
 type ProofId = 'task-detail' | 'recurrence-reminders';
 type ProofAssets = {
-  context: 'sharing' | 'recurrence';
-  desktop: { width: number; contextHeight: number; height: number };
-  mobile: { width: number; contextHeight: number; height: number };
+  context?: 'sharing';
+  desktop: { width: number; contextHeight?: number; height: number };
+  mobile: { width: number; contextHeight?: number; height: number };
 };
-const proofAssets = {
+const proofAssets: Record<ProofId, ProofAssets> = {
   'task-detail': {
     context: 'sharing',
     desktop: { width: 439, contextHeight: 92, height: 528 },
     mobile: { width: 390, contextHeight: 96, height: 548 },
   },
   'recurrence-reminders': {
-    context: 'recurrence',
-    desktop: { width: 439, contextHeight: 92, height: 470 },
-    mobile: { width: 390, contextHeight: 100, height: 398 },
+    desktop: { width: 439, height: 470 },
+    mobile: { width: 390, height: 398 },
   },
-} satisfies Record<ProofId, ProofAssets>;
+};
 const proofs = (['task-detail', 'recurrence-reminders'] as const).map(id => ({
   id, ...t.gallery.items[id], ...t.features.proof[id], assets: proofAssets[id],
 }));
 const dashboard = t.features.proof.dashboard;
 const captures = {
-  en: { title: 'Shop together', text: 'Keep the household shopping list in one place.', shopping: 'A Groceries shopping list with items and a cart.', habit: 'A habit with a seven-day streak.' },
+  en: { title: 'Shop together', text: 'Keep the household shopping list in one place.', shopping: 'A shopping list with items and a cart.', habit: 'A habit with a seven-day streak.' },
   de: { title: 'Gemeinsam einkaufen', text: 'Die Einkaufsliste für den Haushalt an einem Ort.', shopping: 'Eine Einkaufsliste mit Artikeln und Einkaufswagen.', habit: 'Eine Gewohnheit mit einer Serie von sieben Tagen.' },
   es: { title: 'Comprar en equipo', text: 'La lista de la compra del hogar en un solo lugar.', shopping: 'Una lista de la compra con artículos y carrito.', habit: 'Un hábito con una racha de siete días.' },
   fr: { title: 'Faire les courses ensemble', text: 'La liste de courses du foyer au même endroit.', shopping: 'Une liste de courses avec des articles et un panier.', habit: 'Une habitude avec une série de sept jours.' },

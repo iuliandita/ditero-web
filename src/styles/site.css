@@ -444,6 +444,7 @@ p { text-wrap: pretty; max-width: 66ch; }
   .feature-guide:hover { background: var(--surface); }
   .feature-group > summary:hover { color: var(--brand); border-top-color: var(--brand); }
   .client-details summary:hover { color: var(--brand); }
+  .device-choice:hover { background: var(--bg); text-decoration: underline; text-underline-offset: 0.2em; }
   .tour-choice:hover .choice-title { text-decoration: underline; text-underline-offset: 0.2em; }
 }
 

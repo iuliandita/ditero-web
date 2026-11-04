@@ -20,6 +20,11 @@ function fixture(root) {
   write('sitemap.xml', `<urlset>${contract.locales.flatMap(locale => contract.paths.map(path => `<url><loc>${contract.origin}${contract.pageUrl(locale, path)}</loc></url>`)).join('')}</urlset>`);
 }
 
+test('release contract targets beta.2', () => {
+  expect(contract.softwareVersion).toBe('v0.1.0-beta.2');
+  expect(contract.releaseUrl).toBe(`${contract.repository}/releases/tag/v0.1.0-beta.2`);
+});
+
 test.each(['valid', 'wrong canonical', 'missing route', 'production as preview', 'duplicate beacon'])('%s output', scenario => {
   const root = mkdtempSync(resolve(tmpdir(), 'site-output-'));
   try {

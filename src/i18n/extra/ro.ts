@@ -1,7 +1,7 @@
 import type { ExtraCopy } from './types';
 
 export const ro: ExtraCopy = {
-  ui: { view: 'Vizualizare', desktop: 'Desktop', phone: 'Telefon', tour: 'Descoperă Ditero', platforms: 'Web, Android și aplicație desktop experimentală. CLI, TUI și MCP din sursă.', details: 'Detalii', menu: 'Meniu', heroIntro: 'Liste de cumpărături comune, treburi casnice recurente și mementouri pentru casa ta. Gratuit, open source și găzduit de tine.', groups: 'Grupuri de funcții', docs: 'Documentație' },
+  ui: { view: 'Vizualizare', desktop: 'Desktop', phone: 'Telefon', tour: 'Descoperă Ditero', platforms: "Web este în beta; Android și desktop sunt experimentale; CLI, TUI și MCP sunt distribuite ca pachete Bun.", details: 'Detalii', menu: 'Meniu', heroIntro: 'Liste de cumpărături comune, treburi casnice recurente și mementouri pentru casa ta. Gratuit, open source și găzduit de tine.', groups: 'Grupuri de funcții', docs: 'Documentație' },
   setup: { steps: ["Pornește serverul cu Docker Compose", "Creează-ți contul în aplicația web", "Invită oameni și partajează o listă"] },
   ai: {
     title: "Planifică cu asistentul tău",
@@ -10,8 +10,8 @@ export const ro: ExtraCopy = {
     example: 'Planifică picnicul de sâmbătă, atribuie cumpărăturile și marchează rezervarea trenului ca prioritate mare.',
     resultLabel: "Exemplu de plan",
     results: [{"title": "Planifică picnicul de sâmbătă", "detail": "Listă comună"}, {"title": "Cumpără mâncare pentru picnic", "detail": "Atribuită lui Alex"}, {"title": "Rezervă trenul", "detail": "Prioritate mare"}],
-    source: "Descărcările alfa nu includ executabile separate.",
-    shortSource: "MCP rulează din sursă.",
+    source: "Pachetele CLI, TUI și MCP necesită Bun 1.3.14 sau mai nou și sunt calificate pe Linux x64.",
+    shortSource: "MCP este distribuit ca pachet Bun.",
     points: [
       'Este un asistent extern pe care îl conectezi tu. Ditero nu are chatbot integrat și nu găzduiește niciun model AI.',
       'Clientul tău MCP decide unde ajung rezultatele și conversațiile. Folosește un client de încredere.',

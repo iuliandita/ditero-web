@@ -112,8 +112,8 @@ const productCopy = (text: string) => text.split(/((?:و)?(?:Docker Compose|Post
                   <img src={`/images/proof/${proof.id}-${theme}.webp`} width={proof.assets.desktop.width} height={proof.assets.desktop.height} alt={proof.alt} loading="lazy" decoding="async" />
               </a></span></div>
               <div class="proof-link proof-mobile"><span class="proof-excerpts">{proof.id === 'recurrence-reminders' && <a href={`/images/gallery/habit-mobile-${theme}.png`} aria-label={`${t.capture.open}: ${captures.habit}`}><img src={`/images/proof/habit-mobile-${theme}.webp`} srcset={`/images/proof/habit-mobile-${theme}.webp 1x, /images/proof/habit-mobile-${theme}-2x.webp 2x`} width="390" height="160" alt={captures.habit} loading="lazy" decoding="async" /></a>}<a href={`/images/gallery/${proof.id}-mobile-${theme}.png`} aria-label={`${t.capture.open}: ${proof.alt}`}>
-                  {proof.id !== 'recurrence-reminders' && <img src={`/images/proof/${proof.assets.context}-context-mobile-${theme}.webp`} width={proof.assets.mobile.width} height={proof.assets.mobile.contextHeight} alt="" loading="lazy" decoding="async" />}
-                  <img src={`/images/proof/${proof.id}-mobile-${theme}.webp`} width={proof.assets.mobile.width} height={proof.assets.mobile.height} alt={proof.alt} loading="lazy" decoding="async" />
+                  {proof.id !== 'recurrence-reminders' && <img src={`/images/proof/${proof.assets.context}-context-mobile-${theme}.webp`} srcset={`/images/proof/${proof.assets.context}-context-mobile-${theme}.webp 1x, /images/proof/${proof.assets.context}-context-mobile-${theme}-2x.webp 2x`} width={proof.assets.mobile.width} height={proof.assets.mobile.contextHeight} alt="" loading="lazy" decoding="async" />}
+                  <img src={`/images/proof/${proof.id}-mobile-${theme}.webp`} srcset={`/images/proof/${proof.id}-mobile-${theme}.webp 1x, /images/proof/${proof.id}-mobile-${theme}-2x.webp 2x`} width={proof.assets.mobile.width} height={proof.assets.mobile.height} alt={proof.alt} loading="lazy" decoding="async" />
               </a></span></div>
             </div>
           ))}

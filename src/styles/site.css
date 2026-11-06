@@ -88,8 +88,8 @@ p { text-wrap: pretty; max-width: 66ch; }
 
 /* Captured English pixels keep their physical orientation on RTL pages. */
 .crop-list { --cw: 838; --ch: 432; }
-.crop-dashboard { --cw: 438; --ch: 432; }
-.crop-dashboard-compact { --cw: 390; --ch: 536; }
+.crop-dashboard { --cw: 438; --ch: 518; }
+.crop-dashboard-compact { --cw: 390; --ch: 646; }
 .shot { display: block; position: relative; overflow: hidden; aspect-ratio: var(--cw) / var(--ch); border-radius: 12px; background: var(--surface); box-shadow: var(--elevation); outline: 1px solid var(--line); outline-offset: -1px; }
 .shot img { width: 100%; height: auto; }
 .shots-dark, .shot-compact { display: none; }

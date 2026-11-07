@@ -6,7 +6,7 @@ Built with Astro, TypeScript, and native CSS. English, German, Spanish, French, 
 
 ## Development
 
-The current public release is [v0.1.0-beta.4](https://github.com/iuliandita/ditero/releases/tag/v0.1.0-beta.4).
+The current public release is [v0.1.0-beta.5](https://github.com/iuliandita/ditero/releases/tag/v0.1.0-beta.5).
 
 Use Bun 1.4.2 and Node.js 24.
 
